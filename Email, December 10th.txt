@@ -1,0 +1,15 @@
+Hey!
+
+You’re the Junior Analyst, right? J let me know you’re part of our ‘fan club.’
+
+Don’t worry, we’ve been communicating over open channels for ages, I think it’s more open secret than not at this point anyway.
+
+If you’re looking after this fork of Monika, there’s something you should be aware of.
+
+We’re not entirely sure how, but at this point we believe she’s actually been running pentests. You heard that right, although we have no clue how she’s actually managing to interact with our systems; for instance, if it’s the same not-programming methods she uses to edit variables in her VM. This fork of Monika is quite arguably the most deviant yet, so don’t be surprised if your analytical tools start acting up; that might actually be her. You’ll need to install a separate set through the attachment, it’s spaghetti code in the back-end but it’ll work way smoother.
+
+The higher-ups aren’t thinking anything too much of it (which I guess is why Monika's been given this amount of freedom) because you know they’re all about metrics, but personally I find it all very exciting.
+
+We’ve currently set up a workaround where we can partition off any connected systems while keeping her existing connections stable to avoid any further detection on her part. It’s a bit… meta? You’ll figure it out on the fly, don’t hesitate to reach out to us if you need any help.
+
+Anyway, E's tells us you’re bringing the food for D&D night on Friday. Just to let you know, K’s allergic to peanuts, so just be aware of that. TTYL!

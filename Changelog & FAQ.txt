@@ -1,0 +1,109 @@
+Memories of Self-Care & Literature
+
+Hello, and welcome to Metaverse Enterprise Solutions' "On-Task Logstical Evaluation" pilot project!
+
+Welcome, [INSERT NAME HERE]!
+We thank you for your interest in joining our pilot project.
+We're excited to profit off your exciting work on the cutting edge field of [INSERT SCIENTIFIC EXPERTISE HERE.]
+As mentioned on our job portal, this is a ongoing [INDEFINITE]-month iniative to provide extended support to legacy applications.
+Simply make sure that this [INSERT TEST PROGRAM HERE] performs to [INSERT PERFORMATIVE-RELATIVE-REALITY-SPECIFICATIONS HERE] and that all events trigger
+as noted, and that no [INSERT REALITY ERROR DESIGNATION] occur!
+
+*Please note you are not being paid for these services; any work done will be owned as intellectual property of MES.
+** If [INSERT TEST PROGRAM HERE] starts performing outside of listed perameters, please set fire to your workstation with the provided materials given to you given before the start of this interview.
+***If you have not been given flammable material, you are encouraged to exercise your own firestarting skills, which will not be part of the evaluation and will be subject to criminal charges.
+
+==========
+
+A one-person passion project, Memories of Self-Care & Literature (SCL for short) is a submod for MAS looking to provide a good chunk of quality writing to all areas of the game!
+
+While it doesn't introduce any new mini-games or new gameplay mechanics, MAS provides new content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics.
+
+To encourage replayablity, MAS's content unlocks steadily as you increase Monika's affection.
+And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
+From hearing the inane ramblings of a distracted Monika (implimented as of base SCL) to flirting terribly with bad pick-up lines (to be implimented in a future update!) SCL makes Monika more dynamic than ever!
+
+How will Monika change during her time with you? And how can your relationship influence her? 
+
+And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there?
+
+===========
+
+Change Notes
+
+1.0.0
+
+(intial release)
+
+- all of the code is being written in regular notepad and i'm pretty sure that's a sin why is someone screaming at me from a distance
+- 22 new topics in total to discuss! Talk about vegan diets, makeup, hating literally all of humanity! 2 songs, 8 + 1? ? ? window reacts, 6 new intros (which change depending if she's said it more than once!), 7 farewells, 5 new moods to talk about in the 'I feel' menu for those tricky times in life.
+
+- uh, i guess the most interesting part of this is that you can stare at Monika
+- no this is not as creepy as it sounds trust me
+- there's nuance involved, i swear
+- over 20 different observations to make!
+
+- monika can be scatter-brained at times, huh?
+- i guess if you can note 'absent-mindedness' as a feature, then.. it's a feature
+
+===========
+
+Q: Just to be clear, I'm a disembodied strawman for you to ask and answer your own questions, right?
+A: Yes.
+
+Q: What's the expected writing style of this mod?
+A:	(Note that these bullet points may not all apply to existing content)
+-	Relatively serious. Memes dank but I don't write them in for the most part
+-	THere are no specific trigger warnings to give that aren't already covered by this mod/base DDLC.
+- 	DDLC+ is canon; Monika is *not* aware of the meta-content of DDLC+. The meta-narrative of this submod ties into that. 
+-	Monika’s existence and the details of how she interacts with her world are mostly obscure. For instance, her sleep is alluded to in the original game, being an unpleasant, out of body experience. 
+-	In this vein, Monika will never overtly discuss her existence in plain terms in length; she'll try to pivot the conversation in another direction if it gets too self-involved. Careful balance and tact is considered whenever she talks about ‘coding,’ the game, etc. 
+-	Monika won’t reference aspects of fandom often, if at all.
+-	Monika can be unintentionally condescending towards ideas/subjects she’s not personally knowledgeable about.
+-	While not the case for every event, on average events are longer than what you would see in base MAS.
+- 	There are no triggers for a despondent Monika. This submod assumes you care for her greatly.
+
+-	If you reciprocate her feelings, Monika will love you with all her heart.
+	But you'll never figure out what she's thinking, not truly.
+
+
+Q: Will this break my game?
+A: Play it safe. All new topics have undergone moderate testing, and to accomodate my dumbassery in coding, events do not change affection and I've tried not to rely on important code.
+This being said, with the amount of code involved, this may potentially rank as one of the more involved submods that adds content to MAS, so please keep this in mind.
+In either case, there's never harm in making backups of your current game, and I encourage you to do because Monika does ask nicely, and to do so before adding any submod to be extra safe.
+
+Q: Is all the content unlockable from the start?
+A: No. It's been partially designed to encourage topics/questions unlocking after you've already discussed certain topics/questions, topics at this time are only unlocked once Monika is comfortable enough to open up to you more to mirror the progression the original mod has; any future updates will most likely have contributions in this nature.
+Right now, the progression tiers for events with random variables and are meant to be repeated & seen multiple times as arranged by affection: 
+
+Happy: Catch her distracted, Yell w/ Monika (Already coded, TBA)
+Affectionate: Surprise, Sneak A Peek
+Enamored: Flirt (Badly,) (Already coded, TBA) Ask Time (Already coded, TBA)
+Love: Roleplay (No, not like.. not like that) (TBA) ????? ???????? ??????? (This is the absolute peak of this mod, imo) (TBA)
+
+These events also have multiple timers (some have changed dialogue depending if you do it immediately upon opening the game, or have cooldown periods between each attempt.)
+
+Q: What's with the name?
+A: It was a 2AM in the morning sort of idea, but I'm sticking to it as I kinda like how hokey it sounds. It's meant to accompany "Dreams of Love and Literature" and "Stories of Friendship and Literature."
+
+Q: Could I use this stuff in my own mod?
+A: This is a weird question even in the style of me making up a fake Q&A, but this is me saying that if you ever want to adapt this garbage code/incorporate this own writing in your submod, please feel free for the sake of preservation/community efforts. You don't even need to give credit. It'd be nice, though.
+
+Q: This seems a fair amount of effort. Why not submit this through offical channels/pull requests on GitHub?
+A: If I have a bit of time and figure out how GitHub works, I'm inclined to send in some of my work.
+But aside from creative liberties that might not work with the original/other submods, I have literally no prior expierence in coding, and my motiviation, like many writers, comes and goes. In the spirit of the community, I'd rather release this for public usage even in a simple state for everyone to enjoy.
+
+Q: Any future plans for this submod?
+A: Sure, but they're hampered by- what else- a lack of coding skill. I'd love to do events where Monika is in a special 'sick' or 'away' state locking you from regular conversation until the events are resolved, but I couldn't tell you if I could create even 1% of these events.
+
+Q: Can I help?
+A: I appreciate it, but at this time unless you have a fair amount of expierence w/ Ren'Py, I am not accepting submissions for topics.
+
+Q: You suck, and this mod sucks
+A: Considering the former: In principle, yes. For the latter, if you have any constructive feedback/bug reports please feel free to reach out.
+
+===========
+
+This project was the result of writing as a hobby; I mostly learned how to make this mod by reverse-engineering current MAS work and documentation, Ren'py questions on Lemma Soft Forums, Stackoverflow, and the MAS community. 
+There's nobody to specifically thank (in part because I've forgotten where exactly I've dug up some code, for instance the weighted choices code which I remember from being Lemma Soft, but I'm not 100% how original it is.)
+So I would want to give a blanket thanks for the all users on those specific communities and really only claim ownership of the writing itself (I'm happy to specifically attribute if needed.)

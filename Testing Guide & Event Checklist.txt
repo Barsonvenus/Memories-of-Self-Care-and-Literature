@@ -1,0 +1,143 @@
+Hello, and welcome to Metaverse Enterprise Solutions' "On-Task Logstical Evaluation" test program!
+
+'Welcome, [INSERT NAME HERE]!
+We thank you for your interest in joining our team.
+We're excited to profit off your exciting work on the cutting edge field of [INSERT SCIENTIFIC EXPERTISE HERE.]
+As part of our rigorious testing and interview process to single yourself out from what we're sure is a pool of geniuses and wunderkinds,
+We'll have you undergo a simple test!
+Simply make sure that this [INSERT TEST PROGRAM HERE] performs to [INSERT PERFORMATIVE-RELATIVE-REALITY-SPECIFICATIONS HERE] and that all events trigger
+as noted, and that no [INSERT REALITY ERROR DESIGNATION] occur!'
+
+*Please note you are not being paid for these services; any work done will be owned as intellectual property of MES.
+** If [INSERT TEST PROGRAM HERE] starts performing outside of listed perameters, please set fire to your workstation with the provided materials given to you given before the start of this interview.
+***If you have not been given flammable material, you are encouraged to exercise your own firestarting skills, which will not be part of the evaluation and will be subject to criminal charges.
+
+Please refer to 'Event Checklist' for a overview of all currently added events. Detailed event info is found after.
+
+**Event Checklist**
+
+(22 topics, 2 songs, 11 Window Reacts, 6 Intros, 11 Farewells, 6 Moods, 1 Compliment)
+(Events are random by default unless specifically cited otherwise)
+
+Monika?
+Misantropy 
+Change
+Karma
+If you weren't in the Literature Club... [Ask]
+Favourite Word [Ask]
+You have a room, right? [Ask] [Unlocked after seeing Vanilla. Monika's room sequence once]
+End Myth [Aff. Trigger = Happy]
+Philosophy, Practicality [Aff. Trigger = Happy]
+Famous Monsters [Aff. Trigger = Happy]
+Cramp [Aff. Trigger = Happy]
+Lies
+How do you think we influence each other? [Ask]
+Is it hard to maintain a purely vegan diet? [Ask] [Unlocked after seeing Vanilla. Vegan topic]
+Adults [Unlocked after seeing Vanilla. Meta Parents topic]
+Do you think you're a monster? [Unlocked after Famous Monsters topic] [Ask]
+Makeup [2 Triggers for Gender; Male, Female/Non-Binary]
+Distracted
+Catch her Distracted? [Unlocked after Distracted] [Ask] [Aff. Trigger = Happy]
+ - 25% Success w/ 7 different outcomes (equal probability)
+ - 6 excuses to make up for a scatter-brained Monika
+Jii~ [Unlocked after discussing Vanilla. player's face topic] [Aff. Trigger = Affectionate]
+Steal a glance [Unlocked after Jii~] [Ask] [Aff. Trigger = Affectionate]
+ - 20 different outcomes (equal probability)
+Surprise her? [Unlocked after Steal a glance] [Ask] [Aff. Trigger = Affectionate]
+ - 3 outcomes (85% Failure, 14% Success, 1% Bold Success.)
+ - Special added dialogue for doing both sucessful actions so in first 3 minutes of the game booting up
+
+Farewells:
+
+Truman's Farewell [Good morning, good evening, good night] [Aff. Trigger = Normal]
+Demons Souls Farewell [May thine strength help your world be mended] [Aff. Trigger = Normal]
+Bloodborne Farewell [May you find your worth in the waking world] [Aff. Trigger = Normal]
+Dark Souls 2 Farewell [Until hope has fully withered] [Aff. Trigger = Normal]
+Dark Souls 3 Farewell [Mayst thou thy peace discov'r] [Aff. Trigger = Normal]
+Halo [Wake me when you need me] [Aff. Trigger = Normal]
+Flippity Flip [Aff. Trigger = Normal]
+Indecision [Hey, player... never mind.] [Aff. Trigger = Normal]
+Solo Bye "I love you. I know" [Monika ver] [Aff. Trigger = Happy]
+Solo Bye "I love you. I know" [Player ver] [Unlocked after seeing Solo Bye Monika Ver] [Aff. Trigger = Happy]
+Let's try modifying your code [Goodbye menu] 
+ - Monika will give a different farewell if you choose this option in a time window of 15 minutes after opening the game
+
+Intros:
+
+Braille [Aff. Trigger = Normal] [Different if seen >once]
+Binary [Aff. Trigger = Normal] [Different if seen >once]
+Elvish [Aff. Trigger = Normal] [Different if seen >once]
+Talking to herself [Aff. Trigger = Normal] [Different if seen >once]
+Dark Souls Intro [Even a girl like me requires repose] [Aff. Trigger = Normal]
+Elden Ring Intro [Turn our time to strength...] [Aff. Trigger = Normal]
+
+Moods (I feel like..):
+
+I don't really know how to describe it.
+Like time's a little screwed up.
+ - Like time's too fast
+ - Like time's too slow
+Oddly 'neutral.'
+Pensive.
+Philosophical.
+Reflective.
+
+Compliments:
+
+You deserve to be happy!
+
+Songs:
+
+Exile Vilify
+Overkill
+
+Reacts:
+
+Granblue Fantasy
+Forum ('Forums' is also accepted)
+FFXIV (FFXIVLauncher, ffxiv_dx11.exe, FINAL FANTASY XIV, Final Fantasy XIV, Endwalker, Stormblood, Shadowbringers)
+Mangadex
+Gmail
+Stardew Valley
+??? ???? ?? ? ??? Plus
+Arknights
+Yakuza (Yakuza Kiwami, Yakuza Kiwami 2, Yakuza: Like A Dragon)
+Friday Night Funkin (Friday Night Funkin, Friday Night Funkin', Doki Doki Takeover!)
+Halo (Halo Infinite, Halo 2, Halo 3, Halo 4, Halo 5: Guardians)
+
+**Detailed Event Information**
+
+[Makeup]
+
+Dialogue changes depending if you identify as male or female/non-binary.
+
+[Steal a Glance]
+
+There are 20 equal probilities.
+One probability takes into account if you gave the promise ring; changes dialogue if it does.
+
+[Catch her distracted]
+ - Cannot do 5 minutes upon starting up game (you may be able to sneak up on her, but catching her absent-minded requires her to settle in more!)
+ - Cooldown of 5 minutes between successful attempts as well
+
+[Surprise Her]
+- Boo (14%) dialogue
+ - Added dialogue if done within 3 minutes of game booting up
+  - Dialogue different second times onwards
+   - Added dialogue if 'Ticklish (1%)' done 
+- Ticklish (1%) dialogue
+ - Added dialogue if done within 3 minutes of game booting up
+  - Dialogue different second times onwards
+   - Added dialogue if 'Boo (14%)' done
+- 10 minute cooldown between both successful attempts
+
+These introductions change past the first time, so dialogue is exclusive for the only first time you view these events:
+
+Braille [Aff. Trigger = Normal] [Different if seen >once]
+Binary [Aff. Trigger = Normal] [Different if seen >once]
+Elvish [Aff. Trigger = Normal] [Different if seen >once]
+Talking to herself [Aff. Trigger = Normal] [Different if seen >once]
+
+Actualization Filter for Window Reacts has been put in place for keywords
+"Doki Doki Literature Club Plus!", "Doki Doki Literature Club Plus", "Doki Doki Literature Club Plus ", "Doki Doki Literature Club Plus! ", "Doki Doki Literature Club Plus! - "
+Please let your supervisor know if these words are being used in other than offical MES documentation material.  
