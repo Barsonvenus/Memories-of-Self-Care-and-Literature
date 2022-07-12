@@ -5,7 +5,7 @@ A one-person passion project, Memories of Self-Care & Literature (SCL for short)
 
 While it doesn't introduce any new mini-games or new gameplay mechanics, MAS provides new content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics.
 
-To encourage replayablity, MAS's content unlocks steadily as you increase Monika's affection.
+To encourage the dynamics of a blossoming and changing relationship, MAS's content unlocks steadily as you increase Monika's affection.
 
 And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
 
