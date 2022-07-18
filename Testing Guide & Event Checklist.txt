@@ -61,6 +61,7 @@ Solo Bye "I love you. I know" [Monika ver] [Aff. Trigger = Happy]
 Solo Bye "I love you. I know" [Player ver] [Unlocked after seeing Solo Bye Monika Ver] [Aff. Trigger = Happy]
 Let's try modifying your code [Goodbye menu] 
  - Monika will give a different farewell if you choose this option in a time window of 15 minutes after opening the game
+ - If you re-open the game and exit using this again within another 15 minutes, Monika will also notice that and give you a different farewell!
 
 Intros:
 
@@ -137,6 +138,14 @@ Braille [Aff. Trigger = Normal] [Different if seen >once]
 Binary [Aff. Trigger = Normal] [Different if seen >once]
 Elvish [Aff. Trigger = Normal] [Different if seen >once]
 Talking to herself [Aff. Trigger = Normal] [Different if seen >once]
+
+For this farewell:
+
+Let's try modifying your code [Goodbye menu] 
+ 
+Monika will give a different farewell if you choose this option in a time window of 15 minutes after opening the game. 
+A cooldown timer is set so that if you've pressed this goodbye upon booting up the game again within 15 minutes, Monika will have a third variant of this goodbye.
+This timer resets every time you choose this goodbye, so you can indefinitely get the third variant by choosing this goodbye over and over again within that 15 minute window.
 
 Actualization Filter for Window Reacts has been put in place for keywords
 "Doki Doki Literature Club Plus!", "Doki Doki Literature Club Plus", "Doki Doki Literature Club Plus ", "Doki Doki Literature Club Plus! ", "Doki Doki Literature Club Plus! - "
