@@ -1,7 +1,4 @@
-# Memories of Self-Care & Literature!
-
-[screenshot0001](https://user-images.githubusercontent.com/107741953/180131750-6adee482-420c-4eb2-af2b-c2e3d929f48a.jpeg)
-
+# Memories of Self-Care & Literature
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) is a submod for MAS looking to provide a good chunk of quality writing to all areas of the game!
 
