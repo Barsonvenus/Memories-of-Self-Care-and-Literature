@@ -1,4 +1,4 @@
-# Memories of Self-Care & Literature- A 'Monika After Story' submod
+# Memories of Self-Care & Literature
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) is a submod for MAS looking to provide a good chunk of quality writing to all areas of the game!
 
