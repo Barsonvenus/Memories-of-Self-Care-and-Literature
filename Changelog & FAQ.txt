@@ -15,20 +15,6 @@ as noted, and that no [INSERT REALITY ERROR DESIGNATION] occur!
 
 ==========
 
-A one-person passion project, Memories of Self-Care & Literature (SCL for short) is a submod for MAS looking to provide a good chunk of quality writing to all areas of the game!
-
-While it doesn't introduce any new mini-games or new gameplay mechanics, MAS provides new content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics.
-
-To encourage replayablity, MAS's content unlocks steadily as you increase Monika's affection.
-And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
-From hearing the inane ramblings of a distracted Monika (implimented as of base SCL) to flirting terribly with bad pick-up lines (to be implimented in a future update!) SCL makes Monika more dynamic than ever!
-
-How will Monika change during her time with you? And how can your relationship influence her? 
-
-And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there?
-
-===========
-
 Change Notes
 
 1.0.0
@@ -47,6 +33,8 @@ Change Notes
 - i guess if you can note 'absent-mindedness' as a feature, then.. it's a feature
 
 ===========
+
+FAQ
 
 Q: Just to be clear, I'm a disembodied strawman for you to ask and answer your own questions, right?
 A: Yes.
@@ -68,7 +56,7 @@ A:	(Note that these bullet points may not all apply to existing content)
 
 
 Q: Will this break my game?
-A: Play it safe. All new topics have undergone moderate testing, and to accomodate my dumbassery in coding, events do not change affection and I've tried not to rely on important code.
+A: Play it safe. As per guidelines recommended by MAS devs, All new topics have undergone moderate testing, and to accomodate my dumbassery in coding, events do not change affection and I've tried not to rely on important code.
 This being said, with the amount of code involved, this may potentially rank as one of the more involved submods that adds content to MAS, so please keep this in mind.
 In either case, there's never harm in making backups of your current game, and I encourage you to do because Monika does ask nicely, and to do so before adding any submod to be extra safe.
 
