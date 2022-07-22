@@ -12,7 +12,7 @@ init -990 python:
 init -989 python:
     if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
         store.sup_utils.SubmodUpdater(
-            submod="Memories of Self-Care and Literature",
+            submod="Memories of Self Care and Literature",
             user_name="Barsonvenus",
             repository_name="Memories-of-Self-Care-and-Literature"
         )
