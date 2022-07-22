@@ -13,3 +13,7 @@ From hearing the inane ramblings of a distracted Monika (implimented as of base 
 How will Monika change during her time with you? And how can your relationship influence her? 
 
 And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there?
+
+Installation:
+
+Download files; put into new folder labelled 'Submods' which in turn should be in MAS's 'Game' directory, alongside the "Mod_assets" folder and all the scripts for MAS.
