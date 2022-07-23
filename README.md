@@ -16,4 +16,6 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 Installation:
 
-Download files; put into new folder which in turn should be in a folder labelled 'Submods' in MAS's 'Game' directory, alongside the "Mod_assets" folder and all the scripts for MAS.
+Download source code; put into new folder which in turn should be in a folder labelled 'Submods' in MAS's 'Game' directory, alongside the "Mod_assets" folder and all the scripts for MAS.
+
+Auto-updater version requires Booplicate's "Submod Updater Plugin" otherwise you will encounter a error upon booting up the game.
