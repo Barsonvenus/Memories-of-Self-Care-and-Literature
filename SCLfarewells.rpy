@@ -170,18 +170,27 @@ label bye_prompt_addingcode:
     $ sesh_shorter_than_15_mins = mas_getSessionLength() < datetime.timedelta(minutes=15)
     
     if sesh_shorter_than_15_mins:
-        m 1wso "Oh, you've really just got here? Did something update, or you must be eager to try out something you've just found?"
-        m 1etc "Or... a bit of code you've just given me needs a bit more tweaking, huh?"
-        m 1ekb "In either case, thanks for letting me know. I guess today's a bit of a workout!"
-        m 7hub "Let's get started!"
-        return 'quit'
+        if not mas_timePastSince(persistent._mcl_last_modifycode, datetime.timedelta(minutes=15)):
+            m 3suw "Whoa! We're changing up my code again so quickly?"
+            m 4sfb "Today's a real marathon, then! Let's go, {i}go,{/i} {b}{i}go!{/i}{/b}"
+            $ persistent._mcl_last_modifycode = datetime.datetime.now()
+            return 'quit'
+        
+        else:
+            m 1wso "Oh, you've really just got here? Did something update, or you must be eager to try out something you've just found?"
+            m 1etc "Or... a bit of code you've just given me needs a bit more tweaking?"
+            m 1ekb "In either case, thanks for letting me know. I guess today's a bit of a workout!"
+            m 7hub "Let's get started!"
+            $ persistent._mcl_last_modifycode = datetime.datetime.now()
+            return 'quit'
         
     else:
         m 1wso "Oh! Okay, thanks for letting me know."
         m 1dsc "Just psyching myself up..."
         m 7nfb "Alright! Let's give it a go!"
+        $ persistent._mcl_last_modifycode = datetime.datetime.now()
         return 'quit'
-    
+        
 init 5 python:
     addEvent(
         Event(
