@@ -1,5 +1,17 @@
 Change Notes
 
+2.0.0
+(Reconsile Self & Literature)
+
+- wait, theres like a new version of ren'py? i didnt get the memo on this, do i gotta recode everything or
+- i wrote this joke and update like months ago so this joke now makes less sense
+
+- 18 new topics; bringing the total to 40 topics with this submod!
+
+- unlock the ability to Flirt badly with Monika. No, seriously, the option is literally labelled 'Flirt (badly).'
+- unlock the ability to ask Monika the time. No, seriously, the option is literally labelled 'Ask Monika the time.'
+- For those who are a little more playful, you can flirt with Monika or ask her the time immediately upon opening the game; she'll make a comment on you choosing those options right away.
+
 1.0.2
 
 (intial release)
