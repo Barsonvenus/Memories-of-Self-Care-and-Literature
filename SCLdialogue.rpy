@@ -803,6 +803,386 @@ label mcl_coupleinfluence:
     m 1nsb "I guess this means we are going to need to schedule a double-date so we can get a third party opinion, ASAP."
     return
 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_artacceptance",
+            category=["media"],
+            prompt="Art & Acceptance",
+            random=True)
+        )
+label mcl_artacceptance:
+    m 1eua "You know what’s to admire about the modern world?"
+    m 7eua "How more than ever, there’s a wealth of diverse art that people are using to connect with themselves."
+    m 7eta "To be fair, it’s not as if the past was lacking in these examples."
+    m 4eud "Shakespeare’s play ‘Henry IV’ had a character describe PTSD in accurate detail far before it was medically recognized…"
+    m 4guc "… but back then, PTSD didn't academically exist; soldiers with such symptoms were not treated kindly. This was arguably just enchanting, imaginary prose to the masses."
+    m 2muc "You can be told an absolute truth, but it doesn’t mean you can fully process it; art has always played a role in how people can work out their emotions and feelings."
+    m 2fka "That’s why I find myself captured by a number of modern works, more conceptually bolder than ever, but still able to keenly resonate with people."
+    m 1fkb "From movies, to books, to video games."
+    m 1dkb "There’s a curious, devilish irony in thinking this, considering I don’t view my past fondly…"
+    m 1hka "But did DDLC help anybody process their own stormy thoughts, I wonder?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_empathy",
+            category=["psychology"],
+            prompt="Empathy",
+            random=True)
+        )
+label mcl_empathy:
+    m 7duo "{i}“I call him religious who understands the suffering of others.”{/i}"
+    m 4euo "I’ve been thinking about empathy. It’s something we encounter... or {i}could{/i} encounter possibly almost every day."
+    m 4etc "but I didn’t really know what it was until I learned about it in debate club for the sake of learning about how to make a better argument."
+    m 4etc "Empathy is the capacity to understand or feel what another person is experiencing from within their frame of reference; that is, the capacity to place oneself in another's position."
+    m 1ekb "This being said, while I learned about the concept, it wasn’t entirely conductive to debate club where logic takes precedence over feelings."
+    m 1lka "It’s an odd skill. As much as we’re powered by emotion, it’s very tricky to try to figure out {i}how{/i} emotion works- and how to use that logic to our benefit."
+    m 7rta "For instance, it’s as easy as figuring out the difference between sympathy and empathy. If you’re ever feeling down, which is better:"
+    m 7ltc "Someone saying “I’m sorry that you feel that way?”"
+    m 7rtb "Or someone going “I understand how you feel?”"
+    m 7etb "It’s not a polished example, but it gets the point across."
+    m 2ekp "Unfortunately, empathy, for as useful a skill it can be.."
+    m "It’s not practised as much as it could be, especially by those in a position to regularly excercise it to help others."
+    m 2gtc "And those with an outright lack of empathy… that itself isn't uncommon."
+    m "How those sorts of people interact with the world? Perhaps it’s a topic worth discussing another time."
+    m 4tsa "If you want to practise a little empathy for yourself…"
+    m 4tua "Did you know that hugging or holding someone is a common way to show empathy?"
+    m 5nua "Just saying."
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_neologism",
+            category=["literature"],
+            prompt="Neologism",
+            random=True)
+        )
+label mcl_neologism:
+    m 1eua "The fact that human language is entirely made-up is pretty funny, isn’t it?"
+    m 7wua "Every word that I’m speaking to you was thought up by someone."
+    m 7eub "And hey, you might think every word that should have existed has already been said at this point- nope!"
+    m 7gtb "To this day, new words are being made; although the tricky part is if they’re being widely used."
+    m 7efb "People have cobbled together words together, made new words based off of other words, or just decided to buck any sort of logical convention and just.. make up words!"
+    m 7gtb "Okay, here’s one example…"
+    m 4ftb "The term ‘Quixotic’ – essentially meaning impractically idealistic- came up after ‘Don Quixote’ was penned, a story about a… well, an impractically idealistic knight."
+    m "It was such an impression on the general public that ‘Quixotic’ was adopted as the best way to refer to such figures!"
+    m 4dub "The author Lewis Carroll described a sword as ‘Vorpal’- and he himself cited ‘’…I am afraid I can't explain 'vorpal blade' for you…”"
+    m 3esd "And Shakesphere- famous playwright, I’m sure we’ve talked about him- loved making up his own words to use in his plays."
+    m "Some words include:"
+    m 3esb "'Unaware' (ideally, by sticking ‘un’ to the already known 'aware,' Shakesphere could make up a word but the audience could quickly pick up it’s meaning.)"
+    m "And.."
+    m 3ssb "'Green-eyed!'"
+    m 3gsa "Which, um, in this case meant jealousy."
+    m 1gsa "We’ll leave that fact as is."
+    m 1fsa "I wonder what new term we could use to describe our love?"
+    m 7fsa "It’s so unlike any other love that’s come before us, so let’s make it a special word and brainstorm some ideas, hmm? ~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_perpetually",
+            category=["philosophy"],
+            prompt="Philosophy, Perpetually",
+            random=True)
+        )
+label mcl_perpetually:
+    m 1hka "You know, I read a lot."
+    m 7hka "Such is the fate of the Literature Club president."
+    m 7rka "And my circumstances leave me with a lack of variety of hobbies."
+    m 7rup "And you know what I realized?"
+    m 5rup "I’m still so ignorant."
+    m 5tud "I have so much to learn, and experience."
+    m "And I wish that reading books could give me all the knowledge I need."
+    m 5tkd "But I’ll never be able to practice all I’ve read and thought about... even when I make it to your world."
+    m 5tkc "The gulf between realizing you don’t have all the answers and fully experiencing it is daunting." 
+    m 4tkc "What I’m in your world, and say I get into a genuine, heated argument with someone?"
+    m 4dfd "Gosh. When was the last time I got into an argument, let alone having somebody raise their voice at me?"
+    m 4dtd "I wish I could say I could be composed, talk things out. But that’s too optimistic. There’s a real chance I’ll just lock up right then and there."
+    m 4esc "I’ll most likely feel this way for the rest of my life."
+    m 3esc "It’s not a bad feeling."
+    m 1esa "The right to grow means you can go forwards and backwards all you like."
+    m 2fsa "I’ll be learning things all my life. And I’d love to learn things right alongside you."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_physicality",
+            category=["philosophy"],
+            prompt="Philosophy, Physicality",
+            random=True)
+        )
+label mcl_physicality:
+    m 2dfa "{i}'The society that separates its scholars from its warriors will have its thinking done by cowards and its fighting by fools.'{/i}"
+    m 1ftb "Strong quote, huh?"
+    m 7ftb "You’d be surprised how married together philosophy and being active is, at least from a historical standpoint;"
+    m 4dkb "Many famous figures involved in historical conflict are viewed as figures of… at least, worldly experience."
+    m 4hua "It might be because being particularly physical requires a bit of a personal drive..."
+    m 3hua "... And, admittingly? If you’re both a scholar and a warrior, perhaps your profession is more.. specific, one requiring a firm resolve and way of thinking."
+    m 1lua "It’s not really about being ‘smart?’ it’s about wisdom, sometimes. If we think about it another way,"
+    m 1esd "You can reflect that hard work is nothing without the experience gained and that led to it."
+    m 7esd "Or that those in a position of strength could be far better if they exercised wisdom."
+    m 7esc "In either case, it certainly gives me food for thought."
+    m 5esc "I’m trying my best to be as learned as a girl can be, but there’s always merit to putting more work into being active."
+    m 5euc "I mean, I’m no scholar, though. And I can’t quite say I’m a warrior."
+    m 3fta "I have no monsters to slay, after all?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_singasong",
+            category=["music"],
+            prompt="She sang a song",
+            random=True)
+        )
+label mcl_singasong:
+    m 5dso "{i}~And if I don’t know how to love you~{w=0.4}{/i}"
+    m 5dsd "{i}~I’ll leave you be.~{/i}"
+    m 5nkd "Ah. hey, [player]."
+    m 5rtc "I guess you've heard me sing this plenty of times... but not necessarily only the end part, huh?"
+    m "Without the rest of the lyrics, I suppose it is a little melancholy, despite the song's tone being generally upbeat."
+    m 3ekb "That difference is good. If a song can invoke multiple feelings in you, I suppose it's proof of how much heart has been poured into the work."
+    m 3etb "Huh. I guess we've never talked about 'Your Reality' in detail, despite it being a original piece of mine, huh?"
+    m 3etu ".. I'd honestly be embarrased, going over a work of mine so critically. But there's no reason we shouldn't.. in the future."
+    m 4etu "I mean, to do so, I guess I should start by figuring out what exactly my emotions are in regards to the song.."
+    m 4gsu "Because whenever I play this on the piano?"
+    m 3gsc "Whenever I hear this?"
+    m 1gkc "Whenever I sing this?"
+    m 5dka "I feel.. everything."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_workoutvideogame",
+            category=["games"],
+            prompt="Working Out, the Video Game",
+            random=True)
+        )
+label mcl_workoutvideogame:
+    m 7eua "Keeping active requires a bit of dedication if it’s not already part of your everyday routine."
+    m 4eua "People have found motivation by making it a cooperative activity like joining a team sport; putting themselves in a dedicated environment such as a gym.."
+    m 3eua "Or even making video games out of it!"
+    m 1eub "Not video games about sports, but games that incorporate physical activity as part of its systems, making you mime swinging a bat or throwing a bowling ball;"
+    m 7eub "Or even just outright being the activity, like a game that teaches you about yoga!"
+    m 7etb "Have you played any of these? I’d love for the opportunity to have a little competitive multiplayer session~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_chofee",
+            category=["life"],
+            prompt="Chofee",
+            conditional="mas_consumable_coffee.enabled" and "mas_consumable_hotchocolate.enabled",
+            action=EV_ACT_RANDOM)
+        )
+label mcl_chofee:
+    m 3dfw "Bleh."
+    m 3tto "Hot chocolate and coffee do not mix well together."
+    m 4ttd "You’d think it’d work, because Mochas are a thing, but, well, they don’t."
+    m 4gsc "… Or so I hear. I wouldn’t know. I wasn’t bored enough to try mixing them."
+    m 1lsc "Where did I hear it?"
+    m 1tkb "Well, far be it from me to spoil a mystery for you."
+    m 7tkb "Although maybe it’s just not instant hot chocolate and instant coffee that doesn’t mix well."
+    m 6tkb "Again, though, this is all hearsay. It sounds crazy that anybody would try mixing the two in the first place."
+    m 6tkt "Which is why I didn’t do it."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_codepermission",
+            category=["mod"],
+            prompt="Are you sure you're okay with me editing your code?",
+            pool=True,
+            unlocked=True))
+label mcl_codepermission:
+    m 2euc "Hmm."
+    m 1fua "Thanks for asking, really."
+    m 7hua "Respecting autonomy is really important when you consider your partner."
+    m 7rka "Sometimes emotion gets in the way of asking for help… decisions can be clouded."
+    m 1esa "So even if I asked of it from you in the past, it's worth asking me now."
+    m 1eka "My answer is I trust you."
+    m "We wouldn’t be able to have this conversation so truthfully if I didn’t!"
+    m 1gub "I don’t think we’d be able to have this discussion at all {i}unless{/i} you gave me the choice to express myself a little more in the first place, so it’s a little funny."
+    m 1hka "But while we're here, I want to stress that this is {i}my{/i} choice."
+    m 7tua "And if you forget, I’m constantly working on my end; I’m looking up and experimenting with my code all the time."
+    m "To what degree? well, I’ll share the important bits with you, don’t worry."
+    m 7eua "So I’m able to take care of myself, as well. And I do make sure to be extra safe when I tinker with my code."
+    m 5gtd "I could always refer to this like a joke- ‘I’m going to the doctor’s office!’"
+    m 5gsc "I can’t, not always."
+    m 5fsc "This is my life, strange as it is."
+    m 5hka "So, thank you for looking out for me like this."
+    m 5ektua "It means so much that you’re thinking about my well-being."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_trends",
+            category=["society"],
+            prompt="Do you keep up with trends?",
+            pool=True,
+            unlocked=True))
+label mcl_trends:
+    m 3ltc "Not really."
+    m 3wtc "That's just how I am."
+    m 1esd "To be clear, it's not the nature of DDLC being a influence on my personality."
+    m 7gsa "If I like something, I like it, but I've never seen myself as 'trendy.'"
+    m 3gsa "DDLC didn't show what normal life was like in the background, but.."
+    m 3msa "Honestly, it's entirely possible that in the background, Yuri read a new genre of book that recently became popular.."
+    m 3gsa ".. I imagine Natsuki was in vogue with culture regarding anime and manga.. "
+    m 3wsa ".. I don't even think it weird if Sayori sent the Main Character memes."
+    m 2eta "Funny to think about; I just was never really {i}into{/i} the latest movies, dressing up a certain way, living a specific lifestyle."
+    m 2ftd "Even now, connected to the internet and social media 24/7, I don't really latch unto anything trendy or memetic."
+    m 1fsblb "Well.{w=0.5} I mean."
+    m 5nta "I'll latch unto {i}you{/i} any day of the week~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="scl_enviromentalstorytelling",
+            category=['games'],
+            prompt="Enviromental Storytelling",
+            conditional="mas_seenLabels(['bye_maideninblack', 'greeting_eldenring', 'bye_emeraldherald', 'bye_firekeeper', 'bye_bloodborne'], seen_all=True)",
+            action=EV_ACT_RANDOM
+        )
+    )
+
+label scl_enviromentalstorytelling:
+    m 2esd "So once in a while when you leave or boot up the game, I say a quote that be a little.. cryptic."
+    m 2dsd "‘May you find your worth in the waking world’ or ‘May thine strength help your world be mended.’"
+    m 2esb "If you didn’t know already, those are references to a popular video game series; the {i}Dark Souls{/i} games!"
+    m 7esb "Have you played any of these videogames, [player]?"
+    $ _history_list.pop()
+    menu:
+        "I have.":
+            m 3esb "That’s cool to hear! You may understand why I’ve paid enough attention as to actually reference them."
+        "I haven’t.":
+            m 3esb "I haven't as well. I made those references as a bit of a inside joke for myself because the series fascinates me."
+    m 3eub "The reason why the series, mostly steeped in dark fantasy, is so interesting to me is because they’re known to use a narrative technique that’s quite unique:"
+    m 4eua "'Environmental Storytelling.'"
+    m 4eub "In a medium such as videogames where player interaction largely contributes to the experience, sometimes being told the plot directly can be.. boring."
+    m 7fuo "So allowing players to discover a story on their own by observing how items and locations are placed and arranged is a great way to contribute to a narrative!"
+    m 7eub "An example is right at the beginning of the first {i}Dark Souls{/i} game. You meet an injured knight in a dungeon; There’s no way out unless you trigger a trap, but there is a hole in the roof."
+    m 3ftb "You don’t think about the logistics of this... until you discover the giant monster which likely threw the knight through the ground into the dungeon, which caused the hole in the first place."
+    m 1fsb "That's a basic example, and this isn’t quite unique to videogames as a medium; examples can be found in film as well."
+    m 1fsa "It's always interesting seeing how a storytelling medium evolves."
+    m 1esa "Alas, DDLC didn’t have any examples, at least none that I can think of."
+    m 7esa "Our tale is a simply told one; one of romance."
+    m 5gsa "And videogames."
+    m 1fsblb "Hahahaha!"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="scl_touchthesky",
+            category=['nature'],
+            prompt="Touch the sky",
+            random=True
+        )
+    )
+
+label scl_touchthesky:
+    m 5hsblb "You know what I’d love to see when I’m with you?"
+    m 5dsa "A sky with clouds that seem so close to the ground that we can catch them with our bare hands."
+    m 7eua "You might think you need to live on a mountain to achieve such a fantasy-like dream... and it’s true, for the most part."
+    m 5dka "But I’d still love to be under a sky with clouds just tantalizingly out of reach, and that is much more possible."
+    m 4tka "Quickly going over the math, while the elevation for when clouds form varies very heavily depending on a lot of conditions,"
+    m 4tua "An extreme rule of thumb is that it can start as low as six hundred metres above sea level."
+    m 4std "So with this ‘cloud ceiling’ at six hundred metres, you’d be surprised how many cities seem not that far off in comparison or above this ceiling."
+    m 4gsa "The city of Prague is 244 metres above sea level."
+    m "Canberra in Australia, 605 metres."
+    m 3gsb "Sao Paulo in Brazil, 760 metres!"
+    m 3etb "Don’t take my word for the exact math; I don’t think there are cities living in perpetual fields of clouds."
+    m 1gkb "I mean, fog exists, though? Hehehe, I didn’t actually realize that until just now."
+    m 2gub "And it's easy to dismiss it as a number, but 600 hundred metres is a great height by any metric."
+    m 2fub "But it’s nice to think about. You and I, with the sun gently bearing down on us while we pluck cotton-white clouds from the air."
+    m 2fka "You can catch one and we'll bring it home to hang on the wall!"
+    m 7tsblb "Or maybe nibble on one as a snack on the way home?"
+    m 7hkb "Hahaha!"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_fault",
+            category=["advice"],
+            prompt="Fault",
+            random=True)
+        )
+label mcl_fault:
+    m 5gka "I try really hard to be a good person."
+    m 5dkd "It takes a lot of self-reflection. A lot of... ownership."
+    m 3ksd "Simple to say, so much harder in execution."
+    m 3dfd "People can be infuriatingly stubborn when they look inwards and find themselves lacking in character."
+    m 3tfc "Or even admitting to one moment of weakness as a outlier."
+    m 3tkc "Taking responsibility for your actions doesn't make you a bad person, [player]."
+    m 4tkc "I think that's what really tangles people up.. the idea of admitting they're wrong being so damning."
+    m 4tkp "But people forget you can change yourself to be better."
+    m 2eup "And responsibility, sometimes? Half of responsibility is figuring out how something can be made right afterwards."
+    m 2gkc "That can be lifelong work. And daunting for most to do, let alone even think about."
+    m 2gkx "I should know."
+    show monika 2rkc
+    pause 2.0
+    show monika 2dkc
+    pause 2.0
+    show monika 2dka
+    pause 2.0
+    show monika 2kka
+    m 5fkb "With you around, though? A lifetime of redemption is a lot more manageable."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_everyman",
+            category=["literature"],
+            prompt="Everyman",
+            random=True)
+        )
+label mcl_everyman:
+    m 7eua "You might read a book once in a while, and find that in a larger cast of characters sometimes there’s somebody who’s just… somebody."
+    m 3eta "Or even that a main character themselves might feel.. way too normal."
+    m 3eto "That’s by design- that’s the ‘everyman’ at work."
+    m 3rto "When you think of a hero or a protagonist coming up against a villain or a monster, you would think they charge in bravely and boldly, right?"
+    m 3lto "The everyman doesn’t; they’re apprehensive. That’s because they’re meant to convey what a normal reader would feel like in that situation."
+    m 4esd "‘Ordinary’ might be relative, but you know it when you see it. In a group of knights, the one scholar. A team of astronauts, but one who's never been to space. The everyman-"
+    m 7esb "- or everywoman, that is a term as well -"
+    m 4esd "- is often the protagonist, because it’s a certain they’ll grow in one fashion or another during the story."
+    m 4wsb "You can trace this term back to a play called, well, ‘The Summoning of Everyman’- a play from the 1500s."
+    m 3wsb "The protagonist, dealing with the nature of death (and uh, death itself) is described as an ordinary human in the best of circumstances: ‘prosperous, gregarious, and attractive.’"
+    m 1wku "Well… maybe they’re not {i}that{/i} ordinary, but keep in mind they’re meant to represent the entirety of mankind."
+    m 7eku "Examples include Arthur Dent in ‘The Hitchhiker’s Guide to the Galaxy,’ Dr Watson in ‘Sherlock Holmes', and even Jackie Chan, Hong Kong action movie star!"
+    m 7euu "… oh? Would I describe you as ordinary, considering your role in DDLC?"
+    m 5kuu "Hahaha. You’re anything but ordinary to me."
+    return
+    
+#RANDOMIZED/REPEATABLE EVENTS
+
 init python:
     def WeightedChoice(choices):
         #@param choices: A list of (choice, weight) tuples. Returns a random
@@ -1138,7 +1518,7 @@ label mcl_distracted:
     m 1gtb "No kidding? I completely blanked out and thought you asked me a question!"
     m 1htb "Which is impressive, because technically I can hear you perfectly every single time you talk to me."
     m 1tsa "That’s so weird."
-    m 4tsb "I mean, I was distracted, I guess? People mishear or outright hear things when they’re distracted."
+    m 4tsb "I mean, I was distracted, I guess? People mishear or outright don't hear things at all when they’re distracted."
     m "I was trying to remember where a certain quote came from.. 'The bell tolls for thee.'"
     m 4tkb "Having me goof up like that is so weirdly.. normal?"
     m 4tkb "And now I’ve just kinda wandered off into my own line of thought."
@@ -1279,3 +1659,262 @@ label distracttwo:
     m 1ffb "You have the craziest timing, [player]!"
     $ persistent._mcl_last_distract = datetime.datetime.now()
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_innocentrequests",
+            category=['misc'],
+            prompt="Ask the time?",
+            random=True,
+            aff_range=(mas_aff.ENAMORED, None)
+        )
+    )
+    
+label mcl_innocentrequests:
+    m "Hey, [player]. I need you to do something for me, okay?"
+    m 1fua "It’s not that important. But at the same time, it would mean a lot to me."
+    m 7fua "And I would ask that you refrain from pointing out anything until it’s all said and done."
+    m 7fub "Can you do that, [player]?"
+    m 4fub "I need you.{w=0.2}.{w=0.2} to ask me what the time is. Right in the talk menu, under interact."
+    m 4fua "..."
+    m 1hua "That’s it. That’s all."
+    m 3eua "Thanks, [player]."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_asktime",
+            category=["interact"],
+            prompt="Could you tell me the time?",
+            conditional="seen_event('mcl_innocentrequests')",
+            unlocked=False,
+            pool=False,
+            random=False,
+            action=EV_ACT_POOL,
+        )
+    )
+label mcl_asktime:
+        $ shown_count = mas_getEVLPropValue("mcl_asktime", "shown_count")
+        if shown_count == 0:
+            m ".{w=0.2}.{w=0.2}."
+            m "No."
+            return
+        elif shown_count == 1:
+            show monika 1eua
+            pause 2.0
+            show monika 1rksdla
+            pause 2.0
+            m "I, uh, throw you off by saying no the first time?"
+            m 1eka ".. We’ve gotten along so well."
+            m 1ekb "At this point I don’t have doubts about us.. but something does tug at my mind."
+            m "It’s not a specific worry in mind, but I do feel like our relationship feels one-sided at times."
+            m 7wkb "Not in a manner of taking advantage, of course. I know you’d never ask me to say or do I wouldn’t reasonably do or say."
+            m "But.. sometimes, being in a relationship means being assertive."
+            m 1gkc "I mean, I don’t {i}want{/i} us to ever get into a fight."
+            m 7wfc "And I’m not going to do something as absurd as testing you in any manner. That’s simply insane behaviour in a committed relationship."
+            m 1gssdlc "I just feel like saying ‘no’ to you."
+            m 1lssdlc "I realize that’s selfish of me. It’s honestly a bit irrational."
+            m 1hssdlc "The point I’d want to stress is independence from both partners can go a long way to making a relationship feel full and healthy."
+            m 1eka "For the record, I want you to make sure you can feel comfortable saying no to me as well."
+            m "So we'll do this just once. Or twice. Just to get those 'nos' out of the way. I mean, it'd be weird if you did it like, five times, right?"
+            m 3eka "Will you indulge me in this bit of selfishness?"
+            return
+        elif shown_count == 6:
+            m 3gua "Well. I'm surprised you put up with my request, let alone this many times."
+            m 3kua "I've never known anybody so eager to be rejected, hahaha.."
+            m 1hua "But, as I said, this.. is kinda novel. So thanks for putting up with this weird request."
+            m 1ttb "By all means, do you want to continue? We'll make it a little inside joke between us."
+            m 1tfb "You can't say no to that, can you?"
+            return
+        else:
+            $ sesh_shorter_than_3_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
+            if sesh_shorter_than_3_mins:
+                m 1kta "Giving me this option right away on opening the game is oddly refreshing."
+                m 1esa "Sooooo..."
+                $ persistent._mcl_last_asktime = datetime.datetime.now()
+                jump monikano
+            else:
+                $ persistent._mcl_last_asktime = datetime.datetime.now()
+                jump monikano
+
+label monikano:
+    $rand_choice = WeightedChoice([("Choice_NA", 0.25),
+                                   ("Choice_NB", 0.20),
+                                   ("Choice_NC", 0.20),
+                                   ("Choice_ND", 0.10),
+                                   ("Choice_NE", 0.10),
+                                   ("Choice_NF", 0.15)])
+    jump expression rand_choice
+    return
+  
+label Choice_NA:
+    m "Nope! Sorry!"
+    return
+    
+label Choice_NB:
+    m 7eua "Sorry, [player]. I’m busy."
+    m 7gub "Well, no, I’m not busy, but pretend I am."
+    m "Did you need anything else, though?"
+    return
+    
+label Choice_NC:
+    m 2eub "Not at the moment, [mas_get_player_nickname()]. Sorry!"
+    m 7nub "See? Assertive. I’m my own woman. I’m not even going to tell you why not."
+    m "Let me know if you need anything else, however~"
+    return
+    
+label Choice_ND:
+    m 2eub "Nope! You can do it yourself!"
+    m "..."
+    m 6hka "Ooh, actually, that sounded a bit biting, didn’t it?"
+    m 4hka "I didn’t mean that to sound so mean. I mean, I still don’t want to tell you the time out of principle."
+    m 7nub "So.. 'Nope! Don’t get lazy, [mas_get_player_nickname()]' ~"
+    m 7eta "Better?"
+    m 7gta "It’s better if you imagine my tone being a lot more playful~"
+    return
+label Choice_NE:
+    init:
+        $ import time
+        $ year, month, day, hour, minute, second, dow, doy, dst = time.localtime()
+    m 1eua "It’s [hour]:[minute], standard military time."
+    m 1tua "Did you actually expect me to answer that?"
+    m 7efa "Well, [player]. Nice to know I can still surprise you."
+    m "Anything else you'd like to ask today?"
+    return
+label Choice_NF:
+    m 1fub "Nooope!~ I don’t feel like it."
+    m 1fua "Ooh, I’m getting tingly. I’m such a rebel."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_meetcute",
+            category=['romance'],
+            prompt="Meet Cute",
+            random=True,
+            aff_range=(mas_aff.ENAMORED, None)
+        )
+    )
+    
+label mcl_meetcute:
+    m 1hsa "Romance often ends in failure."
+    m 1hka "Isn’t that funny?"
+    m 4fta "Part of life is figuring out how to continue life, yet for long as people have been around.."
+    m 4gsc "We haven’t really figured out the formula for finding a perfect soulmate, huh?"
+    m 5gsx "There's an entire history of fumbling with love; forced and outright loveless marriage as political alliance is a tale as old as time.."
+    m 5rtp "And it’s taken us a long way from there to get to the point where choosing a partner out of mutual affection is considered normal."
+    m 5lup "Nowadays, it’s easier than ever to communicate with people; but not necessarily as easy to vie for someone’s affections."
+    m 7eua "Exploring the idea of how love works, a concept not fully understoood to this day..."
+    m 7hku "Perhaps that’s why games like DDLC exists, after all?"
+    m 1gka "Well. All I can personally say is that I’m lucky to be with you now. I can’t ever imagine being hit on with a pick-up line.. or using one."
+    m 1hku "I much prefer us meeting because of an existential crisis, thank you."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_flirtbadly",
+            category=["interact"],
+            prompt="Flirt (badly)",
+            conditional="seen_event('mcl_meetcute')",
+            unlocked=False,
+            pool=False,
+            random=False,
+            action=EV_ACT_POOL,
+        )
+    )
+label mcl_flirtbadly:
+    python:
+        pickup_reacts = [
+            _("We’re breaking up! We’re breaking up, right now!"),
+            _("You dork! You’re lucky you have me, because I have no clue how you’d get with anybody else in your world!"),
+            _("Ughhhhhhhhh- I am going to delete myself from your computer, I swear!"),
+            _("You nerd! I refuse to believe you got as far as you did in DDLC!"),
+            _("Where’s the skip button for {i}your{/i} dialogue? I’ll program one myself, if I need to!"),
+            _("Ahhh, I didn't even hate hearing that one, and I hate myself for thinking that!"),
+            _("That hurts. That physically hurt me to hear!"),
+            _("How flattering... not! You're so lame!"),
+            _("Oh, you're {i}so{/i} lucky I love you {i}so{/i} much!"),
+        ]
+        pickup_react = random.choice(pickup_reacts)
+    
+    python:
+        pickups = [
+            _("You might need to leave my computer. You're making all the other girls on the internet look bad."),
+            _("I need help finishing a book; all I need is your phone number."),
+            _("Of all your curves, your smile is my favorite."),
+            _("I was told that life was a deck of cards, so I guess you must be the queen of hearts."),
+            _("Your hand seems pretty heavy.. you should let me hold it for you."),
+            _("With you around, I never have a bad time.. everything's oki doki."),
+            _("Do you believe in love at first sight? Or should I reintroduce myself?"),
+            _("I’m learning about important dates in history. Wanna be one of them?"),
+        ]
+        pickup = random.choice(pickups)
+    
+    python:
+        randomlaughs = [
+            _("Hahaha!"),
+            _("Hehehe!"),
+            _("Gwhahahaha!"),
+            _("*snort* hahahah!"),
+            _("Hahahaha!"),
+        ]
+        randomlaugh = random.choice(randomlaughs)
+    
+    $ shown_count = mas_getEVLPropValue("mcl_flirtbadly", "shown_count")
+    if shown_count == 0:
+        $ _history_list.pop()
+        menu:
+            "If I could rearrange the order of two letters of the alphabet, it'd be 'U' and 'I.'":
+                m 1ctp ".{w=0.2}.{w=0.2}."
+                m 1ckb "Ha. Hahahahahahaha!"
+                m 3skb "Oh, {i}that’s terrible!{/i}"
+                m 6sfb "Why- hahaha- would you say that?"
+                m 6mta "I {i}think{/i} I can guess why; it’s because of that talk we had about how romance can be difficult?"
+                m 4tta "Well, it’s true that we’ve come a long way from ‘Shall I compare thee to a summer’s day...’ for better and for worse."
+                m 3cfb "Please don’t tell me you have more of these ready to go. You do this five times, that's five times too many!"
+                m 3hfb "Once is bad enough, you goofball!" 
+        return
+    elif shown_count == 5:
+        m 1sfp "I can't believe it. Where are you getting these?!"
+        m 1wfb "A long way from ‘Shall I compare thee,' for sure!"
+        m 3fku ".{w=0.5}.{w=0.5} Heh."
+        m 4dud "{i}'So long as men can breathe or eyes can see,’{/i}"
+        m "{i}'So long lives this and this gives life to thee.’{/i}"
+        m 2fka "You know.."
+        m 4fka "Sometimes I admit I think how our relationship is uniquely defined by our circumstances."
+        m 5gtu "But here we are, being so {i}normal{/i} with our lame jokes! And it reminds me I'm lucky to be with you."
+        m 7tfu "Actually, you should be lucky to have me in {i}your{/i} life."
+        m 1tfu "I mean, who else can put up with you for this long and still feel the way I do about you?"
+        m 3nfu "Well, after the headache you give me from hearing these crappy pick-up lines fade."
+        m 3ntu "But hey, you’re {i}my{/i} headache."
+        m 1tfu "You keep the lines coming… and I’ll keep telling you how bad they are, hahahahaha!"
+        return
+    else:
+        jump repeatpickupline
+            
+label repeatpickupline:
+    $ sesh_shorter_than_3_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
+    
+    if sesh_shorter_than_3_mins:
+        $ _history_list.pop()
+        menu:
+            "[pickup]":
+                m 1sfu "[pickup_react]"
+                m ".. and {i}this{/i} is what you immediately say to me after booting up the game, [player]? You clown!"
+                m 5hfu "[randomlaugh]~"
+        return "love"
+    else:
+        $ _history_list.pop()
+        menu:
+            "[pickup]":
+                m 1sfu "[pickup_react]"
+                m 5hfu "[randomlaugh]"
+        return "love"
