@@ -16,7 +16,7 @@ Please refer to 'Event Checklist' for a overview of all currently added events. 
 
 **Event Checklist**
 
-(22 topics, 2 songs, 11 Window Reacts, 6 Intros, 11 Farewells, 6 Moods, 1 Compliment)
+(40 topics, 2 songs, 11 Window Reacts, 6 Intros, 11 Farewells, 6 Moods, 1 Compliment)
 (Events are random by default unless specifically cited otherwise)
 
 Monika?
@@ -36,6 +36,21 @@ Is it hard to maintain a purely vegan diet? [Ask] [Unlocked after seeing Vanilla
 Adults [Unlocked after seeing Vanilla. Meta Parents topic]
 Do you think you're a monster? [Unlocked after Famous Monsters topic] [Ask]
 Makeup [2 Triggers for Gender; Male, Female/Non-Binary]
+Are you sure you're okay with me editing your code? [Ask]
+Do you keep up with trends? [Ask]
+Touch the sky
+Working Out, The Video Game
+Fault
+Enviromental Storytelling [Unlocked after seeing all of: DS I-III farewell, Demon Souls Farewell, Bloodborne Farewell, Elden Ring Intro]
+Empathy
+Chofee
+Everyman
+Philosophy, Physicality
+Philosophy, Perpetuality
+Art & Acceptance
+Neologism
+She sang a song (discussing Your Reality)
+
 Distracted
 Catch her Distracted? [Unlocked after Distracted] [Ask] [Aff. Trigger = Happy]
  - 25% Success w/ 7 different outcomes (equal probability)
@@ -46,6 +61,17 @@ Steal a glance [Unlocked after Jii~] [Ask] [Aff. Trigger = Affectionate]
 Surprise her? [Unlocked after Steal a glance] [Ask] [Aff. Trigger = Affectionate]
  - 3 outcomes (85% Failure, 14% Success, 1% Bold Success.)
  - Special added dialogue for doing both sucessful actions so in first 3 minutes of the game booting up
+Innocent request 
+Can you let me know what time it is? [Unlocked after Innocent Request] [Aff. Trigger = Enamored]
+ - 6 outcomes (25%, 20%, 20%, 15%, 10%, 10%)
+ - extra dialogue given at 5th time viewing topic
+ - Special added dialogue for doing this within 3 minutes of booting up the game
+Meet Cute [Aff. Trigger = Enamored]
+Flirt (badly) [Unlocked after Meet Cute] [Aff. Trigger = Enamored]
+ - 9 randomized reactions, 8 randomized terrible pick-up lines, i'm so sorry (all equal probability) 
+ - also like.. 4 randomized laughs, because why not
+ - extra dialogue given at 5th time viewing topic
+ - Special added dialogue for doing this within 3 minutes of booting up the game
 
 Farewells:
 
