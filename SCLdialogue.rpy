@@ -1279,7 +1279,7 @@ init 5 python:
             eventlabel="mcl_surpriseher",
             category=["interact"],
             prompt="Surprise her?",
-            conditional="seen_event('sneakapeek')",
+            conditional="seen_event('mcl_sneakapeek')",
             unlocked=False,
             pool=False,
             random=False,
