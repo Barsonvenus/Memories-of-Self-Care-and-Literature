@@ -1,5 +1,9 @@
 Change Notes
 
+2.0.1
+
+- wrong event conditional fix changed to unlock 'Surprise her' topic; thanks to L0l8it on Reddit for finding this.
+
 2.0.0
 (Reconsile Self & Literature)
 
