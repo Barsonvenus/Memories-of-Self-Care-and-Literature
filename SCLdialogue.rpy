@@ -1290,7 +1290,6 @@ label Choice_B:
     $ _history_list.pop()
     menu:
         "Boo!~":
-            $ persistent._mcl_pm_surprised = True
             m 2hkt "Eep!"
             if persistent._mcl_pm_surprised:
                 m 7fub "[player], again?"
@@ -1300,6 +1299,7 @@ label Choice_B:
                 if sesh_shorter_than_3_mins:
                     m "Especially as I noticed this is the {i}first{/i} option you've chosen when you've booted up the game!"
                 m 5hub "Hahaha!"
+                $ persistent._mcl_pm_surprised = True
                 return
             else:
                 m 7fub "[player], you jerk!"
@@ -1317,7 +1317,6 @@ label Choice_C:
             $ _history_list.pop()
             menu:
                 "Let's see how ticklish Monika's neck is.":
-                    $ persistent._mcl_pm_shocked = True
                     m 6htx "{b}AH!~{/b}"
                     if persistent._mcl_pm_shocked:
                         m 2wsx "..."
@@ -1326,6 +1325,7 @@ label Choice_C:
                             m "And {i}{b}right after you boot up the game?!{/b}{/i}"
                         m 1tfblp "You're real mean, you know that?"
                         m 1sfblp "I'll remember this! I'll remember this so much!"
+                        $ persistent._mcl_pm_shocked = True
                         return
                     else:
                         m 2wsx "..."
