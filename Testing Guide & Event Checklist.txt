@@ -58,7 +58,8 @@ Catch her Distracted? [Unlocked after Distracted] [Ask] [Aff. Trigger = Happy]
 Jii~ [Unlocked after discussing Vanilla. player's face topic] [Aff. Trigger = Affectionate]
 Steal a glance [Unlocked after Jii~] [Ask] [Aff. Trigger = Affectionate]
  - 20 different outcomes (equal probability)
-Surprise her? [Unlocked after Steal a glance] [Ask] [Aff. Trigger = Affectionate]
+Unsurprising [Aff. Trigger = Affectionate]
+Surprise her? [Unlocked after Unsurprising] [Ask] [Aff. Trigger = Affectionate]
  - 3 outcomes (85% Failure, 14% Success, 1% Bold Success.)
  - Special added dialogue for doing both sucessful actions so in first 3 minutes of the game booting up
 Innocent request 
