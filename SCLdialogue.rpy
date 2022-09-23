@@ -1204,6 +1204,7 @@ init 5 python:
             eventlabel="mcl_alwaysasurprise",
             category=['monika'],
             prompt="Unsurprising",
+            aff_range=(mas_aff.AFFECTIONATE, None),
             random=True,
         )
     )
