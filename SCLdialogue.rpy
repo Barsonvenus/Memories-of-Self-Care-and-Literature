@@ -1197,6 +1197,79 @@ init python:
             else:
                 randval -= weight
 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_alwaysasurprise",
+            category=['monika'],
+            prompt="Unsurprising",
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            random=True,
+        )
+    )
+    
+label mcl_alwaysasurprise:
+    m 3hta "You know what must be a hassle?"
+    m 3tta "Getting specifically labelled as being 'unflappable' or 'unshakable' or any such term that makes you sound like nothing fazes you."
+    m 3ttd "Those are very lofty standards to hold someone up to."
+    m 1tsc "I had a little of that, back in school? My classmates would remark how 'reliable' I am in sudden situations."
+    m 1rsc "I think it's- for instance, if a loud noise suddenly happened, a window breaking- more often than not I wasn't the type to immediately.."
+    m 7lsd "Whip my head around to look for the sound,"
+    m 7lso "Or.. you know, scream or anything."
+    m 4esc "I mean, it wasn't as if I {i}wasn't{/i} shocked in those situations; I really just kind of froze up for a moment."
+    m 4esa "I find it funny that in those moments, you can be labelled as 'cool under pressure' if you don't show anything other than abject shock."
+    m 4eta "Everybody's wired for fear, or worry, or paranoia."
+    m 3eta "It's just that our minds are capable of pushing that down.. or the response itself is to just lock up."
+    m 3fta "Just funny to think about how 'bravery' works for some people."
+    $ shown_count = mas_getEVLPropValue("mcl_alwaysasurprise", "shown_count")
+    if shown_count is not 0:
+        $ _history_list.pop()
+        menu:
+            "Hmm. Maybe you could try teasing Monika by actually trying to surprise her a little?":
+                $ _history_list.pop()
+                menu:
+                    "Sure!":
+                        $ MASEventList.push("mcl_surprise_monika",True)
+                        return
+                    "Hmm, let's keep it light.":
+                        show monika
+    $ _history_list.pop()
+    menu:
+        "Boo.":
+            m 7ffa "I mean, try harder than {i}that{/i} if you want to surprise me, [player]."
+    "..."
+    "Maybe you'll take her up on that?"
+    return
+    
+init python:
+    mas_override_label("mcl_surpriseher", "mcl_surprise_monika")
+
+default persistent._mcl_pm_surprised = None
+default persistent._mcl_pm_shocked = None
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_surprise_monika",
+            category=["interact"],
+            prompt="Surprise her?",
+            unlocked=False,
+            conditional="seen_event('mcl_alwaysasurprise')",
+            action=EV_ACT_POOL,
+        )
+    )
+label mcl_surprise_monika:
+    if not mas_timePastSince(persistent._mcl_last_surprise, datetime.timedelta(minutes=10)):
+        "You'd like to try surprising Monika again, but her head is on a swivel since you've just done it."
+        "You think it's worth waiting until she's relaxed again; maybe you'll be able to catch her off-guard then?"
+        m 1ffa "Don't think I don't notice you! I'm on the lookout for you sneaking about, [player]."
+        "Yeah, definitely want to cool it for now."
+        return
+    "Okay, she hasn't noticed you yet..."
+    jump mclsurprisestart
+
 label mclsurprisestart:
     $rand_choice = WeightedChoice([("Choice_A", 0.70),
                                    ("Choice_B", 0.20),
@@ -1217,7 +1290,6 @@ label Choice_B:
     $ _history_list.pop()
     menu:
         "Boo!~":
-            $ persistent._mcl_pm_surprised = True
             m 2hkt "Eep!"
             if persistent._mcl_pm_surprised:
                 m 7fub "[player], again?"
@@ -1227,6 +1299,7 @@ label Choice_B:
                 if sesh_shorter_than_3_mins:
                     m "Especially as I noticed this is the {i}first{/i} option you've chosen when you've booted up the game!"
                 m 5hub "Hahaha!"
+                $ persistent._mcl_pm_surprised = True
                 return
             else:
                 m 7fub "[player], you jerk!"
@@ -1244,7 +1317,6 @@ label Choice_C:
             $ _history_list.pop()
             menu:
                 "Let's see how ticklish Monika's neck is.":
-                    $ persistent._mcl_pm_shocked = True
                     m 6htx "{b}AH!~{/b}"
                     if persistent._mcl_pm_shocked:
                         m 2wsx "..."
@@ -1253,6 +1325,7 @@ label Choice_C:
                             m "And {i}{b}right after you boot up the game?!{/b}{/i}"
                         m 1tfblp "You're real mean, you know that?"
                         m 1sfblp "I'll remember this! I'll remember this so much!"
+                        $ persistent._mcl_pm_shocked = True
                         return
                     else:
                         m 2wsx "..."
@@ -1267,34 +1340,7 @@ label Choice_C:
                         m "- and I am going to pay you back ten-fold when I'm with you in your world."
                         m 1sfb "I'm going to take my time finding {i}your{/i} sensitive spots~"
                         m "Consider this my declaration of war!"
-            return
-
-default persistent._mcl_pm_surprised = None
-default persistent._mcl_pm_shocked = None
-
-init 5 python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="mcl_surpriseher",
-            category=["interact"],
-            prompt="Surprise her?",
-            conditional="seen_event('mcl_sneakapeek')",
-            unlocked=False,
-            pool=False,
-            random=False,
-            action=EV_ACT_POOL,
-        )
-    )
-label mcl_surpriseher:
-    if not mas_timePastSince(persistent._mcl_last_surprise, datetime.timedelta(minutes=10)):
-        "You'd like to try surprising Monika again, but her head is on a swivel since you've just done it."
-        "You think it's worth waiting until she's relaxed again; maybe you'll be able to catch her off-guard then?"
-        m 1ffa "Don't think I don't notice you! I'm on the lookout for you sneaking about, [player]."
-        "Yeah, definitely want to cool it for now."
-        return
-    "Okay, she hasn't noticed you yet..."
-    jump mclsurprisestart
+                        return
     
 init 5 python:
     addEvent(

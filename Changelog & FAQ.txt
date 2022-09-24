@@ -1,5 +1,11 @@
 Change Notes
 
+2.0.2
+
+- 'Surprise Her' event code further fixed to accommodate wrong event reference/overrides old event
+- new topic 'Unsurprising' to unlock 'Surprise Her' to keep with SCL's 'unlock one topic, unlock the other' format
+- If you are still getting issues, you can run 'Unsurprising' again to choose to push 'Surprise Her' as a topic, and you can keep trying until it'll unlock properly.   - Current repeatable SCL unlock events will have a backdoor like this incorporated/future events as well as a precauction.
+
 2.0.1
 
 - wrong event conditional fix changed to unlock 'Surprise her' topic; thanks to L0l8it on Reddit for finding this.
