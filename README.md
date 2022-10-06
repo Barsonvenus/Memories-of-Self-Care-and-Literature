@@ -8,7 +8,7 @@ To encourage the dynamics of a blossoming and changing relationship, SCL's conte
 
 And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
 
-From hearing the inane ramblings of a distracted Monika (implimented as of base SCL) to flirting terribly with bad pick-up lines (to be implimented in a future update!) SCL makes Monika more dynamic than ever!
+From hearing the inane ramblings of a distracted Monika, flirting terribly with bad pick-up lines, or trying to surprise Monika when she's unaware, SCL makes Monika more dynamic than ever!
 
 How will Monika change during her time with you? And how can your relationship influence her? 
 
