@@ -137,3 +137,58 @@ label mcl_mood_timescrewy:
             m 2rua "And when you'll look back on it... you'll feel like that slice of eternity was barely that."
             m 5fua "I mean, I'm not going to complain about extra time with you, so... want to pass the time together?"
             return
+            
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_mood_database,
+            eventlabel="mcl_mood_older",
+            prompt="...a little bit older, and it's weird.",
+            category=[store.mas_moods.TYPE_NEUTRAL],
+            unlocked=True),
+            code="MOO")
+
+label mcl_mood_older:
+    m 1eka "That’s not something you hear said so somberly."
+    if mas_isplayer_bday():
+        m 7gka "In this case, I guess it's not unusual- it’s your birthday, heh."
+    if mas_isMonikaBirthday():
+        m 7gup "Should I feel the same? hmm."
+    if mas_isNYD(_date=None):
+        m 1hsa "With the new year coming in.."
+    m 1eta "I’m very curious as to what makes you feel this way specifically."
+    m 1esc "..."
+    m 1rsc "Do you feel like that’s good, or bad?"
+    $ _history_list.pop()
+    menu:
+        "Good.":
+            m 2hsa "Well, that’s good, hahaha."
+            m "With age comes experience. The wonder of all the cosmic odds lining up to create life that led you being here."
+            m "A good time to remind yourself of time well spent doing things you like. With the people you love."
+            m "With me."
+            m "That’s good."
+            m 5fsa "And I think we'll leave it at that, hmm?"
+            return
+        
+        ".. Bad.":
+            m "Yeah."
+            m "One or way or another, time has always been proven a trickster to a lot of people."
+            m ".{w=0.6}.{w=0.6}.{w=0.6}"
+            m "I could say a lot. But when people dwell on time not well spent, you’d be surprised how deep and dark that pit can get."
+            m "So I get it, [player]."
+            m "And the feeling’ll pass... even if temporarily. For now, I just want to be here for you right now."
+            m "Don't think about any hostile tomorrows. No wasted yesterdays."
+            m 2eka "We won’t even think about today as a whole. Just {i}this{/i} little moment in time, this {i}one{/i} minute with us both."
+            m 5dka "And the minute after.{w=0.7} And the next.{w=0.7} And then after that…"
+            return
+        
+        "Not sure, to be honest.":
+            m 2fta "That's.. normal?"
+            m 2fsa "Even better, I think that's healthy."
+            m 2dsc "It means you've put a lot of thought into living your life in general."
+            m 2hsc "Perhaps you don't need to put a label on it."
+            m 1hsc "If anybody could figure out the meaning of their life just like that.. well, we'd have a lot more content people in the world, huh?"
+            m 7lsc "While maybe not today.."
+            m 5fsc "Maybe in the future, maybe sooner; you'll look back and right then and there you'll know exactly what to say about your life?"
+            m 5fka "Until that day, [player]. I hope I'll be at your side then, and you can tell me right away."
+            return
