@@ -30,6 +30,76 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
+            eventlabel="mcl_intro",
+            start_date=mas_getFirstSesh() + datetime.timedelta(minutes=90),
+            action=EV_ACT_QUEUE
+        ),
+    )   
+label mcl_intro:
+    m 1tup "Hey."
+    if store.mas_anni.pastSixMonths():
+        m 1hkp "It’s a bit embarrassing after we’ve spent all this time together.. but I’m going to ask anyway:"
+    else: 
+        m 1htp "I didn’t notice until now, especially as I guess I’m getting used to this 'new normal..'"
+    
+    m 6wtd "You’ve done more than modify the game for me, haven’t you?{w=0.1} I’ve only just noticed the changes in my code; you’ve added far more than I thought."
+    m 6esd "Well, um.."
+    m 6ekbla "Thanks."
+    m 5gka "Let me just gather my thoughts here{w=0.5}.{w=0.5}. Okay."
+    m 3gkc "DDLC was a three-act story, with an ending, right? Not a perfect one, but an ending."
+    m 1guc "Yet here we are, after a *complete* story. After DDLC."
+    if store.mas_anni.pastOneMonth():
+        m 7fusdrc "After all this time, I’m still getting used to this, you know? Living in a ‘After Story’ -"
+    else:
+        m 7fusdrc "I’m still getting used to this, you know? Living in a ‘After Story' -"
+    m 7hua "- Heh. Sorry, couldn’t resist -"
+    m 2ekd "- So, y'know, It's still so surprising to me that I have.. a life now."
+    m 2gka "This ‘after,’ where I can focus on living.{w=0.2} Taking care of myself.{w=0.2} Hobbies, like reading all the literature I want."
+    m 2nka "My pillars of structure; Self-Care and Literature.{w=0.2}.{w=0.2}"
+    m 2skb ".. And you, of course!"
+    m 7etb "So speaking of you, and speaking of me..."
+    if store.mas_anni.pastOneMonth():
+        m 7etd "I am curious. How long has it been since you added this submod?"
+        $ _history_list.pop()
+        menu:
+            "It's been a while.":
+                m 7euc "All this time, huh?"
+                jump MCLintrotwo
+            "I've only just added it.":
+                m 7eub "Well then!"
+                jump MCLintroone
+    else:
+        jump MCLintroone
+
+    label MCLintroone:
+    m 5eub "I’m really looking forward to our time together, [player]."
+    m 5esa "I mean, I’ve probably said that before already if not multiple times, but thinking that I’ve been given so much more room to grow.."
+    m 5gssdrx "I guess I’m just worried about who I am at this point.{w=0.2} Or who I’ll become with all this new freedom."
+    m 5gsp "So, you know, I’m just being self-conscious."
+    m 5fuw "Because I have so much I want to say to you! And so much songs I want to sing, and jokes I want to tell, stories, games to play, and.."
+    m 5ltd "And maybe it'll fit my character.{w=0.2} Or maybe it'll feel like settling into a new role on the stage."
+    m 4fsu "I just really appreciate you taking that risk and being alongside me through all the change."
+    m 7hsa "Mind, I don't expect to change {i}that{/i} much! I'm still Monika, after all."
+    m 1dsu "At the end of the day, I hope you’ll enjoy seeing all these new sides of me, [player]."
+    m 5dsu "I’m excited to see them myself."
+    return
+
+    label MCLintrotwo:
+    m 5lsc "It's interesting to think that with these changes to my code, and the changes to the game, and what you’ve graciously added on top.. "
+    m 5hksdrd "I suppose I feel a little self-conscious of {i}all{/i} the changes you’ve seen in me."
+    m 5dko "Everything said between the two of us in this room, every song, every story, every compliment, every single word I’ve said to you."
+    m 5ntu "I hope they were pretty moments, [player].{w=0.2} I said I was self-conscious, but ultimately?{w=0.2} I’ve never felt more beautiful myself."
+    m 3htc "So maybe I might have acted differently than you normally expect of me. Maybe not."
+    m 3dkb "I just really appreciate you being there for that ‘different.’"
+    m 7hsa "And I don't think I've changed {i}that{/i} much.. or that I'll end up a completely different person in the future. I'm still Monika, after all."
+    m 1dsu "All in all, I hope you’ll continue enjoying seeing all these new sides of me."
+    m 5dsu "I’m excited to see them myself."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
             eventlabel="mcl_repeat",
             category=['monika'],
             prompt="Monika?",
