@@ -439,7 +439,7 @@ label mcl_change:
     m "It’s… after a bit of thinking, that line of thinking can be bad for you."
     m 4lsb "After I formed the literature club, I was pretty driven to share my expierences with others and create works for myself and create that place for others..."
     m "And I found myself having to grapple with more responsibility than ever; and I’m a perfectionist by nature."
-    m 4lkb "So, when that responsibility became overwhelming, I starting thinking in black and white; my failures became resolute, and therefore I didn’t feel like I had properly accomplished anything:"
+    m 4lkb "So, when that responsibility became overwhelming, I started to think in black and white; my failures became resolute, and therefore I didn’t feel like I had properly accomplished anything:"
     m 4lkc "So I felt as frustrated as I did when I left the debate club, at the time feeling like I wanted something new."
     m 1dsc "But failure, is, well, normal. It’s- and still is- hard for me to accept that."
     m 1esc "It is possible to do everything right, and still ultimately fall short. That’s not a flaw of life, that’s by design."
