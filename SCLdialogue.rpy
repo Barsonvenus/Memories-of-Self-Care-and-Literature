@@ -1250,7 +1250,145 @@ label mcl_everyman:
     m 7euu "… oh? Would I describe you as ordinary, considering your role in DDLC?"
     m 5kuu "Hahaha. You’re anything but ordinary to me."
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_friendspartners",
+            category=["life",],
+            prompt="Friends & Partners",
+            aff_range=(mas_aff.HAPPY, None),
+            conditional="seen_event('monika_friends')",
+            action=EV_ACT_RANDOM
+            )
+        )
+label mcl_friendspartners:
+    m 7hua "You know.."
+    m 7hub "You’re my best friend!"
+    m 3ttb "And I don't think I've ever actually said it in plain terms."
+    m "Funny, that. Considering it’s not unheard of for partners to consider each other their best friends."
+    m 3tta "Admittingly though, I ended up falling in love with you quite quickly from our first introduction, so it’s like we became partners before we fully became friends?"
+    m 3esa "Which is also entirely possible, if not for how backwards that may sound. A friendship is a type of relationship, after all!"
+    m 1gsd "Although honestly, I’m just wondering what ‘friend’ means at the end of the day."
+    m 1dsd "Let’s look up a meaning from a dictionary…"
+    m "'A person whom one knows and with whom one has a bond of mutual affection.'"
+    m 1htc "Hmm. I don’t think that definition comes easily, as one’s definition may be partially driven by emotion. "
+    m 1etc "It depends on what you think of your friends, I suppose."
+    m 1esa "I see a lot of positive qualities in you I admire as a peer, [player].{w=0.3} Even if for whatever reason I wasn’t interested in you romantically.."
+    m ".. I’d still want to know you, even if it's just as aquaintances."
+    m 1hsa "I’m extremely lucky to be with you in that regard."
+    m 7hsa "I guess what I’m saying is…"
+    m 7lta "I hope we can be good friends from here on out?"
+    m 5tta "Hahaha!~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_literatureclubbestie",
+            category=["club members",],
+            prompt="Literature Club Bestie?",
+            aff_range=(mas_aff.HAPPY, None),
+            conditional="seen_event('mcl_friendspartners')",
+            action=EV_ACT_RANDOM
+            )
+        )
+label mcl_literatureclubbestie:
+    m 7hub "Hey, [player]!"
+    m 7eub "So I think I have a good question in mind.. and it’s related to a topic we’ve discussed."
+    m 4gtd "I brought up the idea of what ‘friends’ might mean to people, and I mentioned I consider you my best friend."
+    m 4gsd "The main character of DDLC also had a best friend in Sayori… well, a childhood friend, but we didn’t see the main character interact with anyone else."
+    m 4msd "So it’s natural to assume Sayori and the MC would consider each other their closest friend."
+    m 4fsa "With that said, {cps=30}here’s~ a~ quest{w=0.5}-ion..{/cps}"
+    m 3ffu "If you had a choice of choosing a best friend from the other girls in the literature club, who would it be?"
+    $ _history_list.pop()
+    label bestiechoices:
+    menu:
+        "Sayori?":
+            m 3ftu "Hahaha, the childhood friend wins again, huh?"
+            m 3ftc "Hmm."
+            m 1hsc "Do you have a similar acquaintance that you’ve known from an early age?"
+            m 1esc "I’ve never had somebody like that in my life, so knowing somebody for years and years on end? It’s hard to imagine, honestly."
+        "Natsuki?":
+            m 1esc "I know the circumstances were unusual, but the way Natsuki showed concern for Yuri- "
+            m 7esb "- it showed that Natsuki’s the type of person who’d go out of her way to help her friends, even if she doesn't know how exactly."
+            m 7ekb "For a spitfire, she can be a little clumsy, huh?"
+        "Yuri?":
+            m 7ekb "I know that you might have seen an exaggerated side of her.."
+            m 7mka "But Yuri’s willingness to try to connect with others despite personal difficulties made her all the more genuine."
+            m 1fka "As a best friend, I don’t think you’d find anybody more loyal; it’s nice to have friends that actually {i}show{/i} they like being friends with you."
+        "You, Monika!":
+            m 1ffb "Cheating~"
+            m 6rkp "…"
+            m 6rka "I hope I would be a good best friend."
+            m 4tka "Now I feel like I’m interviewing for the position, hahaha."
+            m 3hut "'I always look out for my friends, and I’ll always stick by them!'"
+            m 3tuu "Now, back to the question at hand.."
+            jump bestiechoices
+    m 1fua ".."
+    m 1nut "So, I might have cornered you there with that question. "
+    m 7nuu "Becoming ‘best friends’ with someone comes naturally, so it’s an abstract question and understandably difficult to {i}choose{/i} one."
+    m 7hua "After all, the game highlighted the good qualities of being friendly with them, even if the end result was to get the main character romantically involved."
+    m 7hta "And really, what would separate ‘best friend’ and ‘friend’ and ‘romantic partner?’ There’s a lot of overlap, and that’s what I’m curious about."
+    m 3eta "Because, well, we were all good to each other.{w=0.1} I don’t know if we all considered each other ‘best friends’ or anything of the sort.."
+    m 3etp "I guess we weren’t together that long as well, from a certain perspective."
+    m 3dsp "But I always thought the world of them during our time together."
+    m 5dsp "I hope they thought well of me, too."
+    return "derandom"
     
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_monikasbestie",
+            category=['club members',],
+            prompt="So who would be your Lit. Club bestie?",
+            unlocked=False,
+            pool=False,
+            conditional="seen_event('mcl_literatureclubbestie')",
+            action=EV_ACT_POOL
+        )
+    )
+label mcl_monikasbestie:
+    $ shown_count = mas_getEVLPropValue("mcl_monikasbestie", "shown_count")
+    if shown_count == 0:
+        label bestieoriginal:
+        m "..."
+        m "Um..."
+        m 3rko "{cps=30}Ohhhhhhkkkkayyyyyyyy{/cps}{nw}"
+        m 2hkb "Yeah, that question has thrown me for a loop."
+        m 2tkb "And it's completely fair game because I already asked you."
+        m "Well, that's tricky for me to answer. I mean, not because of what happened.."
+        m "It’s just because, you know, in the frame of reference back when we were all in the Literature Club, I liked everyone."
+        m "Having a ‘best’ friend and a ‘friend’ can be seperate, and compared to a regular ‘friend,’ I think a ‘best’ friend could mean a lot of many things."
+        m 3fku "{cps=30}And.. well, I’ve never had a specific ‘best’ friend, so..{/cps}"
+        m 2dku "{cps=30}If I had to choose…{/cps}"
+        m 6eux "{cps=30}Well, um, as the literature club president I don’t want to be biased{/cps}{nw}"
+        m 6etsdrw "{cps=70}Uh, and, this question doesn’t really consider context such as the time I spent with every individual member-{/cps}{nw}"
+        m 6mksdlp "{cps=90}And of course, y’know, ‘choosing’ a best friend seems a bit forceful, especially if we take it from the girls point of view-{/cps}{nw}"
+        m "Ahh, I’m rambling now."
+        m "I really should just answer whomever comes to mind so we can close the book on this."
+        m ".{w=0.1}.{w=0.1}."
+        m 2gkbla "Sayori."
+        m 2lsbla "I don't really have a specific reason. Just whoever came to mind first."
+        m 2tst "But don’t get me wrong, only in this hypothetical scenario! Yuri and Natsuki would and are still very important to me."
+        m 1tsp "We can close the book on that question, then."
+        m 7esu "I guess me being flustered isn’t a bad thing;{w=0.3} I have such a hard time deciding because that's how much everyone means to me!"
+        return
+    else:
+        if random.randint(1, 10) == 1:
+            jump bestieoriginal
+        else:
+            m 2esp "..."
+            m 2esu "Well, no harm in asking again."
+            m 2hsu "Sayori."
+            m 1hsu "I don't really have a specific reason. Just whoever came to mind first."
+            m 2tst "But don’t get me wrong, only in this hypothetical scenario. Yuri and Natsuki would and are still very important to me."
+            m 7esu "I have such a hard time deciding because that's how much everyone means to me!"  
+            return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
