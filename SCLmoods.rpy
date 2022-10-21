@@ -163,21 +163,21 @@ label mcl_mood_older:
     menu:
         "Good.":
             m 2hsa "Well, that’s good, hahaha."
-            m "With age comes experience. The wonder of all the cosmic odds lining up to create life that led you being here."
-            m "A good time to remind yourself of time well spent doing things you like. With the people you love."
-            m "With me."
-            m "That’s good."
+            m 1dsa "With age comes experience. The wonder of all the cosmic odds lining up to create life that led you being here."
+            m 1nsa "A good time to remind yourself of time well spent doing things you like. With the people you love."
+            m 1esa "With me."
+            m 7esa "That’s good."
             m 5fsa "And I think we'll leave it at that, hmm?"
             return
         
         ".. Bad.":
-            m "Yeah."
-            m "One or way or another, time has always been proven a trickster to a lot of people."
-            m ".{w=0.6}.{w=0.6}.{w=0.6}"
-            m "I could say a lot. But when people dwell on time not well spent, you’d be surprised how deep and dark that pit can get."
-            m "So I get it, [player]."
-            m "And the feeling’ll pass... even if temporarily. For now, I just want to be here for you right now."
-            m "Don't think about any hostile tomorrows. No wasted yesterdays."
+            m 2dsp "Yeah."
+            m 1dsx "One or way or another, time has always been proven a trickster to a lot of people."
+            m 1gsc ".{w=0.6}.{w=0.6}.{w=0.6}"
+            m 7gsc "I could say a lot. But when people dwell on time not well spent, you’d be surprised how deep and dark that pit can get."
+            m 4gsc "So I get it, [player]."
+            m 4esd "And the feeling’ll pass... even if temporarily. For now, I just want to be here for you right now."
+            m 3dsd "Don't think about any hostile tomorrows. No wasted yesterdays."
             m 2eka "We won’t even think about today as a whole. Just {i}this{/i} little moment in time, this {i}one{/i} minute with us both."
             m 5dka "And the minute after.{w=0.7} And the next.{w=0.7} And then after that…"
             return
