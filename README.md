@@ -1,3 +1,5 @@
+![A screenshot that tells you absolutely nothing](https://user-images.githubusercontent.com/107741953/198372682-d67e0fa9-aef5-46fb-ab8a-01a8a1f025b3.png)
+
 # Memories of Self-Care & Literature
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) provides new content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics. 
