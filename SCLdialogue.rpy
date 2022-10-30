@@ -1662,7 +1662,7 @@ init 5 python:
             category=["advice",],
             prompt="Hearing",
             aff_range=(mas_aff.HAPPY, None),
-            conditional="seen_event('monika_using_pcs_healthily')"
+            conditional="seen_event('monika_using_pcs_healthily')",
             action=EV_ACT_RANDOM,
             )
         )
