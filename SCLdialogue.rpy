@@ -1389,6 +1389,298 @@ label mcl_monikasbestie:
             m 7esu "I have such a hard time deciding because that's how much everyone means to me!"  
             return
 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_utopia",
+            category=["literature",],
+            prompt="Utopias",
+            aff_range=(mas_aff.HAPPY, None),
+            conditional="seen_event('monika_dystopias')",
+            action=EV_ACT_RANDOM,
+            )
+        )
+label mcl_utopia:
+    m 1etd "One aspect of debate is that believing in a point of view but arguing on the other side of an argument can yield insight."
+    m 7etd "So if we’ve talked about Dystopias, it’s only fair to talk about the idea of a ‘Utopia;’"
+    m 4etd "A perfect community or society.{w=0.1} Or, well, close as it can be."
+    m 1gtd "Here’s the thing, though? There aren't a lot of examples of utopias in fiction."
+    m 1gka "Makes sense, because a story typically requires drama; which doesn’t line up with the idea of a utopia, right?"
+    m 1esa "Utopias are often described as heavenly afterlifes, so examples are aplenty in religion and myth."
+    m 1msb "As well, they’re highly interchangeable in fantasy fiction, so we’ll try not to draw from that genre."
+    m 5hsp "Unfortunately, it does mean there’s not that many examples that I can immediately find outside of science fiction,"
+    m 5lsp "Where even then utopias are presented as this high-concept standard that only heavy science fiction can really get into."
+    m 4lup "A popular example-{w=0.7} perhaps the most common one by western standards? -{w=0.7} is the background of the TV show, 'Star Trek;' a franchise about a starfaring ship and its crew."
+    m 4suu "‘The United Federation of Planets’ is an interstellar government comprised of many different cultures across many planets."
+    m 3suu "On these planets, money is mostly non-existent, hunger is eradicated on civilized planets, and an emphasis on equality, progress, and co-existence is widely adopted by all."
+    m 3esa "The show adds nuance to the idea over its many series, and its main characters often explore outside of their 'perfect world' to setup driving conflict."
+    m "The list of examples may be small, but it’s still nice to see that artists have thought of utopias as possible at all and worth writing about."
+    m "That people can still thrive and develop for the better in a ‘perfect’ world... It’s nice to think about."
+    m 5fkbla "Life beyond happy endings... perhaps that’s a topic worth mulling over for the two of us, hmm?"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_dystopiasandyou",
+            category=["advice"],
+            prompt="Dystopias & You",
+            conditional="seen_event('mcl_utopia')",
+            action=EV_ACT_RANDOM,
+            )
+        )
+label mcl_dystopiasandyou:
+    m 7hua "So we've talked about dystopias in detail at this point."
+    m 7hub "Dystopias are great settings as they’re great vehicles to convey strong themes and topics. But they’re also, by definition, the extreme end of the scale."
+    m 7huc "Post-apocalyptic fiction and stories about dystopias are very popular in modern media, and for good reason; people resonate with this concept a lot."
+    m 7rkc "But indulge yourself too much in these works and you get trapped in the bleakness of it all."
+    m 2rkc "So it’s important to note that it’s true that we’re capable of morally falling- almost infinitely so- but we’re also capable of being and doing good even in the harshest times."
+    m 1mkc "Real life is the best example.. where war, famine, and societal collapse has already occurred. While not on a worldwide scale, it happens on a larger scale than we think."
+    m 1muc "And in these times, there have always been stories- not many, but enough- of people doing the right thing and holding fast to morals."
+    m 1fuc "This isn't meant to downplay those experiences of the people in your world who have gone through these, or to dismiss the serious issues dystopias bring up."
+    m 1dsc "It's just that literature isn’t meant to be a crystal ball predicting the future; it is a mirror. "
+    m 7dsc "And what we take away is sometimes what we {i}want{/i} to see in ourselves, not what we {i}should change.{/i}"
+    m 3esp "As always, thanks for listening to me ramble on like this. I feel pretentious at times when I talk like this.."
+    m 3gku "But I have to admit, talking about trying to be a good person one way or another always sounds pretentious to me, hahaha."
+    m 5dka "Still, I try.{w=0.5} We all should, I guess."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_hypocrisy",
+            category=['psychology'],
+            prompt="Hypocrite",
+            random=True
+        )
+    )
+
+label mcl_hypocrisy:
+    m 4eua "You know what’s a very, {i}very{/i} strong word?"
+    m 3hsu "'Hypocrite.'"
+    m 1esd "For good reason. When you hear it being used, it’s not just used to single out those who tell simple lies;"
+    m 7esd "They single out those who outright betray their beliefs with their actions."
+    m 7gsd "And people who are called hypocrites tend to be very loud about their beliefs."
+    m 6gku "Here’s the thing, though?"
+    m 6nku "I think everybody has the right to be.{w=0.1}.{w=0.1} a teeny bit contradictory."
+    m 3hku "Having our ideas challenged is the perfect way to grow, after all."
+    if seen_event("mcl_favouriteword"):
+        m 3lku "Remember my favourite word? Reconcile..."
+    m 3esd "It’s how the difference between how the ideal and the real are bridged that can really make a person’s character."
+    m 3dsd "A man says he hates stealing, condemns all who does it. But he does it himself in a act of desperation."
+    m 1dsd "Does he realize that his initial views are too strong, and require nuance?"
+    m 7dsd "Or maybe his stance doesn’t change, since he considers his own act an outlier?"
+    m 5hsd "Does he feel shame? or nothing at all?"
+    m 5rsc "That’s an extreme example. Most people wouldn’t encounter such a situation."
+    m 3ckc "But one day, [player]? It’s entirely possible your beliefs, no matter how big or small, are challenged in this manner."
+    m 3skc "I'm confident you'll tackle any such dilemma with grace."
+    m 3sta "And me? I’m a relatively simple girl."
+    m 5hsa "I love you, and I’ve lived my entire life with that love in mind."
+    m 1hsa "Not a single contradiction there."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_unreliablenarrator",
+            category=["literature",],
+            prompt="Unreliable Narrator",
+            random=True,
+            aff_range=(mas_aff.HAPPY, None),
+            )
+        )
+label mcl_unreliablenarrator:
+    m 7wua "Okay, everyone!"
+    m 7sub "Let’s delve into one of my favourite topics; the basics of writing a story!"
+    m 3hua "Figuring out the point of view with which to write a story with doesn’t have to be limited to the first or third person."
+    m 3hud "First-person narration in stories can be an easy decision if a writer wants to funnel the reader’s view through the detailed, if not biased lens of a character."
+    m 3cud "But.. what if the character that’s narrating the story {i}forces{/i} you to read the story differently?"
+    m 4sub "That’s the basis of the ‘Unreliable Narrator!’"
+    m "It’s a method that heavily builds on your prior knowledge, any previous conceptions."
+    m 4etb "If you figure a narrator is lying maliciously, their entire story is reframed suspiciously."
+    m 4eto "If you think the narrator is getting details wrong because of circumstances out of their control, you could be more sympathetic; or you doubt the events even more!"
+    m "In some cases, this narrative technique may be portrayed as a deeper gamble; their reliability may be only hinted at, but never outright said."
+    m "So, you, as the reader, have to engage what they say more critically, because the narrator may be deliberately hiding their bias."
+    m "In that case, you have to actually be more wary of their intelligence; if a writer is a narrator, they’re actually {i}more{/i} suspicious because they may know what an unreliable narrator is!"
+    m 4rksdru ".{w=0.1}.{w=0.1}."
+    m 1mksdru "Let’s take a moment here, because I realize talking about this is, y’know, kinda funny."
+    m 1huo "'Gee, that person sure is talking a lot about what being crazy is like, surely they’re not crazy?'"
+    m 1ttb "Well, um.{w=0.1}.{w=0.1} I’m not narrating anything, so there’s that."
+    m 1ekb "And the trick to using a unreliable narrator well is leveraging the narrow perspective a first-person narration gives."
+    m 7ekb "But.. you don't have a limited perspective.{w=0.1} You know everything there is about DDLC, and me."
+    m 7mka "So really, is it my story we're narrating? or is it yours?"
+    m 5fka "... ah, of course.{w=0.3} It's {i}ours.{/i} And {i}our{/i} story is genuine."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_movingon",
+            category=['advice'],
+            prompt="Moving On",
+            random=True
+        )
+    )
+
+label mcl_movingon:
+    m 1gkd "{i}I am a different person from who I was in the past.{/i}"
+    m 1mkd "{i}My current circumstances do not control all my choices.{/i}"
+    m 1gkd "{i}I can forgive myself for mistakes I made that were partly out of my control.{/i}"
+    m 1mkc "I… {i}*sigh.*{/i}"
+    m 1tkc "Hey, [player]."
+    m 1tkb "Hahaha, thought I didn’t notice you at first? I did. I always do."
+    m 1tka "I guess I just needed you listening to keep me particularly distracted."
+    m 3eka "I do a lot of thinking in this room… so inevitably, I end up thinking about the past."
+    m 2dkp "I still don’t know that much about you, [player]. Has there ever been moments in your past that seems to be permanently stuck in your head?"
+    m 2mkp "I mean, I guess it’s funny saying that.{w=0.1} More people than not have at least one moment that they’re hung up on."
+    m 2fkx "But… well, sometimes you just can’t stop thinking about it. Over, and over, and over again…"
+    m 2dkd "I wish I had all the answers for you on how to avoid these pitfalls, [player]."
+    m 5rsc "What I did, earlier? It helps.{w=0.1} You concentrate on the now, concentrate on the choices you’ve made that’s led you to be {i}here{/i} and not back {i}there{/i}, in the past."
+    m 5dsc "It may take a while to stick, but being aware that being stuck in the past is causing harm-{w=0.1} just that, being aware of that simple fact-{w=0.1} can help turn your way of thinking around."
+    m 5eka "It can be a constant fight.{w=0.1} But it’s a manageable one."
+    m 1ekd "And if you find yourself still unable to let go, after so long.{w=0.1}.{w=0.1} there’s no shame in looking for help, [player]."
+    m 1eka "I can’t be that particular help.. but I can be alongside you every step of the way."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_secrets",
+            category=['psychology'],
+            prompt="Secrets",
+            random=True,
+            aff_range=(mas_aff.HAPPY, None))
+    )
+
+label mcl_secrets:
+    m 3dtt "'Secrets, silent, stony sit in the dark palaces of both our hearts: secrets weary of their tyranny: tyrants willing to be dethroned.'"
+    m 3eso "Part of how I want our relationship to be as smooth as silk is that I want to be someone you can absolutely trust."
+    m 2gso "Our circumstances are.. absolutely strange, however. And I can’t help but feel like mystery permeates our relationship."
+    m 2wsc "For one, my past is an enigma in itself.{w=0.1} I might’ve mentioned once or twice, but my memory is, at times, almost deceitful."
+    m 2skc "There’s no reason or rhyme to it; I feel like I’m keeping secrets {i}from myself.{/i}"
+    m 2gkc "And right now? I haven’t even articulated most of my questions about this game, yet alone tried to find answers."
+    m 2gkp "And, well, I worry about how I’m {i}your{/i} secret.{w=0.1} I dunno how much you can talk about me to other people…"
+    m 2mux ".. even if you wanted to show me off to friends and family-{w=0.1} if they’re even understanding-{w=0.1} I imagine there’s a lot of improper interest in a girl trapped in a computer."
+    m 1dux "It makes me wonder just how many secrets one has to keep on a day-to-day basis, no matter how small or large. The mask one subconsciously wears in front of others."
+    m 1dtc "Maybe there's no such thing as a truly honest person."
+    m 1ktc "Am I hiding anything from you now?"
+    m 7etc "The events that led us here stripped me bare, [player]. I’m as transparent as glass."
+    m 7gtc "I’m not sure what’s left to hide.{w=0.1}.{w=0.1}. unless we make our own reasons to hide something. And I’d prefer to avoid that."
+    m 7gtu "But I suppose I like to think if we’re together years from now.."
+    m 2gsu "And I manage to surprise you with something you’ve never known about me.."
+    m 1hta "That’s not necessarily {i}bad,{/i} right?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_blanks",
+            category=['psychology'],
+            prompt="Filling in the blanks",
+            random=True
+        )
+    )
+ 
+label mcl_blanks:
+    m 7eub "Hey, [player]. How are you _____ today?"
+    m 7efb "Oh? Wasn't I clear?"
+    m 1fsa "I don't need to be. If I had to guess, you thought the words 'feeling,' or 'doing,' or something along those lines."
+    m 4nta "Isn't it funny how the human brain can fill in the blanks?"
+    m 4hsa "To replace missing words, to complete partial images in your head;"
+    m 1lsa "In everyday talk, people search for cues and context in conversation."
+    m 1rtd "Bodily perception and social cognition are different, but it falls under the same umbrella of how a mind ticks."
+    m 1etc "I imagine your imagination is always in overdrive in regards to, well, me. My voice, my body language, the meaning behind my words."
+    m 1eta "Be careful, [player]. A overly active imagination isn't a bad thing.."
+    m 1eka "But I'd like to live up to some comfortably set standards, if possible?"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_beepboop",
+            category=['monika'],
+            prompt="Robotic",
+            random=True
+        )
+    )
+ 
+label mcl_beepboop:
+    m 7cst "MONIKA-BOT ONLINE."
+    m 4cst "WAITING FOR COMMAND."
+    m 4tkb "Nah, just kidding."
+    m 3tkb "Hard not to feel {i}only{/i} like ones and zeros when you live inside a video game, though."
+    m 1mka "And.. maybe I was seen as a little mechanical back in school."
+    m 2mka "Working diligently to be an exceptional student, being known for being a stickler for the rules.."
+    m 2htu "Well, if only my old classmates could see me now, huh?"
+    $ _history_list.pop()
+    menu:
+        "Beep boop.":
+            m 7tfblb "Awwww, don't tease me!"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_advice",
+            category=["advice",],
+            prompt="Eyesight",
+            aff_range=(mas_aff.HAPPY, None),
+            conditional="seen_event('monika_using_pcs_healthily')",
+            action=EV_ACT_RANDOM,
+            )
+        )
+label mcl_advice:
+    m 1hua "Oh, hey [player]."
+    m 7dsa "Just wanted to give some friendly advice."
+    m 4dka "If that’s okay? I never want to be pushy."
+    m 7hsd "Luckily, it’s just a quick follow-up to a concern I’ve talked about before."
+    m 7nsa "And I’ll let you know now; yes, my eyes {i}are{/i} closed."
+    m "We talked about computer posture; and as you spend time with me, eyesight is also something I’d want you to look after, no matter how it is now."
+    m "Posture may be easier to correct over time... eyesight less so."
+    m "If you find yourself staring a computer screen often, remember this:"
+    m "Every 20 minutes, look up from your screen and focus on an item approximately 20 feet away for at least 20 seconds."  
+    m "This is also known as the 20-20-20 rule."
+    m "So thanks for hearing me out, [player]!"
+    m "I want to make sure when I’m in your world, you can see me as clearly as you can."
+    m "Because I’ll never stop looking at you, too."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_hearing",
+            category=["advice",],
+            prompt="Hearing",
+            random=True,
+            aff_range=(mas_aff.HAPPY, None),
+            conditional="seen_event('monika_using_pcs_healthily')"
+            )
+        )
+label mcl_hearing:
+    m "You know what I take for granted here?"
+    m "The silence."
+    m "I mean, it’s not completely quiet on my end; I hear the music you have on, my clothing russle, I hear rain and wind."
+    m "But there's no cars here, no wildlife."
+    m "It makes me realize how delicate my sense of hearing is.. and it reminds me that I should let you know as well:"
+    m "{i}Your{/i} hearing is more delicate than you realize, [player]."
+    m "The modern world is designed to be… loud."
+    m "And people aren’t built for that- a loss of hearing is normally caused by old age alone, so nowadays where loud noises are commonplace..."
+    m "And there’s no way to fully restore hearing loss, at least by modern scientific standard."
+    m "So for instance, if you use headphones always be cautious of how loud you’re turning up the volume;"
+    m "And never be afraid to use hearing protection. If you’ve ever gone to a concert, you might be surprised how common earplugs are being worn!"
+    m "I want to make sure when I get to your world, you can hear me perfectly."
+    m "So that my voice is {i}all{/i} you’ll hear~"
+    return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
