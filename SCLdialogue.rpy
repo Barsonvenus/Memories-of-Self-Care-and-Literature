@@ -1418,7 +1418,8 @@ label mcl_utopia:
     m "The list of examples may be small, but it’s still nice to see that artists have thought of utopias as possible at all and worth writing about."
     m "That people can still thrive and develop for the better in a ‘perfect’ world... It’s nice to think about."
     m 5fkbla "Life beyond happy endings... perhaps that’s a topic worth mulling over for the two of us, hmm?"
-
+    return
+    
 init 5 python:
     addEvent(
         Event(
