@@ -1661,9 +1661,9 @@ init 5 python:
             eventlabel="mcl_hearing",
             category=["advice",],
             prompt="Hearing",
-            random=True,
             aff_range=(mas_aff.HAPPY, None),
             conditional="seen_event('monika_using_pcs_healthily')"
+            action=EV_ACT_RANDOM,
             )
         )
 label mcl_hearing:
