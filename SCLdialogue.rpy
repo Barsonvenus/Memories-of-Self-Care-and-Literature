@@ -2225,6 +2225,7 @@ label mcl_innocentrequests:
     m 7fua "And I would ask that you refrain from pointing out anything until it’s all said and done."
     m 7fub "Can you do that, [player]?"
     m 4fub "I need you.{w=0.2}.{w=0.2} to ask me what the time is. Right in the talk menu, under interact."
+    m "It might not appear right away. Maybe you'll need to wait until next time the game boots up. That's fine. No rush."
     m 4fua "..."
     m 1hua "That’s it. That’s all."
     m 3eua "Thanks, [player]."
