@@ -1,5 +1,9 @@
 Change Notes
 
+3.0.0
+
+- "Ask the time" topic has been modified to get across that ""Could you tell me the time?" may not be available until later boot-ups
+
 2.0.2
 
 - 'Surprise Her' event code further fixed to accommodate wrong event reference/overrides old event
