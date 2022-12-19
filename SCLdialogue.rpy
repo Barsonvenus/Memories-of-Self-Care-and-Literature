@@ -441,7 +441,7 @@ label mcl_change:
     m "And I found myself having to grapple with more responsibility than ever; and I’m a perfectionist by nature."
     m 4lkb "So, when that responsibility became overwhelming, I started to think in black and white; my failures became resolute, and therefore I didn’t feel like I had properly accomplished anything:"
     m 4lkc "So I felt as frustrated as I did when I left the debate club, at the time feeling like I wanted something new."
-    m 1dsc "But failure, is, well, normal. It’s- and still is- hard for me to accept that."
+    m 1dsc "But failure, is, well, normal. It was- and still is- hard for me to accept that."
     m 1esc "It is possible to do everything right, and still ultimately fall short. That’s not a flaw of life, that’s by design."
     m "So, accomplishments are... a hard metric to judge growth by. And likewise, just seeing time pass doesn’t work for me, where time here is different."
     m 1esd "And you know what?"
