@@ -4,7 +4,7 @@
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) provides new content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics. 
 
-This mod currently includes over 40 new topics in total to discuss, 2 songs, 9 window reacts, 6 new intros, 7 farewells, and 5 new moods to talk about in the 'I feel' menu for those tricky times in life.
+This mod currently includes over 56 new topics in total to discuss, 2 songs, 9 window reacts, 6 new intros, 7 farewells, and 5 new moods to talk about in the 'I feel' menu for those tricky times in life.
 
 To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection.
 
@@ -18,7 +18,7 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 # Installation:
 
-Download source code; put into new folder which in turn should be in a folder labelled 'Submods' in MAS's 'Game' directory, alongside the "Mod_assets" folder and all the scripts for MAS.
+Download source code; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Make sure SCL is in a folder of it's own inside the 'Submods' folder.
 
 Auto-updater version requires Booplicate's [Submod Updater Plugin](https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin) otherwise you will encounter a error upon booting up the game.
 
