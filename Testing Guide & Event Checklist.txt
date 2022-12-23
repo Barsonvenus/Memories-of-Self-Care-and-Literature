@@ -16,7 +16,7 @@ Please refer to 'Event Checklist' for a overview of all currently added events. 
 
 **Event Checklist**
 
-(58 topics, 2 songs, 11 Window Reacts, 6 Intros, 17 Farewells, 6 Moods, 1 Compliment)
+(58 topics, 2 songs, 11 Window Reacts, 8 Intros, 17 Farewells, 6 Moods, 1 Compliment)
 (Events are random by default unless specifically cited otherwise)
 
 SCL Intro (One-time event) [Will change based on relationship w/ Monika & how long you've been playing MAS]
@@ -134,6 +134,8 @@ Elvish [Aff. Trigger = Normal] [Different if seen >once]
 Talking to herself [Aff. Trigger = Normal] [Different if seen >once]
 Dark Souls Intro [Even a girl like me requires repose] [Aff. Trigger = Normal]
 Elden Ring Intro [Turn our time to strength...] [Aff. Trigger = Normal]
+Morse Code [Aff. Trigger = Normal] [Different if seen >once]
+Monikaish [Aff. Trigger = Happy] [Different if seen >once]
 
 Moods (I feel like..):
 
