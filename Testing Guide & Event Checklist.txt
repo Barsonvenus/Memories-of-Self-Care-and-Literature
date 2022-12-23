@@ -16,7 +16,7 @@ Please refer to 'Event Checklist' for a overview of all currently added events. 
 
 **Event Checklist**
 
-(56 topics, 2 songs, 11 Window Reacts, 6 Intros, 17 Farewells, 6 Moods, 1 Compliment)
+(58 topics, 2 songs, 11 Window Reacts, 6 Intros, 17 Farewells, 6 Moods, 1 Compliment)
 (Events are random by default unless specifically cited otherwise)
 
 SCL Intro (One-time event) [Will change based on relationship w/ Monika & how long you've been playing MAS]
@@ -58,19 +58,22 @@ Expansion: Tales of Self-Care & Literature
 Friends, Partners [Unlocked after Vanilla Friends topic] [Aff. Trigger = Happy]
 Literature Club Bestie [Unlocked after Friends, Partners] [Aff. Trigger = Happy]
  - 4 choices
-Who would you choose as a bestie? [Ask] [Unlocked after Literature Club Bestie]
+Who would you choose as a bestie? [Ask] [Unlocked after 'Literature Club Bestie']
  - Monika's... feeling a little weird about this question. Her dialogue changes past asking the first time.
  - If you really want to see her original response, you can see her original answer about 10% of the time every time you repeat this question.
+Utopias [Unlocked after seeing Vanilla 'Dystopias' topic]
+Dystopias & You [Unlocked after seeing 'Utopias']
 Hypocrite
 Moving On
-Secrets
+Secrets [Aff. Trigger = Happy]
 Unreliable Narrator [Aff. Trigger = Happy]
 Do you think about contributing to the world? [Ask]
  - This is more like two topics in one.
  - Asking this past the first time has modified dialogue allows you to jump right into the second part of this.
-Eyesight [Aff. Trigger = Happy]
-Hearing [Aff. Trigger = Happy]
-Colour & Emotion [Aff. Trigger = Affectionate] [Unlocked after seeing all of: Red/Blue/Gold Truth 'Goodbyes']
+ - Additional dialogue if already viewed Vanilla 'Nihlism' topic
+Eyesight [Aff. Trigger = Happy] [Unlocked after Vanilla 'Using PCs Healthily' topic]
+Hearing [Aff. Trigger = Happy] [Unlocked after Vanilla 'Using PCs Healthily' topic]
+Colour & Emotion [Aff. Trigger = Affectionate] [Unlocked after seeing all of: 'Red/Blue/Gold Truth' Goodbyes]
 Utopias [Unlocked after Vanilla Dystopias topic] [Aff. Trigger = Happy]
 Filling in the Blanks
 Robotic
