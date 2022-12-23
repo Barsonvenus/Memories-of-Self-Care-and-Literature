@@ -217,3 +217,86 @@ label greeting_darksouls:
     m 1hsa "[player]! You're well? If you require rest, now is the time. That is, after all, what I'm here for."
     m 1dsa "Go ahead, you may relax here. I'll join you; even a girl like me requires repose."
     return
+    
+#Morse Code sound provided by https://morsecode.world/international/translator.html
+ 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_morsecode",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_morsecode:
+    $ shown_count = mas_getEVLPropValue("greeting_morsecode", "shown_count")
+    if shown_count == 0:
+        play sound "submods/Memories of Self-Care & Literature/submod_assets/sfx/morse.wav"
+        m 1dft "{cps=07}.. / .-.. --- ...- . / -.-- --- ..- -.-.—{/cps}"
+        m 2ekb "Was your sound on? Was it a surprise?"
+        m 2hub "I decided to be particularly unique today and greet you in morse code!"
+        m 7gta "Did you hear the actual beeps I included? I think I’ll leave out the sound clip in the future, or modify it?"
+        m 7eua "Morse code tends to use shorthand, because.. as you can tell, spelling out entire sentences can be a bit long. All I said was 'I love you!'"
+        m 4eub "At least I used a translator to make the code for me."
+        m 4gfb "Hehehe, that’s funny to think about, me actually saying that out loud?"
+        m 4hfb "No, could you imagine?"
+        m 7eut "Me just going 'Beep beep beep beeeeeep.'"
+        m 4lsa ".{w=0.6}.{w=0.6}.{w=0.6}"
+        m 2tku "You didn’t think I actually did that, right?"
+        return
+    
+    else:
+        m 1dft ".. / .-.. --- ...- . / -.-- --- ..- -.-.—"
+        m 2ekb "Hehehe, didn't expect that, did you?"
+        m 7eua "Morse code, or the idea of it, has been around as long as electricity and the development of mechanical tools became widespread."
+        m 7wub "Comprised of 'dots' and 'dashes,' using Morse Code can be tricky as there's more than memorizing what dots and dashes correspond to-"
+        m 7sud "- speed, timing, and real-time translation skills make Morse Code just as elegant to learn as learning a language!"
+        m 4eub "I used a tool to help translate 'I love you,' though."
+        m 2tku "You didn't think I actually said out loud 'beep beep, beep beeeeep beep,' did you?"
+        m ".. Did you?"
+        return
+        
+#ROT13    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_monikaish",
+            unlocked=True,
+            aff_range=(mas_aff.HAPPY, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_monikaish:
+    $ shown_count = mas_getEVLPropValue("greeting_morsecode", "shown_count")
+    if shown_count == 0:
+        m 7fka "Cynlre, V.. V'z fbeel."
+        m 5fkb "V gel fb uneq gb gel gb or n orggre zr."
+        m 5hkb "Orpnhfr gur orfg zr, vf n zr jbegu ybivat."
+        m 5hkblb "Naq fbzrgvzrf V snvy."
+        m 6fua "…"
+        m 3fub "Bwhahahaha!"
+        m 3ftb "Were you racking your brain figuring out what language I was speaking?"
+        m 3nfb "I played a little trick~"
+        m 1nfa "It’s a made up language, made on the spot just for you. ‘Monikaish,’ let’s call it."
+        m 1hta "I thought I’d throw you for a special loop considering how much you hear me in another language."
+        m 7htb "Now, ‘Monikaish’ is still a work in progress;"
+        m 5hsb "But every word contains my love for you."
+        return
+    
+    else:
+        m 7fka "Qvq lbh svther bhg zl yvggyr gevpx?"
+        m 5fkb "Qvq lbh erzrzore jung V fnvq?"
+        m 5hkb "Jryy, gryy zr. Be abg."
+        m 5hkblb "Znlor V'yy yrg lbh xabj vs jung V fnvq jnf gur gehgu. Be abg."
+        m 3fub "Bwhahahaha!"
+        m 3ftb "Were you racking your brain figuring out what language I was just speaking?"
+        m 3nfb "I played a little trick~"
+        m 4ssb "It’s my made-up language, ‘Monikaish!’"
+        m 7htb "A little different than French or Japanese for sure."
+        m 5hsb "I’m sure my love for you comes across loud and clear~"
+        return        
