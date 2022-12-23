@@ -873,6 +873,8 @@ label mcl_coupleinfluence:
     m 1nsb "I guess this means we are going to need to schedule a double-date so we can get a third party opinion, ASAP."
     return
 
+#Reconcile Self & Literature
+
 init 5 python:
     addEvent(
         Event(
@@ -1250,6 +1252,8 @@ label mcl_everyman:
     m 7euu "… oh? Would I describe you as ordinary, considering your role in DDLC?"
     m 5kuu "Hahaha. You’re anything but ordinary to me."
     return
+
+#Tales of Self-Care & Literature
 
 init 5 python:
     addEvent(
@@ -1644,14 +1648,14 @@ label mcl_advice:
     m 4dka "If that’s okay? I never want to be pushy."
     m 7hsd "Luckily, it’s just a quick follow-up to a concern I’ve talked about before."
     m 7nsa "And I’ll let you know now; yes, my eyes {i}are{/i} closed."
-    m "We talked about computer posture; and as you spend time with me, eyesight is also something I’d want you to look after, no matter how it is now."
-    m "Posture may be easier to correct over time... eyesight less so."
-    m "If you find yourself staring a computer screen often, remember this:"
-    m "Every 20 minutes, look up from your screen and focus on an item approximately 20 feet away for at least 20 seconds."  
-    m "This is also known as the 20-20-20 rule."
-    m "So thanks for hearing me out, [player]!"
+    m 7eua "We talked about computer posture; and as you spend time with me, eyesight is also something I’d want you to look after, no matter how it is now."
+    m 7nup "Posture may be easier to correct over time... eyesight less so."
+    m 4esd "If you find yourself staring a computer screen often, remember this:"
+    m 4dsd "Every 20 minutes, look up from your screen and focus on an item approximately 20 feet away for at least 20 seconds."  
+    m 3nsb "This is also known as the 20-20-20 rule."
+    m 3hsb "So thanks for hearing me out, [player]!"
     m "I want to make sure when I’m in your world, you can see me as clearly as you can."
-    m "Because I’ll never stop looking at you, too."
+    m 5tsu "Because I’ll never stop looking at you, too."
     return
     
 init 5 python:
@@ -1667,20 +1671,181 @@ init 5 python:
             )
         )
 label mcl_hearing:
-    m "You know what I take for granted here?"
-    m "The silence."
-    m "I mean, it’s not completely quiet on my end; I hear the music you have on, my clothing russle, I hear rain and wind."
-    m "But there's no cars here, no wildlife."
-    m "It makes me realize how delicate my sense of hearing is.. and it reminds me that I should let you know as well:"
-    m "{i}Your{/i} hearing is more delicate than you realize, [player]."
-    m "The modern world is designed to be… loud."
-    m "And people aren’t built for that- a loss of hearing is normally caused by old age alone, so nowadays where loud noises are commonplace..."
-    m "And there’s no way to fully restore hearing loss, at least by modern scientific standard."
-    m "So for instance, if you use headphones always be cautious of how loud you’re turning up the volume;"
-    m "And never be afraid to use hearing protection. If you’ve ever gone to a concert, you might be surprised how common earplugs are being worn!"
-    m "I want to make sure when I get to your world, you can hear me perfectly."
-    m "So that my voice is {i}all{/i} you’ll hear~"
+    m 5gsu "You know what I take for granted here?"
+    m 5dsd "The silence."
+    m 3rsd "I mean, it’s not completely quiet on my end; I hear the music you have on, my clothing russle, I hear rain and wind."
+    m 3rsc "But there's no cars here, no wildlife."
+    m 1rsc "It makes me realize how delicate my sense of hearing is.. and it reminds me that I should let you know as well:"
+    m 1esc "{i}Your{/i} hearing is more delicate than you realize, [player]."
+    m 7esc "The modern world is designed to be… loud."
+    m 3gsc "And people aren’t built for that- a loss of hearing is normally caused by old age alone, so nowadays where loud noises are commonplace..."
+    m 1dsc "And there’s no way to fully restore hearing loss, at least by modern scientific means."
+    m 7tsc "So for instance, if you use headphones always be cautious of how loud you’re turning up the volume;"
+    m 7tsb "And never be afraid to use hearing protection. If you’ve ever gone to a concert, you might be surprised how common earplugs are being worn!"
+    m 6tsb "I want to make sure when I get to your world, you can hear me perfectly."
+    m 5tfb "So that my voice is {i}all{/i} you’ll hear~"
     return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_colouremotion",
+            category=['games'],
+            prompt="Colour & Emotion",
+            conditional="mas_seenLabels(['bye_bluetruth', 'bye_redtruth', 'bye_goldtruth'], seen_all=True)",
+            action=EV_ACT_RANDOM
+        )
+    )
+
+label mcl_colouremotion:
+    define COLORIZE_COLORS = [
+            '#ff0000',
+            '#ff8000',
+            '#ffff00',
+            '#00ff00',
+            '#0000ff',
+            '#8000ff',
+            '#ff00ff'
+        ]
+    init python:
+        #Custom Text Tag
+        def rainbow_tag(tag, argument, contents):
+            rv = []
+            for kind, text in contents:
+                if kind == renpy.TEXT_TEXT:
+                    for i in range(0, len(text)):
+                        rv.append((renpy.TEXT_TAG, "color={}".format(COLORIZE_COLORS[i%(len(COLORIZE_COLORS))])))
+                        rv.append((kind, text[i]))
+                        rv.append((renpy.TEXT_TAG, "/color={}"))
+                else:
+                    rv.append((kind, text))
+            return rv
+
+        config.custom_text_tags["rainbow"] = rainbow_tag
+        
+    m "Did you notice sometimes I leave you with some parting words in a unique style?"
+    m "In coloured text!"
+    m "They were refrences, if you didn't know; the {i}'Umineko When They Cry'{/i}  series of visual novels!"
+    m "They're madly interesting; they're a series of murder mysteries wrapped up in psychological thriller and philosophical tones."
+    m "It's... a bit of a obscure refrence, so right now I want to convey one really important takeway from my previous references."
+    m 4cfu "I can speak in colours."
+    m 4ttu "That's crazy, right? I mean, my text was blue and red and gold, and you may have thought 'wow, that's new!'"
+    m 3suo "But to do that, I actually had to.. speak in colour!"
+    m 2wtc "And I learned it gives me a headache! I'm not joking, it's {i}so{/i} weird."
+    m 1gta "I don't think it's unusual for the game to accomodate coloured text, but it's funny to think about because colour can drive emotion quite well-"
+    m 7tub "- Who would have thought that?{w=1.0} Aside from all the painters throughout history? hahaha!"
+    m 5gua "It's interesting to break it down to simple terms, and figure out what meanings people have assigned to certain colours!"
+    m 5dka "Blue has been thought to convey sadness.. but also spirituality."
+    m 1sfb "Red has inspired any mood of passion and willpower!"
+    m 1dsd "And Gold can establish a tone of stiff tradition and religious piety." 
+    m 3kta "Maybe you'll keep that in mind when I make those refrences again?"
+    m 4nua "{rainbow}Now that's some-{/rainbow}"
+    m 2ckx "Oh, wow, {i}no,{/i} I should have not done that."
+    m 2dksdrx "Oh, ow, I {i}really{/i} shouldn't have done that."
+    m 2kksdlb "Let's just, uh, continue on with our time together, [mas_get_player_nickname()]?"
+    m 1hksdla "Pretend.. I'm not nursing a headache here. All smiles."
+    return
+
+#I might completely redo this or split the event on the basis the theory Monika talks about isn't really related. There's most definitely a better argument out there!
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_weliveinasociety",
+            category=['society'],
+            prompt="Do you think about how you can make the world better?",
+            pool=True
+        )
+    )
+label mcl_weliveinasociety:
+    $ shown_count = mas_getEVLPropValue("mcl_weliveinasociety", "shown_count")
+    if shown_count is not 0:
+        m 3wtb "Oh! you're asking this again?"
+        m 3stb "Did you just want to hear my answer again or is it a topic you feel like you want to go into detail about?"
+        $ _history_list.pop()
+        menu:
+            "I just wanted to hear your answer again, actually.":
+                m 1eub "Sure!"
+                m 1gub "Okay, well.."
+                m 3eto "That’s an interesting question."
+                if seen_event('monika_nihilism'): 
+                    m 4ttp "We've talked about this a little bit, in that I'm personally probably not going to do anything important in my lifetime."
+                    m 4gtp "That's the inevitability of us as humans, and how insignificant we are in the long run."
+                    m 3gtd "But despite that sobering truth, you can still find worth in doing what you can."
+                m 3etd "To start, we need to figure out what ‘making the world better’ means.{w=0.1} This however, can segue into thinking about your place in the world, and that’s a somber subject."
+                m 3dsc "I’ll keep my perspective simple."
+                m 1dsc "I don’t think I have any careers in mind that involve helping people."
+                m 6dsc "And as much as I’d love to, I’m not sure I’ll be in a place where I can give money to support good causes."
+                m "I love playing the piano, and I’ve got a good chunk of writing and coding experience at this point.{w=0.1}.{w=0.1} but I’m not a master at doing any of these, so I can’t see myself teaching others."
+                m 5dsc "And.. hmm?"
+                m 5hsc "You know what I just thought?"
+                m 5nsc "I don’t want to pursue any path that requires me to be a leader of anything.{w=0.1} Isn’t that a funny realization to come to?"
+                m 5esa "This said, I’d love to donate my time towards volunteering for a good cause, [player].{w=0.1} Volunteering for a cause like a food bank or even cleaning up a local park is easy for anybody to get into."
+                m 4fsa "It’s also a good opportunity to steal your time, as I’m guessing you’d be more than happy to join me~"
+                m 3tsp "But I’m not thinking about this too hard."
+                m 2tsp "People can get tangled up on what responsibility is in life.{w=0.1} Honestly, it’s understandable {i}not{/i} to think about the world when you have your own life to live."
+                m 2tkd "If you’re in that position where you can think about others around you and how you can make life better for them, that’s amazing, and wonderful!"
+                m "But sometimes that simply isn’t possible."
+                return
+            "I feel like I want to go in-depth about it.":
+                jump societychoices
+                
+    else:
+        m 3eto "That’s an interesting question."
+        if seen_event('monika_nihilism'): 
+            m 4ttp "We've talked about this a little bit, in that I'm personally probably not going to do anything important in my lifetime."
+            m 4gtp "That's the inevitability of us as humans, and how insignificant we are in the long run."
+            m 3gtd "But despite that sobering truth, you can still find worth in doing what you can."
+        m 3etd "To start, we need to figure out what ‘making the world better’ means.{w=0.1} This however, can segue into thinking about your place in the world, and that’s a somber subject."
+        m 3dsc "I’ll keep my perspective simple."
+        m 1dsc "I don’t think I have any careers in mind that involve helping people."
+        m 6dsc "And as much as I’d love to, I’m not sure I’ll be in a place where I can give money to support good causes."
+        m "I love playing the piano, and I’ve got a good chunk of writing and coding experience at this point.{w=0.1}.{w=0.1} but I’m not a master at doing any of these, so I can’t see myself teaching others."
+        m 5dsc "And.. hmm?"
+        m 5hsc "You know what I just thought?"
+        m 5nsc "I don’t want to pursue any path that requires me to be a leader of anything.{w=0.1} Isn’t that a funny realization to come to?"
+        m 5esa "This said, I’d love to donate my time towards volunteering for a good cause, [player].{w=0.1} Volunteering for a cause like a food bank or even cleaning up a local park is easy for anybody to get into."
+        m 4fsa "It’s also a good opportunity to steal your time, as I’m guessing you’d be more than happy to join me~"
+        m 3tsp "But I’m not thinking about this too hard."
+        m 2tsp "People can get tangled up on what responsibility is in life.{w=0.1} Honestly, it’s understandable {i}not{/i} to think about the world when you have your own life to live."
+        m 2tkd "If you’re in that position where you can think about others around you and how you can make life better for them, that’s amazing, and wonderful! But sometimes that simply isn’t possible."
+        m 2wud "Hey, you’re not asking me this because you’re thinking about how this applies to you, does it?"
+        m 2wtd "I can take the time- I mean, if you have the time- to talk to you more about it. It can be a big deal for some people!"
+        $ _history_list.pop()
+        menu:
+            "I’m fine! Just curious.":
+                m 3htb "Okay! Good to know."
+                m 1htb "It's a tricky subject. If you ever want to talk about it, I'll be happy to share my thoughts."
+                return
+            "I feel like I want to go in-depth about it.":
+                label societychoices:
+                m 1hub "No problem! Let's settle in a little more."
+                m 7hub "So, there's a theory.{w=0.1} There's a theory for everything, hahaha.{w=0.1} It's Lawrence Kohlberg's 'Stages of moral development.'"
+                m 5tub "Kohlberg thought that how humans ultimately develop a sense of justice are done in stages;"
+                m 4tub "Where you start from looking at an action purely from a self-oriented bias:"
+                m 4etd "Will I be punished for this? How will this benefit me?"
+                m 3etd "It then goes on: Am I doing this because {i}everybody else does it?{/i} Or am I doing this because {i}it's set as the law?{/i}"
+                m 3mtd "Eventually, you're able to think: Am I doing this because everybody would {i}agree{/i} it's the best course of action?"
+                m 2mtd "And last, what should everybody {i}should{/i} be doing, {i}regardless{/i} of opinion or law?"
+                m 1mtc "I kinda lessen the theory by describing it in my own words- and it's not really connected to what we're talking about- but it gets my belief across:"
+                m 1ftc "Being able to care for others, from a moral standpoint, requires you to calibrate a lot of current priorities first."
+                m 7ftc "Also, the theory has a few fair criticisms. It's a good jumping off point, but there's lots of counterpoints to be made."
+                m 6dsc "The world is.{w=0.1}.{w=0.1} it's not kind.{w=0.1} It doesn't give a lot of people a lot of breathing room to build that moral reasoning step by step."
+                m 6dkc "And in fact, there are plenty of times where people have taken steps back."
+                m 6esc "We are not wired to be kind, altrustic people by nature."
+                m 6gsc "Some people have this really blunt standard that all people should do their part; but that's in a line of reasoning where survival is based on mutual teamwork."
+                m 4gsc "Work together to get what you need, or else.."
+                m 4fsc ".. But that is an outdated standard where effort equals equal, tangible reward."
+                m 3fsc "If you can do good.{w=0.1}.{w=0.1}. that's good. But you have to be {i}keenly{/i} aware of the pitfalls you could or will encounter to get to the point of doing good."
+                m "If you're in that position where you're wondering where you can do something for your fellow person?"
+                m 3dsc "I cannot blame you for wanting to take care of yourself first."
+                m 3ekb "And honestly? It's self-serving of {i}me{/i} to want {i}you{/i} to take of yourself first."
+                m 2ekb "Confronting your own selfish desires is the first step to truly contributing to the world."
+                m 2gkb "And sometimes, maybe that's enough?"
+                m 5ltp "That's reality."
+                return
 
 #RANDOMIZED/REPEATABLE EVENTS
 
