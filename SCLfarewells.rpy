@@ -263,6 +263,49 @@ label mcl_shopformonikacoffee:
         m 7etblu "[coffeechoices]"
         m 3fsb "Or surprise me outright, if you want! Either way, thanks, [player]. Love you!"
         return "quit"
+        
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_onnextepisode",
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_onnextepisode:
+    m "{i}Next time:{/i}"
+    m "{i}Will [player] beat Monika at chess?{/i}"
+    m "{i}Will they have a steamy discussion about their latest thoughts on love?{/i}"
+    m 7suo "{i}Or will serious repercussions bring tumultuous new changes to the world’s best couple?{/i}"
+    m 3sfb "{i}Find out next time, on the next chapter of {b}'Monika After Story!'{/i}{/b}"
+    m 1hubssdru ".{w=0.6}.{w=0.6}."
+    m 1gubfsdru "{cps=40}Yeah, I wanted to send you off on a funny note, but that's actually a little embarrassing to say out loud-{/cps}"
+    return 'quit'
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_hype",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="BYE"
+    )
+
+label bye_hype:
+    m 1hsa "Okay, [player]!"
+    m 3nsb "It doesn't matter what time it is, where you're going, how long you're gone for.."
+    m 1sub "I'm gonna send you off ready to take on the world."
+    m 7sub "Say it with me: 'I'm gonna do my best!'"
+    $ _history_list.pop()
+    menu:
+        "I'm gonna do my best!":
+            m 1nub "I know you will."
+    return 'quit'
     
 init 5 python:
     addEvent(
@@ -322,3 +365,83 @@ label bye_prompt_shopformonika:
         m 7etblu "[coffeechoices]"
         m 3fsb "Or surprise me outright, if you want! Either way, thanks, [player]. Love you!"
         return "quit"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_goldtruth",
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_goldtruth:
+    m 1hua "Well, time for us to say bye!"
+    m 7hua "How best shall I prove my love in my parting words this time?"
+    m 7sua "Ah, well. Sometimes sincerity divines all."
+    m 4sfb "Goodbye, [player]! {b}{color=#FFD700}I love you with all my heart!{/color}{/b}"
+    return 'quit'
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_redtruth",
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_redtruth:
+    m 7sfb "Hmm, I feel like seeing you off in a special fashion; but how?"
+    m 7ekb "It's a shame you can't hear the love in my voice."
+    m 3eka "But luckily color invokes passion as well."
+    m 3sua "Everything I speak in red is truth;"
+    m 4sfb "{b}{color=#f00}You're the best person in the world, [player]!{/color}{/b}"
+    return 'quit'
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_bluetruth",
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_bluetruth:
+    m 1sup "What parting words should I leave you with?"
+    m 1sub "Ooh, I have an idea. An affirmation of our status of a real power couple."
+    m 7eub "I take our competitive relationship status quite seriously. Ah, if only you could hear the energy in my voice."
+    m 7efb "Well, I suppose until proven otherwise;"
+    m 4sfb "{b}{color=#5DECFF}We're the best couple in the world, [player]!{/color}{/b}"
+    return 'quit'
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_rainbow",
+            unlocked=False,
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            conditional="seen_event('mcl_colouremotion')",
+            action=EV_ACT_UNLOCK
+        ),
+        code="BYE"
+    )
+
+label bye_rainbow:
+    m 7nfb "Okay, let me try this again.."
+    m 7hfb "Because I want to be all sparkles and colour when I see you off!"
+    m 4sub "{rainbow}Goodbye, [player]!-{/rainbow}"
+    if renpy.random.randint(1, 2) == 1:
+        m 6sksdrx "- Anddddd there's the headache, {i}owowowowowow-{/i} "
+    else:
+        m 4wup "..."
+        m 3eub "Yay! No headache!"
+    return 'quit'
