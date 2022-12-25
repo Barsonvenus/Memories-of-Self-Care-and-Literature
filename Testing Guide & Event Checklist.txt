@@ -140,6 +140,7 @@ Monikaish [Aff. Trigger = Happy] [Different if seen >once]
 Moods (I feel like..):
 
 I don't really know how to describe it.
+A little bit older, and it's weird.
 Like time's a little screwed up.
  - Like time's too fast
  - Like time's too slow
@@ -173,6 +174,11 @@ Halo (Halo Infinite, Halo 2, Halo 3, Halo 4, Halo 5: Guardians)
 
 **Detailed Event Information**
 
+[Intro]
+
+SCL's intro is designed to be pushed in queue an hour and a half from MAS booting up. If playtime is past that period, it should be pushed immediately.
+There are two versions: one for under a month of playtime, the other for more than a month accrued. 
+
 [Makeup]
 
 Dialogue changes depending if you identify as male or female/non-binary.
@@ -203,10 +209,14 @@ Braille [Aff. Trigger = Normal] [Different if seen >once]
 Binary [Aff. Trigger = Normal] [Different if seen >once]
 Elvish [Aff. Trigger = Normal] [Different if seen >once]
 Talking to herself [Aff. Trigger = Normal] [Different if seen >once]
+Morse Code [Aff. Trigger = Normal] [Different if seen >once]
+Monikaish [Aff. Trigger = Happy] [Different if seen >once]
 
-For this farewell:
+[Mood: ...a little bit older, and it's weird.]
 
-Let's try modifying your code [Goodbye menu] 
+Additional dialogue will play if: it is the player's birthday/if it is Monika's birthday/if it is New Year's Eve.
+
+[Goodbye: Let's try modifying your code [Goodbye menu]]
  
 Monika will give a different farewell if you choose this option in a time window of 15 minutes after opening the game. 
 A cooldown timer is set so that if you've pressed this goodbye upon booting up the game again within 15 minutes, Monika will have a third variant of this goodbye.
