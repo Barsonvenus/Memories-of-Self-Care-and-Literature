@@ -140,7 +140,7 @@ label mcl_repeat:
     $ _history_list.pop()
     menu:
         "[m_name].":
-            "Monika!"
+            m "Monika!"
     $ _history_list.pop()
     menu:
         "[player]?":
