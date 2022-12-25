@@ -1756,7 +1756,8 @@ init 5 python:
             eventlabel="mcl_weliveinasociety",
             category=['society'],
             prompt="Do you think about how you can make the world better?",
-            pool=True
+            pool=True,
+            unlocked=True,
         )
     )
 label mcl_weliveinasociety:
