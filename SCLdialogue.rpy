@@ -602,7 +602,8 @@ init 5 python:
             eventlabel="mcl_favouriteword",
             category=['literature'],
             prompt="Do you have a favourite word?",
-            pool=True
+            pool=True,
+            unlocked=True
         )
     )
 label mcl_favouriteword:
