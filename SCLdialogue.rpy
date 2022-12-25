@@ -595,18 +595,21 @@ label mcl_practical:
     m 6eua "And I’ll believe in you too."
     return
 
+init python:
+    mas_override_label("mcl_favouriteword", "mcl_herfavouriteword")
+
 init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="mcl_favouriteword",
+            eventlabel="mcl_herfavouriteword",
             category=['literature'],
             prompt="Do you have a favourite word?",
             pool=True,
             unlocked=True
         )
     )
-label mcl_favouriteword:
+label mcl_herfavouriteword:
 
     m 1tua "Oh, gosh."
     m 7tta "Do you think because I like reading and writing that I’d have such a specific opinion as to have a favourite word?"
