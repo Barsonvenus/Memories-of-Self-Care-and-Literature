@@ -18,7 +18,9 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 # Installation:
 
-Download source code; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Make sure SCL is in a folder of it's own inside the 'Submods' folder.
+Download source code; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Unzip the source code in this folder and Make sure SCL is in a folder of it's own inside the 'Submods' folder.
+
+The end result is that your directory has a 'game' folder; in it a 'submods' folder; and then a folder containing the contents of this submod.
 
 Auto-updater version requires Booplicate's [Submod Updater Plugin](https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin) otherwise you will encounter a error upon booting up the game.
 
