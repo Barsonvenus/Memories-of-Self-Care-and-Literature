@@ -1,9 +1,13 @@
 Change Notes
 
 3.0.0
+(Tales of Self & Literature)
 
+- 16 new topics, 2 intros, and 10 farewells added
 - "Ask the time" topic has been modified to get across that "Could you tell me the time?" may not be available until later boot-ups
-- Overide label for "Favourite Word" topic
+- Overide label for "Favourite Word" topic as missing unlocked=True 
+- Various typos/missing 'm' sprite indicators added back in
+- I'm going to keep it real with you. I'm still not sure how semantic versioning works.
 
 2.0.2
 
