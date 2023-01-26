@@ -808,7 +808,7 @@ label mcl_cramp:
     m "I mean, they’re already quite healthy foods already! No reason not to eat them, aside from preference and dietary restrictions."
     m 1tusdlb "Awkward, you catching me like that for the first time."
     m 1hub "Let's make sure to share many more awkward memories together, hahaha!"
-    return
+    return "derandom"
     
 
 init 5 python:
