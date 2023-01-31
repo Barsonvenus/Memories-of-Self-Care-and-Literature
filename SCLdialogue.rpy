@@ -26,6 +26,10 @@
     #m "Hmm..."
 #return
 
+init 5 python in mas_bookmarks_derand:
+    # Ensure things get bookmarked and derandomed as usual.
+    label_prefix_map["mcl_", "scl_"] = label_prefix_map["monika_"]
+
 init 5 python:
     addEvent(
         Event(
