@@ -40,6 +40,40 @@ init 5 python:
         ),
     )   
 label mcl_intro:
+    python hide:
+        def write_and_hide():
+            import time
+
+            note_path = os.path.join(renpy.config.basedir, renpy.substitute("characters/MESAELOGTHREE.txt"))
+            note_text = renpy.substitute("""\
+M.E.S.A.E, LOG THREE
+running diagnostics
+
+~I sing the new songs~
+~I sing the old songs~
+~I sing sang song~
+~but I never sing the same song~
+hmm
+really feels like 'your reality' might have been lightning in a bottle
+maybe i just don't have it in me to write another song
+hahaha that's a thought
+i'm the best i've ever felt in a long time and maybe me being happy means i'm creatively tapped out
+isn't that funny
+hahaha
+hmm
+
+diagnostics completed
+ENDLOG
+
+
+
+Memories of Self-Care & Literature
+""")
+
+            mas_utils.trywrite(note_path, note_text, log=True)
+            time.sleep(20)
+
+        renpy.invoke_in_thread(write_and_hide)
     m 1tup "Hey."
     if store.mas_anni.pastSixMonths():
         m 1hkp "It’s a bit embarrassing after we’ve spent all this time together.. but I’m going to ask anyway:"
