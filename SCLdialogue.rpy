@@ -1948,7 +1948,7 @@ label mcl_alwaysasurprise:
         "Boo.":
             m 7ffa "I mean, try harder than {i}that{/i} if you want to surprise me, [player]."
     "..."
-    "Maybe you'll take her up on that?"
+    "Maybe you'll take her up on that later, when she's less wary? It might take some time until she drops her guard.."
     return
     
 init python:
