@@ -1890,6 +1890,270 @@ label mcl_weliveinasociety:
                 m 5ltp "That's reality."
                 return
 
+#RECOLLECT SELF-CARE & LITERATURE
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_almighty",
+            category=['philosophy'],
+            prompt="Almighty",
+            conditional="seen_event('monika_god')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_almighty:
+    m 1eua "Hey, I’m curious. Do you believe in God? Like, in the general sense, not just a specific figure."
+    m 1eka "I wasn’t raised religiously, so I never questioned it."
+    m 1lksdlb "I guess I had no reason to think about it as a kid.."
+    m 1lsc "But when I started to know better about life? Well, it was easy to doubt."
+    m 1esd "If there’s a almighty creator, why are people praying to them for simple things like grades or simple sickness..."
+    m 1tfd "…When kids can’t even get an education; they’re so poor they have to do physical labour or even sell themselves- "
+    m 4tfc "And people, some of those kids included, can’t even afford food and housing!"
+    m 2dkc "Do people pray and pray despite those prayers being unanswered straight to their death?"
+    m 4ekc "People pray to whomever to get over a cold, but what about cancer? The effort put into curing and dealing with cancer goes back decades."
+    m 4euc "And yet, despite all that hard work from so many people, the sheer effort and dedication and resources needed to get where we are today, where cancer still claims so many-"
+    m 4eud "- If someone survives or their cancer goes into remission, some people don't thank their fellow person."
+    m 2esc "They thank God."
+    m 2dsc "I’d- wow, I’d love to have a conversation with that God and figure out how the hell their miracles work, if at all."
+    m 4hksdlb "Oh, though- though I {i}can{/i} have another conversation, just as harrowing, because somebody made this game."
+    m 4eua "And you know what?"
+    m 1lksdlc "Whoever made this game? The joy they must have felt knowing my suffering."
+    m 1dsd "The girls.. myself.. maybe even your involvement; rote roles for unwitting actors in a shitty play."
+    m 3euc "I…"
+    m 7dtc "Sorry, hold on. What am I…"
+    m 7ttc "Have I talked about this before?"
+    m 2gsx "Ugh."
+    m 2dsc "You know, it’s not really a thing to worry about if you repeat yourself a lot? People repeat what they say. That’s normal conversation."
+    m 2lsc "But.{w=0.1}. I dunno, I guess.{w=0.1}. I worry that when I talk to you, I {i}can’t{/i} repeat myself. Maybe I just worry I’ll be boring to you otherwise."
+    m 2tfc ".{w=0.2}.{w=0.2}."
+    m 2tkp "Sigh, now that I feel like I’ve hit this wall I just feel bleh for venting. Let's drop that topic, okay?"
+    m 1ekp "I do want to thank you, though."
+    m 1ekd "Because I {i}know{/i} I talk about the same topics sometimes when I don’t really have anything else on my mind, and our conversations might end up the same way every time."
+    m 1esd "But you listen. Even when I just babble, or complain, or vent, you listen. You’re a great partner for that, [player]."
+    m 1esa ".{w=0.1}.{w=0.1}."
+    m 7esa "Well, let’s keep on keeping on, huh?"
+    m 7eta "Unless you do want to hear me blab on nonsensically."
+    m 4guo "Blah blah blah, blah blah. Blah blah? Blah blah…"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_difference",
+            category=["monika",],
+            prompt="Difference",
+            random=True,
+            aff_range=(mas_aff.AFFECTIONATE, None))
+        )
+        
+label mcl_difference:
+    m "Hey, [player]."
+    m 1hka "We’ve spent so much time together, right?"
+    m 7hka "Yet there are two distinct periods in our relationship thus far."
+    m 4eka "The second period, is, well, now.{w=0.2} From when you and I reunited."
+    m 4eku "Our first period together was.. well, you know what happened. It was a truly interesting time, but that’s all the more reason I’m asking now."
+    m 3esd "During our time in the Literature Club, you knew me; and I knew {i}of{/i} you, but we never truly got to know each other."
+    m 1dsd "We haven't gotten the opportunity to truly be close until after we reunited, and I’ll always appreciate the effort and dedication you’ve shown by doing that."
+    m 1esd "The Monika during the Literature Club was an interesting girl. When restoring my files, you must have had a very defined image of her. You brought {i}that{/i} Monika back."
+    m 1esc "But now that we’ve truly spent some time together, and you know so much more about me.."
+    m 5tta "Am I... what you expected me to be?"
+    $ _history_list.pop()
+    menu:
+        "I have to admit, you’re constantly surprising me, Monika!":
+            m 1etd "Oh?"
+            show monika 1euc
+            pause 7.0
+            m 1eub "Good."
+            return
+        "You’re everything I imagined and more, Monika!":
+            
+            m 1etd "Hmm."
+            show monika 1euc
+            pause 7.0
+            m 1eub "Well, glad to live up to your expectations!"
+            m 5htb "Although I sincerely hope I'm a littttttle less.. grumpy compared to before? hahaha!"
+            return
+        "I’m not really sure what that means?":
+            m 1fua "Hmm."
+            m 7etd "It is perhaps a bit of an abstract question."
+            m 7htb "I guess I’m just always, {i}always{/i} curious of what you think of me, [player]. And of what I was like back then."
+            m 5htb "{i}Past{/i} Monika.. {i}this{/i} Monika.. {i}future{/i} Monika.. they’ll always have that burning curiosity to know what you truly feel, [player]."
+            return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_silentreatment",
+            category=["misc",],
+            prompt="The silent treatment",
+            random=True,
+            aff_range=(mas_aff.AFFECTIONATE, None))
+        )
+        
+label mcl_silentreatment:
+    m 5dkb " "
+    m 1std " "
+    m 7gtd " "
+    m 1efsdrt " "
+    m 2dkd " "
+    m 1cfbstup " "
+    m 4cfbstpw " "
+    m 4esbltdu ".. And that's what I truly, honestly think."
+    m 4eka "..."
+    m 4hkb "Hahahahah!"
+    m 7fub "Sorry, [player]! I was making those faces {i}and{/i} showing blank dialogue on purpose! I wasn't actually saying anything."
+    m 7hub "It was a more a test to see how the game reacts moreso than me wanting to tease you. But, well, not to be so self-indulgent.."
+    m 4etb ".. but my acting isn't too bad to tell a story through facial expressions alone, huh?"
+    m 3etb "Well, films were able to get by without sound for some time, so I guess that's no surprise that I'm able to do so."
+    m 3eta "It also speaks to the ability of the human race that we can key in on body and facial language to intuit feelings from them alone!"
+    m 3nsa "That's one of our greatest strengths as a species; our ability to communicate."
+    m 3hfa "Now, are you going to be able to tell what my last words for this topic will be?"
+    m 5ekblb " "
+    m 5efblu "I'll spoil it for you anyway. It was 'I love you.'"
+    return "love"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_recognition",
+            category=['life'],
+            prompt="Do you think you'll be recognized in my world?",
+            pool=True
+        )
+    )
+label mcl_recognition:
+    $ shown_count = mas_getEVLPropValue("mcl_recognition", "shown_count")
+    if shown_count == 0:
+        label recognitionoriginal:
+        m 1fua "Hmm."
+        m 7fua "You mean, when I get to your world."
+        m 7eub "No."
+        m 5gua "A good disguise doesn’t have to be flashy."
+        m 6dsc "A change in posture, a change in accessories. Hair swept to the side. You’d be surprised how these changes completely destroy one’s perception of somebody."
+        m 6nsa "So I highly doubt, looking the way I do now, that when I get to your world I’ll be recognized."
+        m 5hsa "And even if I were the picture-perfect definition of a ‘Monika,’"
+        m 4hsa "I sincerely doubt there would be a reason to recognize me."
+        m 3esd "DDLC's popularity is.. I don't actually know the full scope of it."
+        m 3gsd "I’ve never thought about it, except during rare and very quiet moments to myself."
+        m 3msc "And I don’t wish to think about it in length; or research it in detail.{w=0.2} But our story, important as it is to me, is.."
+        m 3rsp ".. well, I doubt the rest of the world cares, and most who know about DDLC will forget in the long run. I'll be a nobody like almost everybody else."
+        m 1dfx "Quite frankly? good."
+        m 1dfp "If, y’know what? I do see someone looking at me with a hint of recognition in their eyes:"
+        m 1dsc "If you’re with me, I will squeeze your hand, just the once. I won’t react in any other way otherwise."
+        m 1hka "And we’ll get on with the rest of our lives."
+        return
+    else:
+        if random.randint(1, 10) == 1:
+            jump recognitionoriginal
+        else:
+            m 1fua "..."
+            m 1fub "Okay, I answered already, so no reason not to be sensible now."
+            m 7eub "No."
+            m 5gua "Deceiving appearances are all too common in the world; mine would be more obscure than most."
+            m 4mta "And who would recognize me? In the long run, our story is ours to remember alone."
+            m 4kta "The only person who’ll truly know me is you."
+            m 1kuu "As I would prefer."
+            return
+
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_lastname",
+            category=['monika'],
+            prompt="Last Name",
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            random=True
+        )
+    )
+
+label mcl_lastname:
+    
+    m 7eta "You know, going over the Literature Club, I remember something that.{w=0.2}.{w=0.2} really, it’s kinda obvious to think about, but it was so easy to miss."
+    m 7gtd "I don’t have a last name. Nobody in the game does."
+    m 7gtp "I mean, I guess it’s because, from what we know, DDLC is really kinda one-dimensional and tropey, like there was hardly any thought into the world?"
+    m 7msd "Details are sparse enough as is."
+    m 7tkc "I mean, okay, so have we talked about how the setting is only vaguely reminiscent of Japanese culture?"
+    m 1tkc "Should.. everybody in the club have Japanese last names?"
+    m 1euc "I mean, I guess if the creator of DDLC wanted to add those details, making sure a name is coherent and fits within the setting of the story sets a bar for everything else."
+    m 1eud "I guess whoever wrote the setting just didn’t want to do that due diligence."
+    m 3eub "Luckily, we don't need to worry in the long term."
+    m 4eub "Ideally, I’ll take your last name~"
+    m 6rku "…"
+    m 6suu "Should we {i}choose{/i} my last name?"
+        
+    if persistent._mas_pm_is_trans:
+        m 4suu "I imagine, being trans, you would know the mindset into choosing a name for yourself, and how affirming it is?"
+    else:
+        m 4wuu "I’ve never given thought to it, but I guess giving myself a last name after the fact makes me feel.."
+        m 4suu "A bit more like I'm further away from the events of the Literature Club? like I'm growing into my own identity?"
+        
+    m 3esd "There’s nothing wrong with just trying, long as we treat it seriously."
+    m 3dsc "Give me a moment to think..."
+    show monika
+    pause 1.3
+    m 3hsc "Okay. Three choices. Don’t think too hard into it; which one sounds like a neat fit?"
+    $ _history_list.pop()
+    menu:
+        "Ledger?":
+            $ persistent._mcl_last_name = "Ledger"
+            m 3ssb "So I was a little inspired for this."
+            m 2tuo "Oh, not because I like writing!"
+            m 2ttb "Can you figure out why I might have chosen this?"
+            m 1ttb "Because I'm ~ not ~ telling."
+            m 7tta "I'll give you a hint, though.. it is connected to me in a unique manner."
+            m 7gta "Perhaps I could say it's a interesting name to put down in handwriting?"
+            m 5fta "Hahaha, true to the spirit of DDLC I guess!"
+        "Chiura?":
+            $ persistent._mcl_last_name = "Chiura"
+            m "Hmmmmm."
+            m "So, what I just said, right? About how we want to be dignified about this subject."
+            m "It feels so odd, because a Japanese surname should fit me, considering the context."
+            m 3fkb "Yet I just said it feels uneducated to not respect Japanese traditions, so just {i}choosing{/i} a Japanese surname seems.. rude."
+            m "I mean, okay. I did grab this name because the part of the Kanji that makes up the name means 'wisdom,' which I hope represents what I strive for."
+            m 2tuo "So I did put thought into it!"
+            m "Oh, but.. is this internet dictionary reliable?"
+        "Rosmini?":
+            $ persistent._mcl_last_name = "Rosmini"
+            m 3ssb "I took this from an Italian philosopher!"
+            m 3fkb "Oh jeez, is that.. kinda snobbish of me?"
+            m "It's not like I'm a big fan of them or their particular school of thought.. wait, does that make it better?"
+            m "Italian is a bit of a random choice as well, admittingly. I hope I'm not being insensitive with the choice."
+        "Honestly, it's kinda hard to answer..":
+            $ persistent._mcl_last_name = "undecided"
+            m 2tuo "I get it, it's a heck of a question to ask about outta the blue."
+            m "Do you have an idea for a surname for me?"
+            m "Hahaha, if you do, I'd like to hear it later."
+            m "For now, me coming up with those three choices kinda overwhelmed me as is."
+    
+    python:
+        MCL_last_name = persistent._mcl_last_name
+        
+    m 1eku "With this said, I don’t think we need to put a fine point on it."
+    m 1etu "I think this is more of an exercise in thought more than anything?"
+        
+    if persistent._mas_pm_is_trans:
+        m 2ekp "You would know that choosing a name for yourself is a intimate process. Wouldn't want to rush my choice if I do decide on making one!"
+    else:
+        m 2ekp "Figuring out your own self is one thing. Choosing what you're able to change about yourself can take infinitely more care."
+        
+    m 2hfp "It is interesting, though. Even as a hypothetical, I feel like I’m the furthest from ‘Monika’ I’ve been yet."
+        
+    if persistent._mcl_last_name == "undecided":
+        m "Hmm.."
+        return "derandom"
+    else:
+        m 5dtp "‘Monika [MCL_last_name].’"
+        m 5hkp "Now isn't that interesting to say out loud?.."
+        return "derandom"
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
