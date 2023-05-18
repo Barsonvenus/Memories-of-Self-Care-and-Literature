@@ -50,3 +50,33 @@ label mas_song_BBs_theme:
     m "Even through simple song, we're all bound by strands of some kind, huh?"
     m 6dsa "I wonder if I'll ever need to sing one in the future. Or what lullaby will come to mind.."
 return
+
+#Recollect Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_without_a_weapon",
+            prompt="Without a Weapon",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_without_a_weapon:
+    m 7hud "{i}~I’m aiming with a plastic gun~{/i}"
+    m 7eud "{i}~A little guarded, but a lot of fun~{/i}"
+    m 7ffd "{i}~I don’t know why I keep carving out space for more~{/i}"
+    m 7efb "{i}~I’ve learned to keep a careful eye~{/i}"
+    m 4efb "{i}~Learned to break down all the doors~{/i}"
+    m 4hfb "{i}~Loving you is war~{/i}"
+    m 4dfb "{i}~And I’m without a weapon~{/i}"
+    m 3dfw "{i}~Loving you is warrrrrrr~{/i}"
+    m 1hsa "Romance and violence are simple enough concepts to co-exist, if only for narrative purpose."
+    m 1ksa "I for one would prefer a relationship to be without conflict, but there's no mistaking taking up arms for the sake of love is a concept that invokes passion."
+    m 7tta "Or.. maybe literally fighting off others. Or actually fighting somebody directly for their affection, hahaha!"
+    m 7ttb "As you might also hear often: 'love is a battlefield?'"
+    return
