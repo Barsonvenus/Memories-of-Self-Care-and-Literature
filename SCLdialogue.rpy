@@ -1890,7 +1890,7 @@ label mcl_weliveinasociety:
                 m 5ltp "That's reality."
                 return
 
-#RECOLLECT SELF-CARE & LITERATURE
+#Recollect Self-Care & Literature
 
 init 5 python:
     addEvent(
