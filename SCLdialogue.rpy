@@ -2938,3 +2938,245 @@ label repeatpickupline:
                 m 1sfu "[pickup_react]"
                 m 5hfu "[randomlaugh]"
         return "love"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_echo",
+            category=["location"],
+            prompt="Echo",
+            conditional="mas_current_background == mas_background_def",
+            aff_range=(mas_aff.HAPPY, None),
+            action=EV_ACT_RANDOM,
+            )
+        )
+label mcl_echo:
+    m 2esc "[player]?"
+    $ _history_list.pop()
+    menu:
+        "Yes, Monika?":
+            m 2etc "[mas_get_player_nickname()]?"
+    m 2euc "Ah... snickerdoodles."
+    m 3ekd "[player]? [mas_get_player_nickname()]? I was testing a new bit of code and now.. I'm not sure you can hear me properly. Or.. if it's the opposite."
+    m 4ekd "I don't know if you can hear me?"
+    $ _history_list.pop()
+    menu:
+        "I can make out what you're saying. Can you hear what I'm saying?":
+            m 6dkp "Hmm. I'm not sure how to figure this out. What, do I have to shout?"
+    m 6rtp "..."
+    m 4hsw "{b}{size=+5}HEEYYYYY! CANNN YOUU HEARR MEEE?{/size}{/b}"
+    "{i}{size=-10}.. hearr meee ..{/size}{/i}"
+    m 4wsd "What the? Was that a-"
+    $ _history_list.pop()
+    menu:
+        "Monika?":
+            m 6hkt "Eep!"
+    m 6etu "Oh, [player]! I can hear you now! Okay, I guess the issue was on my end."
+    m 4stu "Sorry about that- but hey, were you able to hear what I just said? Did you hear?"
+    m 3sto "When I shouted... I heard an echo!"
+    m 3sub "No way, right? Only one way to find out!"
+    m 6huw "{b}{size=+5}HELLOO OUT THEREE!{/size}{/b}"
+    "{i}{size=-10}.. out thereee ..{/size}{/i}"
+    m 6sub "Hahahahahaha! You can! You can hear my voice bounce back!"
+    m 3wub "I didn’t think this classroom would have the right acoustics to produce an echo!"
+    m 4wub "I mean.. I guess it makes sense? It’s actually quite empty. I dress it up, but I have no idea what the physical properties of it actually are."
+    if renpy.seen_label('greeting_ourreality'):
+        m 2gtb "Or is it because this room is connected to the floating islands?"
+    else:
+        m 2gtb "Or is it because, well, there's nothing outside this room?"
+    m 2fub "Perhaps we’re hearing the voice bounce outside?"
+    m 2hua "I’ve never yelled that loud here, so I’ve never known."
+    m 1eud "I also admit I’m.. just not the type of person to raise their voice."
+    m 1fud "I can definitely project my voice as needed, sure. But I’m not a loud person by nature."
+    $ shown_count = mas_getEVLPropValue("mcl_alwaysasurprise", "shown_count")
+    if shown_count is not 0:
+        $ _history_list.pop()
+        menu:
+            "Ooh! Ooh! Can I try?":
+                m 1eua "Hmm?"
+                $ MASEventList.push("mcl_ventwithmonika",True)
+                return
+    m 1hua "So, uh, sorry for the mix-up! But hey, now we know you can hear echoes here.{w=0.2} And sorry if me shouting was a bit much."
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_ventwithmonika",
+            category=["interact"],
+            prompt="Shout w/ Monika?",
+            unlocked=False,
+            conditional="seen_event('mcl_echo')",
+            action=EV_ACT_POOL,
+        )
+    )
+label mcl_ventwithmonika:
+    $ shout = renpy.random.randint(1,8)
+    default shout = 0
+    $ _history_list.pop()
+    
+    python:
+        randomlaughs = [
+            _("Hahaha!"),
+            _("Hehehe!"),
+            _("Gwhahahaha!"),
+            _("*snort* hahahah!"),
+            _("Hahahaha!"),
+        ]
+        randomlaugh = random.choice(randomlaughs)
+        
+        randomencouragement = [
+            _("YEAH! STICK IT TO THE ESTABLISHMENT!"),
+            _("THAT'S WHAT I WANT TO HEAR!"),
+            _("WOOOOOOO!"),
+            _("YEAH! I AGREE WITH WHATEVER YOU JUST SAID!"),
+            _("THAT'S RIGHT! YOU TELL OFF WHOEVER YOU WERE TALKING ABOUT!"),
+            _("NO CAP! (er, am I saying that right?)"),
+        ]
+        randomencourage = random.choice(randomencouragement)
+     
+    $ shown_count = mas_getEVLPropValue("mcl_ventwithmonika", "shown_count")
+    if shown_count == 0:
+        m 3etb "Oh! I suppose the echoing made you a bit curious, huh?"
+        m 3gsa "Hmm.{w=0.1} There's a novelty in that. Have you ever been a place where you could hear your voice echo?"
+        m 7fua "Don't feel weird if you haven't.{w=0.1} Let me explain; a echo is a reflection of sound, heard after a delay."
+        m 4fua "All sounds we make are actually produced as vibrations through the air, and as such bounce off any hard surface."
+        m 3fua "But these vibrations are dampened with every hard surface it comes into contact with, so echoes are only produced when there aren't a lot of objects in the area!"
+        m 3hub "So that's why you can hear a echo when you shout down a well, or across a open field."
+        m 3sub "'Echo' comes from Greek myth about the nymph named 'Echo,' cursed only to speak the last few words spoken to her; this curse doomed to ruin her infatuation with her love with Narcissus."
+        m 3euu "But enough trivia. Should we?.."
+        m 3etu "How about we make a bargain? I'm happy to make some noise; but I want to give you the opportunity to as well."
+        m 3ftu "I mean, if you safely can without bothering anybody.{w=0.1} You'd be surprised how loud a voice really is, and I wouldn't want you disrupting your neighbourhood."
+        m 3ntu "But otherwise.{w=0.1}.{w=0.1} well, let's start.{w=0.1}.{w=0.1} with getting something off my chest."
+        m 2dsu "Ahem."
+        m 6sfo "{b}{size=+5}I ONCE ACCIDENTLY ATE A BIT OF SAYORI'S LUNCH!{/size}{/b}"
+        "{i}{size=-10}.. a bit of sayoris lunch .. {/size}{/i}"
+        m 2sub "Whew! Finally good to admit that."
+        m 2ekblb "And yeah. I accidently mixed up my lunchbox with Sayori's once. And when she noticed? I feigned ignorance."
+        m 1gkb "Always been a little guilty, so that did feel good!{w=0.2} Hmm, I wonder what else might be fun to get off my chest?.."
+        return
+    else:
+        m "Hmm.."
+        if not mas_timePastSince(persistent._mcl_last_yell, datetime.timedelta(minutes=5)):
+            m 7hka "Sorry, my voice is a little hoarse.. How about later?"
+            m 7eua "I'm glad you're always up for yelling up a riot with me, though!"
+            m 6fub "My adorable fellow rebel, you~"
+            return
+        m 1hsu "Sure, why not?"
+        m 1etu "Always funny to schedule a 'yelling session.'"
+        m 7etb "But I do get a kick out of hearing a echo here."
+        if mas_current_background is not mas_background_def:
+            m "Hopefully we'll still be able to hear a echo since we changed up the classroom a little."
+        m 7eta "So, are you joining me?"
+        $ _history_list.pop()
+        menu:
+            "I'll shout with you!":
+                m 7hua "Great!"
+                m 7tua "You'll forgive me for not being able to hear you, so.. um, I'll just provide my encouragement in my own little unique manner!"
+                m 7tft "Oh gosh, if you yell something inappropiate though and I inadvertingly support it, I'll never forgive you!"
+                m 6tfb "Okay, make sure you don't get in trouble, alright?"
+                m 6sfb "No bothering anybody; yell into a pillow if you want! When you're done, just continue my dialogue!"
+                m 2eut "Ready?"
+                m 7wuo "GO!"
+                m 7wuc "..."
+                m 4hfx "[randomencourage]"
+                m 4sfu "Okay! My turn!"
+                jump monikayell
+                return
+                
+            "You go ahead!":
+                m 6etb "Ooh, putting me on the spot."
+                m 4ffa "Hmm, alright.."
+                label monikayell:
+                if shout == 1:
+                    m 4dfa "..."
+                    m 4dfb "I’m just gonna yell as LOUD AS I CAN!"
+                    m 4sfw "{b}{size=+5}AAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!{/size}{/b}"
+                    m 4skb "HHHHhahahahaha!"
+                    m "Ohmygod, I’ve never yelled that loud {i}ever!{/i}"
+                    m 7hkb "You should hear my voice- I’ve almost broken my voice!"
+                    m "I didn’t hear an echo that time; although to be fair, I think my laughter covered it up!"
+                    jump shoutafter
+                if shout == 2:
+                    m 6sfo "{b}{size=+5}III LOOOVVEEEE YOUUUU!{/size}{/b}"
+                    "{i}{size=-10}.. eeee youuuu .. {/size}{/i}"
+                    m 4stb "Eh? Eh? Did you expect me to yell out something so embarrassing?"
+                    m 4sfb "Well, just wait until I get to your world, [player]."
+                    m "I'll shout it from the rooftops! The heavens!"
+                    m "[randomlaugh]"
+                    jump shoutafter
+                if shout == 3:
+                    m 6cfw "{cps=20}{size=+10}{b}PPPEEEENNNNNII{/b}{/size}{/cps}{nw}"
+                    m 6skbsb "Nonononono I’m so sorry, {i}I’m so sorry, {/i} that’s so {i}crude{/i} of me, but I can't help it!"
+                    "{i}{size=-10}.. nnnii ..{/size}{/i}"
+                    m 7gusdra "Ah. Oops."
+                    m 7husdrb "[randomlaugh]"
+                    m 7kusdrb "Oh, gosh, hehehehehe!"
+                    jump shoutafter
+                if shout == 4:
+                    m 6wfw "{b}{size=+5}I JUST WANT TO BE HAPPPPPPPPPYYYYYYYYYYYY!{/size}{/b}"
+                    "{i}{size=-10}.. pppyyyyyyyyy ..{/size}{/i}"
+                    m 1hkb "[randomlaugh]"
+                    m 1lkb "I just… oh, wow. Actually hearing that come from my mouth..."
+                    m 1tua "Ah, don’t think too much into it, [player]."
+                    m 1ftb "If there's a statement that everybody should be yelling to themselves, that would be a good one, wouldn't you say?"
+                    jump shoutafter
+                if shout == 5:
+                    m 6cfw "{b}{size=+5}SCREW YOU, LITERATURE CLUBBBBB!{/size}{/b}"
+                    "{i}{size=-10}.. ew you, literature clubbbbb ..{/size}{/i}"
+                    m "..."
+                    m 4htu "Yeah, that gets.. bottled up sometimes."
+                    m 3wtd "Oh, not like.. I'm disparaging the girls! It’s just.. the club, in the abstract sense. All that’s happened, you know?"
+                    m 3etb "Don't get me wrong, I'm not in a bad headspace or anything.."
+                    m 3gfb "But wow, is that always good to yell."
+                    jump shoutafter
+                if shout == 6:
+                    m 6cfw "{b}{size=+10}EULALIAAAA!{/size}{/b}"
+                    "{i}{size=-5}.. aliaaa ..{/size}{/i}"
+                    m 6sfo "Ooh, that is exciting!"
+                    m 7husdrb "Oh. Um."
+                    m "I wanted to shout out something that really gets the heart pumping, you know?"
+                    m "So I went for a war cry. This one's from a fantasy series, the 'Redwall' books!"
+                    m 3gfb "Don't expect to see me charging into battle anytime soon, though?"
+                    m "Hehehehe!"
+                    jump shoutafter
+                if shout == 7:
+                    m 6hfw "{b}{size=+5}RANDOM LOUD NOISES!{/size}{/b}"
+                    "{i}{size=-10}.. oud noises ..{/size}{/i}"
+                    m 6htsdru "..."
+                    m 6ttsdru "Yeah, I couldn't. I couldn't think of anything."
+                    m 6ssu "Refreshing to let loose like that, though!"
+                    m 1gfb "[randomlaugh]"
+                    jump shoutafter
+                if shout == 8:
+                    m 6cfw "{b}{size=+5}GO EFF YOURSELF, WORLD!{/size}{/b}"
+                    "{i}{size=-10}.. yourself, world ..{/size}{/i}"
+                    m 1euu "..."
+                    m 6cfw "{b}{size=+8}GO TO HELL, WORLD!!{/size}{/b}"
+                    "{i}{size=-10}.. to hell, world ..{/size}{/i}"
+                    m 6sfo "Now that's the {i}bite{/i} I'm looking for."
+                    m "A bit startling to hear, [player]?"
+                    m 7guu "Well, sometimes it feels like it's you against everybody, right?"
+                    m 3gfb "I mean I'm rebellious to say it's me against the world, but I'm not rebellious enough to even swear properly!"
+                    m "[randomlaugh]"
+                    jump shoutafter
+                    
+label shoutafter:
+    $ sesh_shorter_than_3_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
+    
+    if sesh_shorter_than_3_mins:
+        m 1euu "I gotta admit, doing this upon right after booting up the game definitely gets the blood pumping."
+        m 7euu "There are certainly stranger rituals for the start of our time together, I suppose!"
+        m 7guu "We're not exactly roosters declaring the sun rise, but we can get away with a bit of mischief here and there, right? <3"
+        m 5htu "Imagine us overlooking a deep canyon far from civilization, nobody else around.. the proclaimations we'll shout then, hmm?"
+        $ persistent._mcl_last_yell = datetime.datetime.now()
+        return
+    else:
+        m 1euu "And I gotta admit, there's a lot of cartharsis to be had in just being loud."
+        m 7euu "But not really doable unless you're out and about in the wild with wide open spaces."
+        m 7guu "Can't recommend it as a daily activity, but we can get away with a bit of mischief here and there, right? <3"
+        m 5htu "Imagine us overlooking a deep canyon far from civilization, nobody else around.. the proclaimations we'll shout then, hmm?"
+        $ persistent._mcl_last_yell = datetime.datetime.now()
+        return
