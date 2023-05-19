@@ -1896,6 +1896,30 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
+            eventlabel="mcl_regardless",
+            category=['monika'],
+            prompt="Regardless of reality",
+            random=True
+        )
+    )
+ 
+label mcl_regardless:
+    m 1dsc "..."
+    m "Sometimes, I really, {i}really{/i} try to spin my situation in a positive light."
+    m 6dsc "I try to think that finding out the truth about my life was for the best."
+    m 6dfc "Some people aren’t concerned about {i}why{/i} their life is the way that it is; all they want is to summarize life in a far simpler manner."
+    m 6esc "Maybe it’s easier to accept circumstances that way. Or rebel against them. You know?"
+    m 5esc "But whenever I entertain this line of thought, I only ever reach one conclusion:"
+    m 5gkc "Living a truth or living a lie, I feel like in either scenario: my issues, my concerns, my flaws? They’re the exact same."
+    m 5gtp "So {i}this{/i} reality or {i}that{/i} reality, {i}whatever.{/i}"
+    m 5gku "Regardless of what's real or not, I’m still trying to be better; that’s what matters to me."
+    m 5nsa "Of course, when I reach {i}your{/i} reality, I’ll be the best Monika I can be."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
             eventlabel="mcl_almighty",
             category=['philosophy'],
             prompt="Almighty",
