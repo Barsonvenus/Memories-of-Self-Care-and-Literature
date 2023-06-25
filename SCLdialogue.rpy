@@ -1994,7 +1994,6 @@ label mcl_difference:
             m 1eub "Good."
             return
         "You’re everything I imagined and more, Monika!":
-            
             m 1etd "Hmm."
             show monika 1euc
             pause 7.0
