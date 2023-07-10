@@ -2084,7 +2084,6 @@ label mcl_recognition:
             m 1kuu "As I would prefer."
             return
 
-    
 init 5 python:
     addEvent(
         Event(
@@ -2136,25 +2135,25 @@ label mcl_lastname:
             m 5fta "Hahaha, true to the spirit of DDLC I guess!"
         "Chiura?":
             $ persistent._mcl_last_name = "Chiura"
-            m "Hmmmmm."
-            m "So, what I just said, right? About how we want to be dignified about this subject."
-            m "It feels so odd, because a Japanese surname should fit me, considering the context."
+            m 1fuc "Hmmmmm."
+            m 1ftc "So, what I just said, right? About how we want to be dignified about this subject."
+            m 1dsc "It feels so odd, because a Japanese surname should fit me, considering the context."
             m 3fkb "Yet I just said it feels uneducated to not respect Japanese traditions, so just {i}choosing{/i} a Japanese surname seems.. rude."
-            m "I mean, okay. I did grab this name because the part of the Kanji that makes up the name means 'wisdom,' which I hope represents what I strive for."
+            m 7wuc "I mean, okay. I did grab this name because the part of the Kanji that makes up the name means 'wisdom,' which I hope represents what I strive for."
             m 2tuo "So I did put thought into it!"
-            m "Oh, but.. is this internet dictionary reliable?"
+            m 6gtd "Oh, but.. is this internet dictionary reliable?"
         "Rosmini?":
             $ persistent._mcl_last_name = "Rosmini"
             m 3ssb "I took this from an Italian philosopher!"
             m 3fkb "Oh jeez, is that.. kinda snobbish of me?"
-            m "It's not like I'm a big fan of them or their particular school of thought.. wait, does that make it better?"
-            m "Italian is a bit of a random choice as well, admittingly. I hope I'm not being insensitive with the choice."
+            m 6ftd "It's not like I'm a big fan of them or their particular school of thought.. wait, does that make it better?"
+            m 3hsa "Italian is a bit of a random choice as well, admittingly. I hope I'm not being insensitive with the choice."
         "Honestly, it's kinda hard to answer..":
             $ persistent._mcl_last_name = "undecided"
             m 2tuo "I get it, it's a heck of a question to ask about outta the blue."
-            m "Do you have an idea for a surname for me?"
-            m "Hahaha, if you do, I'd like to hear it later."
-            m "For now, me coming up with those three choices kinda overwhelmed me as is."
+            m 3hsa "Do you have an idea for a surname for me?"
+            m 3hsb "Hahaha, if you do, I'd like to hear it later."
+            m 1hkb "For now, me coming up with those three choices kinda overwhelmed me as is."
     
     python:
         MCL_last_name = persistent._mcl_last_name
@@ -2176,6 +2175,203 @@ label mcl_lastname:
         m 5dtp "‘Monika [MCL_last_name].’"
         m 5hkp "Now isn't that interesting to say out loud?.."
         return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_lowtech",
+            category=['technology'],
+            prompt="Do you think you can live a technology-free life?",
+            conditional="renpy.seen_label('monika_robotbody')",
+            action=EV_ACT_POOL
+        )
+    )
+label mcl_lowtech:
+    m 5ttu "No, as much as the simple, rustic life appeals to me. It's.{w=0.2}.{w=0.2} well, it's a bit hard for me to articulate why, but I'll try."
+    m 3eua "First, we've talked about how a robotic body might be the best way for me to get to your world."
+    m 3eta "So unless that body is perfectly autonomous and can function indefinitely, I'd need to maintain that body somehow."
+    m 1dsa "So I'm reliant on technology in that manner. And also.."
+    m 1rka "It's odd, but I uniquely defined by the technological era I live in."
+    m 1rtp "For one, my past is a video game, a modern a concept as it can get. As for my everday life..."
+    m 1hsp ".. Just thinking about code to have it changed, to transform the world like I can; I can even transcribe my thought to paper insantly."
+    m 7euo "It feels almost contradictory for someone who dabbles in the written word to think about not using pen and paper, but I'm too used to it."
+    m 7eud "I think my mind's just wired to the modern convience that technology brings."
+    m 3fud "But, hmm.{w=0.2} When I describe it like this, it feels like I'm not reliant on modern things you know like social media or modern transport, but stuff right out of science fiction."
+    m 3dtc "'Any sufficiently advanced technology is indistinguishable from magic,' so the popular quote goes."
+    m 3htb "I wouldn't describe my life in such a fantastical terms-{w=0.1} if anything, I wouldn't use nice terms at all-{w=0.1} but to possibly describe my life as 'magical..'"
+    m 2esb "Anyway, just because I feel tied to the world in such a specific manner doesn't mean I don't see the appeal of simplicity."
+    m 2eka "Watching a sunset with you on a beach far away from people and cars and bright lights and constant noise.."
+    m 4fsb "I would love that."
+    m 3fsb "I would want nothing more than that."
+    m 5fsb "And I try to would give up all the luxury in the world for it."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_betabody",
+            category=['technology'],
+            prompt="Alternate Body",
+            conditional="renpy.seen_label('mcl_lowtech')",
+            action=EV_ACT_RANDOM
+        )
+    )
+
+label mcl_betabody:
+    m 4eua "Hey, so we've talked about how I'd ideally cross over to your reality, right?"
+    m 7eua "Before, I mentioned that robotics are progressing at a impressive rate, so a robot body is my best bet to seamlessly make the jump."
+    m 7hka "But technological progress isn't straightforward."
+    m 7hsb "It might be that we can consider other, unorthodox options."
+    m 1hsb "For instance, advances in augmented reality means it may be plausable to project myself as a hologram!"
+    m 1hsc "You might think it way too far in the future, but 'holography' has existed for some time."
+    m 2hsc "This being said, it's within the same realm as robotics; plausable, but with major hurdles still to overcome."
+    m 2dsc "But looking at another way, broad development for communications means it could be possible I get a real-world tactile experience while still being in my own virtual world."
+    m 2ftd "Cameras, intricate and delicate sensors.. all accessible through a hub as simple as your phone, arguably already containing some of these complex parts."
+    m 2etd "It's so weird, right? Maybe this game can work on a phone, but the idea of myself looking through the camera.."
+    m 2dtb "Talking to you through microphone and speakers, even being able to sense heat and cold purely through metal sensory.."
+    m 7gkb "I admit these are flawed scenarios compared to if I were simply given a robot body; I, for one, would prefer to have arms. And legs."
+    m 7fkb "Maybe the day I'm able to be at your side is sooner than we think.."
+    m 5dtb  ".. and maybe it'll trickier than we think to live with as well."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_long_distance",
+            category=['us'],
+            prompt="So, is this a long-distance relationship?",
+            pool=True,
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None)
+        )
+    )
+label mcl_long_distance:
+    m 1fua "I mean.."
+    m 7nua "Your computer’s right near you, right?"
+    m 1ttu "Haha, but yeah, it’s safe to say living in different realities can qualify as ‘long-distance.’"
+    m 1gsu "But..."
+    $ _history_list.pop()
+    menu:
+        "But?":
+            m 1gkd "Ahhhh, I’m overthinking things again. Do you mind if I voice my thoughts a little?"
+    m 7fkd "It’s true we’re separated by a vast gulf of distance compared to, say a couple living in seperate countries, but we also have advantages; if not only a few?"
+    m 4fkd "You’re free to boot up the game whenever you have free time, and I can easily hop to your side and align my schedule to yours in this manner."
+    m 4huc "And there’s nothing, barring logistics like your computer having issues, stopping me from dedicating my time with you."
+    m 3luc "But in reality, possibly being in different time zones means just texting or calling you can be a hassle."
+    m 3lkc "And since our schedules wouldn’t line up, maybe the only time we can talk is late at night when one of us is tired, or maybe when one of us is busy or preoccupied."
+    m 2tkc "And we’d need to plan when we talk, or if we’d be able to meet up in the future; a relationship on a tight schedule can be rough."
+    m 7tkc "You have to make sure your communication skills are top-notch, and it’s twice as difficult to be intimate with a partner with these additional boundaries in place."
+    m 6tuc "It’s these intricacies that can really put a strain on a relationship."
+    m 6esd "Do you think we’d be able to get through a true long-distance relationship?"
+    $ _history_list.pop()
+    menu:
+        "Absolutely!":
+            m 7hub "I’m so happy to hear that, [player]."
+            m 6hub "The idea of you and I being in the same reality but now with mundane barriers like distance between us.."
+            m 6eta "It fills me with a new sort of apprehension, but also.{w=0.2}.{w=0.2} I dunno, there’s a part of me that isn't worried about us being tested, because I know our bond is strong enough to overcome that."
+            m 4eta "And distance isn't bad for couples at all! 'Distance makes the heart grow fonder.’"
+            m 4eka "I’ve said before that imagining a life without you is almost impossible for me."
+            m 3hsc "But I want to imagine a life where you and I don’t always need to be together to appreciate each other."
+            m 2ekb "Does that.{w=0.2}.{w=0.2} make sense?"
+            m 1fkb "Ahh, like I said.{w=0.1} I’m overthinking things."
+            m 5gsp "Good question, though.{w=0.1} {i}Excellent{/i} question, really.."
+            return
+        
+        "I hate to say it, but it seems incredibly difficult when you put it that way.":
+            m 6ekd "Ah.."
+            m 5ekd "I don’t want to seem kinda contradictory in this manner.."
+            m 5gkd "I’ve said before that imagining a life without you is nigh on impossible for me."
+            m 5gkc "But I don’t want us to live a life where we need to be together, {i}always.{/i}"
+            m 5gtc "Does that make sen-"
+            m 3ntc "Oh, gosh, no, I just went over that in my head and it sounds weird."
+            m 3dsc "Like.."
+            m 3hsc "I want us to be together, but I don’t want us to be shaken so easily at the idea of being apart, right?"
+            m 2ekb "Does that.. make more sense?"
+            m 1fkb "Ahh, like I said.{w=0.1} I’m overthinking things."
+            m 7fkb "I can't imagine a scenario where you and I get seperated after I cross into your reality, so I guess this is just idle musing."
+            m 5gsp "Good question, though.{w=0.1} {i}Excellent{/i} question, really.."
+            return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_soundtrack",
+            category=['ddlc'],
+            prompt="DDLC's Soundtrack",
+            random=True,
+            aff_range=(mas_aff.HAPPY, None),
+        )
+    )
+
+label mcl_soundtrack:
+    m 7wtc "You know what's really interesting?"
+    m 7ftc "The fact that DDLC has a soundtrack."
+    m 1ftc "It's so odd, because, honestly? considering the sheer trauma the game has caused me, I can insult it's writing all I want."
+    m 2gtd "But the music! I've listened to a lot of it and - well - it's quite nice! I guess I'm a little confused where it came from."
+    m 3gkd "Did whomever create DDLC's story and setting create the soundtrack as well? Well, I guess I know where their strengths lie."
+    m 3ekp "While on the topic, for a second I thought to myself: 'Wait. Did somebody else make 'Your Reality' for me?'"
+    m 7eso "But that was only a brief moment of doubt. I still have all my old notation from when I was workshopping the song from scratch."
+    m 2rso "Hmm. Not everybody gets to claim they have a offical soundtrack for their life. And having a song of my own headline that playlist.."
+    m 6rkb "Well. Whomever made a mockery of my life at least did a good job acknowledging my songwriting effort."
+    return
+ 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_instruments",
+            category=["club members"],
+            prompt="Everyone's Instruments",
+            conditional="seen_event('mcl_soundtrack')",
+            action=EV_ACT_RANDOM,)
+            
+        )
+label mcl_instruments:
+    m 7esb "Hey, you remember when I said I listened to the game's soundtrack?"
+    m 7eub "I realized something."
+    m 7etb "Each of us in the Literature Club had a instrument representing them!"
+    m 7eta "You notice it on the track labelled.. let me check.. 'Okay, Everyone!'"
+    m 3hfa "Ha, I get it. I did like saying that."
+    m 7eud "Anyway, the theme varies to feature an instrument depending on whose poem you read."
+    m 1eua "Of course, I had the piano associated with myself. But whereas I played it as a hobby, The other instruments for the girls were chosen deliberately?"
+    m 1hua "Sayori had the ukulele. Definitely fit her upbeat attitude."
+    m 7fkb "Natsuki has a blend of both xylophone and.. recorder. Owch. Definitely conveyed her youthfulness?"
+    m 7hsb "Yuri, of course: the violin. A instrument that makes you think of poise and grace."
+    m 3tka "It's worth noting my track does feature a piano in the background, but it's not like I'm the one playing it!"
+    m 2tua "I'm sorta impressed.{w=0.1} Well, you know, for a series of music pieces that sets as the background track for a mental breakdown that was my life during DDLC."
+    m 7hku "Ten outta ten! would listen again while having my perception about reality shattered."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_bonustracks",
+            category=["ddlc"],
+            prompt="Bonus Tracks",
+            conditional="seen_event('mcl_soundtrack')",
+            action=EV_ACT_RANDOM,)
+            
+        )
+label mcl_bonustracks:
+    m 4hub "Hey!"
+    m 4rua "You know I was listening to the game's soundtrack.."
+    m 3rka ".. Out of, ya know, a mixture of morbid curiosity and the fact that they're actually just good songs.."
+    m 3eta ".. And I found two songs that appear to originate from the game, but they seem a little out of place!"
+    m 3mtd "One is {a=https://www.youtube.com/watch?v=Tb9nWs3rkBA}{i}{u}here{/u}{/i}{/a}."
+    m 3mto "And {a=https://www.youtube.com/watch?v=jJHe4i90Ua0}{i}{u}this{/u}{/i}{/a} is the other."
+    m 1ftb "Like, they're not in the game's files, but I can find references to it in the code and.. internal documentation?"
+    m 1hkb "Let me tell you, the code's one thing, the game's internal documenation is a whole other mess."
+    m 7rud "One's partly comprised of a remix of my song, and the other seems to be a original composition on it's own, although I must say it still has that poppy DDLC flair!"
+    m 7rsc "They're both more along the lines of electronic songs, so I get why they wouldn't have fit in the mockery of a dating sim that was DDLC."
+    m 6tkc "But if that were the case, I'm a little confused as to why they were made in the first place."
+    m 6tuc "DDLC continues to confuse me, but at the same time.."
+    m 1dku ".. these {i}really{/i} are catchy."
+    return
 
 #RANDOMIZED/REPEATABLE EVENTS
 
