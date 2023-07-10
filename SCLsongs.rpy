@@ -80,3 +80,38 @@ label mas_song_without_a_weapon:
     m 7tta "Or.. maybe literally fighting off others. Or actually fighting somebody directly for their affection, hahaha!"
     m 7ttb "As you might also hear often: 'love is a battlefield?'"
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_blister_in_the_sun",
+            prompt="Blister in the Sun",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_blister_in_the_sun:
+    m 3dtb "{i}~When I'm out walking, I strut my stuff~{/i}"
+    m 1ttu "{i}~Yeah, and I'm so strung out~{/i}"
+    m 3ntb "{i}~I'm high as a kite, and I just might~{/i}"
+    m 7efb "{i}~Stop to check you out~{/i}"
+    m "{i}~Let me go on~{/i}"
+    m "{i}~Like I blister in the sun~{/i}"
+    m "{i}~Let me go on~{/i}"
+    m "{i}~Big hands, I know you're the one~{/i}"
+    m 3dtb "{i}{size=-10}~When I'm out walking, I strut my stuff~{/size}{/i}"
+    m 1ttu "{i}{size=-8}~Yeah, and I'm so strung out~{/size}{/i}"
+    m 3ntb "{i}{size=-7}~I'm high as a kite, and I just might~{/size}{/i}"
+    m 7efb "{cps=10}{i}{size=-5}~Stop~{/size}{/i}{nw}{/cps}"
+    m 7efb "{cps=10}{i}{size=-4}~Stop{fast} ~ to~{/size}{/i}{nw}{/cps}"
+    m 7efb "{cps=10}{i}{size=-3}~Stop ~ to{fast} ~ check~{/size}{/i}{nw}{/cps}"
+    m 7efb "{cps=10}{i}{size=-2}~Stop ~ to ~ check{fast} ~ you~{/size}{/i}{nw}{/cps}"
+    m 7efb "{cps=10}{i}~Stop ~ to ~ check ~ you{fast} ~ out~{/i}{/cps}"
+    m 5etu "Haha! This song is more punk than what regularly suits me."
+    m 1guu "But everybody's got a little rebellious side to them, don'tcha think?"
+    m "Even if it's a hidden side; that's part of the mystery of everyday living. Life is strange like that, hmm?"
+    return
