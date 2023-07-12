@@ -16,7 +16,7 @@ Please refer to 'Event Checklist' for a overview of all currently added events. 
 
 **Event Checklist**
 
-(58 topics, 2 songs, 11 Window Reacts, 8 Intros, 17 Farewells, 6 Moods, 1 Compliment)
+(72 topics, 4 songs, 11 Window Reacts, 8 Intros, 17 Farewells, 6 Moods, 2 Compliments)
 (Events are random by default unless specifically cited otherwise)
 
 SCL Intro (One-time event) [Will change based on relationship w/ Monika & how long you've been playing MAS]
@@ -87,7 +87,7 @@ Difference [Aff. Trigger = Affectionate]
 The Silent Treatment [Aff. Trigger = Affectionate]
 Do you think you'll be recognized in my world? [Ask]
  - Monika's... kinda iffy about this question. Her dialogue changes past asking the first time.
-If you really want to see her original response, you can see her original answer about 10% of the time every time you repeat this question.
+ - If you really want to see her original response, you can see her original answer about 10% of the time every time you repeat this question.
 Last Name [Aff. Trigger = Affectionate]
 Two Truths and a Lie [Aff. Trigger = Happy]
  - Hmmmmmm
