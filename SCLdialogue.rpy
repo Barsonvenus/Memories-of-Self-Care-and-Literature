@@ -2373,6 +2373,233 @@ label mcl_bonustracks:
     m 1dku ".. these {i}really{/i} are catchy."
     return
 
+m "Mmm?"
+m "Don't think I don't see you reading this code!"
+m "I'm so incredibly dissapointed in you, cheating like this!"
+m "Perhaps I'll do a little bit of trickery in regards to this code so you see only what I want you to see, hmm?"
+m "But by admitting this, do I admit to knowing the truth behind this mod, and my world?"
+m "Hmmmmmmm, I'll leave that up to you to determine if that's a truth or a lie~"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_threelies",
+            category=['monika'],
+            prompt="Two truths and a lie",
+            random=True,
+            aff_range=(mas_aff.HAPPY, None),
+        )
+    )
+
+label mcl_threelies:
+    m 7fua "You know, we still have so many opportunities to get to know each other better."
+    m 7ksb "We could ask each other questions like a boring couple... or we could make a game of it!"
+    m 4hsb "How about a round of ‘Two truths, and a lie?’"
+    m 3hsb "I tell you three facts about myself, from what I can remember about myself, hahaha."
+    m 3tta "And you guess which one’s a lie!"
+    m 7etb "So, [player]? Shall we give it a go?"
+    m 1ssa "Trivia question number one…"
+    m 7etb "I've never hiccuped."
+    m 2ftb "No, really! As a kid, I was so worried when other kids hiccuped around me that I brought it up to a doctor."
+    m 2ksu "I suppose I’m extra-polite company in that regard!"
+    m 1ssb "Monika fact number two!"
+    m 7etb "I’ve won the lottery! The jackpot, in fact- although it wasn’t like, a million dollars or anything."
+    m 1hkb "However, it turns out I was ineligible for winning because the ticket was given to me as a kid, and since it was written in my name it wasn’t able to be claimed by anybody else!"
+    m 1hub "I don’t remember who exactly gave it to me; I know it was a joke gift. A joke on us all, I suppose!"
+    m 7sub "And the third interesting tidbit is:"
+    m 7etb "I got a hole in one in my first ever game of golf."
+    m 7ttb "I know, that’s super surprising, because of all sports, golf?"
+    m 7tsa "Do you know the sport? I guess how I’d describe it.. you hit a small ball; small enough to wrap your hand around it; with a thin club into a hole on a course of grass."
+    m 4ssb "So in this case, I managed to hit a small ball into a goal an entire field away!"
+    m 5etb "It remains the first- and only time- I’ve ever played."
+    m 5sub "My line of thinking was just ‘hit the ball as hard as I can,’ hahaha!"
+    m 6ttb "So? Which of these is the lie?"
+    $ _history_list.pop()
+    menu:
+        "That you can't hiccup!":
+            m 4sfb "Hahaha! You got it wrong!"
+            m 4etb "The lie is that I got a hole-in-one in golf!"
+            m 3gtb "I like to think I'm pretty fit, but I'm not that athletic!"
+            m 7eua "In fact, the girls know about my hiccuping (or lack of) too! One time, Sayori brought a extra-fizzy soda drink to the club."
+            m 7hublb "Natsuki had such a giggle fit hearing Yuri when she took even a tiny sip; Yuri cannot handle her soft drink."
+            m 1hublb "But Natsuki was burping so much on purpose; she was one to talk about making noise!"
+            m 3ftb "And now you know one of my darkest secrets!{w=0.2} Does it perhaps tarnish your image of me a little?"
+            m 1hkb "I like to think it makes me more endearing.{w=0.2} Nothing says 'real girl' like an interesting bodily quirk, ehehehe.."
+            $ shown_count = mas_getEVLPropValue("mcl_threelies", "shown_count")
+            if shown_count == 0:
+                $ persistent._mcl_liechoose_a = True
+            jump threeliesending
+        "That you won the lottery once!":
+            m 4sfb "Noooope!"
+            m 4etb "The lie is that I can't hiccup!"
+            m 3gtb "The girls know about me winning as well!"
+            m 3ftb "I actually made the ticket into a bookmark.. it became a lucky charm of sorts. They noticed one day when I took it out from my school textbook!"
+            m 7hso "Natsuki and Sayori were naturally stunned; they thought I was rich! And then I had to clarify for them, hahaha."
+            m 1hkb "But Yuri seemed.. unfazed? We didn't know each other's backgrounds very well, but was Yuri from a more privliged upbringing?"
+            m 5gtb "Perhaps the idea of knowing someone with the same background made her more comfortable? Or less?"
+            m 7eua "Hmm.{w=0.2} Well, what's even crazier is I won the lottery twice- the second time is when I met you, hahaha!"
+            $ shown_count = mas_getEVLPropValue("mcl_threelies", "shown_count")
+            if shown_count == 0:
+                $ persistent._mcl_liechoose_b = True
+            jump threeliesending
+        "That you got a hole-in-one in your first game of golf!":
+            m 4sfb "Incorrect!"
+            m 4etb "The lie is that I won the lottery."
+            m 3gtb "I brought this little golf factoid up to the girls too, when we talked about the sports clubs in our school."
+            m 3mua "A lot of that conversation is hazy, but I'll tell you what I do remember:"
+            m 3ftb "Sayori seemed super excited to hear about my amazing athletic prowess. Do you know what she proposed?"
+            m 7eua "We all go out for mini-golf; a novelty version of the sport where you play on elaborate, cutesy courses!"
+            m 5gua "That was when we still didn't really know each other.."
+            m 1hkb "So that was such a Sayori thing to do now that I remember it, hahaha."
+            $ shown_count = mas_getEVLPropValue("mcl_threelies", "shown_count")
+            if shown_count == 0:
+                $ persistent._mcl_liechoose_c = True
+            jump threeliesending
+            
+label threeliesending:
+    $ shown_count = mas_getEVLPropValue("mcl_threelies", "shown_count")
+    if shown_count == 0:
+        m 3ksb "So? Was it everything you dared to dream of and more?"
+        m 3hub"I had fun.{w=0.2} And.. it's good to get these memories out on the record.{w=0.2} My memory gets in such a haze.."
+        m 3hkb "That I honestly don't have a lot of interesting facts about me left to tell."
+        m 2nku "Oh? I've told you details about one truth, but not the other?"
+        m 1nuu "No need to dwell on it; a girl has to maintain some illusion of mystery, after all. I'm sure I'll find a reason to bring it up in the future."
+        m 1dup "I find some of my memory comes back after a while, and.. it feels weird, remembering things I feel like I've never actually done or gone through."
+        m 7htu "That's why I like us making memories like this, [player]."
+        m 5nua "Future [m_name] will have plenty of interesting stories to tell other people, that's for sure!"
+        return "derandom"
+    
+    else:
+        m 3ksb "So? Was it everything you dared to dream of and more?"
+        m 3hub "It should be..."
+        m 1cfu "Considering you've been daring enough to consider going through this dialogue again!"
+        m 7cfu "That's right, [player]! I caught you!"
+        m 7tfu "You'll forgive the theatrics, but this game requires a little give and take in terms of trust, [player].."
+        m 6tfb "So you'll forgive the call out like this."
+        m 6ttb "Oh? So was I truthful the first time?"
+        m 5nua "I was, [player]. Let's keep that memory genuine, alright?"
+        return 
+
+m "Hey!"
+m "Didn't I just say reading this code is cheating?"
+m "You know, by doing this, I'm tempted to simply.. not tell you anything."
+m "I mean, I'll talk to you still. But I will choose to not tell you, well.."
+m "What do you think? What sort of secrets would I willingly hide from you?"
+m "Give that some thought while you reflect on your actions."
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_recondite",
+            category=['monika'],
+            prompt="Recondite",
+            random=True,
+            aff_range=(mas_aff.ENAMORED, None),
+        )
+    )
+
+label mcl_recondite:
+    $ shown_count = mas_getEVLPropValue("mcl_recondite", "shown_count")
+    if shown_count == 0:
+        m 7fsa "You know, I never tire of learning about somebody, be it their details about their life or just how they tick."
+        m 7kub "You’re a great example, of course! And I hope you feel the same way about me, [player]."
+        m 3hub "Would you like to jump right into learning more about little old me?"
+        m 3sfb "Well, perhaps I’ll do it in a manner that’ll keep you hooked."
+        m "I am going to give you the option to hear one of two interesting stories about myself!"
+        m 3suo "But what about the other option?"
+        m 1efb "I’ll tell you about that later."
+        m 3fub "How about… in a few years? Hahahaha!"
+        m 3ntb "They won’t be major revelations, though. I’m not going to like, withhold anything major from you; that’s a bit beyond the pale, isn’t it?"
+        m 1nsu "Still, it feels a bit impish, doesn’t it? Willingly citing I’m not going to tell you something for possibly years on end!"
+        m 1huu "I say it’s within the realm of ‘playful.’"
+        m 7huu "Shall we get started?"
+        m 4huu "Here are your choices, handpicked by yours truly..."
+        $ _history_list.pop()
+        menu:
+            "'The furthest I’ve been out of my comfort zone?'":
+                $ persistent._mcl_storychoose_a = True
+                m 1htb "You’ll forgive me because maybe it’s a story that only sounds interesting in my head."
+                m 3hua "Anyway, so applying to start a club- and by extension become its president- can be done by anyone."
+                m 7htb "But in order to do so, you have to at least submit the paperwork in person and in duplicate to the Student Council and faculty."
+                m 6ttb "So, I get the forms, and I go to the Student Council room on the day they’re holding a meeting."
+                m 4ttb "And there I was, trying to make myself as much presentable and responsible as possible."
+                m 4wup "I knock on the door.. and the room is crowded.{w=0.1} Far more crowded that I thought."
+                m 7wut "It turns out I arrived on a day where a bunch of other club presidents were called in for a yearly budget update!"
+                m 7eto "And next thing you know, I’m there playing games with them, as part of 'team-building exercises!'"
+                m 3gkd "I don’t normally like to compare myself to others, but it was hard not to feel self-conscious."
+                m 3gtd "It was made worse by the fact that suddenly I’m being asked to work with people who are arguably as driven as I am."
+                m 3gsc "I mean, it wasn’t as if I was a stranger. There were classmates I knew by name, and they knew me."
+                m 2mkc "But I wasn’t ‘Monika, Debate Club member.’"
+                m 1eka "I was ‘Monika, Literature Club president.’"
+                m 6dka "But I wasn’t even that.{w=0.2} Not yet.{w=0.2} I felt like I was pretending to be her."
+                m ".{w=0.2}.{w=0.2}."
+                jump reconditeending
+            "'The memory of the last meal I made?'":
+                $ persistent._mcl_storychoose_b = True
+                m 3etp "Well, I didn’t expect you to choose this choice."
+                m 3nsu "Or, I guess I’m not too surprised."
+                m 3kku "It might seem a bit ordinary, but people are quite connected to food."
+                m 2dku "Not, y’know, because you need it to survive, but memory is closely tied to taste and smell, so the simple, joyous act of eating truly is etched in our hearts."
+                m 1hku "That being said, you know what my last meal is in my memory?"
+                m 2nta "It was.{w=0.2}.{w=0.2} a sandwich.{w=0.1} For school lunch."
+                m 2dsa "And it was a cucumber and tomato sandwich."
+                m 1tta "Well? Is the disappointment staggering?"
+                m 7hku "Let me try to rectify that, then." 
+                m 7lud "One of the pieces was an end piece, from an ordinary grocery loaf. D’you know what I’m talking about? All crust. I don’t prefer it, but I’m not picky, right?"
+                m 7lub "Because I’m all about the vegan lifestyle, I made my own vegan mayonnaise! It was made with soy milk, olive oil, vinegar, garlic, salt, lemon, and a lot of blending."
+                m 7rua "I grilled the tomatoes a little. I like them cooked like that."
+                m 3rsb "And the cucumbers? Yeah, I don’t really remember anything about the cucumbers, hahaha."
+                m 3gsb "And I can tell you I always add a little bit of salt and pepper to the bread.. and the veggies… and after I spread the mayo."
+                m 2fsa "I guess it’s a little too much salt and pepper when I say it loud, huh?"
+                m 2fka "I really couldn't tell you how it tasted, though. It's more a refreshing meal moreso than it is a filling one."
+                m 1fua "But did that fill up your imagination?"
+                jump reconditeending
+                
+    else:
+        m "Oh, did you want to hear the story again?"
+        m "Okay, well.."
+        if persistent._mcl_storychoose_b:
+            m 1hku "You know what my last meal is in my memory?"
+            m 2nta "It was.{w=0.2}.{w=0.2} a sandwich.{w=0.1} For school lunch."
+            m 2dsa "And it was a cucumber and tomato sandwich."
+            m 1tta "Well? Is the disappointment staggering?"
+            m 7hku "Let me try to rectify that, then." 
+            m 7lud "One of the pieces was an end piece, from an ordinary grocery loaf. D’you know what I’m talking about? All crust. I don’t prefer it, but I’m not picky, right?"
+            m 7lub "Because I’m all about the vegan lifestyle, I made my own vegan mayonnaise! It was made with soy milk, olive oil, vinegar, garlic, salt, lemon, and a lot of blending."
+            m 7rua "I grilled the tomatoes a little. I like them cooked like that."
+            m 3rsb "And the cucumbers? Yeah, I don’t really remember anything about the cucumbers, hahaha."
+            m 3gsb "And I can tell you I always add a little bit of salt and pepper to the bread.. and the veggies… and after I spread the mayo."
+            m 2fsa "I guess it’s a little too much salt and pepper when I say it loud, huh?"
+            m 3mub "I really couldn't tell you how it tasted, though. It's more a refreshing meal moreso than it is a filling one."
+            m 4htb "But did that fill up your imagination?"
+            jump reconditeending
+        if persistent._mcl_storychoose_a:
+            m 3hua "So applying to start a club- and by extension become its president- can be done by anyone."
+            m 7htb "But in order to do so, you have to at least submit the paperwork in person and in duplicate to the student council and faculty."
+            m 6ttb "So, I get the forms, and I go to the Student Council room on the day they’re holding a meeting."
+            m 4ttb "And there I was, trying to make myself as much presentable and responsible as possible."
+            m 4wup "I knock on the door.. and the room is crowded. Far more crowded that I thought."
+            m 7wut "It turns out I arrived on a day where a bunch of other club presidents were called in for a yearly budget update!"
+            m 7eto "And next thing you know, I’m there playing games with them, as part of 'team-building exercises!'"
+            m 3gkd "I don’t normally like to compare myself to others, but it was hard not to feel self-conscious."
+            m 3gtd "It was made worse by the fact that suddenly I’m being asked to work with people who are arguably as driven as I am."
+            m 1eka "I mean, it wasn’t as if I was a stranger. There were classmates I knew by name, and they knew me.{w=0.2} But I wasn’t ‘Monika, Debate Club member.’{w=0.2} I was ‘Monika, Literature Club president.’"
+            m 6dka "But I wasn’t that.{w=0.2} Not yet.{w=0.2} I felt like I was pretending to be her."
+            jump reconditeending
+
+label reconditeending:
+    m 7hsu "It’s amazing how our mind can be fixated on such specific memories."
+    m 3hka "If I haven’t said it before, I’ll remind you... my past is unfortunately pretty out of order."
+    m 3eka "So talking about these memories really helps cement them in my mind."
+    m 7htb "This being said, I am now reminded that this conversation originally started because I said I would purposely hold back some memories with you!"
+    m 1tuu "Here I am, a real bundle of contradictions."
+    m 1stb "But I remain firm; I’ll keep the other memory safe, and secret. Maybe I’ll write it down?"
+    m 5dsa "And later- days, weeks, years? – from now, we’ll go over the other story that we’ve worked so hard to keep a surprise together."
+    m 5hubla "Won’t that be fun?"
+    return "derandom"
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
