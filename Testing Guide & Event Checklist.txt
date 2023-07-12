@@ -77,7 +77,30 @@ Colour & Emotion [Aff. Trigger = Affectionate] [Unlocked after seeing all of: 'R
 Utopias [Unlocked after Vanilla Dystopias topic] [Aff. Trigger = Happy]
 Filling in the Blanks
 Robotic
+
+Expansion: Recollect Self-Care & Literature
+
 Regardless of Reality
+Almighty [Unlocked after Vanilla God topic]
+Difference [Aff. Trigger = Affectionate]
+ - Hmm
+The Silent Treatment [Aff. Trigger = Affectionate]
+Do you think you'll be recognized in my world? [Ask]
+ - Monika's... kinda iffy about this question. Her dialogue changes past asking the first time.
+If you really want to see her original response, you can see her original answer about 10% of the time every time you repeat this question.
+Last Name [Aff. Trigger = Affectionate]
+Two Truths and a Lie [Aff. Trigger = Happy]
+ - Hmmmmmm
+ - Take Monika at face value, okay?
+Recondite [Aff Trigger = Happy]
+ - Hmmmmmmmmmmmmmmmm
+ - Respect Monika's wishes, okay?
+Do you think you can live a technology-free life? [Ask] [Unlocked after Vanilla Monika's Body topic]
+Alternate Body [Unlocked after Do you think you can live a technology-free life? topic]
+So, is this a long-distance relationship? [Ask] [Aff Trigger = Love]
+DDLC's Soundtrack [Aff Trigger = Happy]
+Everyone's Instruments [Unlocked after DDLC's Soundtrack topic]
+Bonus Tracks [Unlocked after DDLC's Soundtrack topic]
 
 **Repeatable events**
 
@@ -103,6 +126,12 @@ Flirt (badly) [Unlocked after Meet Cute] [Aff. Trigger = Enamored]
  - also like.. 4 randomized laughs, because why not
  - extra dialogue given at 5th time viewing topic
  - Special added dialogue for doing this within 3 minutes of booting up the game
+Echo [Aff. Trigger = Happy]
+Shout w/ Monika [Unlocked after Echo]
+ - If you feel like making noise yourself, Monika has 6 phrases of encouragement!
+ - Monika has 8 things to yell about! Which is a lot more than the usual number for people, I guess?
+ - Special added dialogue for doing this within 3 minutes of booting up the game
+ - Cooldown of 5 minutes
 
 Farewells:
 
@@ -125,6 +154,11 @@ Gold Truth [Aff. Trigger = Affectionate]
 Rainbow [Unlocked after seeing Colour & Emotion]
 Next time, on MAS... [Aff. Trigger = Affectionate]
 Try your best!
+Request new drink? [Aff. Trigger= Happy] [Requires Coffee gift given]
+ - 7 types of coffee
+ - If hot chocolate has been given and the current season is winter, Monika can ask for 9 types of hot chocolate (30% chance when this farewell is seen)
+Am I grabbing you something to drink? [Ask] [Unlocked after 'Request New Drink']
+ - Same as 'Request new drink", just able to be asked on demand to give users a convenient option to see this text
 
 Intros:
 
@@ -152,11 +186,14 @@ Reflective.
 Compliments:
 
 You deserve to be happy!
+You have great posture, considering you're sitting all the time!
 
 Songs:
 
 Exile Vilify
 BB's Theme
+Without a Weapon
+Blister in the Sun
 
 Reacts:
 
