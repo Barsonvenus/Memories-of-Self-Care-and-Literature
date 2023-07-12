@@ -1,5 +1,15 @@
 Change Notes
 
+4.0.0
+(Recollect Self-Care & Literature) 
+
+- 14 new topics, 2 songs, 1 compliment, 1 window react
+- various typos/grammar fixes
+- couple of topics have been rewritten for better flow
+- monika can yell. or, you can yell with monika. just shout.. whatever.
+- oh man, writing these changelogs are fun because i can be like 'yell with monika' is a feature and it's like, 'okay????'
+- that's great
+
 3.0.0
 (Tales of Self & Literature)
 
@@ -13,7 +23,8 @@ Change Notes
 
 - 'Surprise Her' event code further fixed to accommodate wrong event reference/overrides old event
 - new topic 'Unsurprising' to unlock 'Surprise Her' to keep with SCL's 'unlock one topic, unlock the other' format
-- If you are still getting issues, you can run 'Unsurprising' again to choose to push 'Surprise Her' as a topic, and you can keep trying until it'll unlock properly.   - Current repeatable SCL unlock events will have a backdoor like this incorporated/future events as well as a precauction.
+- If you are still getting issues, you can run 'Unsurprising' again to choose to push 'Surprise Her' as a topic, and you can keep trying until it'll unlock properly.   
+- Current repeatable SCL unlock events will have a backdoor like this incorporated/future events as well as a precauction.
 
 2.0.1
 
