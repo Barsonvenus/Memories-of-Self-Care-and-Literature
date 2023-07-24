@@ -1689,7 +1689,7 @@ label mcl_advice:
     m 7dsa "Just wanted to give some friendly advice."
     m 4dka "If that’s okay? I never want to be pushy."
     m 7hsd "Luckily, it’s just a quick follow-up to a concern I’ve talked about before."
-    m 7nsa "And I’ll let you know now; yes, my eyes {i}are{/i} closed."
+    m 7nsa "And I’ll let you know now; yes, my eyes {i}were{/i} closed on purpose those last few lines."
     m 7eua "We talked about computer posture; and as you spend time with me, eyesight is also something I’d want you to look after, no matter how it is now."
     m 7nup "Posture may be easier to correct over time... eyesight less so."
     m 4esd "If you find yourself staring a computer screen often, remember this:"
