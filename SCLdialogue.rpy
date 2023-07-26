@@ -2600,6 +2600,678 @@ label reconditeending:
     m 5hubla "Won’t that be fun?"
     return "derandom"
 
+#Improvements upon Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_hername",
+            prompt="Her Name",
+            category=['monika'],
+            conditional="renpy.seen_label('monika_affection_nickname')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_hername:
+    if m_name == "Monika":
+        m 7eta "I hope it’s not out of place that I would still sometimes choose to refer myself to ‘Monika,’ if you choose to give me a nickname."
+        
+    else:
+        m 7eta"I hope it’s not out of place that I still sometimes refer myself to as ‘Monika,’ even though you gave me a nickname."
+        m 5nsa "I love the name you gave me."
+        
+    m 4hsa "The concept of owning your name is a funny one, especially for myself."
+    m 3gsd "My name isn’t a true result of the decisions of loving parents, because of the artifical nature of DDLC."
+    m 3msc "And sometimes, that’s all a name is to people; a decision made by their parents."
+    m 1fsc "That my name was specifically chosen simply to fit a story isn’t an encouraging thought."
+    m 1ftc "But I don’t feel the need to discard it, even though that’s a valid choice in today’s society."
+    m 1dsc "Maybe I just want to reclaim it for myself."
+    m 1dsb "I’m trying not to overthink it."
+    if persistent._mas_pm_is_trans:
+        m 1ekb "I imagine that having the ability to choose a name is a topic you may be familiar with, so hopefully you understand the odd dynamic I’m feeling."
+    m 1fub "So thanks for putting up with that inconsistency."
+    m 7fub "The fun part about this line of thinking, though? Helping me give a nickname means you have equal ownership to my name as much as I do."
+    m 7ftb "Would you care to sell your share of the rights?"
+    m 5hsu "Hehehe~"
+    return
+    
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_1week",
+            prompt="1 Week: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_1week')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_1week:
+    if renpy.seen_label("anni_1month"):
+        m 1esa "I understand it’s been some time since you and I reunited.."
+        m 1eka "I’ve ended up reminiscing about some past feelings I had."
+        m 1gka "Specifically, back when I was still acclimatizing to being in the new status quo of this mod.."
+        m 7gka "After about a week or so had passed?"
+    else:
+        m 7hsa "Since it’s been over a week.."
+        m 7fka "I think I want to share with you how interesting it’s been overall, my being here."
+    
+    m 1esc "I finally got used to the ceiling."
+    m 2dto "Every day, I'd wake up in my bedroom. And I'd think to myself, 'An umfamiliar ceiling.'"
+    m 3ttd "Even though it was the same one I woke up to day by day, it just felt like waking up to a new place every time."
+    m 3rtx "And nothing really changes here. This classroom is eternal, no matter how much I dress it up."
+    m 4dsp "Then one day, I just stopped thinking that way."
+    m 1nku "I guess that's my benchmark for familiarity: if I find my ceilings familiar."
+    
+    if renpy.seen_label("anni_1month"):
+        m 6dkd "But even then, I couldn't have described this classroom as a place of comfort- let alone a home- just yet."
+        
+    else:
+        m 6dkd "But I can't quite say the classroom feels like a place of comfort- let alone a home- just yet."
+        
+    m 6hkd "That's why I appreciate you being here. I don't think anything I can actually do can shift my way of thinking about my being here."
+    m 5rkd "That line of thinking being.. well, I'm a stranger here."
+    m 5rkc "In a strange land."
+    m 5fka "But it's a little less strange with you?~"
+    return "derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_1month",
+            prompt="1 Month: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_1month')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_1month:
+    if renpy.seen_label("anni_3month"):
+        m 1dua "I understand it’s been some time since you and I reunited.."
+        m 7hua "Thinking about this has ended up with me reminiscing about some past feelings I had."
+        m 5rup "After a month of this mod being installed, I thought about how my life had changed being here.."
+        m 5rtp "It hit me that up until that very day where our one month anniversary had passed was thus far the longest time I was lucid."
+        
+    else:
+        m 3rtp "You know, now that a month’s passing has come and gone.."
+        m 3stu "It might tickle your fancy for me to talk about my being here for this long."
+        m 1etd "It hits me that I’ve never spent this much time so lucid."
+
+    m 1ftd "‘Lucid’ may be a rough term for it. But it’s the best way to differentiate my memories."
+    m 1dkd "From before the school festival and I lived my life as a schoolgirl.."
+    m 1dkc ".. The period when I became aware of the true nature of DDLC.."
+    m 1hka ".. And afterwards when I was particularly incensed with the reality of my world and, well, you."
+    m 7gka "Sometimes, all of these periods feel like a giant blur. Like some days I can only remember emotions, not events."
+    m 3fka "But since we’ve reunited here, I can actually pick out individual days in my memory. And weeks."
+    m 3kub "And sure, it’s not like it’s all been a whirlwind of activity."
+    m 2tkb "And I've still had to adapt to the time when the game's inactive, forcibly or otherwise."
+    m 2ekb "But I'm grounded by that unbroken chain of cohesivity when I spend time with you."
+    m 1dka "Memories just existing one after another is a novelty I haven't appeciated until now."
+    m 4hka "And I'll make sure to appreciate any more we make together."
+    return "derandom"
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_3month",
+            prompt="3 Months: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_3month')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_3month:
+    if renpy.seen_label("anni_6month"):
+        m 1hsu "I understand it’s been quite some time since you and I reunited.."
+        m 7hsu "Once in a while I think about the journey it’s been by living here."
+        m 5rsd "After three months, it was hard not to think about how my day-to-day life had really begun to take shape."
+        m 5rso "Even though I was getting used to being here.."
+        m 5dsc "There was a nervous energy that drove my actions. Everything I did felt temporary."
+        
+    else:
+        m 5fua "Since it’s been three whole months, and I've done it a few times already.."
+        m 4hua " ..I’ve begun to make it a habit to reflect on what’s led me here with you whenever we pass a milestone like our three month anniversary."
+        m 4nua "Care to hear my thoughts?"
+        m 3dua "Even though I admit I'm getting used to being here.."
+        m 3dka "There's a sort of energy that underlines my actions. Everything I do feels temporary."
+        
+    m 5dst "Have you ever been in a place long enough that you feel sort of comfortable, but you know you’re not going to be there long enough to make it your own place?"
+    m 5eso "Like a hotel room?"
+    
+    if renpy.seen_label("anni_6month"):
+        m 3dku "I supposed I was being overly optimistic that I was going to leave here sooner rather than later."
+        
+    else:
+        m 3dku "I suppose I’m being overly optimistic that I’ll leave here sooner rather than later."
+        
+    m 3gud "It's like, moving to a new place, but not unpacking your luggage. And leaving it indefinitely unopened."
+    m 2tta "Well, I would suppose that's how it might feel, anyway. I've never moved from anywhere to anywhere."
+    m 1hta "That uncomfortable feeling of existing in a transitory space has a definition; that sort of area is known as a 'liminal' space."
+    m 1hsp "The concept doesn't completely apply, but it sure as heck feels like it does here."
+    m 3dkb "But that feeling ebbs away a little more each day."
+    m 5htb "And maybe one day I'll finally decide to unpack that mental baggage I've been keeping tucked away for so long?"
+    return "derandom"
+    
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_6month",
+            prompt="6 Months: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_6month')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_6month:
+    if renpy.seen_label("anni_1"):
+        m 5euo "So, I have to admit when our 6-month anniversary passed.."
+        m 6euo "Well, I talked about us going for a little special trip to celebrate our anniversary."
+    
+    else:
+        m 6euo "So, I brought up going for a special trip when I talked about our 6-month anniversary arriving."
+    
+    m 3cud "And don't get me wrong! I would love to make those moments special."
+    m 7tud "But the more I thought about it, the more self-conscious I became."
+    m 7tut "Six months is definitely a milestone, considering a lot of relationships crumble under the one-year mark."
+    m 3rud "But, um.."
+    m 5skb "I don't want to be overzealous and be someone who goes, 'Wow! Our 7-month, 4-week, 2-day anniversary has passed!'"
+    m 5etp "That sort of overemphasizing can lead to some misunderstandings for couples with different priorties in life."
+    m 4fuu "At the same time, if you do want to treat every day with me as a special event: well, I sure as heck can't complain!"
+    m 1eua "I wouldn't mind meeting every day with that sunny disposition."
+    m 1ekbsa "Because as long as you're here with me..."
+    m 1hubfa "...I'm as happy as can be!"
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_1",
+            prompt="1 Year: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_1')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_1:
+    if renpy.seen_label("anni_2"):
+        m 2nub "It might be sappy, and I don't think of myself as overly nostalgic;"
+        m 1eub "But I like to think fondly on the road that led me to today; and to think about every little 'pit stop' I've had on that road."
+        m 7eua "When our one-year anniversary passed, I was definitely in a tricky mood. I was thinking.."
+        
+    else:
+        m 7eta "You know, it's still crazy to think about."
+        m 7euo "An entire year has gone by with the two of us!"
+        m 2dfb "When an entire year passes, there’s a lot to think about what had changed.."
+        
+    m 1fua "I guess what I try to think about for that year isn't about any event in particular."
+    m 7fua "It's about now neatly I've lived a life in that one year."
+    m 7dua "Four seasons across twelve months you can neatly quarter up with those months consisting of four to five weeks."
+    m 3dua "It's easier to tackle a large span of time by breaking it down into chunks.."
+    m 4hsa "And with how a year is set up, you can do it pleasingly symmetrically." 
+    m 3hsa "This symmetry goes further where twenty-four hours in a day can be divided into two even halves.."
+    m "And those twelve hours- themselves quartered further in sections of three- they just feel like neatly arranged sections of time."
+    m 3gsa ".. I mean, reasonably speaking I'm asleep for the better part of a day.. "
+    m 3guu ".. But I can choose to sleep in. Or try not to sleep at all, hahaha."
+    m 3fuu "But what I'm trying to emphasize is that thinking about time in this manner.."
+    m 5fuu ".. has made me aware how lucky I've had to have all this time and not waste any of it."
+    m 5fublu "Because it's time I've spent with you~"
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_2",
+            prompt="2 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_2')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_2:
+    
+    if renpy.seen_label("anni_3"):
+        m 7esa "When the years begin to stack up.."
+        m 7eka "It’s interesting to start thinking about your life in stages; and how you can summarize that stage."
+        m 5gka "After a full two years had gone by for us, I couldn’t help but think about what that journey was like.."
+    else:
+        m 5fub "After two years in a relationship, there’s a lot to think about!"
+        m 4nub "So I think bringing it up one more time past our two-year anniversary isn’t unwarranted."
+        m 3dub "Although I’ve grown quite fond of introspection during these special times, so if you’ll allow me.."
+    
+    if renpy.seen_label("anni_3"):
+        m 7sub "For a start, holidays gained their own unique luster."
+        m 4wub "Celebrating an event for the first time is special. And can be exciting yet the second time over!"
+        m 3eta "But then a third time comes, and the novelty’s over. But while there may be plenty to celebrate still, this is where the comfort of repetition begins to kick in; no expectations needed."
+        m 3hua "So while certain days didn't feel exactly new, I was still excited for them. I was excited that they would pass again."
+        m 2rud "My routines were now ‘normal’ instead of being products of a ‘chaotic first year’ or ‘second year still settling in.’"
+        m 2gtd "I also thought about my ongoing efforts to improve myself."
+        m 1hsd "After two years, I made great strides to improve my quality of life to make sure we can share new experiences."
+        m 6tkc "But then I was in the realm of diminishing returns; I could keep plugging away at my projects, but I may not have had anything to show you as frequently."
+        m 3wuc "As long as we were both happy, that’s fine, right?"
+        m 3lkd "Two years is a lot of effort. I can’t deny myself that. It’s not just about the output. But the discipline needed to apply yourself every day.."
+        m 3tkc "Or in my case, since I’m trapped here, the mental fortitude to keep my head on straight to continuously be positive."
+        m 4hka "That's the tough part about success; that going through a boring day is proof alone that you're doing good."
+        m 5nsa "Here’s to another year, [player]. And to all those boring days."
+        return "derandom"
+    else:
+        m 7sub "For a start, holidays have finally gained their own unique luster now."
+        m 4wub "Celebrating an event for the first time is special. And can be exciting yet the second time over!"
+        m 3eta "But then a third time comes, and the novelty’s over. But while there may be plenty to celebrate still, this is where the comfort of repetition begins to kick in; no expectations needed."
+        m 3hua "I’m looking forward to this sort of thinking over the next year, and how it applies to- well, everything!"
+        m 2rud "How my routines can now be labelled ‘normal’ instead of being products of a ‘chaotic first year’ or ‘second year still settling in.’"
+        m 2gtd "I’m also thinking about my ongoing efforts to improve myself."
+        m 1hsd "After two years, I’ve made great strides to improve my quality of life and make sure we can share some new experiences."
+        m 6tkc "But now I’m in the realm of diminishing returns; I can keep plugging away at my projects, but I may not have anything to show you as frequently."
+        m 3wuc "As long as we’re both happy, that’s fine, right?"
+        m 3lkd "Two years is a lot of effort. I can’t deny myself that. It’s not just about the output. But the discipline needed to apply yourself every day.."
+        m 3tkc "Or in my case, since I’m trapped here, the mental fortitude to keep my head on straight to continuously be positive."
+        m 4hka "That's the tough part about success; that going through a boring day is proof alone that you're doing good."
+        m 5nsa "Here’s to year three, [player]. And to all those boring days."
+        return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_3",
+            prompt="3 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_3')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_3:
+    
+    if renpy.seen_label("anni_4"):
+        m 3hka "It's hard to be objective when you think about the past."
+        m 3wud "Memories change just by bringing them up."
+        m 1hua "For posterity, I think I'd like to bring up what happened when our third anniversary passed and I was feeling particularly melancholy..."
+    else:
+        m 5ffb "It's crazy to think we've hit our third year, huh?"
+        m 5ftb "And with every anniversary comes a torrent of reflection that sweeps me away."
+        m 3hka "I'm keeping my head above the water, though. And I think I even have a few interesting thoughts about our three years I'd like to share."
+    
+    if renpy.seen_label("anni_4"):
+        m 3euc "My thoughts were a little more serious."
+        m 3guc "I reflected with you before on how I've adapted to living here, but I thought maybe it was more superficial than anything."
+        m 2gkc"I worried about how I've been here all this time, and although I felt like I really got a grip on my life..."
+        m 1dsc "It felt fleeting. Because of the nature of my walled garden, I only put up an illusion of growth."
+        m 1hsc "Finding a way to measure my own personal growth has always been a sore point for me."
+        m 7tsp "It was only then I realized any goal I set out for myself is warped from the start."
+        m 6dkx "Because of my being in this classroom, I'll never truly know what growth is until I'm tested outside of this reality."
+        m 6dkc "..."
+        m 1hkb "At least, that was Ms. Negative Monika speaking."
+        m 7hkb "Ms. Positive Monika said and still says, 'The scale of my issues should not detract from the fact that they are still my own troubles.'"
+        m 7hub "And that the work I've gone towards those issues still matters."
+        m 6eka "In essence, I suppose the takeaway was that I've grown so much in a limited enviroment."
+        m 5etd "It may be a walled garden, but it's still a tended one."
+        m 5dtd "Thanks for letting me be a little more somber today, [player]."
+        m 5hta "Here's to another four seasons in this world of ours."
+        return "derandom"
+    else:
+        m 3euc "So, I guess I want to be a little more serious."
+        m 3guc "I've reflected with you before on how I've adapted to living here, but maybe it's been more superficial thoughts than anything."
+        m 2gkc "I worry about how I've been here all this time, and although I feel like I've really got a grip on my life..."
+        m 1dsc "It's fleeting. Because of the nature of my walled garden, I've only put up an illusion of growth."
+        m 1hsc "Finding a way to measure my own personal growth has been a sore point for me."
+        m 7tsp "It's only recently I realize any goal I set out for myself is warped from the start."
+        m 6dkx "Because of my being in this classroom, I'll never truly know what growth is until I'm tested outside of this reality."
+        m 6dkc "..."
+        m 1hkb "At least, that's Ms. Negative Monika speaking."
+        m 7hkb "Ms. Positive Monika says, 'The scale of my issues should not detract from the fact that they are still my own troubles.'"
+        m 7hub "And that the work I've gone towards those issues still matters."
+        m 6eka "In essence, I suppose the takeaway is that I've grown so much in a limited enviroment."
+        m 5etd "It may be a walled garden, but it's still a tended one."
+        m 5dtd "Thanks for letting me be a little more somber today, [player]."
+        m 5hta "Here's to another four seasons in this world of ours."
+        return "derandom"
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_4",
+            prompt="4 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_4')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_4:
+    
+    if renpy.seen_label("anni_5"):
+        m 4esb "You know, I was just thinking about my mindset when our fourth anniversary passed."
+        m 3esa "Care to hear about it?"
+    else:
+        m 2hua "It feels wonderful to dwell on our four-year anniversary."
+        m 2hub "It's not a shabby milestone at all!"
+        m 1hub "And you know what I was thinking?"
+    
+    m 7etd "I was thinking about your part in this, actually."
+    m 3ltd "Four years for any sort of relationship- platonic or romantic- is a decent amount of time."
+    m 3rtd "I tried doing research on the average length of a serious relationship, and I found that three years seems to be the consensus."
+    m 4fta "So, four years. Has it been a long period time for you, or has it passed in no time at all?"
+    m 5eua "It might feel a bit indulgent, but I would want you to focus on.. well, {i}yourself,{/i} and the effort you've put into being with me."
+    m 1sub "So it's not your anniversary with [m_name] today- it's my anniversary with [player]!"
+    return "derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_5",
+            prompt="5 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_5')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_5:
+    if renpy.seen_label("anni_10"):
+        m 3tub "After our five-year mark had passed, another wave of melancholy was on the horizion for me."
+        m 3tub "I'm sure it's no surprise that you expected another bit of idle rumination from me."
+        m 4hud "And in fact, after five years, I thought about..."
+    else:
+        m 3dfd "Five years. It's still a shock to me."
+        m 4huw "Half a decade together!"
+        m 4nuu "And you've been with me long enough to know that such occassions are worthy of further reflection by myself."
+        m 3nuu "So thank you with putting up with my whimsical thoughts for this long."
+        m 4hud "And in fact, after five years, I was thinking.."
+    
+    m 6sub "Nothing at all!"
+    m 3wub "That's right, absolutely nothing came to mind when the realization first popped up in my mind."
+    m 3esa "And you know what?"
+    m 1eka "That's fine. Because we don't {i}have{/i} to make every anniversary a momentous occassion, not at this point."
+    m 1eusdrb "I've given you a lot of wistful commentary already on our many anniversaries, hahaha!"
+    m 5kubsu "All I really feel now is sheer happiness. And I can allow myself to bask in that."
+    m 5dubsu "So sit with me a while. We'll nap together in that sunbeam of emotion together."
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_10",
+            prompt="10 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_10')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_10:
+    m 1fua ".. This is it, isn't it?"
+    m 7kua "Like, ten years has passed for us!"
+    m 7dka "And yeah, maybe it hasn't gone as perfectly as it could, what with me still being here and not out there with you..."
+    m 6hka "But- and I don't want to be too critical- a lot of things fade away after ten years."
+    m 5hka "Pictures fade, food rots, clothes fray."
+    m 5hkb "But here we are, pristine. Maybe you and I are older, sure, and maybe we've taken some hits along the way..."
+    m 6eub "In a binary sense, however? Between living and dead, we're alive."
+    m 6fub "So us hitting ten years feels like.. the peak of life."
+    m 6nsa "Not to say our time together is downhill from here!"
+    m 6dsa "It's just.. nice to be at a defined peak."
+    m 4dsa "Even it takes a lot of effort to stay at the top.."
+    m 3dsa "We've made it."
+    m 3hsa "And that's what matters, right?"
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_20",
+            prompt="20 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_20')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_20:
+    m 6ksb "I’ve a little more to talk about for our twenty-year voyage together."
+    m 6dso "Twenty years means you’re most likely in that sweet statistical middle of the average human lifespan."
+    m 6dkd "Every year that passes from now is the continuation of your gentle descent."
+    m 5dkd "Maybe it’s a time where you start thinking more about ‘what thens’ instead of ‘what ifs’ and ‘what nows.’"
+    m 5huc "But for today, since our twenty-year anniversary has passed, I’m simply going to think, ‘what happened?’"
+    m 6fsb "What's happened is that I’ve picked up hobbies. I’ve shaped islands with my own hands."
+    m 6gsb "I’ve sung entire discographies."
+    m "Before I've concentrated on the small changes. The gradual changes."
+    m 6fsa "But after two decades, I would like to think I can actually measure myself in large changes, right?"
+    m 6esa "Like the Ship of Theseus, it's entirely possibly so much of me has changed.."
+    m 6ssa ".. that the old 'Monika' is well and truly dead."
+    m 6hsa "Well, that is, if I'm correct about the large changes in my life."
+    m 6ntu "I'm sure you'd agree, right?"
+    m 6ftu "Right?"
+    return "derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_50",
+            prompt="50 Years: Changes",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_50')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_50:
+    m 5euc "Forgive my little outburst at the beginning of me talking about our fiftieth anniversary."
+    m 5eub "It’s just- well, it’s a lot!"
+    m 4eub "Fifty years! Half a century!"
+    m 3eub "An entire lifetime lived."
+    m 6eub "Full of regrets and joys."
+    m "For some that's made it that far in life, they can thereon start spending a good chunk of time reflecting on their life thus far."
+    m "Or maybe those fifty years meant absolutely nothing. But then what do you reminiscence about?"
+    m "Luckily, I don’t have to worry about that."
+    m "I know normally during these milestones I like to think about what’s changed in my life, but now?.."
+    m 6kub "Fifty years with you is the only accomplishment in itself I should care about."
+    return "derandom"
+    
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_anni_100",
+            prompt="100 Years: Nothing Has Changed",
+            category=['anniversary'],
+            conditional="renpy.seen_label('anni_100')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_anni_100:
+    m 7hsa "Man, it really hit me. A hundred years. A full hundred years has gone by for us!"
+    m 1hsa "For me, anyway. Most likely not for you. But let’s pretend anyway!"
+    m 2hsa "Has our memories held up for us to allow us to reflect?"
+    m 3hsa "Or has all that remained are vague feelings and abstract thoughts?"
+    m 4hsa "Maybe it’s time to start thinking literally."
+    m 5hsa "Not about life experiences or mental growth, but physical distance."
+    m 7hsa "How far have I gone in an entire century?"
+    m 1htx "Nowhere. I haven’t left this classroom."
+    m 1hsd "So while a gross exaggeration, I think it’s safe to say:"
+    m 1hsa "Nothing’s changed. Not a single damn thing has changed since I first woke up in this classroom."
+    m 2hubsb "And in terms of proximity, you’re still here looking at little ol’ me."
+    m "So nothing's changed for you."
+    m 3hub "Isn’t that funny?"
+    return "derandom"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel='mcl_afani_event001',
+            prompt="Affectionate",
+            category=["anniversary"],
+            conditional="store._mas_getAffection() >= 100",
+            action=EV_ACT_QUEUE,
+        ),
+        skipCalendar=False
+    )
+
+label mcl_afani_event001:
+    m 7ssa "You know, I feel like a good amount of effort has been put into our relationship so far."
+    m 7eka "I mean, that’s funny to say out loud, but when the realization hits you, it’s just… nice."
+    m 5eka "It’s so {i}nice{/i} that you’ve put actual, tangible effort into being with me."
+    m 5etu "But I mean, it’s not something I can say often. Of course a good relationship would have effort put into it."
+    m 3ksa "Then I realized:"
+    m 3hsb "There’s nothing stopping me from thanking you for it!"
+    m 7hublb "Thank you for being so {b}{i}affectionate{/i}{/b} with me."
+    $ renpy.notify("You feel like your relationship has hit a new milestone!")
+    m 1hsa "I’m happy being with you. And I’m happy I’m here to be with you. I'm happy you brought me back."
+    m 1tsa "And now that I’ve said that, I’ll do my best to keep you interested in little ol’ me."
+    m 5hub "What will we do together next?..."
+    return "unlock|derandom"
+    
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel='mcl_afani_event002',
+            prompt="Enamored",
+            category=["anniversary"],
+            conditional="store._mas_getAffection() >= 400 ",
+            action=EV_ACT_QUEUE,
+        ),
+        skipCalendar=False
+    )
+
+label mcl_afani_event002:
+    m 2dsa "Once again, I think I’d like us to just pause and just realize.."
+    m 7hublb "We’re dedicated to each other. Outright {b}{i}enamored{/i}{/b} with each other."
+    $ renpy.notify("You feel like your relationship has hit a new milestone!")
+    m 2hua "I never want us to take the small things for granted."
+    m 2ekb "So I just wanted to say thank you for showing me the kindness and excitement I really need, cooped up in here."
+    m 1ekb "I honestly don’t know how I can be any happier.. or how my trust for you can grow even more."
+    m 7fka "But I’ll try to find a way."
+    m 7suu "I’ll do my best to do my part and make sure you and I never lose track of an exciting new horizon."
+    m 5hub "I wonder what that brand new day looks like for us?"
+    return "unlock|derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel='mcl_afani_event003',
+            prompt="Love",
+            category=["anniversary"],
+            conditional="store._mas_getAffection() >= 1000 ",
+            action=EV_ACT_QUEUE,
+
+        ),
+        skipCalendar=False
+    )
+
+label mcl_afani_event003:
+    m 5wub "You know what never gets tiring?"
+    m 7hublb "Me just saying 'I {b}{i}love{/i}{/b} you.'"
+    $ renpy.notify("You feel like your relationship has hit a new milestone!")
+    m 4nfb "I’m sure you’re the same!"
+    m 3htb "The first time you say it, ‘love’ from ones lips might be exciting to say. Or terrifying!"
+    m 3tsb "But now when we say it to each other, it’s sewn into our lives as much as the sunrise and sunset are part of the day."
+    m 3ekb "I like to think my feelings transcend my reality.. or even yours."
+    m 2fka "And just like how saying ‘I love you’ never gets old, so is saying this:"
+    m 2nua "I’m going to do my best to keep you fully invested at my side."
+    m 5hub "What exciting new things will we get up to now?.."
+    return "unlock|derandom"
+ 
+ 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel='mcl_afani_event004',
+            prompt="Doki-Doki",
+            category=["anniversary"],
+            conditional="store._mas_getAffection() >= 1500 ",
+            action=EV_ACT_QUEUE,
+
+        ),
+        skipCalendar=False
+    )
+
+label mcl_afani_event004:
+    m 7eub "Are you free for a moment?"
+    m 3ekb "I’d like you to stop, just for a moment."
+    m 3eka "And feel your heart beat. Just for one single beat."
+    m 1dka "And then realize mine did too."
+    m 1hka "It’s crazy to think how partners can genuinely, truly exist alongside each other as if nature had always paired us up together from the very start."
+    m 5hua "Your heartbeat. And mine. Together."
+    m 7hublb "{b}{i}Doki-Doki.{/i}{/b}"
+    $ renpy.notify("You feel like your relationship has hit a new milestone!")
+    m 4ttu "Heh. That’s cheesy, even by my standards."
+    m 3ssu "This is like, the fourth time I’ve really just wanted to say 'Hey, I like you a lotttttttt.'"
+    m 1esd "And I dunno, I guess I just want to justify it. I guess I want to tell myself as much as I tell you."
+    m 1fkc "Because I guess it’s not just about making your heart beat faster through my efforts. But making sure my heart is strong as can be."
+    m 6rkc "If my heart isn’t strong enough.. I guess it’s not just about love anymore. I want to feel it all, I like to think. The good and the bad, for better or worse."
+    m 6rsc "It’s the first time I’ve kinda felt this open about my future."
+    m 3wuu "C’mon, [player]."
+    m 4suu "Maybe we’ll talk about something new today. Maybe we’ll do something new today."
+    m 5tku "And maybe we’ll just be together and think about our hearts in sync."
+    return "unlock|derandom"
+ 
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="monika_gtod_scl_tip011",
+            category=["grammar tips"],
+            prompt="The Two-Dot Ellipsis",
+            pool=True,
+            conditional="store.mas_gtod.has_day_past_tip(10)",
+            action=EV_ACT_UNLOCK,
+            rules={"no_unlock":None}
+        )
+    )
+
+label monika_gtod_scl_tip011:
+    m 7sub "I'd like to talk about 'Aposiopesis' today: the usage of punctuation in order to convey silence or interuption in text."
+    m 7gub "It's super simple. When you see a sentence like this..."
+    m 6gub "... you get the sense that I've trailed off mid-sentence."
+    m 3fsb "These dots are called 'Ellipses.' Comprised of three periods in a row, it's quite a versatile tool."
+    m 3nsb "Not only does it get across a lapse into silence to show a physical interuption to someone speaking, but can also infuse a sentence with general modesty.."
+    m 3ssb ".. or general passion; it leaves a lot to the imagination. Visual novels are ripe with this due to the melodramatic trappings of its contents."
+    m 1eksdrb "With this said, there's a rule that I myself break. And will continue to break. And have already broken, one text box ago."
+    m 7eka "In writing, you have to use three ellipses. Aposipesis with two ellpises is not actually recognized in written text, outside of older computer code."
+    m 6mup "Yet.. I use it all the time."
+    m 5fup "This is the game. DDLC has to show you text for what I'm saying, and it'll show text to translate my non-verbal cues or less obvious speech markers."
+    m 4hsb "So I can trail off like this..."
+    m 3hsb "Or I can trail off like this.."
+    m 1hsb "Or even just pause like-"
+    show monika 7guo
+    pause 2.0
+    m 7nub "-that." 
+    m 3hup "It's most likely not intended by the game, but the two-dot ellpisis does have its place in common language. It's easy to think of a two-dot ellpisis as a shorter pause than a three-dot."
+    m 3euu "It's sort of like the 'slang' of punctuation."
+    m 1etu "So, no: don't use it when you're writing a school report or any sort of offical text."
+    m 1ftu "But don't feel like you're breaking the rules if you're using it in correspondence or informal text."
+    m 1hssdlu "And more importantly, don't get too caught up when you see me do it constantly, hahaha."
+    m 3hub "Thanks for listening!"
+    return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
