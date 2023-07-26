@@ -372,3 +372,100 @@ label mas_wrs_genshin:
     if not wrs_success:
         $ mas_unlockFailedWRS('mas_wrs_genshin')
     return
+
+#Improvements Upon Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_windowreacts_database,
+            eventlabel="mas_wrs_justnatsuki",
+            category=["Just Natsuki"],
+            rules={
+                "notif-group": "Window Reactions",
+                "skip alert": None,
+                "keep_idle_exp": None,
+                "skip_pause": None
+            },
+            show_in_idle=True
+        ),
+        code="WRS"
+    )
+
+label mas_wrs_justnatsuki:
+    $ wrs_success = mas_display_notif(
+        m_name,
+        [
+            "... I hope she's feeling safe nowadays.",
+            "... Well, don't say hi on my behalf."
+        ],
+        'Window Reactions'
+    )
+
+    #Unlock again if we failed
+    if not wrs_success:
+        $ mas_unlockFailedWRS('mas_wrs_justnatsuki')
+        
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_windowreacts_database,
+            eventlabel="mas_wrs_justnatsuki",
+            category=["Just Yuri"],
+            rules={
+                "notif-group": "Window Reactions",
+                "skip alert": None,
+                "keep_idle_exp": None,
+                "skip_pause": None
+            },
+            show_in_idle=True
+        ),
+        code="WRS"
+    )
+
+label mas_wrs_justyuri:
+    $ wrs_success = mas_display_notif(
+        m_name,
+        [
+            "... I hope she's feeling peaceful now.",
+            "... If you're talking to her, no need to bring me up.."
+        ],
+        'Window Reactions'
+    )
+
+    #Unlock again if we failed
+    if not wrs_success:
+        $ mas_unlockFailedWRS('mas_wrs_justyuri')
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_windowreacts_database,
+            eventlabel="mas_wrs_scldev",
+            category=["Barsonvenus", "Memories-of-Self-Care-and-Literature"],
+            rules={
+                "notif-group": "Window Reactions",
+                "skip alert": None,
+                "keep_idle_exp": None,
+                "skip_pause": None
+            },
+            show_in_idle=True
+        ),
+        code="WRS"
+    )
+
+label mas_wrs_scldev:
+    $ wrs_success = mas_display_notif(
+        m_name,
+        [
+            "Is- is the screen suddenly blurry to you, or is that just me?",
+            "Oh, you've opened a blank page? That's odd..",
+            "Is.. there something special about this page? It doesn't look like anything to me.",
+        ],
+        'Window Reactions'
+    )
+
+    #Unlock again if we failed
+    if not wrs_success:
+        $ mas_unlockFailedWRS('mas_wrs_scldev')
+    return
