@@ -1,5 +1,11 @@
 Change Notes
 
+4.2.0
+(Improvements upon Self-Care & Literature)
+- 19 events, 3 window reacts
+- Events are mostly anniversary based; 4 depends on affection levels (as a seamless way to alert you to affection changes) and each anniversary milestone now has a second event tied to it
+- I figured out how semantic numbering works
+
 4.0.0
 (Recollect Self-Care & Literature) 
 
