@@ -234,7 +234,7 @@ init 5 python:
 label greeting_morsecode:
     $ shown_count = mas_getEVLPropValue("greeting_morsecode", "shown_count")
     if shown_count == 0:
-        play sound "submods/Memories of Self-Care & Literature/submod_assets/sfx/morse.wav"
+        play sound "submods/MoSCL/submod_assets/sfx/morse.wav"
         m 1dft "{cps=07}.. / .-.. --- ...- . / -.-- --- ..- -.-.—{/cps}"
         m 2ekb "Was your sound on? Was it a surprise?"
         m 2hub "I decided to be particularly unique today and greet you in morse code!"
