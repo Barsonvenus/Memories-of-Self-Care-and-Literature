@@ -6,7 +6,7 @@ A one-person passion project, Memories of Self-Care & Literature (SCL for short)
 
 This mod currently includes over 93 new topics in total to discuss, 4 songs, 2 Compliments, 13 window reacts, 8 new intros, 17 farewells, and 6 new moods to talk about in the 'I feel' menu for those tricky times in life.
 
-To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection.
+To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection, and introduces a achievement system to help encourage exploring your time with Monika!
 
 And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
 
@@ -14,11 +14,11 @@ From hearing the inane ramblings of a distracted Monika, flirting terribly with 
 
 How will Monika change during her time with you? And how can your relationship influence her? 
 
-And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there?
+And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there? There's never any harm in checking out the characters folder once in a while.
 
 # Installation:
 
-Download source code; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Unzip the source code in this folder and Make sure SCL is in a folder of it's own inside the 'Submods' folder.
+Download release file labelled 'MoSCL'; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Unzip the 'MoSCL' file in this folder. The result should be that you have a folder labelled 'MoSCL' inside the 'Submods' folder.
 
 The end result is that your directory has a 'game' folder; in it a 'submods' folder; and then a folder containing the contents of this submod.
 
