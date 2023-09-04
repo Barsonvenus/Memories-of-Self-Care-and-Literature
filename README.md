@@ -1,4 +1,4 @@
-![A screenshot that tells you absolutely nothing]([https://user-images.githubusercontent.com/107741953/265365710-5aa5bbb5-798c-4c34-b3d8-ce2d2e39331f.png])
+![A screenshot that tells you absolutely nothing]((https://user-images.githubusercontent.com/107741953/265365710-5aa5bbb5-798c-4c34-b3d8-ce2d2e39331f.png))
 
 # Memories of Self-Care & Literature
 
