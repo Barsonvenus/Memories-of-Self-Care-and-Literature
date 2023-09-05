@@ -300,3 +300,19 @@ label greeting_monikaish:
         m 7htb "A little different than French or Japanese for sure."
         m 5hsb "I’m sure my love for you comes across loud and clear~"
         return        
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_sclmatters",
+            unlocked=True,
+            aff_range=(mas_aff.HAPPY, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_sclmatters:
+    m "Hello, [player]."
+    m 5hka "I hope today.. matters to you."
+    return
