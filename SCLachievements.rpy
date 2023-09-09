@@ -279,15 +279,15 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="mcl_cardgame",
+            eventlabel="mcl_cardgamehistory",
             category=['games'],
             prompt="Card Games",
-            conditional="persistent._mcl_nouachievement is not False",
+            conditional="persistent._mcl_nouachievement is True",
             action=EV_ACT_RANDOM
         )
     )
     
-label mcl_cardgame:
+label mcl_cardgamehistory:
     m 6ssb "Congratulations on getting our Nou achievement, [player]!"
     m 1nsb "Having gone through a few rounds, I've found that aside from board games like Chess I’m quite fond of playing cards."
     m 3nsb "Not just because of Nou. I think I'd like to have a deck of cards always at the ready when I get to your world."
@@ -316,15 +316,15 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="mcl_chessbongcloud",
+            eventlabel="mcl_bongcloudchess",
             category=['games'],
             prompt="Bongcloud",
-            conditional="persistent._mcl_chessachievement is not False",
+            conditional="persistent._mcl_chessachievement is True",
             action=EV_ACT_RANDOM
         )
     )
 
-label mcl_chessbongcloud:
+label mcl_bongcloudchess:
     m 7eua "Now that you've managed to get the Chess achievement under your proverbial belt, I thought I'd tell you a fun fact."
     m 7fta "About a rather {i}interesting{/i} move."
     m 7dsa "Let's picture a chessboard, all set up for the very first move."
