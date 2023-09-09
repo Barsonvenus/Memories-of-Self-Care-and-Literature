@@ -4242,6 +4242,10 @@ label mcl_ventwithmonika:
         m 1gkb "Always been a little guilty, so that did feel good!{w=0.2} Hmm, I wonder what else might be fun to get off my chest?.."
         return
     else:
+        if shown_count >= 5 and persistent._mcl_achievementyell is False:
+            #cheevoflag
+            $ persistent._mcl_achievementyell = True
+            $ renpy.notify ("Achievement: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
         m "Hmm.."
         if not mas_timePastSince(persistent._mcl_last_yell, datetime.timedelta(minutes=5)):
             m 7hka "Sorry, my voice is a little hoarse.. How about later?"
