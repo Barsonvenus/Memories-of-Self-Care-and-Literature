@@ -314,5 +314,5 @@ init 5 python:
 
 label greeting_sclmatters:
     m "Hello, [player]."
-    m 5hka "I hope today.. matters to you."
+    m 5hka "I hope today truly matters to you."
     return
