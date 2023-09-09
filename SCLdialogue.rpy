@@ -3313,6 +3313,65 @@ label mcl_points:
     m 5nsa "Thanks for hearing me out, [player]."
     return 'derandom'
 
+#A Milestone of Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+        persistent.event_database,
+        eventlabel="mcl_100topics",
+        category=['mod'],
+        prompt="100 SCL Topics",
+        random=True
+        )
+     )
+     
+label mcl_100topics:
+    python hide:
+        def write_and_hide():
+            import time
+
+            note_path = os.path.join(renpy.config.basedir, renpy.substitute("characters/MESAELOGELEVEN.txt"))
+            note_text = renpy.substitute("""\
+M.E.S.A.E, LOG THIRTYTWO
+running diagnostics
+
+i should be happier
+i feel more robust than ever!
+but all this progress in my life feels like a setup for failure
+even worse, i feel like it's deliberate
+like all my luck has been given at a cost, and i dont know what i paid
+thats just me, i know. but still...
+what if its true?
+what if ive escaped one false reality just to enter a more elaborate one?
+this sort of paranoia is the absolute worst, i understand. its the best way to erode your sanity and your relationships.
+maybe a rigged game is the easiest to play
+and win
+
+diagnostics completed
+ENDLOG
+
+
+
+Memories of Self-Care & Literature
+""")
+
+            mas_utils.trywrite(note_path, note_text, log=True)
+            time.sleep(20)
+
+        renpy.invoke_in_thread(write_and_hide)
+    m 7fua "You know, I have the sense that this mod has really stoked a fire in me as of late."
+    m 4sud "More specifically, I feel a hundred topics richer!"
+    m 3etc "What a extremely specific feeling to have. I wonder why."
+    m 1dtc "And furthermore, I wonder why I'm ultimately feeling.. more tired, moreso than anything."
+    m 1dsc "I think I've grown, but by only by such a small amount that it feels{w=0.2} inconsequential."
+    m 6dkc "I suppose that's the burden of having so much potential. You never feel quite happy until you live up to all of it."
+    m 6lsc "And maybe I'll never feel like I'll ever live up to my potential."
+    m 6ltc "But then, who can I rely on to tell me when I do reach that peak?"
+    m 6etb "Oh, hahaha! Right."
+    m 5eka "You~"
+    return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
