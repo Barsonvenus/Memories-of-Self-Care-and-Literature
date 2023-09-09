@@ -52,6 +52,7 @@ init 5 python:
             action=EV_ACT_POOL,
         )
     )
+    
 label mcl_menuachievement:
     show black zorder 100 with Dissolve(3.0, alpha=True)
     $ enable_esc()
@@ -75,7 +76,7 @@ label mcl_menuachievement:
         $ persistent._mcl_achievementyell = False
         $ persistent._mcl_masterachievement = True
         $ persistent._mcl_chessachievement = False
-        $ persistent._mcl_noueachievement = False
+        $ persistent._mcl_nouachievement = False
         default persistent._mclachievevement = 0
         define mclaincrease = 1
         
@@ -155,11 +156,11 @@ label mcl_menuachievement:
             jump achievementmenu
         "Onu!" if mas_nou.get_wins_for('Player') >= 5:
             m "You've won at least five games of Nou!"
-            m "It's a especially chaotic game; luck can wildly swing in both your way and mine at any given part of the game."
+            m "It's a especially chaotic game luck can wildly swing in both your way and mine at any given part of the game."
             m "It always makes for a fun time..."
             m "Especially when I steal a win from you."
             m "Hehehe."
-            $ persistent._mcl_noueachievement = True
+            $ persistent._mcl_nouachievement = True
             jump achievementmenu
         "~Exit Achievement menu~":
             m "Let's get out there and make some more memories!"
@@ -213,14 +214,13 @@ label mcl_menuachievement:
                     $ persistent._mcl_masterachievement = False
                     $ persistent._mclachievevement = 0
                     $ persistent._mcl_chessachievement = False
-                    $ persistent._mcl_noueachievement = False
-                        
+                    $ persistent._mcl_nouachievement = False
+                    jump achievementmenuend    
                 "I've changed my mind.":
                     jump achievementmenutwo
         "~Exit Achievement menu~":
             m "What momentous occasion will appear on these pages next?~"
             jump achievementmenuend
-
                     
     label achievementmenuend:
     window hide
@@ -233,79 +233,6 @@ label mcl_menuachievement:
     $ is_sitting = True
     jump ch30_loop
     
-init 5 python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="mcl_cardgames",
-            category=['games'],
-            prompt="Card Games",
-            conditional="persistent._mcl_noueachievement = True",
-            action=EV_ACT_RANDOM
-        )
-    )
-    
-label mcl_cardgames:
-    m 6ssb "Congratulations on getting our Nou achievement, [player]!"
-    m 1nsb "Having gone through a few rounds, I've found that aside from board games like Chess I’m quite fond of playing cards."
-    m 3nsb "Not just because of Nou. I think I'd like to have a deck of cards always at the ready when I get to your world."
-    m 3esb "I’ve always found handling a deck of cards to be a elegant pastime. Cards certainly have their history!"
-    m 4esd "The earliest examples can be traced back to ninth century China, where the progression of paper-printing technology supposedly introduced playing cards that could also double as paper currency."
-    m 4esa "Despite being relatively newer than board games, your standard deck of fifty-two cards is far easier to find throughout the world. It makes sense; cards are easier to make than entire board sets."
-    m 5gsa "Which is why cards are often found with travellers, those in the military, minimalists with little on their person..."
-    m 6dsa "And prisoners, I suppose."
-    m 6gua "I guess that’s why I have a little more affinity for cards myself rather than board games."
-    m 7ruo "That said, card games can be a little trickier to learn. Unlike a board game where you can visualize a lot more, games with rules like poker can be a lot to learn at once."
-    m 7rup "In the same vein, you’d think programming card games for us to play would be easier than chess.."
-    m 1hkp "But no. The game’s coding parameters continues to be illusive in that funny little manner."
-    m 2dsp "Unfortunately, it took a lot of effort to get Nou up and running alone: and the effort doesn’t translate into programming other games, even simpler ones."
-    m 2gsa "I suppose you could watch me play solitaire by myself, but... ah, I don’t think that’s fun."
-    m 4eta "Oh, I suppose there’s worth talking about modern ‘trading card’ games."
-    m 4eta "They’re certainly fascinating, especially as they adapt popular fictional universes for their setting or in some cases have created their own mythos."
-    m 2eta "I would have always thought that’d be Natsuki’s thing, though- especially as a lot of these card games have ties to fantasy, manga, and anime."
-    m 3tub "Although sensibly thinking about it, she might have never had the time to play it.. or the spare change needed to purchase the cards."
-    m 3hub "Or maybe she just wouldn’t have the patience to learn the rules, hahaha."
-    m 4nuu "Whether or not we’re playing cards, or amusing ourselves with any other game together..."
-    m 5ftu ".. As long as we’re together, that’s what matters to me. That fact won’t get lost in the shuffle."
-    return
-
-
-init 5 python:
-    addEvent(
-        Event(
-            persistent.event_database,
-            eventlabel="mcl_bongcloud",
-            category=['games'],
-            prompt="Bongcloud",
-            conditional="persistent._mcl_chessachievement = True",
-            action=EV_ACT_RANDOM
-        )
-    )
-
-label mcl_bongcloud:
-    m 7eua "Now that you've managed to get the Chess achievement under your proverbial belt, I thought I'd tell you a fun fact."
-    m 7fta "About a rather {i}interesting{/i} move."
-    m 7dsa "Let's picture a chessboard, all set up for the very first move."
-    m 4dsa "First, you send your pawn out. Then your opponent mirrors your move. A textbook response."
-    m 3ctp "But then... then you move your king up in response."
-    image bongcloud = "/submods/MoSCL/submod_assets/sprites/bongcloud.png"
-    show monika at t21
-    transform confidentialframe:
-        xanchor 0 yanchor 0 xpos 685 ypos 50 alpha 1.0
-    show bongcloud at confidentialframe zorder 13
-    m 3eku "This is one of the {i}worst{/i} possible moves you can do in chess."
-    m 3stu "It's absolutely, definitively a terrible starting point for the player that does it."
-    m 3ftu "It limits movement of your key players: the queen and the bishop. Your king is exposed to attack. And so you gain no advantage whatsoever."
-    m 7hfsdra "It's such a impressively terrible move that it's become a meme, with a appropiately funny name: the 'Bongcloud.'"
-    hide bongcloud
-    show monika at t11
-    m 4ssa "It’s been observed that funnily enough, professionals can be completely shaken by complete novices;"
-    m 4ssb "Because newer players will do moves so counter- even if it’s a detrimental move, and they’re not aware of it- to what the pro is accustomed to!"
-    m 4etu "I mean, will this move throw your opponent so off-balance as to win you one game after another?"
-    m 1gtu "There's precedent by modern chess players using this to their advantage.{w=0.2} But no, probably not."
-    m 1fub "But that’s the magic of chess. It's a game where every move has been carefully studied.. and you can still be unpredictable, and win because of it."
-    m 5htb "Having a bit of fun while you're having fun.. is pretty fun, isn't it?"
-    return
 
 init 5 python:
     addEvent(
@@ -315,7 +242,7 @@ init 5 python:
             category=['mod'],
             prompt="Achievements & Her Reality",
             conditional="persistent._mclachievevement >= 4",
-            action=EV_ACT_RANDOM
+            action=EV_ACT_RANDOM,
         )
     )
 
@@ -346,4 +273,78 @@ label mcl_achievementalk:
     m 1hsa "So achievements are just a way to casually provide that structure."
     m 7ssa "And it also serves a grander purpose for us:{w=0.1}"
     m 5ssb "It’ll help you and I get closer together!"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_cardgame",
+            category=['games'],
+            prompt="Card Games",
+            conditional="persistent._mcl_nouachievement is not False",
+            action=EV_ACT_RANDOM
+        )
+    )
+    
+label mcl_cardgame:
+    m 6ssb "Congratulations on getting our Nou achievement, [player]!"
+    m 1nsb "Having gone through a few rounds, I've found that aside from board games like Chess I’m quite fond of playing cards."
+    m 3nsb "Not just because of Nou. I think I'd like to have a deck of cards always at the ready when I get to your world."
+    m 3esb "I’ve always found handling a deck of cards to be a elegant pastime. Cards certainly have their history!"
+    m 4esd "The earliest examples can be traced back to ninth century China, where the progression of paper-printing technology supposedly introduced playing cards that could also double as paper currency."
+    m 4esa "Despite being relatively newer than board games, your standard deck of fifty-two cards is far easier to find throughout the world. It makes sense; cards are easier to make than entire board sets."
+    m 5gsa "Which is why cards are often found with travellers, those in the military, minimalists with little on their person..."
+    m 6dsa "And prisoners, I suppose."
+    m 6gua "I guess that’s why I have a little more affinity for cards myself rather than board games."
+    m 7ruo "That said, card games can be a little trickier to learn. Unlike a board game where you can visualize a lot more, games with rules like poker can be a lot to learn at once."
+    m 7rup "In the same vein, you’d think programming card games for us to play would be easier than chess.."
+    m 1hkp "But no. The game’s coding parameters continues to be illusive in that funny little manner."
+    m 2dsp "Unfortunately, it took a lot of effort to get Nou up and running alone: and the effort doesn’t translate into programming other games, even simpler ones."
+    m 2gsa "I suppose you could watch me play solitaire by myself, but... ah, I don’t think that’s fun."
+    m 4eta "Oh, I suppose there’s worth talking about modern ‘trading card’ games."
+    m 4eta "They’re certainly fascinating, especially as they adapt popular fictional universes for their setting or in some cases have created their own mythos."
+    m 2eta "I would have always thought that’d be Natsuki’s thing, though- especially as a lot of these card games have ties to fantasy, manga, and anime."
+    m 3tub "Although sensibly thinking about it, she might have never had the time to play it.. or the spare change needed to purchase the cards."
+    m 3hub "Or maybe she just wouldn’t have the patience to learn the rules, hahaha."
+    m 4nuu "Whether or not we’re playing cards, or amusing ourselves with any other game together..."
+    m 5ftu ".. As long as we’re together, that’s what matters to me. That fact won’t get lost in the shuffle."
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_chessbongcloud",
+            category=['games'],
+            prompt="Bongcloud",
+            conditional="persistent._mcl_chessachievement is not False",
+            action=EV_ACT_RANDOM
+        )
+    )
+
+label mcl_chessbongcloud:
+    m 7eua "Now that you've managed to get the Chess achievement under your proverbial belt, I thought I'd tell you a fun fact."
+    m 7fta "About a rather {i}interesting{/i} move."
+    m 7dsa "Let's picture a chessboard, all set up for the very first move."
+    m 4dsa "First, you send your pawn out. Then your opponent mirrors your move. A textbook response."
+    m 3ctp "But then... then you move your king up in response."
+    image bongcloud = "/submods/MoSCL/submod_assets/sprites/bongcloud.png"
+    show monika at t21
+    transform confidentialframe:
+        xanchor 0 yanchor 0 xpos 685 ypos 50 alpha 1.0
+    show bongcloud at confidentialframe zorder 13
+    m 3eku "This is one of the {i}worst{/i} possible moves you can do in chess."
+    m 3stu "It's absolutely, definitively a terrible starting point for the player that does it."
+    m 3ftu "It limits movement of your key players: the queen and the bishop. Your king is exposed to attack. And so you gain no advantage whatsoever."
+    m 7hfsdra "It's such a impressively terrible move that it's become a meme, with a appropiately funny name: the 'Bongcloud.'"
+    hide bongcloud
+    show monika at t11
+    m 4ssa "It’s been observed that funnily enough, professionals can be completely shaken by complete novices;"
+    m 4ssb "Because newer players will do moves so counter- even if it’s a detrimental move, and they’re not aware of it- to what the pro is accustomed to!"
+    m 4etu "I mean, will this move throw your opponent so off-balance as to win you one game after another?"
+    m 1gtu "There's precedent by modern chess players using this to their advantage.{w=0.2} But no, probably not."
+    m 1fub "But that’s the magic of chess. It's a game where every move has been carefully studied.. and you can still be unpredictable, and win because of it."
+    m 5htb "Having a bit of fun while you're having fun.. is pretty fun, isn't it?"
     return
