@@ -3449,6 +3449,7 @@ label Choice_C:
             $ _history_list.pop()
             menu:
                 "Let's see how ticklish Monika's neck is.":
+                    $ persistent._mcl_pm_shocked = True
                     m 6htx "{b}AH!~{/b}"
                     if persistent._mcl_pm_shocked:
                         m 2wsx "..."
@@ -3457,7 +3458,11 @@ label Choice_C:
                             m "And {i}{b}right after you boot up the game?!{/b}{/i}"
                         m 1tfblp "You're real mean, you know that?"
                         m 1sfblp "I'll remember this! I'll remember this so much!"
-                        $ persistent._mcl_pm_shocked = True
+                        #cheevo flag 
+                        if persistent._mcl_surpriseachievement is not True:
+                            $ persistent._mclachievevement += mclaincrease
+                            $ persistent._mcl_surpriseachievement = True
+                            $ renpy.notify ("Achievement: Ooh, I'll get you back!")
                         return
                     else:
                         m 2wsx "..."
@@ -3472,6 +3477,11 @@ label Choice_C:
                         m "- and I am going to pay you back ten-fold when I'm with you in your world."
                         m 1sfb "I'm going to take my time finding {i}your{/i} sensitive spots~"
                         m "Consider this my declaration of war!"
+                        #cheevo flag
+                        if persistent._mcl_surpriseachievement is not True:
+                            $ persistent._mclachievevement += mclaincrease
+                            $ persistent._mcl_surpriseachievement = True
+                            $ renpy.notify ("Achievement: Ooh, I'll get you back!")
                         return
     
 init 5 python:
@@ -3909,6 +3919,14 @@ label mcl_asktime:
             m 1ttb "By all means, do you want to continue? We'll make it a little inside joke between us."
             m 1tfb "You can't say no to that, can you?"
             return
+        elif shown_count >= 6:
+            #cheevo flag
+            if persistent._mcl_noachievement is not True:
+                $ persistent._mcl_noachievement = True
+                $ renpy.notify ("Achievement: You've mastered the difficult art of asking for the time.")
+                $ persistent._mclachievevement += mclaincrease
+            jump monikano
+
         else:
             $ sesh_shorter_than_3_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
             if sesh_shorter_than_3_mins:
@@ -4076,6 +4094,13 @@ label mcl_flirtbadly:
         m 3ntu "But hey, you’re {i}my{/i} headache."
         m 1tfu "You keep the lines coming… and I’ll keep telling you how bad they are, hahahahaha!"
         return
+    elif shown_count >= 10:
+        #cheevoflag
+        if persistent._mcl_flirtachievement is not True:
+            $ persistent._mclachievevement += mclaincrease
+            $ persistent._mcl_flirtachievement = True
+            $ renpy.notify ("Achievement: You have proven yourself bad at romance. Yay?")
+            jump repeatpickupline
     else:
         jump repeatpickupline
             
