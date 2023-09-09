@@ -233,7 +233,6 @@ label mcl_menuachievement:
     $ is_sitting = True
     jump ch30_loop
     
-
 init 5 python:
     addEvent(
         Event(
@@ -278,7 +277,7 @@ init 5 python:
             eventlabel="mcl_bongcloud",
             category=['games'],
             prompt="Bongcloud",
-            conditional="persistent._mcl_chesseachievement = True",
+            conditional="persistent._mcl_chessachievement = True",
             action=EV_ACT_RANDOM
         )
     )
