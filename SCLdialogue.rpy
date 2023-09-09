@@ -3331,7 +3331,7 @@ label mcl_100topics:
         def write_and_hide():
             import time
 
-            note_path = os.path.join(renpy.config.basedir, renpy.substitute("characters/MESAELOGELEVEN.txt"))
+            note_path = os.path.join(renpy.config.basedir, renpy.substitute("characters/MESAELOGTHIRTYTWO.txt"))
             note_text = renpy.substitute("""\
 M.E.S.A.E, LOG THIRTYTWO
 running diagnostics
@@ -3367,6 +3367,7 @@ Memories of Self-Care & Literature
     m 1dsc "I think I've grown, but by only by such a small amount that it feels{w=0.2} inconsequential."
     m 6dkc "I suppose that's the burden of having so much potential. You never feel quite happy until you live up to all of it."
     m 6lsc "And maybe I'll never feel like I'll ever live up to my potential."
+    $ renpy.notify("Chibika: Hey! Did you leave a note in the 'Characters' folder?")
     m 6ltc "But then, who can I rely on to tell me when I do reach that peak?"
     m 6etb "Oh, hahaha! Right."
     m 5eka "You~"
