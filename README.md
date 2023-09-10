@@ -4,7 +4,7 @@
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) provides new personally written content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics. 
 
-This mod currently includes over 100 new topics in total to discuss, 4 songs, 2 Compliments, 13 window reacts, 9 new intros, 17 farewells, and 6 new moods to talk about in the 'I feel' menu for those tricky times in life.
+This mod currently includes over 100 new topics in total to discuss, 4 songs, 2 Compliments, 13 window reacts, 10 new intros, 17 farewells, and 6 new moods to talk about in the 'I feel' menu for those tricky times in life.
 
 To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection, and introduces a achievement system to help encourage exploring your time with Monika!
 
