@@ -1,5 +1,12 @@
 Change Notes
 
+5.1.2
+(A Milestone of Self-Care & Literature)
+- Achievements! Monika will humbly note down if you've done anything of recognition in a notebook she has to encourage exploring the more randomized topics SCL has. You'll also gain achievements by playing enough games of Chess and Nou! Right now, the achievement menu as as barebones and basic as can be, but it lays the groundwork for future content as well. All you need to do to unlock the achievement system is reach the affectionate tier.
+- 6 new topics (4 of which are connected to the Achievement system) and 1 new intro
+- Okay I'm still kinda wildin' with semantic numbering but I'll cool it with this release
+- Also Monika talks about the 'Bongcloud.' No, really.
+
 4.2.0
 (Improvements upon Self-Care & Literature)
 - 19 events, 3 window reacts
