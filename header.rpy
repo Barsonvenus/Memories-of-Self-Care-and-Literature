@@ -3,5 +3,5 @@ init -990 python in mas_submod_utils:
         author="SATURNVENUS",
         name="Memories of Self Care and Literature",
         description="(Metaverse Enterprise Solutions Analytics & Engagements Tools, Internal Use Only.) A submod that adds an entire wealth of dialogue! Check out the github/wiki {a=https://github.com/Barsonvenus/Memories-of-Self-Care-and-Literature}{i}{u}here!{/u}{/i}{/a}",
-        version="4.2.0",
+        version="5.1.2",
     )
