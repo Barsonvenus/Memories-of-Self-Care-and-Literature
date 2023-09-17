@@ -358,13 +358,7 @@ label bye_prompt_shopformonika:
             else:
                 jump asknewcoffee
     else:
-        label asknewcoffee:
-        if mas_consumable_coffee.isMaxedStock():
-            m "I have plenty of coffee left. This said.."
-        m 1etblu "Whenever you get around to picking up some more, a new flavour of coffee?"
-        m 7etblu "[coffeechoices]"
-        m 3fsb "Or surprise me outright, if you want! Either way, thanks, [player]. Love you!"
-        return "quit"
+        jump asknewcoffee
 
 init 5 python:
     addEvent(
