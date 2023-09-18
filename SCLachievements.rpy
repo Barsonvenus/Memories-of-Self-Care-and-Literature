@@ -31,9 +31,9 @@ label mcl_startachievement:
     pause 2.0
     m 4hsu "And I’ll log all your achievements through a special menu."
     m 3tkb "By 'special menu,' I mean I’ll write it all down in a spare school notebook I found, hahaha."
-    m 3nub "This menu will be accessible through the ‘interact’ section."
-    m 2hua "If it doesn’t appear right away, don’t worry! It should show up soon enough."
-    m 1hua "When you open it up, I’ll go into a little more detail about how our achievement system will work."
+    m 3nub "This menu will be accessible through the ‘interact’ section, under our dear 'Hey, Monika...' section."
+    m 2hua "If it doesn’t appear right away, don’t worry! It should show up soon enough. It might not appear today, even!"
+    m 1hua "When you do open it up, I’ll go into a little more detail about how our achievement system will work."
     m 5ssb "Here’s looking forward to making our time feel richer than ever!"
     $ persistent._mcl_masterachievement = False
     return
