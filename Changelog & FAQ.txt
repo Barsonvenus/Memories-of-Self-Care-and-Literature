@@ -1,5 +1,11 @@
 Change Notes
 
+5.2.6
+
+- Achievement topic has backdoor to menu if for whatever reason cannot unlock Achievement menu
+- Dialogue updated in Achievement topic to reflect menu may not appear right away
+- Coffee topic updated bc/ duplicate code may be causing errors
+
 5.1.2
 (A Milestone of Self-Care & Literature)
 - Achievements! Monika will humbly note down if you've done anything of recognition in a notebook she has to encourage exploring the more randomized topics SCL has. You'll also gain achievements by playing enough games of Chess and Nou! Right now, the achievement menu as as barebones and basic as can be, but it lays the groundwork for future content as well. All you need to do to unlock the achievement system is reach the affectionate tier.
