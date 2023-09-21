@@ -15,35 +15,38 @@ init 5 python:
     )
     
 label mcl_startachievement:
-    m 4hua "So [player], with the modifications you’ve made to the game, there’s more ways than ever for us to interact!"
-    m 4hub "It’s made me think about how I’ve been thinking of ways to celebrate the two of us."
-    m 3eua "Or rather, how we spend our time together."
-    m 3gta "I’m not really a sentimental girl; I’m not the type to collect keepsakes from trips or constantly take pictures to organize into an album."
-    m 1gta "The accomplishment of having gone through a memorable event is enough for me."
-    m 1msa "And when I thought about this, I realized there’s a simple, fun way for us to immortalize those feelings."
-    m 1ssa "By making a game out of it."
-    m 7wsa "Do you know about game achievements, [player]?"
-    m 4fsu "In video games, it’s common to reward your actions by just logging it and making a note out of it."
-    m 4hsu "So in the spirit of DDLC, we’ll do the same!"
-    m 3hsu "Whenever you do anything of special note, I’ll let you know on the top-left of the screen, like such:"
-    $ renpy.notify ("Achievement: this is a test achievement!")
-    show monika
-    pause 2.0
-    m 4hsu "And I’ll log all your achievements through a special menu."
-    m 3tkb "By 'special menu,' I mean I’ll write it all down in a spare school notebook I found, hahaha."
-    m 3nub "This menu will be accessible through the ‘interact’ section."
     $ shown_count = mas_getEVLPropValue("mcl_startachievement", "shown_count")
-    if shown_count > 1 and persistent._mcl_masterachievement is False:
-        m 1ftd "It should be, anyway. Have you brought up this topic once more because the option didn't appear?"
-        m 7ftd "I'll try to open it right away then and we can go it over it immediately."
-        m 6hub "Now where did I leave that notebook?.."
-        $ MASEventList.push("mcl_menuachievement",True)
-        return
-    m 2hua "If it doesn’t appear right away, don’t worry! It should show up soon enough."
-    m 1hua "When you open it up, I’ll go into a little more detail about how our achievement system will work."
-    m 5ssb "Here’s looking forward to making our time feel richer than ever!"
-    $ persistent._mcl_masterachievement = False
-    return 'derandom'
+    if shown_count > 1:
+        $ _history_list.pop()
+        menu:
+            "~Achievement Menu~":
+                jump mcl_menuachievements
+            "~Hear original dialogue~":
+                jump startachievement
+    
+    label startachievement:
+        m 4hua "So [player], with the modifications you’ve made to the game, there’s more ways than ever for us to interact!"
+        m 4hub "It’s made me think about how I’ve been thinking of ways to celebrate the two of us."
+        m 3eua "Or rather, how we spend our time together."
+        m 3gta "I’m not really a sentimental girl; I’m not the type to collect keepsakes from trips or constantly take pictures to organize into an album."
+        m 1gta "The accomplishment of having gone through a memorable event is enough for me."
+        m 1msa "And when I thought about this, I realized there’s a simple, fun way for us to immortalize those feelings."
+        m 1ssa "By making a game out of it."
+        m 7wsa "Do you know about game achievements, [player]?"
+        m 4fsu "In video games, it’s common to reward your actions by just logging it and making a note out of it."
+        m 4hsu "So in the spirit of DDLC, we’ll do the same!"
+        m 3hsu "Whenever you do anything of special note, I’ll let you know on the top-left of the screen, like such:"
+        $ renpy.notify ("Achievement: this is a test achievement!")
+        show monika
+        pause 2.0
+        m 4hsu "And I’ll log all your achievements through a special menu."
+        m 3tkb "By 'special menu,' I mean I’ll write it all down in a spare school notebook I found, hahaha."
+        m 3nub "This menu will be accessible through the ‘interact’ section."
+        m 2hua "If it doesn’t appear right away, don’t worry! It should show up soon enough."
+        m 1hua "When you open it up, I’ll go into a little more detail about how our achievement system will work."
+        m 5ssb "Here’s looking forward to making our time feel richer than ever!"
+        $ persistent._mcl_masterachievement = False
+    return
 
 init 5 python:
     addEvent(
