@@ -18,7 +18,7 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 # Installation:
 
-Download either the Auto-Updating version (if having already downloaded The Submod Updater Plugin) or the standalone version.
+Download the standalone file; or, if you have the Submod Updater Plugin, download the file labelled MoSCL.
 
 Unzip the file with a program of your choice. The file should be a folder labelled MoSCL with all the files needed.
 
