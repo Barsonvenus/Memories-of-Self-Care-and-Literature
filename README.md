@@ -18,7 +18,11 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 # Installation:
 
-Download release file labelled 'MoSCL'; in MAS's 'Game' directory (calongside the "Mod_assets" folder and all the scripts for MAS), make sure there is a 'Submods' folder (Create if needed.) Unzip the 'MoSCL' file in this folder.
+Download either the Auto-Updating version (if having already downloaded The Submod Updater Plugin) or the standalone version.
+
+Unzip the file with a program of your choice. The file should be a folder labelled MoSCL with all the files needed.
+
+In your MAS install, you want to create a 'submods' folder in the 'game' folder if you did not have a folder labelled already. Then in the submods folder, have the folder labelled MoSCL.
 
 The end result is that your directory has a 'game' folder; in it a 'submods' folder; and then a folder containing the contents of this submod labelled 'MoSCL.'
 
