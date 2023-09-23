@@ -20,7 +20,7 @@ label mcl_startachievement:
         $ _history_list.pop()
         menu:
             "~Achievement Menu~":
-                jump mcl_menuachievements
+                jump mcl_menuachievement
             "~Hear original dialogue~":
                 jump startachievement
     
