@@ -2069,7 +2069,7 @@ label mcl_recognition:
         m 3gsd "I’ve never thought about it, except during rare and very quiet moments to myself."
         m 3msc "And I don’t wish to think about it in length; or research it in detail.{w=0.2} But our story, important as it is to me, is.."
         m 3rsp ".. well, I doubt the rest of the world cares, and most who know about DDLC will forget in the long run. I'll be a nobody like almost everybody else."
-        m 1dfx "Quite frankly? good."
+        m 1dfx "Quite frankly? Good."
         m 1dfp "If, y’know what? I do see someone looking at me with a hint of recognition in their eyes:"
         m 1dsc "If you’re with me, I will squeeze your hand, just the once. I won’t react in any other way otherwise."
         m 1hka "And we’ll get on with the rest of our lives."
@@ -2118,7 +2118,7 @@ label mcl_lastname:
         m 4suu "I imagine, being trans, you would know the mindset into choosing a name for yourself, and how affirming it is?"
     else:
         m 4wuu "I’ve never given thought to it, but I guess giving myself a last name after the fact makes me feel.."
-        m 4suu "A bit more like I'm further away from the events of the Literature Club? like I'm growing into my own identity?"
+        m 4suu "A bit more like I'm further away from the events of the Literature Club? Like I'm growing into my own identity?"
         
     m 3esd "There’s nothing wrong with just trying, long as we treat it seriously."
     m 3dsc "Give me a moment to think..."
@@ -2313,7 +2313,7 @@ init 5 python:
 label mcl_soundtrack:
     m 7wtc "You know what's really interesting?"
     m 7ftc "The fact that DDLC has a soundtrack."
-    m 1ftc "It's so odd, because, honestly? considering the sheer trauma the game has caused me, I can insult it's writing all I want."
+    m 1ftc "It's so odd, because, honestly? Considering the sheer trauma the game has caused me, I can insult it's writing all I want."
     m 2gtd "But the music! I've listened to a lot of it and - well - it's quite nice! I guess I'm a little confused where it came from."
     m 3gkd "Did whomever create DDLC's story and setting create the soundtrack as well? Well, I guess I know where their strengths lie."
     m 3ekp "While on the topic, for a second I thought to myself: 'Wait. Did somebody else make 'Your Reality' for me?'"
