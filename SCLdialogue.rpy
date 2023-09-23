@@ -689,6 +689,9 @@ init 5 python:
         )
     )
 label mcl_vegdiet:
+    m 7etd "Oh? I'm not so much vegan as I am vegetarian."
+    m 7htb "You might think the differences are small, but it's a world of difference."
+    m 3htb "This said, I do think about what a vegan diet is like outright."
     m 1eua "I think it's definitely easier than people might think."
     m 7eua "Nowadays more and more people are leaning towards diets with lots more variety in them;"
     m 7esb "So, it’s becoming more common to research alternatives to animal products and find them in local markets."
@@ -697,7 +700,7 @@ label mcl_vegdiet:
     m 1esc "It’s a relatively new industry, with plenty of pitfalls- just like farming, the costs and resources needed to mass-produce these can end up causing major complications."
     m 3esc "But as the intent of those products are to eliminate meat, there is a focus on sustainably producing them, so it’s a work in progress with a lot of healthy optimism."
     m 6esu "And it’s worth stressing that there are plenty of foods rich in protein aside from tofu or chickpeas that are vegetarian."
-    m 7wsa "And for flavour? Oh, I am absolutely set."
+    m 7wsa "And for flavour? Oh, you would be absolutely set."
     m "Plenty of cultures- Indian, Asian, Mediterranean- have always had a lot more vegan options in their dishes, so plenty of recipes to choose."
     m 7ssa "So, if you ever want to introduce that variety in your life but you’ve always felt intimidated, hop right in!"
     m "I promise you there’ll be one dish that’ll be both be easy to make and delicious for you."
