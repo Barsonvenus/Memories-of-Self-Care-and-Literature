@@ -1,5 +1,10 @@
 Change Notes
 
+5.2.7
+- Achievement backdoor fixed (incorrect jump)
+- Grammar fixes (Thanks to users Yun-Seo & Girl Lover 5000)
+- Vegan/Vegetarian disconnect tightened up (Thanks to Github user MrVavlo)
+
 5.2.6
 
 - Achievement topic has backdoor to menu if for whatever reason cannot unlock Achievement menu
