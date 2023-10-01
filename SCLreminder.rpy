@@ -9,7 +9,7 @@ init 5 python:
         )
     )
  
-label mcl_readingvariety:
+label mcl_sourcefiles:
     m 7ftp "..."
     m 7lfd "Hmm?"
     m 7ltd "[player], did you..."
