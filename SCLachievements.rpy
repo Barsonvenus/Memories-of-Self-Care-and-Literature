@@ -55,11 +55,11 @@ init 5 python:
             eventlabel="mcl_menuachievement",
             category=['interact'],
             prompt="~Check Achievements~",
-            conditional="seen_event('mcl_startachievement')",
             unlocked=False,
-            pool=False,
-            random=False,
-            action=EV_ACT_POOL,
+            rules={"no_unlock": None},
+            conditional="seen_event('mcl_startachievement')",
+            action=EV_ACT_UNLOCK,
+            pool=True,
         )
     )
     
