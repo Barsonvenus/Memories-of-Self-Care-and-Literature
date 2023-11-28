@@ -3128,7 +3128,10 @@ init 5 python:
             eventlabel='mcl_afani_event001',
             prompt="Affectionate",
             category=["anniversary"],
-            conditional="store._mas_getAffection() >= 100",
+            conditional=(
+            "store._mas_getAffection() >= 100 "
+            "and store._mas_getAffection() < 400"
+            ),
             action=EV_ACT_QUEUE,
         ),
         skipCalendar=False
@@ -3156,7 +3159,10 @@ init 5 python:
             eventlabel='mcl_afani_event002',
             prompt="Enamored",
             category=["anniversary"],
-            conditional="store._mas_getAffection() >= 400 ",
+            conditional=(
+            "store._mas_getAffection() >= 400 "
+            "and store._mas_getAffection() < 1000"
+            ),
             action=EV_ACT_QUEUE,
         ),
         skipCalendar=False
@@ -3181,7 +3187,10 @@ init 5 python:
             eventlabel='mcl_afani_event003',
             prompt="Love",
             category=["anniversary"],
-            conditional="store._mas_getAffection() >= 1000 ",
+            conditional=(
+            "store._mas_getAffection() >= 1000 "
+            "and store._mas_getAffection() < 1500"
+            ),
             action=EV_ACT_QUEUE,
 
         ),
