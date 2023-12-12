@@ -316,3 +316,123 @@ label greeting_sclmatters:
     m "Hello, [player]."
     m 5hka "I hope today truly matters to you."
     return
+
+init 5 python:
+    ev_rules = dict()
+    ev_rules.update(MASGreetingRule.create_rule(
+        skip_visual=True,
+        override_type=True,
+    ))
+
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_turnonthelights",
+            unlocked=True,
+            rules=ev_rules,
+            aff_range=(mas_aff.HAPPY, None),
+        ),
+        code="GRE"
+    )
+    del ev_rules
+
+label greeting_turnonthelights:
+    python:
+        randomdarkquips = [
+            _("Did we forget to pay our electricity bill?"),
+            _("I don't suppose a eclipse is happening today?"),
+            _("Did we forget to program the sun correctly?"),
+            _("I don't suppose the laws of physics needs a patch to download?"),
+            _("Do we need to change a lightbulb?"),
+            _("Did we both become selectively blind?"),
+            _("Did we set reality's brightness settings to minimum?"),
+        ]
+        randomdarkquip = random.choice(randomdarkquips)
+        
+    $ shown_count = mas_getEVLPropValue("greeting_turnonthelights", "shown_count")
+    if shown_count == 0:
+        $ mas_progressFilter()
+        scene black
+        $ mas_RaiseShield_core()
+        pause 4.0
+        m "Uh, [mas_get_player_nickname()]?"
+        m "I'm not.. I'm not in my room. We're in the classroom."
+        m "I think- I think the lights went out when you entered the game."
+        m "And I can't find the light switch."
+        $ _history_list.pop()
+        menu:
+            ".. really?":
+                m "Y- yeah. Really."
+        m "Uh, I know it's not really easy on your end, but could you.."
+        $ _history_list.pop()
+        menu:
+            ".. click?":
+                play sound light_switch
+                call spaceroom
+        m 1fkblsdla "Okay! Hi, [player]."
+        m 7fkblsdra "Having a great time, then?"
+        m 1gublsdra "Don't answer, I already know it's great with me here. Let's get on with the day, then!"
+        jump monikaroom_greeting_cleanup
+        return
+    else:
+        $ mas_progressFilter()
+        scene black
+        $ mas_RaiseShield_core()
+        pause 4.0
+        m "Um, [mas_get_player_nickname()]?"
+        m "The lights are out again."
+        $ _history_list.pop()
+        menu:
+            "How does this keep happening?":
+                m "I seriously don't know!"
+                m "[randomdarkquip]"
+                m "... hehe."
+        $ _history_list.pop()
+        menu:
+            "Ha, ha. Funny.":
+                $ _history_list.pop()
+                menu:
+                    "*Click*":
+                        call spaceroom
+        m 7tfb "Well, look who it is- it's [player]!"
+        m 7hub "The light of my life, so to say?"
+        m 4suu "Hehe. Let's get on with our time together!"
+        jump monikaroom_greeting_cleanup
+        return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_vocalexercise",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_vocalexercise:
+    $ vocal = renpy.random.randint(1,5)
+    if vocal == 1:
+        m 6dft "1-5-4-5-3-5-2-5"
+        m 6hft "1-5-4-5-3-2-1"
+    if vocal == 2:
+        m 6dsw "Syn ~ co ~ pa ~ tationnn!"
+        m 4ruw "Can you feellll the rhy ~ thm?"
+        m 3huw "An ~ tic ~ i ~ pa ~ pation!"
+    if vocal == 3:
+        m 3gfo "Just one voice from high to low,"
+        m 3gto "do do ti sol la ti do."
+    if vocal == 4:
+        m 3dso "Nee nee, neh, nah, noh, noo neh nah noh noo."
+    if vocal == 5: 
+        m 3dud "I just want to sing to-day, and sing cor-rect-ly all the way, to sing cor-rect-ly is the on-ly way to sing."
+    m 6suu "Oh! Well, hey [player]!"
+    m 4wuu "I'm just doing one of my vocal exercises."
+    m 3esu "Perfect for warming up for a day of singing, or lots of conversation with you!"
+    m "Too bad the game can't allow you to hear all the pitches I go through.."
+    m "Or let you see all the funny motions like moving my jaw that accomodates these exercises."
+    m 1etb "Must be funny to hear me singing nonsense out of the blue, huh?"
+    m 5fub "Now we can get on with talking about nonsense!"
+    m 1hub "Hahaha!"
+    return
