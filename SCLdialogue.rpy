@@ -3993,7 +3993,7 @@ label mcl_asktime:
             return
         elif shown_count >= 6:
             #cheevo flag
-            if persistent._mcl_surpriseachievement is not True and persistent._mcl_achievementtoggle is True:
+            if persistent._mcl_noachievement is not True and persistent._mcl_achievementtoggle is True:
                 $ persistent._mcl_noachievement = True
                 $ renpy.notify ("Achievement: You've mastered the difficult art of asking for the time.")
                 $ persistent._mclachievevement += mclaincrease
@@ -4168,7 +4168,7 @@ label mcl_flirtbadly:
         return
     elif shown_count >= 10:
         #cheevoflag
-        if persistent._mcl_flirtachievement is not True:
+        if persistent._mcl_flirtachievement is not True and persistent._mcl_achievementtoggle is True:
             $ persistent._mclachievevement += mclaincrease
             $ persistent._mcl_flirtachievement = True
             $ renpy.notify ("Achievement: You have proven yourself bad at romance. Yay?")
@@ -4314,7 +4314,7 @@ label mcl_ventwithmonika:
         m 1gkb "Always been a little guilty, so that did feel good!{w=0.2} Hmm, I wonder what else might be fun to get off my chest?.."
         return
     else:
-        if shown_count >= 5 and persistent._mcl_achievementyell is False:
+        if shown_count >= 5 and persistent._mcl_achievementyell is False and persistent._mcl_achievementtoggle is True:
             #cheevoflag
             $ persistent._mcl_achievementyell = True
             $ renpy.notify ("Achievement: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
