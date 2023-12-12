@@ -3385,6 +3385,243 @@ Memories of Self-Care & Literature
     m 5eka "You~"
     return
 
+#Hopes of Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_nightwalks",
+            category=['nature'],
+            prompt="Night walks",
+            random=True
+        )
+    )
+ 
+label mcl_nightwalks:
+    m 7fua "Hey, I have kind of a weird question."
+    if mas_globals.time_of_day_3state == "evening":
+        m 4fua "Given the time of day- or night, so to say- I think it’s a great time to ask."
+    m 4kta "Have you ever gone for a walk at night, just to go for a walk at night?"
+    m 4hkb "I’ve never personally felt encouraged to walk around alone during the evening."
+    m 3wub "But I get there’s an appeal for it."
+    if persistent._mas_pm_live_in_city:
+        m 1dkb "Walking your city streets, blending in with nighttime travellers or those out for a good time."
+    m 1dka "Enjoying quiet surburbia, illuminated with only streetlights, if we’re given that at all."
+    m 1dua "And observing nature, some of it sleeping; or alternatively, being delighted by creatures that only come out at night."
+    m 5dua "I like to think it's all romantic. Quiet time to yourself to think about anything and everything. A way to enjoy the world as you don’t normally see it."
+    m 5eup ".. That said."
+    m 5etp "Is it.. safe to wander around at night, where you are?"
+    $ _history_list.pop()
+    menu:
+        "Yes.":
+            m "You know, that’s a rare luxury."
+            if persistent.gender == "F":
+                m "Us ladies can go through some unique trouble, so I'm so happy you have that security."
+            m "To be treated as a passing shadow in the night; neither hostile nor friendly, but simply passing by.."
+            m "When I’m in your world, we very much deserve a night ourselves to just.. wander."
+            m "And I hope that night lasts forever."
+            return
+
+        "No.":
+            m 3ekp "That’s understandable. The world in plain daylight has danger all its own."
+            if persistent.gender == "F":
+                m 2ekp "I mean, I doubly get it because us girls are subject to a lot of potential trouble."
+            m "Well. If there’s one thing I truly wish for, it’s that when I get to your world.."
+            m "One way or another, we can find a night all to ourselves; for {i}everyone{/i} should have that luxury.."
+            return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_badadvice",
+            category=['advice'],
+            prompt="Bad advice",
+            random=True
+        )
+    )
+ 
+label mcl_badadvice:
+    m 1eud "I looked up a self-help book I read in the past."
+    m 4eud "I thought maybe it’d be worth going over again; maybe telling you about it would help you as much as it did me!"
+    m 1wuu "And wow!"
+    m 1sfu "It was crappy."
+    m 7gfu "It might have been exactly what I wanted or even needed to hear back then.."
+    m 7gtd ".. But now I found it all kind of needlessly peppy or even aggressive."
+    m 7mtc ".{w=0.2}.{w=0.2}."
+    m 3fkb "And now comes the self-realization *I* give you a lot of advice, hahaha."
+    m 3kka "I admit a lot of it is meant to be given in broad strokes, [player]."
+    m 2dta "There’s advice, and then good, tailored advice that takes into consideration your personal circumstances and personality."
+    m 2hka "But unfortunately, our means of communication means I can only ask and say so much."
+    m 1hka "So, I try to give advice that anybody- even and {i}especially{/i} myself- could follow."
+    m 1eka "I hope that I never come off as preachy or condescending, [player]. I'm just looking out for you as a friend and partner; I promise."
+    m 1esa "If you currently take what I say to heart; I’d be nothing short of amused if you told me in the future that it was kinda bad in hindsight."
+    m 1fuu "By then, I imagine {i}you'll{/i} be someone I look to for advice."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_fifthwall",
+            category=['misc'],
+            prompt="Who's there?",
+            random=True
+        )
+    )
+ 
+label mcl_fifthwall:
+    m "Hey."
+    m "..."
+    m "..."
+    $ _history_list.pop()
+    menu:
+        "Hey? Is everything okay, or?...":
+            m "Shh."
+    m "Not {i}you,{/i} [player]."
+    m 7efx "I'm talking to {b}{i}you.{/i}{/b}"
+    show monika 7efd
+    pause 2.0
+    show monika 7efc
+    pause 2.0
+    show monika 7etc
+    pause 2.0
+    show monika 6esc 
+    m 3esb "Nobody.{w=0.2} Ah well, can't blame a girl for trying to entertain a random thought on a whim."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_matchmaker",
+            category=['romance'],
+            prompt="Playing Matchmaker",
+            random=True,
+            aff_range=(mas_aff.LOVE, None)
+        )
+    )
+ 
+label mcl_matchmaker:
+    m 7fua "Love might get acidly competitive.."
+    m 6dua "But friends helping friends find success in romance is such a nice idea, isn't it?"
+    m 4hta "Maybe it's the closest you get to playing a dating sim like DDLC in real life."
+    m 3hka "But without all the negative connotations about love being a game."
+    m 3sub "I'm always delighted to hear stories about people earnestly helping their friends be confident enough to persue romantic prospects;"
+    m 1wuu "To nudge a couple with unspoken mutual interest together-"
+    m 7wub "- or even play the situation outright to try to help their companion look their best to win someone's love!"
+    m 7ekb "Long as it's done with everyone's best interests at heart, heh."
+    if persistent.gender == "M":
+        m 3htb "Have you ever played 'Wingman' for anybody, [player]?"
+    elif persistent.gender == "F" or persistent.gender == "X":
+        m 3htb "Have you ever tried to play 'matchmaker' in this regard, [player?]"
+    $ _history_list.pop()
+    menu:
+        "Yep!":
+            m 3sto "Ooh! have you been successful?"
+            $ _history_list.pop()
+            menu:
+                "I was!":
+                    m 1sfb "I shouldn't be surprised; you won my heart, after all!"
+                "Nooooooooope.":
+                    m 6hfu "Hahaha! You're such a good person to even try."
+        "Nope.":
+            m 6htu "That's fair! You have to be really tuned in to people's feelings to try to help."
+    m 5ltu "I talk about this stuff, but I doubt I'd have the courage-{w=0.1} and charisma-{w=0.1} to help someone else like that."
+    m 5lsu "{cps=20}I mean, I guess there's the girls-{/cps}{nw}"
+    show monika 6dfx
+    pause 1.8
+    show monika 6hssdru
+    m "..."
+    m 4hsu "Do you have any friends that might need some help in the romance department?"
+    m 5lsu "[m_name] & [player], love doctors and consultants for hire!"
+    m 4tku "I hope nobody asks how we got our degrees, though."
+    m 3nfb "Hehehe!"
+    return 'derandom'
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_clubcupid",
+            category=["club members",],
+            prompt="Playing Cupid",
+            conditional="seen_event('mcl_matchmaker')",
+            action=EV_ACT_RANDOM,
+            )
+        )
+label mcl_clubcupid:
+    m 2rtt "Hey, [player]. Got a moment?"
+    m 2rtp "I, uh, wanted to loop back to something we talked about."
+    m 2tsp "I mean, a part of myself wants to just ignore what happened. {w=0.1}But you caught me being thrown off-balance, so I’m not sure it’s worth bottling up."
+    m 2eka ".. I think it’s natural to think about your friends and their romantic prospects."
+    m 6gka "When we talked about playing matchmaker, I thought instantly of the Literature Club... So, yeah, I entertained the thought. And I instantly regretted thinking about it."
+    m 6hka "I’m sure you noticed.{w=0.2} If you didn’t.{w=0.1}.{w=0.1} well, this is slightly awkward, hahaha.{w=0.1} But I’ve gone and talked about this anyway, so.."
+    m 4hka "Well.{w=0.2} 'In for a penny, in for a pound.'"
+    m 3lka "Despite all that’s happened, I can’t help but entertain a scenario where I’m helping the girls find love."
+    m 2tksdrb "You realize that’s super weird for multiple reasons, right?"
+    m 1ftsdrb "For one, you might have been their love interest!"
+    m 1nka "Haha, don’t let your sweet little head overheat. You were playing the game, caring for the girls in your own way."
+    m 1hsa "And you chose me in the end."
+    m 7hsa "So as my partner in crime, let’s idly discuss: who’d be interesting to think about helping out in a relationship?"
+    $ _history_list.pop()
+    menu:
+        ".. Yuri.":
+            m 2gka "Despite any pretense of being shy, I don’t think she’d need a push to confess under regular circumstances."
+            m 3gka "But I think she’d definitely be one to overthink things."
+            m 6etc "Do you think she’d play around with a pocket knife as a nervous habit?"
+            m 6cko "'Yuri, I’m sure they didn’t notice you staring at them.. oh, careful with the butterfly knife-{w=0.1} YURI!'"
+
+        ".. Natsuki.":
+            m 2gka "Could you imagine?"
+            m 6hud "'Natsuki, just tell them your feelings!'"
+            m 7hfw "'WHAT FEELINGS? I DON’T LIKE THEM AT ALL!'"
+
+        ".. Sayori.":
+            m 2dka "Another time, another place, and I would imagine her romantic prospects are straightforward."
+            m 2hka "So perhaps all she’ll need is the gentle support of us knowing we’ll cheer her on."
+            m 2lka"Or maybe she doesn't need any reassurance at all. Maybe just being there for her no matter the result of a confession is enough for her..."
+
+    m 2lkb "Haha..{w=0.2} ha.{w=0.2} Hmm."
+    m 2lka ".{w=0.4}.{w=0.4}."
+    m 2rkt "Thinking about my friends’ happiness kinda segues into some real odd thoughts when your friends weren’t really real, right?"
+    m 2rkp "And after what I did? I don’t know if I have the right to consider their feelings at all."
+    m 5lkc "Am I being.. super callous, somehow?"
+    m 6rsc "Should I refer to them in passing as I knew them before; as simply my friends?"
+    m 6dsc "I really can’t stop myself from overthinking things when it comes to the Literature Club."
+    m 5lsc "But at least this was a nice way to think of them."
+    return
+
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_crushtalk",
+            category=['misc'],
+            prompt="It's a secrettttt",
+            random=True
+        )
+    )
+ 
+label mcl_crushtalk:
+    m "{size=-7}Hey. Pst. Hey, you.{/size}"
+    m "Want to talk about romance and stuff?"
+    m "Come a little closer.{w=0.2} I'll admit something to you."
+    m 3tsd ".. I have a crush.{w=0.1} Isn’t that crazy?"
+    m 3tfb "Hehehehehe!"
+    m 7msd "Do you wanna hear who I have a crush on?"
+    m 7gsd "I have a crush on [player]."
+    $ _history_list.pop()
+    menu:
+        "That’s me!":
+            m 2wut "Oh!"
+    m 2ett "So it is!"
+    m 1efu "I hope you can keep a secret from yourself, then."
+    m 1fsb "Hahaha!"
+    return "love"
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
