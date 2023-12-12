@@ -3531,7 +3531,7 @@ label Choice_C:
                         m 1tfblp "You're real mean, you know that?"
                         m 1sfblp "I'll remember this! I'll remember this so much!"
                         #cheevo flag 
-                        if persistent._mcl_surpriseachievement is not True:
+                        if persistent._mcl_surpriseachievement is not True and persistent._mcl_achievementtoggle is True:
                             $ persistent._mclachievevement += mclaincrease
                             $ persistent._mcl_surpriseachievement = True
                             $ renpy.notify ("Achievement: Ooh, I'll get you back!")
@@ -3550,7 +3550,7 @@ label Choice_C:
                         m 1sfb "I'm going to take my time finding {i}your{/i} sensitive spots~"
                         m "Consider this my declaration of war!"
                         #cheevo flag
-                        if persistent._mcl_surpriseachievement is not True:
+                        if persistent._mcl_surpriseachievement is not True and persistent._mcl_achievementtoggle is True:
                             $ persistent._mclachievevement += mclaincrease
                             $ persistent._mcl_surpriseachievement = True
                             $ renpy.notify ("Achievement: Ooh, I'll get you back!")
@@ -3993,7 +3993,7 @@ label mcl_asktime:
             return
         elif shown_count >= 6:
             #cheevo flag
-            if persistent._mcl_noachievement is not True:
+            if persistent._mcl_surpriseachievement is not True and persistent._mcl_achievementtoggle is True:
                 $ persistent._mcl_noachievement = True
                 $ renpy.notify ("Achievement: You've mastered the difficult art of asking for the time.")
                 $ persistent._mclachievevement += mclaincrease
