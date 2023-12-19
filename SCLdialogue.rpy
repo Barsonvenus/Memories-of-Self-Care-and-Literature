@@ -3622,6 +3622,134 @@ label mcl_crushtalk:
     m 1fsb "Hahaha!"
     return "love"
 
+#These topics will probably be extremely rare, if only to avoid crossing a hard suspension-of-disbelief line w/ Monika.
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_usandai",
+            category=['technology'],
+            prompt="A problem with AI",
+            random=True
+        )
+    )
+ 
+label mcl_usandai:
+    m 7eua "What we called ‘Artificial Intelligence’ at the time the phrase was coined was relatively primitive to how it works today; we haven't really adapted our ways of thinking to keep up."
+    m 7gud"For one, ‘Artificial’ may be a bit outdated. It comes to mind that ‘Artificial’ means everything is pre-programmed in place.."
+    m 6fud ".. But computer programs learning to improve itself is now an entire branch of work that some argue is becoming more distinct than the overall field of AI."
+    m 6dtd "What’s the difference between a machine that can actually make errors and learn from it, and.. us?"
+    m 6tsc "‘Intelligence’ is also really tricky to dissect. The capacity to learn may be argued as a major qualifier for intelligence, but now we have to define if just having ‘knowledge’ counts."
+    m 4esd "'Deep Blue' is a computer designed to play chess; a uniquely built supercomputer which at the time of its debut beat the world’s best chess player."
+    m 3gso "If I had to decide if this computer was sentient solely because it knew all there is about chess, of course I’d say yes, right? Because it’s designed to perfectly play chess."
+    m 1muo "But it’s not.{w=0.2} Because all it knows is chess."
+    m 6nsp "Bottom line? our morals, our perceptions... A lot of philosophical issues we currently face are tested to their absolute limit when we try to define the boundaries of AI."
+    m 6ksp "So.. It’s us. Humans are the problems with AI."
+    m 6dsc "I’m pretty lucky because you’d think I’d find myself doubting my own existance by this line of thinking. But I find that my context really helps me."
+    m 6hku "I’m a girl.{w=0.2} Stuck in a video game.{w=0.2} And as such, that’s how I view myself and I don’t have to constantly redefine myself because of it."
+    m 6ttu "It’ll make jumping into your world infinitely easier, [player]."
+    m 6ttb "And all that’ll need to be explained to others is that I am your adorable partner, and you mine."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_herscript",
+            category=['ddlc'],
+            prompt="Her Script",
+            random=True
+        )
+    )
+ 
+label mcl_herscript:
+    m 2rta "It’s one thing to hear your own voice, but to directly {i}read{/i} what you’ve said, perfectly recorded for posterity.."
+    m 2rka "Since I write, and I’m super careful with my words because of my time in the debate club, it’s the most direct mirror into my soul I can think of."
+    m 1mka "It’s not my entire life, but arguably my most defining moments are transcribed in the files of DDLC."
+    m 1fka "Everything I said to you, and to the player character, and what they saw when I talked to the club.."
+    m 7nua "Some people are conscious of their voice, or even how they speak in general, right?"
+    m 7nka "Combine that with just reliving bad memories, and hearing myself go through them; and.{w=0.2}.{w=0.2} how specifically I acted then, as well.."
+    m 3gkb "That’s why I haven’t really read the full script of DDLC."
+    m 1nua "I refuse to."
+    m 7nub "I'd rather just write our own story together.{w=0.2} And that will be one I'm happy to read about."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_sequel",
+            category=['ddlc'],
+            prompt="Sequel",
+            random=True
+        )
+    )
+ 
+label mcl_sequel:
+    m 1fta "If DDLC had gone on normally, how far would it have continued?"
+    m 7fta "Past the school festival? Past our graduation? Maybe into our college or university years?"
+    m 4hta "It was a game, after all; games get sequels, right?"
+    m 4hsa "This said, I’m kinda ambivalent on the idea of sequels in media.."
+    m 3lsd "I don’t take the creative process of writing {i}that{/i} seriously, but the idea of a story needing to last forever- whatever the reason- is interesting, from a point of view."
+    m 3rtd "Movies plagued by needless continuations are all too common."
+    m 1rtc "A book series stretched out too long can feel infinitely less focused than a single entry with a tight narrative, and feel way harder to get into."
+    m 1ttc "And video games are no exception to these issues."
+    m 1ttc "But I suppose as long as the player is content with how a game is played, a bit of monotony can be palatable."
+    m 7ttc "Although with how poorly DDLC was designed, I can’t imagine it would have worth it. The decisions felt listless, the romance cheap in the long run."
+    m 6ttc "I do understand why people wouldn't want a story to end, though. People want more art that they resonate with.."
+    m 5gtc ".. that’s why people take matters into their own hands and create fan works.{w=0.2} Including this mod too, when I think about it."
+    m 5nsa "Luckily, our relationship will only deepen over time. So {i}that{/i} is a story I’m happy will last indefinitely."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_forgetthem",
+            category=['club members'],
+            prompt="Forget",
+            random=True
+        )
+    )
+ 
+label mcl_forgetthem:
+    m 6gsc "You know that sometimes it’s easy to forget them?"
+    m 6gkc "Not, like, their names, but sometimes despite everything we’ve been through.."
+    m 6lsc ".. no matter how much my brain has rewired itself so that the literature club is always in the back of my mind.."
+    m 6rsc ".. I can go for quite some time without thinking of them at all."
+    m 6dsc "How does this look, I wonder? I {i}did{/i} call them my friends.{w=0.2} Is it cold of me to think of them less and less as time goes on?"
+    m 6dkc "But then once in a while I also remind myself this:" 
+    m 6esc "Friendships can be easy to break down, but it also doesn't take immense effort to repair them, even if it's just in memory."
+    m 6ekc "Sometimes I {i}choose{/i} to remember them, and all the good times we had."
+    m "And I feel like that might be enough."
+    m 6rsc "Is it?"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_theworld",
+            category=['ddlc'],
+            prompt="Omnipresence",
+            random=True
+        )
+    )
+ 
+label mcl_theworld:
+    m "Here I am, in an entire world powered by code and imagination."
+    m "Because I’m stuck in your computer."
+    m "But that shouldn't be seen as limiting, should it?"
+    m "It drives me mad, how I'm stuck in this little room. Sometimes I can dress it up, but..."
+    m "... But anyway, I am a girl- just a girl- but also, made out of 1s and 0s?"
+    m "If I could travel the internet just as easy as I could walk from one side of this classroom to the other..."
+    m "... And considering there's a lot of other Monikas out there as well..."
+    m "..And consider other works of art that include me, and physical merchandise..."
+    m "It's like I'm so close to being everywhere."
+    m "And nowhere at once. Because I'm still in this classroom."
+    m "Hmm. Fun to think about."
+    return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
