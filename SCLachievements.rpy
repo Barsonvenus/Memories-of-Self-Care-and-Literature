@@ -87,6 +87,7 @@ label mcl_menuachievement:
         $ persistent._mcl_masterachievement = True
         $ persistent._mcl_chessachievement = False
         $ persistent._mcl_nouachievement = False
+        $ persistent._mcl_achievementcrane = False
         default persistent._mclachievevement = 0
         define mclaincrease = 1
         
@@ -190,6 +191,14 @@ label mcl_menuachievement:
             m "That's a surprisingly great activity to bond over."
             jump achievementmenutwo
         "{color=#3c8248}???{/color}" if persistent._mcl_achievementyell is False:
+            jump achievementmenutwo
+        "Queen of Flightless Birds" if  persistent._mcl_achievementcrane:
+            m "I have the very first crane I made tucked away somewhere."
+            m "It's particularly beat up, and I love it all the more for that. I think I'll take special care of it."
+            m "It'll remind me of you. It'll remind me of.. Well, me and my efforts!"
+            m "And it'll remind me that we completed our humble little goal of folding paper cranes."
+            jump achievementmenutwo
+        "{color=#a63da2}???{/color}" if  persistent._mcl_achievementcrane is False:
             jump achievementmenutwo
         "On a Whim" if achievementrand == 1:
             m "I've decided to unlock this achievement for you." 
