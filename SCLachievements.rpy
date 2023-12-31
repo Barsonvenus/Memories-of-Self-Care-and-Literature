@@ -20,7 +20,14 @@ label mcl_startachievement:
         $ _history_list.pop()
         menu:
             "~Achievement Menu~":
-                jump mcl_menuachievement
+                jump mcl_menuachievements
+            "~Toggle Achievements~":
+                if persistent._mcl_achievementtoggle is True:
+                    $ persistent._mcl_achievementtoggle = False
+                    m "Achievements are off!"
+                if persistent._mcl_achievementtoggle is False:
+                    $ persistent._mcl_achievementtoggle = True
+                    m "Achievements are on!"
             "~Hear original dialogue~":
                 jump startachievement
     
@@ -34,19 +41,32 @@ label mcl_startachievement:
         m 1ssa "By making a game out of it."
         m 7wsa "Do you know about game achievements, [player]?"
         m 4fsu "In video games, it’s common to reward your actions by just logging it and making a note out of it."
-        m 4hsu "So in the spirit of DDLC, we’ll do the same!"
+        m 4hsu "So in the spirit of DDLC, I was thinking we could do the same."
         m 3hsu "Whenever you do anything of special note, I’ll let you know on the top-left of the screen, like such:"
         $ renpy.notify ("Achievement: this is a test achievement!")
         show monika
         pause 2.0
         m 4hsu "And I’ll log all your achievements through a special menu."
-        m 3tkb "By 'special menu,' I mean I’ll write it all down in a spare school notebook I found, hahaha."
+        m 7ftd  "Does this sound like an option you'd be interested in?"
+        $ _history_list.pop()
+        menu:
+            "That sounds fun!":
+                m 7hub "Great!"
+                $ persistent._mcl_achievementtoggle = True
+            "I'm not sure I'd be interested in the idea.":
+                m 7hua "I'm glad I asked, then."
+                m 5htd "I get that adding this would feel a bit too out of place in our dynamic."
+                m 4esd "But if you're ever interested, feel free to re-run this topic."
+                m 3esu "Who needs a special system when every day is a achievement with you?"
+                $ persistent._mcl_achievementtoggle = False
+                return
+        m 3tkb "Now when I say 'special menu,' I mean I’ll write it all down in a spare school notebook I found, hahaha."
         m 3nub "This menu will be accessible through the ‘interact’ section."
         m 2hua "If it doesn’t appear right away, don’t worry! It should show up soon enough."
         m 1hua "When you open it up, I’ll go into a little more detail about how our achievement system will work."
         m 5ssb "Here’s looking forward to making our time feel richer than ever!"
         $ persistent._mcl_masterachievement = False
-    return
+        return
 
 init 5 python:
     addEvent(
@@ -87,6 +107,7 @@ label mcl_menuachievement:
         $ persistent._mcl_masterachievement = True
         $ persistent._mcl_chessachievement = False
         $ persistent._mcl_nouachievement = False
+        $ persistent._mcl_achievementcrane = False
         default persistent._mclachievevement = 0
         define mclaincrease = 1
         
@@ -190,6 +211,14 @@ label mcl_menuachievement:
             m "That's a surprisingly great activity to bond over."
             jump achievementmenutwo
         "{color=#3c8248}???{/color}" if persistent._mcl_achievementyell is False:
+            jump achievementmenutwo
+        "Queen of Flightless Birds" if persistent._mcl_achievementcrane:
+            m "I have the very first crane I made tucked away somewhere."
+            m "It's particularly beat up, and I love it all the more for that. I think I'll take special care of it."
+            m "It'll remind me of you. It'll remind me of.. Well, me and my efforts!"
+            m "And it'll remind me that we completed our humble little goal of folding paper cranes."
+            jump achievementmenutwo
+        "{color=#a63da2}???{/color}" if  persistent._mcl_achievementcrane is False:
             jump achievementmenutwo
         "On a Whim" if achievementrand == 1:
             m "I've decided to unlock this achievement for you." 
