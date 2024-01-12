@@ -3751,6 +3751,26 @@ label mcl_theworld:
     m 1nua "But it's a little fun to think about."
     return
 
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_fun_facts_database,
+            eventlabel="mas_mcl_not_a_fact",
+        ),
+        code="FFF"
+    )
+
+label mas_mcl_not_a_fact:
+    m 6eud "Okay, here's a good one."
+    m 7suo "If you stacked all the elephants on the world on top of one another.."
+    m 7tso "They wouldn't like it very much."
+    m 7ttu "..."
+    m 1ttu "That was a joke."
+    m 1htu "..."
+    m 1hfu "I mean I have to admit, I can see why this joke falls flat on it's face, but I'm actually kind of chuckling to myself having just told it."
+    m 2hub "Hehehe."
+    call mas_fun_facts_end
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
