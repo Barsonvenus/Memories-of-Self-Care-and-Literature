@@ -4850,12 +4850,12 @@ label mcl_cranefolding:
     define mclcincrease = 1
     define cranedissolve = Dissolve(1.0)
 
-    image origamione = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/origamione.png"
-    image origamitwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/origamitwo.png"
-    image origamipileone = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGpile1.png"
-    image origamipiletwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGpile2.png"
-    image origamiflockone = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGflock1.png"
-    image origamiflocktwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGflock2.png"
+    image origamione = "/submods/MoSCL/submod_assets/sprites/origamione.png"
+    image origamitwo = "/submods/MoSCL/submod_assets/sprites/origamitwo.png"
+    image origamipileone = "/submods/MoSCL/submod_assets/sprites/OGpile1.png"
+    image origamipiletwo = "/submods/MoSCL/submod_assets/sprites/OGpile2.png"
+    image origamiflockone = "/submods/MoSCL/submod_assets/sprites/OGflock1.png"
+    image origamiflocktwo = "/submods/MoSCL/submod_assets/sprites/OGflock2.png"
     
     transform craneframe:
         xanchor 0 
