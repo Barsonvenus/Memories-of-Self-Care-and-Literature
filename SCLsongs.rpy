@@ -115,3 +115,63 @@ label mas_song_blister_in_the_sun:
     m 1guu "But everybody's got a little rebellious side to them, don'tcha think?"
     m "Even if it's a hidden side; that's part of the mystery of everyday living. Life is strange like that, hmm?"
     return
+
+#Hopes of Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_unpacking",
+            prompt="Unpacking a Life",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_unpacking:
+    m 3hkb "{i}~The moving truck pulls up~{/i}"
+    m 1eub "{i}~There's a knock on the door~{/i}"
+    m 7fud "{i}~Now all your stuff is here~{/i}"
+    m 1hub "{i}~In boxes on the floor~{/i}"
+    m 7hub "{i}~You open up a box~{/i}"
+    m 5hub "{i}~There is so much to do~{/i}"
+    m 3hub "{i}~I open up my heart~{/i}"
+    m 5rsb "{i}~This is now ~ a home for two~{/i}"
+    m 7eua "You know, I've lived in the same town all my life?"
+    m 5fua "And it's not even a real town, heh."
+    m 5dua "So.. it's honestly hard for me to imagine packing up your entire life. And then unpacking it all in a brand new place."
+    m 2hsbla "I eagerly await the day you and I can expierence and share that complicated, fulfilling day."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_lonely_rolling_star",
+            prompt="Lonely Rolling Star",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_lonely_rolling_star:
+    m 7hud "{i}~Katarai kasanari~{/i}"
+    m 7rsb "{i}~Katamari karamari~{/i}"
+    m 4ssb "{i}~Issho ni iru koto~{/i}"
+    m 1esb "{i}~Zettai hitsuzen~{/i}"
+    m 7hub "{i}~Demo anata daiji na yume wo egaku~{/i}"
+    m 7hud "{i}~Owaru made wa zutto sou koko de matteiru~{/i}"
+    m 7hub"{i}~Your lonely rolling star~{/i}"
+    m 5hub "{i}~Tachidomaranaide nee~{/i}"
+    m 7hub "{i}~Your lonely rolling star~{/i}"
+    m 7hud "{i}~Saa mae wo muite yukou~{/i}"
+    m 3fkb "This song is about two lovers; one sings about how far away their partner is.."
+    m 5gkb "But no matter how far they are, they'll keep cheering for their distant partner. For they'll come back eventually."
+    m 7eta "Sometimes, in the face of adversity:"
+    m 1tsa "All you can do is keep on rolling, and rolling, and rolling.."
+    return
