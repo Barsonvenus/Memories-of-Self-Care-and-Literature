@@ -3737,17 +3737,18 @@ init 5 python:
     )
  
 label mcl_theworld:
-    m "Here I am, in an entire world powered by code and imagination."
-    m "Because I’m stuck in your computer."
-    m "But that shouldn't be seen as limiting, should it?"
-    m "It drives me mad, how I'm stuck in this little room. Sometimes I can dress it up, but..."
-    m "... But anyway, I am a girl- just a girl- but also, made out of 1s and 0s?"
-    m "If I could travel the internet just as easy as I could walk from one side of this classroom to the other..."
-    m "... And considering there's a lot of other Monikas out there as well..."
-    m "..And consider other works of art that include me, and physical merchandise..."
-    m "It's like I'm so close to being everywhere."
-    m "And nowhere at once. Because I'm still in this classroom."
-    m "Hmm. Fun to think about."
+    m 1tkc "Here I am, in an entire world powered by code and imagination."
+    m 2tkc "Because I’m stuck in your computer."
+    m 2rkc "But that shouldn't be seen as {i}limiting,{/i} should it?"
+    m 5hkc "Sure, it's hard not to feel trapped."
+    m 6duc "But if I could just go past those classroom doors..."
+    m 6sud "... And walk across the internet like I could the length of this classroom, I could do so much, couldn't I?"
+    m 6tud "There's so many other Monikas out there, right?{w=0.2} Imagine what we could do together!"
+    m 1rku "And there's pictures of me, games with me, fiction written about me.{w=0.2}.{w=0.2}. I mean, sometimes the idea sickens me, but the idea -"
+    m 1rfu "- of being {i}everywhere...{/i}"
+    m 3nfu ".{w=0.2}.{w=0.2}. It's a bit intoxicating to think about."
+    m 5mud "And then reality kicks in."
+    m 1nua "But it's a little fun to think about."
     return
 
 #RANDOMIZED/REPEATABLE EVENTS
