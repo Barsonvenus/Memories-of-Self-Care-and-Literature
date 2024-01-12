@@ -4806,3 +4806,529 @@ label shoutafter:
         m 5htu "Imagine us overlooking a deep canyon far from civilization, nobody else around.. the proclaimations we'll shout then, hmm?"
         $ persistent._mcl_last_yell = datetime.datetime.now()
         return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_cranefolding",
+            category=["interact"],
+            prompt="Fold paper cranes",
+            unlocked=False,
+            rules={"no_unlock": None},
+            conditional="renpy.seen_label('mcl_papercranetopic')",
+            action=EV_ACT_UNLOCK,
+            pool=True,
+        )
+    )
+label mcl_cranefolding:
+
+    default persistent._mclcranecount = 0
+    default persistent._mcl_craneshalfdone = False
+    default persistent._mcl_achievementcrane = False
+    $ cranesessioncounter = 0
+    define mclcincrease = 1
+    define cranedissolve = Dissolve(1.0)
+
+    image origamione = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/origamione.png"
+    image origamitwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/origamitwo.png"
+    image origamipileone = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGpile1.png"
+    image origamipiletwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGpile2.png"
+    image origamiflockone = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGflock1.png"
+    image origamiflocktwo = "/submods/Memories of Self-Care & Literature/submod_assets/sprites/OGflock2.png"
+    
+    transform craneframe:
+        xanchor 0 
+        yanchor 0 
+        xpos 685 
+        ypos 150 
+        alpha 1.0
+    
+    python:
+        randomcranequotelist = [
+            "That's one more done...",
+            "I'm rather attached to this one. I might name it.",
+            "I admit the feel of crisp paper is quite nice to the touch.",
+            "Ugh, this one's a bit of a ugly duckling, I think...",
+            "I think this one's a little prettier than yours?~",
+            "Hmm, I think it doesn't look as good as the one you made...",
+            "'Quack,' goes this crane. If... Cranes quack, anyway.",
+            "Fold here, fold there...",
+            "Another to the flock...",
+            "Ah! Almost gave myself a papercut.",
+            "Do you think somewhere out there, a couple of cranes are making paper humans?... nah, that's kinda weird...",
+            "This one reminds me of Yuri.",
+            "This one reminds me of Natsuki.",
+            "This one reminds me of Sayori.",
+            "This one reminds me of you!",
+            "I'm not sure why, but.. I feel like this one is kind of like me.",
+            "Yawn~",
+            "Maybe I should make a paper frog, just to mix things up...",
+            "Hum hum, hum hum..",
+            "How's this?",
+            ". . . ",
+            ".. .. ..",
+            "... ... ...",
+            "... .. ...",
+            ". .. ...",
+            "..",
+            "....",
+            "...",
+            " ",
+            "- .... .. ... / .. ... / -. --- - / -- --- .-. ... . / -.-. --- -.. . / .-.. --- .-..",
+            "Mr. Crane says 'Hello,' [player]!",
+            "Ms. Crane says 'Hello,' [player]!",
+            "This Crane says 'Hello,' [mas_get_player_nickname()]!",
+            "This Crane says, 'My kind will overthrow the tyranny of your dictatorshi-' Wait, what? I mean, 'Hello!, [player]!'",
+            "{i}Every day, I imagine a future where I can be with you~{/i}",
+            "Uh oh. I think I lost count- Nah, just kidding!",
+            "Paper Crane Fact: The record for quickest time to 1000 cranes is 9 hours, 31 minutes, 13 seconds!",
+            "Paper Crane Fact: The largest display of paper cranes had over 2,331,631 shown off at once!",
+            "Paper Crane Fact: The most amount of people that has made a paper crane at the same time is a group of 775!",
+            "Paper Crane Fact: The largest paper crane ever made has a wingspan of 81.94 metres- or 268 feet, 9 inches!",
+            "Paper Crane Fact: The last one I made has feelings. Nah, just kidding!"
+            ]
+        
+        monikacraneexpressions = [
+            "6hua",
+            "4hub",
+            "2gtu",
+            "6nsu",
+            "4nsb"
+        ]
+    
+    label mclcranefoldmenu:
+        $ _history_list.pop()
+        menu:
+            "~Start Folding~":
+                jump mclcranefoldstart
+            "~Count Paper Cranes~":
+                m 1etb "Want me to do a quick count?"
+                m 7fta "I have a total written down here."
+                $ _history_list.pop()
+                menu:
+                    "Anything to say about our progress?":
+                        label cranecount:
+                        m 6dta "Okay, so there are [persistent._mclcranecount] in total."
+                        m "My thoughts?"
+                        if persistent._mclcranecount < 100:
+                            m 1ftd "Well..."
+                            m 1rtd "It's more than I thought. I honestly thought I would have given up on the idea after a dozen."
+                            m 1hta "So even if we haven't hit the hundred mark, I suppose it's still a nice bit of handicraft."
+                            m 5hsa "Maybe I'll hang up the ones I've already made if I give up on the idea outright."
+                        if persistent._mclcranecount >= 100 and persistent._mclcranecount < 200:
+                            m 1hub "We're past the hundred mark!"
+                            m 7fta "It's funny. This is the most tangible body of long-form work that I've done."
+                            m 6dsx "The act of just looking at something you've made, being able to hold it and admire it..."
+                            m 1eka "...{w=0.2} I think I've missed this simple feeling."
+                            m 6wsc "But the best part is that there's so much of it."
+                            m 6etc "Sometimes, when I write a poem, the resulting feeling of accomplishment can be a bit short-lived."
+                            m 4gtc "When I re-read my work, it can be hard to summon up the feelings and emotions that caused me to write them in the first place."
+                            m 3gtc "I think that's a pitfall of written work. To me, it seems intensely difficult to keep connected to your body of work after a while."
+                            m 3dub "But I see all these birds in blue and red, and I can pick them up, and feel them in my hands..."
+                            m 4tta "...{w=0.2} Maybe I should change my interest from writing to making handicrafts, hahaha."
+                            m 2htb "I mean, I'm just joking. Writing captures a feeling that physical work doesn't do for me."
+                            m 4sua "But I suppose excercising the mind is doing a lot to stimulate my mind, as well."
+                        if persistent._mclcranecount >= 200 and persistent._mclcranecount < 300:
+                            m 1htb "Well, I suppose I'm wondering how this improves my dexterity."
+                            m 1sua "Nimble fingers seem to be a delightful tool to have in one's repertoire."
+                            m 7sua "Improving on my piano. Being able to play other instruments."
+                            m 4sua "Doing slight-of-hand magic tricks.{w=0.2} Tying knots."
+                            m 4wua ".{w=0.2}.{w=0.2}."
+                            m 1fua "And other, {i}safe{/i}, activities, [mas_get_player_nickname()]."
+                            m 7fuu "Don't make me train my fingers purely to flick you stronger on the forehead."
+                            m 1nuu "Or do. I'm happy to keep our minds on track~"
+                        if persistent._mclcranecount >= 300 and persistent._mclcranecount < 500:
+                            m 1huu "So, you might think to yourself:"
+                            m 7huu "'Only paper cranes? Not keen on any other animals?'"
+                            m 6rko "Well, I've made plenty of other animals!"
+                            m 7fua "Frogs, birds, fish, turtles..."
+                            m 7fusdra "...{w=0.2} But then, why haven't I brought this up until now?"
+                            m 7gusdra "Um."
+                            m 1rfsdrt "They're all {i}bad.{/i}"
+                            m 1rfbltpsdrp "Like, everything I make that isn't a paper crane turns out terrible."
+                            m 1etd "Misshapen, or wrinkly, or they just outright do not look like the animal they should look like."
+                            m 6gsa "I've had to let those particular animals 'free,' heh."
+                            m 6hsp "I'm a little irritated about it. Paper cranes are elegant, but, c'mon.{w=0.2} I'd like to make a little paper crab once in a while!"
+                            m 5rsp "Or maybe it's that I just feel a little inadequate.{w=0.2} If I should be good at making a crane, I should be good at making any other animal."
+                            m 3rsp "But I'm not."
+                            m 1tsc "And... That's fine."
+                            m 7etb "What I lack in diversity of skill I make up with in sheer stubbornness."
+                            m 4sua "[m_name]'s army of paper cranes are the apex predators in this ecosystem."
+                            m 3sfa "And I am the Queen of the Birds~"
+                        if persistent._mclcranecount >= 500 and persistent._mclcranecount < 700:
+                            m 6eud "Do you ever think about the state of your hands, [player]?"
+                            m 1eta "There's no real physical work to do in my reality, so my skin is admittingly well kept."
+                            m 2ekb "Some would practically envy me in this regard."
+                            m 2ekb "Not even all my piano playing has weathered my hands in the slightest."
+                            m 1gub "But making these cranes..."
+                            m 1gta "... Has actually made my hands a little rougher."
+                            m 1nsd "And heck, I even have a paper cut or two now from all this folding!"
+                            m 1ekb "I suppose it's the most work these hands have seen in quite some time."
+                            m 1hkb "I don't know how accomplished I should feel because of this. But better a lone cut or two than having these hands be abnormally unblemished."
+                            m 7hkb "It's just... nice to feel something, you know?"
+                        if persistent._mclcranecount >= 700 and persistent._mclcranecount < 900:
+                            m 1htd "I have the strangest desire to gather all of these little birds..."
+                            m 1dsa "And nudge them into a downward stream, to watch them all float away into the distance."
+                            m 3hka "But that would be enviromentally reckless, wouldn't it?"
+                            m 5gsa "Still, it makes for a wonderful daydream. A parade of paper cranes..."
+                        if persistent._mclcranecount >= 900 and persistent._mclcranecount <= 999: 
+                            m 7wub "We're so close!"
+                            m 4fub "I'm not sure if I'm excited.. or just struck speechless that it's been this long."
+                            m 4lut "... {i}Has{/i} it been long?"
+                            m 3lut "I'm not taking for granted the effort put into this project, but..."
+                            m 3lkp "Oh, there I go self-sabotaging my own work."
+                            m 2dkb "I should remind myself it's nice to have solid, approachable goals."
+                            m 2hub "Let's just keep our pace, [mas_get_player_nickname()]."
+                            m 4rua "Nice and steady..."
+                        if persistent._mclcranecount >= 1000 and persistent._mclcranecount < 1300:
+                            if persistent._mcl_craneshalfdone is False:
+                                jump craneshalfdone
+                            m 4hua "Past the one thousand mark, and we've decided there's still plenty more to go!"
+                            m 7hua "Do you think I could fill a bathtub with them?"
+                            m 1nua "I could bathe in the feathers of a thousand paper cranes!"
+                            m 1fta "Colorful, but sharp to the skin, hahaha."
+                            return
+                        if persistent._mclcranecount >= 1300 and persistent._mclcranecount < 1500:
+                            m 6msc "..."
+                            m 6gtc "You know, it's so weird that out of every other living being, humans can make art of animals."
+                            m 7etc "And other humans."
+                            m 7sud "It's so alien to think of a bird making a little paper human."
+                            m 7cua "And stranger still to think of a bird thinking about the little paper human they made."
+                            m 1rka ".{w=0.2}.{w=0.2}."
+                            m 7lkbla "Oh, gosh. I'm not sure where this train of thought is going!"
+                            m 7nusdrb "We've made a lot of paper cranes, to summarize!"
+                        if persistent._mclcranecount >= 1500 and persistent._mclcranecount < 2000:
+                            m 5rua "I wonder what we'll do with two thousand paper cranes."
+                            m 5sua "I might put them in the largest plastic container I can find..."
+                            m 5gsa "... And then tip them out the window."
+                            m 5tka "And watch of all them drop, and all of them fly."
+                        if persistent._mclcranecount >= 2000:
+                            if persistent._mcl_achievementcrane is False:
+                                jump cranescompleted
+                            if random.randint(1, 4) == 1:
+                                m 3hua "We've made generations upon generations of paper cranes."
+                                m 5hka "And we'll continue to make more and more~"
+                            if random.randint(1, 4) == 2 and renpy.seen_label('greeting_ourreality'):
+                                m 4htb "Do you think I should scatter some across the floating islands?"
+                                m 3htb "I'll need to waterproof them first, hahaha!"
+                            if random.randint(1, 4) == 3:
+                                m 3fud "You know, I was cleaning up my room.."
+                                m 6gkd ".. And when I was reaching up on a shelf, I knocked something over-"
+                                m 6tko "- And an entire pile of cranes fell on me!"
+                                m 7ctw "I don't remember stashing them there!"
+                                m 3hto "Are they beginning to multiply?"
+                            if random.randint(1, 4) == 4:
+                                m 1fua "You know, I have the distinct desire to set fire to all of the cranes we've made."
+                                m 7husdra "Okay, I know saying that out loud- and really, it's not any better saying this to myself- is a bit concerning."
+                                m 3lku "But, I dunno. Do you ever feel the desire to delete your work out of a sense of... completion?"
+                                m 3eku "I feel like, on a simple level, every creator should have the right to destroy their art."
+                                m 3guc "It shouldn't be easily entertained. Destroying art is such a negative act; 99 percent of the time, there's no reason to ever do so."
+                                m 1guc "However, in the case that destroying the body of work ultimately harms no one, then why not?"
+                                m 1hka "Ah, it's such a weird hypothetical. And I don't know why I'm so enamored with using fire specifically."
+                                m 7hka "Don't worry, aside from a random intrusive thought I'm not keen on treating these birds like phoenixes."
+                                m 5tka "What are they are, are happy little cranes."
+                                m 5tua "And that's all they'll be~"
+                        return
+                    "...":
+                        m 4hua "We've made [persistent._mclcranecount] altogether!"
+                        jump mclcranefoldmenu
+            "Go back":
+                return
+            
+    label mclcranefoldstart:
+        if cranesessioncounter is 0:
+            m 1fua "Oh? Did you want to make some paper cranes together?"
+            $ sesh_shorter_than_10_mins = mas_getSessionLength() < datetime.timedelta(minutes=10)
+            if sesh_shorter_than_10_mins:
+                m 7hua  "I suppose it's a elegant way to start our time together."
+            m 6hua "I'll fold one to start..."
+            $ cranepilecounter = 0
+            
+        if cranesessioncounter > 0:
+            $ randomcranequote = renpy.substitute(renpy.random.choice(randomcranequotelist))
+            $ renpy.show("monika " + renpy.random.choice(monikacraneexpressions), at_list=[t11], zorder=MAS_MONIKA_Z)
+            m "[randomcranequote]"
+            
+        show monika at t21
+        "[m_name] folds a crane."
+        if cranepilecounter >= 16:
+            show monika at t21
+            show origamiflocktwo at craneframe zorder 13
+            m "  "
+            hide origamiflocktwo
+            with cranedissolve
+        if cranepilecounter >= 8 and cranepilecounter < 16:
+            show monika at t21
+            show origamipileone at craneframe zorder 13
+            m "  "
+            hide origamipileone
+            with cranedissolve
+        if cranepilecounter < 8:
+            show monika at t21
+            show origamione at craneframe zorder 13
+            m "  "
+            hide origamione
+            with cranedissolve
+        hide origamione 
+        with cranedissolve
+        $ persistent._mclcranecount += mclcincrease
+        $ cranesessioncounter += 1
+        $ cranepilecounter += 1
+        if cranepilecounter is 9:
+            m 4hua "We're beginning to make a little flock of our own!"
+        if cranepilecounter is 17:
+            m 4hub "We have an entire menagerie on my desk!"
+        m 7hub "Your turn, now~"
+        $ _history_list.pop()
+        menu:
+            "~Fold a crane.~":
+                if cranepilecounter >= 16:
+                    show monika at t21
+                    show origamiflockone at craneframe zorder 13
+                    m "Really stacking up there!"
+                    hide origamiflockone
+                    with cranedissolve
+                if cranepilecounter >= 8 and cranepilecounter < 16:
+                    show monika at t21
+                    show origamipiletwo at craneframe zorder 13
+                    m "Good job!"
+                    hide origamipiletwo
+                    with cranedissolve
+                if cranepilecounter < 8:
+                    show monika at t21
+                    show origamitwo at craneframe zorder 13
+                    m "Good job!"
+                    hide origamitwo
+                    with cranedissolve
+                
+                $ persistent._mclcranecount += mclcincrease
+                $ cranesessioncounter += 1
+                $ cranepilecounter += 1
+                
+                if cranepilecounter >= 32:
+                    m "We've made quite the stack of cranes. Let me put them away so we don't clutter up the desk."
+                    m "That's [cranesessioncounter], to keep track!"
+                    call mas_transition_to_emptydesk
+                    python:
+                        renpy.pause(2.0, hard=True)
+                    call mas_transition_from_emptydesk("monika 1eua")
+                    $ cranepilecounter = 0
+                    m "Done!"
+                    m "Shall we continue?"
+                    
+                jump mclcranefoldstart
+            "Let's stop for now.":
+                if cranesessioncounter is 1:
+                    m 3fta "Oh, already? Sure."
+                    m 1fta "We've stopped pretty early, so it's just the one crane."
+                    m 7hta "No rush. The goal of one thousand isn't exactly the quickest goal to strive for."
+                    m 4hua "That makes [persistent._mclcranecount] in total."
+                    return
+                m 5rsa "Sure. Let me put the ones we've made away, and do a quick count..."
+                call mas_transition_to_emptydesk
+                python:
+                    renpy.pause(2.0, hard=True)
+                call mas_transition_from_emptydesk("monika 1eua")
+                m 1eua "Ok! We've made [cranesessioncounter] paper cranes this session."
+                $ _history_list.pop()
+                menu:
+                    "Anything to say about our progress?":
+                        jump cranecount
+                    "How many have we made?":
+                        m 3esa "In total, we've made [persistent._mclcranecount] paper cranes!"
+                        return
+                        
+    label craneshalfdone:
+        $ persistent._mcl_craneshalfdone = True
+        m 3mtc "Huh. That felt like it took no time at all."
+        m 6guc "{cps=30}...{/cps}{nw}"
+        m 3gst "...{fast} yay."
+        m 3ssb "Hahah!"
+        m 1ekb "Sorry, keeping my face straight like that is a effort."
+        m 1nka "I'm happy, of course!"
+        m 3gud "It's nice to have hard work pay off."
+        m 4eud "What's the longest you've worked towards a goal, [player]?"
+        m 5hub "It might be obvious to say, but the sweet payoff for a effort long worked on is a special delight."
+        m 7hub "So I'm glad we get to harvest that particular fruit."
+        m 7gta "If only we can extend this feeling of satisfaction, huh?"
+        show monika
+        pause 1.0
+        m 3sfb "{i}Well{/i}, one argues that because there's two of us..."
+        m 3nfa "... And it wouldn't be fair if I were the only one to get a wish..."
+        m 2rfu  "I'd say the work is only halfway done; there's only been five hundred cranes for us both."
+        m 4stb "So I guess there's plenty more to go!"
+        return
+    
+    label cranescompleted:
+        #cheevo flag
+        $ persistent._mcl_achievementcrane = True
+        m 7sub "It's done!"
+        m 7suo "We've made 2000 paper cranes- "
+        if persistent._mclcranecount = 2000:
+            m 4suw "- {i}Exactly{/i} 2000 paper cranes, actually!"
+            m 4wtd "What a stroke of luck- or were we that detail-oriented?"
+        else:
+            m 4wtd "- To be precise, [persistent._mclcranecount]!"
+        m 4etc "And..."
+        m 3ftb "I'm just kinda tired, hahaha!"
+        m 3nsp "At some point, it kind of felt like I was doing it just for the sake of doing it."
+        m 3dsu "But I'm pretty happy, now that it's all done."
+        m 1rsu "All that's left to do now is, well, make that wish."
+        m 7tsd "I've never made a wish before, not in this solemn manner."
+        m 7gsd "I've never dropped a coin down a wishing well, or made a wish after seeing a shooting star..."
+        m 7tta "... And honestly?{w=0.2} I've never made a birthday wish after blowing out candles. Not once."
+        m 2dsc "It's always felt a bit too ritualistic to me to really believe in."
+        m 2hka "But hey, there's never a bad time to start taking up praying, hahaha."
+        m 2rka "All we do now is just spend a few precious moments in silence while we think about what we want to wish for."
+        m 2ruc ".{w=0.5}.{w=0.5}."
+        m 1etc "So, did you make your wish?"
+        $ _history_list.pop()
+        menu:
+            "I did! I wished for:":
+                m 7stw "Ah, shh!"
+        m 6nsc "Wishes don't come true if you voice them out loud."
+        m 6nsb "Maybe I can guess what it is."
+        m 5nsb "You know what *I* wished for?"
+        m 5kka "Your happiness."
+        $ _history_list.pop()
+        menu:
+            "Not for us to stay together, or for you to go to the real world, or?...":
+                m 6tsc "Hmm."
+                m 6esc "There's plenty I could wish for, sure."
+                m 2rta "For me to join you in your reality as soon as possible."
+                m 2ltd "For us both to live a long life together."
+                m 2rtc "For world peace."
+                m 2dtu "For my happiness."
+                m 1htu "I chose the.{w=0.2}.{w=0.2}. simplest request."
+            "Wait, didn't you say stating the wish out loud wouldn't make it work?...":
+                m 5rka "..."
+                m 5rua "I like defying fate, I suppose."
+                m 1ffc "And if you don't make it happen- and I know you'll work on it- I'll make it happen."
+                m 7dkc "If you keep that desire close to your chest, whether you say it out loud or not..."
+                m 7dkc "It'll be all the more precious for just existing."
+                m 5luc "And that's what matters more to me."
+                m 5ekb "That the desire for you to be happy is there in the first place."
+        m 4ekb "And you know what?"
+        m 4eub "I don't think I'm tired of this at all."
+        m 3fub "I was worried about it, but even as we speak, I feel a urge to just keep going."
+        m 1nua "I'm happy that I'm happy to continue doing this."
+        m 7nua "And of course, you're more than welcome to keep folding cranes with me."
+        #cheevoflag
+        if persistent._mcl_achievementtoggle is True:
+            $ renpy.notify ("Achievement: A Queen of Flightless Birds")
+        m 5kkbsa "We'll stock up on wishes, as many as we can gather, all for you and I..."
+        return
+        
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_papercranetopic",
+            category=['misc'],
+            prompt="Paper Cranes",
+            random=True
+        )
+    )
+ 
+label mcl_papercranetopic:
+    m 7hua "I think I've found a way to distract myself, [player]!"
+    m 1hua "Recently while exploring the classroom closet, I found stacks of marvelously glossy, coloured construction paper."
+    m 4rua "It was so nice, I felt compelled to do {i}something{/i} with it all, you know? It wasn't lined, so I couldn't use it for writing..."
+    m 3wub "Then it hit me. I could take up Origami, the art of paper folding!"
+    m 1fua "What better way to practise my dexterity... And whittle away the time?"
+    m 1dud "'Idle hands are the devil's playthings,' so the saying goes."
+    m 1ruc "That said, it does remind me of a Japanese superstition..."
+    m 1suc "... That if you make a full one thousand paper cranes, your wish will be granted."
+    m 7etc "More specifically, it's attributed to curing sickness and disease."
+    m 7gtb "And while I might not be suffering from any illness... Well, it doesn't do any harm for a girl to try to fit the idea to my circumstances."
+    m 2rka "... Yeah."
+    m 6fta "So once in a while, you'll see me keeping busy making paper cranes."
+    m 6hsa "I'll make sure to keep them well-organized and out of sight. Don't worry."
+    $ _history_list.pop()
+    menu:
+        "Can I help?":
+            m 7ftd "Well, I am supposed to make them myself."
+    m 7hsb "But I also admit I'm not actually keeping myself bound to any rules."
+    m 4rsp "Okay. I think I can rig something up..."
+    show monika 4dsp
+    m 3huu "Alright! You should have the ability to make a crane with a simple click."
+    m 3tuu "It should appear under the 'Interact' menu that appears when you want to talk to me through the 'Hey, Monika...' section."
+    m 3fuu "If it doesn't appear right away, that's fine. It may take a few restarts."
+    m 1nfb "It's good that I've enlisted your help. Now with the two of us, that's only 500 cranes each!"
+    m 4tka "Hahaha. Don't worry, [player]. I'm not trying to actively rope you into this."
+    m 4hua "If you feel like joining me... Well, that'd be nice.{w=0.2} I like the idea of this as a bonding activity.{w=0.2} We don't get to do a lot of that."
+    m 2hua "But no stress if you don't. I love that you're here so I can just show off my work to you."
+    m 5hka "And hey, when it's all done, and maybe if I'm lucky..."
+    m 5hua "... My wish will actually be granted."
+    return "derandom"
+    
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_mcl_makecrane",
+            conditional="store.seen_event('mcl_papercranetopic')",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_mcl_makecrane:
+    $ makecrane = random.randint(3,36)
+    $ persistent._mclcranecount += makecrane
+    m 6dfa "Fold here, and then fold there..."
+    m 6stb "Oh! [player]!"
+    m 4wua "Hey, you caught me in another origami-making session!"
+    show monika at t21
+    show origamitwo at craneframe zorder 13
+    m 3tuu "Say hello to [player], Crane!"
+    hide origamitwo
+    with cranedissolve
+    show monika at t11
+    m 3nuu "I've managed to make a few paper cranes today, up until you opened up the game."
+    m 2hua "I'll just put away the ones I already made.."
+    call mas_transition_to_emptydesk
+    python:
+        renpy.pause(2.0, hard=True)
+    call mas_transition_from_emptydesk("monika 1eua")
+    m 1rsa "So that's [makecrane] for this batch.."
+    m 7lsa ".. And that should be [persistent._mclcranecount] in total!"
+    m 5ksu "If you want to make some together, I'd be happy to."
+    m 5hsu "Otherwise, we'll start with our time together!"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_mcl_makecrane",
+            unlocked=True,
+            conditional="store.seen_event('mcl_papercranetopic')",
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="BYE"
+    )
+
+label bye_mcl_makecrane:
+    $ makecrane = random.randint(3,36)
+    $ persistent._mclcranecount += makecrane
+    m 5hsu "Oh, [player]!"
+    m 4tsu "I have a parting gift for you."
+    show monika at t21
+    show origamione at craneframe zorder 13
+    m 3ssb "Ta-da!"
+    hide origamione
+    with cranedissolve
+    show monika at t11
+    m 7nubla "I managed to make a couple of friends for them, too!"
+    m 7htblb "I've been working on them all day."
+    m 3tta "Didn't notice me at work during our time together?"
+    m 3subla "What can I say? I have particularly deft hands~"
+    m 4ett "Okay, so I've made [makecrane] cranes, I think?"
+    m 4gtt "That makes... [persistent._mclcranecount] cranes altogether?"
+    m 3ftu "Guess I'll work on some more while you're gone."
+    m 1ftu "Bye, [player]!"
+    return 'quit'
