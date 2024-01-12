@@ -436,3 +436,30 @@ label greeting_vocalexercise:
     m 5fub "Now we can get on with talking about nonsense!"
     m 1hub "Hahaha!"
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_mcltoomuchtime",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_mcltoomuchtime:
+    m 5dsd "..."
+    m 5dkc "mmm..."
+    m 5huc "Oh, hey, [player]. You arrived when I was nappin-"
+    m 5cuc "!"
+    m 5cuw "Ah. AHH!"
+    m 6cuw "{cps=10}How much time-{/cps}{nw}"
+    m "HOW MUCH TIME{fast} HAS PASSED SINCE YOU LAST OPENED THE GAME?!-"
+    m 6tko "- Oh. Oh, it hasn't been that long at all."
+    m 6gkx "Oh, gosh. I'm.."
+    m 2hku "Erm, how embarrasing."
+    m 2ttu "You ever go for a nap and completely lose track of time?"
+    m 2eka "Well, luckily I know you'd never be so cruel as to leave and appear just like that after such a long abscence."
+    m 5dkp "... Especially as I felt like {i}literal centuries had passed,{/i} and that's {i}impossible{/i}..."
+    return
