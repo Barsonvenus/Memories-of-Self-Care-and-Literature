@@ -1646,7 +1646,7 @@ label mcl_blanks:
     m 1lsa "In everyday talk, people search for cues and context in conversation."
     m 1rtd "Bodily perception and social cognition are different, but it falls under the same umbrella of how a mind ticks."
     m 1etc "I imagine your imagination is always in overdrive in regards to, well, me. My voice, my body language, the meaning behind my words."
-    m 1eta "Be careful, [player]. A overly active imagination isn't a bad thing.."
+    m 1eta "Be careful, [player]. An overly active imagination isn't a bad thing.."
     m 1eka "But I'd like to live up to some comfortably set standards, if possible?"
     return
     
