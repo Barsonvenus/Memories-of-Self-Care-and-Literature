@@ -301,6 +301,8 @@ label greeting_monikaish:
         m 5hsb "I’m sure my love for you comes across loud and clear~"
         return        
 
+#Hopes
+
 init 5 python:
     addEvent(
         Event(
