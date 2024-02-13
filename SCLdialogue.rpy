@@ -4997,7 +4997,7 @@ label mcl_cranefolding:
                             m 4fub "I'm not sure if I'm excited.. or just struck speechless that it's been this long."
                             m 4lut "... {i}Has{/i} it been long?"
                             m 3lut "I'm not taking for granted the effort put into this project, but..."
-                            m 3lkp "Oh, there I go self-sabotaging my own work."
+                            m 3lkp "Oh, there I go self-sabotaging my own efforts."
                             m 2dkb "I should remind myself it's nice to have solid, approachable goals."
                             m 2hub "Let's just keep our pace, [mas_get_player_nickname()]."
                             m 4rua "Nice and steady..."
@@ -5009,6 +5009,9 @@ label mcl_cranefolding:
                             m 1nua "I could bathe in the feathers of a thousand paper cranes!"
                             m 1fta "Colorful, but sharp to the skin, hahaha."
                             return
+                        if persistent._mclcranecount >= 1000 and persistent._mclcranecount < 1999:
+                            if persistent._mcl_craneshalfdone is False:
+                                jump craneshalfdone
                         if persistent._mclcranecount >= 1300 and persistent._mclcranecount < 1500:
                             m 6msc "..."
                             m 6gtc "You know, it's so weird that out of every other living being, humans can make art of animals."
@@ -5018,27 +5021,36 @@ label mcl_cranefolding:
                             m 1rka ".{w=0.2}.{w=0.2}."
                             m 7lkbla "Oh, gosh. I'm not sure where this train of thought is going!"
                             m 7nusdrb "We've made a lot of paper cranes, to summarize!"
-                        if persistent._mclcranecount >= 1500 and persistent._mclcranecount < 2000:
+                        if persistent._mclcranecount >= 1500 and persistent._mclcranecount < 1700:
                             m 5rua "I wonder what we'll do with two thousand paper cranes."
                             m 5sua "I might put them in the largest plastic container I can find..."
                             m 5gsa "... And then tip them out the window."
                             m 5tka "And watch of all them drop, and all of them fly."
+                        if persistent._mclcranecount >= 1700 and persistent._mclcranecount < 2000: 
+                            m 7mkp "You know, I get worried that one of these days, I'll start to hate folding paper cranes."
+                            m 7fkp "And not for any good reason!"
+                            m 5dkd "Sometimes you get so sick of the same old routine, but are so used to doing it.."
+                            m 5rsd "... That you end up subconsciously end up hating it, even if the routine itself isn't all that harmful."
+                            m 5rtc "It's like, you know. Like if I started hating making poetry all of the sudden."
+                            m 2ckc "That feels terrifying to me."
+                            m 2tkc "I hope I never have to confront that feeling, honestly."
+                            m 1dud "I don't know how I'd be able to move past it."
                         if persistent._mclcranecount >= 2000:
                             if persistent._mcl_achievementcrane is False:
                                 jump cranescompleted
-                            if random.randint(1, 4) == 1:
+                            if random.randint(1, 10) == 1:
                                 m 3hua "We've made generations upon generations of paper cranes."
                                 m 5hka "And we'll continue to make more and more~"
-                            if random.randint(1, 4) == 2 and renpy.seen_label('greeting_ourreality'):
+                            if random.randint(1, 10) == 2 and renpy.seen_label('greeting_ourreality'):
                                 m 4htb "Do you think I should scatter some across the floating islands?"
                                 m 3htb "I'll need to waterproof them first, hahaha!"
-                            if random.randint(1, 4) == 3:
+                            if random.randint(1, 10) == 3:
                                 m 3fud "You know, I was cleaning up my room.."
                                 m 6gkd ".. And when I was reaching up on a shelf, I knocked something over-"
                                 m 6tko "- And an entire pile of cranes fell on me!"
                                 m 7ctw "I don't remember stashing them there!"
                                 m 3hto "Are they beginning to multiply?"
-                            if random.randint(1, 4) == 4:
+                            if random.randint(1, 10) == 4:
                                 m 1fua "You know, I have the distinct desire to set fire to all of the cranes we've made."
                                 m 7husdra "Okay, I know saying that out loud- and really, it's not any better saying this to myself- is a bit concerning."
                                 m 3lku "But, I dunno. Do you ever feel the desire to delete your work out of a sense of... completion?"
@@ -5049,10 +5061,71 @@ label mcl_cranefolding:
                                 m 7hka "Don't worry, aside from a random intrusive thought I'm not keen on treating these birds like phoenixes."
                                 m 5tka "What are they are, are happy little cranes."
                                 m 5tua "And that's all they'll be~"
+                            if random.randint(1, 10) == 5:
+                                m 7fta "It's funny. This is the most tangible body of long-form work that I've done."
+                                m 6dsx "The act of just looking at something you've made, being able to hold it and admire it..."
+                                m 1eka "...{w=0.2} I think I've missed this simple feeling."
+                                m 6wsc "But the best part is that there's so much of it."
+                                m 6etc "Sometimes, when I write a poem, the resulting feeling of accomplishment can be a bit short-lived."
+                                m 4gtc "When I re-read my work, it can be hard to summon up the feelings and emotions that caused me to write them in the first place."
+                                m 3gtc "I think that's a pitfall of written work. To me, it seems intensely difficult to keep connected to your body of work after a while."
+                                m 3dub "But I see all these birds in blue and red, and I can pick them up, and feel them in my hands..."
+                                m 4tta "...{w=0.2} Maybe I should change my interest from writing to making handicrafts, hahaha."
+                                m 2htb "I mean, I'm just joking. Writing captures a feeling that physical work doesn't do for me."
+                                m 4sua "But I suppose excercising the mind is doing a lot to stimulate my mind, as well."
+                            if random.randint(1, 10) == 6:
+                                m 5rua "I wonder what we'll do with all these cranes."
+                                m 5sua "I might put them in the largest plastic container I can find..."
+                                m 5gsa "... And then tip them out the window."
+                                m 5tka "And watch of all them drop, and all of them fly."
+                            if random.randint(1, 10) == 7:
+                                m 7hua "Do you think I could fill a bathtub with our cranes?"
+                                m 1nua "I could bathe in the feathers of a thousand paper cranes!"
+                                m 1fta "Colorful, but their down is a little too sharp to the skin, hahaha."
+                            if random.randint(1, 10) == 8:
+                                m 1htd "I have the strangest desire to gather all of these little birds..."
+                                m 1dsa "And nudge them into a downward stream, to watch them all float away into the distance."
+                                m 3hka "But that would be enviromentally reckless, wouldn't it?"
+                                m 5gsa "Still, it makes for a wonderful daydream. A parade of paper cranes..."
+                            if random.randint(1, 10) == 9:
+                                m 6msc "..."
+                                m 6gtc "You know, it's so weird that out of every other living being, humans can make art of animals."
+                                m 7etc "And other humans."
+                                m 7sud "It's so alien to think of a bird making a little paper human."
+                                m 7cua "And stranger still to think of a bird thinking about the little paper human they made."
+                                m 1rka ".{w=0.2}.{w=0.2}."
+                                m 7lkbla "Oh, gosh. I'm not sure where this train of thought is going."
+                                m 7nusdrb "Wow, we've made a lot of paper cranes!"
+                            if random.randint(1, 10) == 10:
+                                m 7mkp "You know, I get worried that one of these days, I'll start to hate folding paper cranes."
+                                m 7fkp "And not for any good reason!"
+                                m 5dkd "Sometimes you get so sick of the same old routine, but are so used to doing it.."
+                                m 5rsd "... That you end up subconsciously end up hating it, even if the routine itself isn't all that harmful."
+                                m 5rtc "It's like, you know. Like if I started hating making poetry all of the sudden."
+                                m 2ckc "That feels terrifying to me."
+                                m 2tkc "I hope I never have to confront that feeling, honestly."
+                                m 1dud "I don't know how I'd be able to move past it."
                         return
                     "...":
                         m 4hua "We've made [persistent._mclcranecount] altogether!"
                         jump mclcranefoldmenu
+            "~Restart Count~":
+                m 7etc "Huh?"
+                m 7etd "You want to throw away our work?"
+                m 7gtc "..."
+                m 4hkb "Truth be told, I'm not that all fussed if we do. And I suppose you may have a good reason."
+                m 3lkb "It's a perfectionist trait that can be certainly be a little unhealthy in excess..."
+                m 3lub "... But I get wanting to redo a task just because you think it can be done a {i}little{/i} better."
+                m 1etb "So, alright. Are we starting from scratch?"
+                $ _history_list.pop()
+                menu:
+                    "Yes, reset the count to zero.":
+                        $ persistent._mclcranecount = 0
+                        m 7hsb "I've released all the cranes from our service. Don't worry, they've simply migrated to a new home."
+                        return
+                    "I've changed my mind.":
+                        m 7esa "That's fair."
+                        return
             "Go back":
                 return
             
