@@ -4,17 +4,19 @@
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) provides new personally written content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics. 
 
-This mod currently includes over 113 new topics in total to discuss, 6 songs, 2 Compliments, 15 window reacts, 15 new intros, 18 farewells, 6 new moods to talk about in the 'I feel' menu for those tricky times in life; and lastly, 1 not-so-fun fact. 
-
-To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection, and introduces a achievement system to help encourage exploring your time with Monika!
-
-And as the two of you progress through your relationship, you can unlock topics with Monika with random elements that change every time you view them!
-
-From hearing the inane ramblings of a distracted Monika, flirting terribly with bad pick-up lines, and even cutting loose and screaming to the top of your lungs with Monika, SCL makes Monika more dynamic than ever!
+To encourage the dynamics of a blossoming and changing relationship, SCL's content unlocks steadily as you increase Monika's affection, and while it doesn't provide new core gameplay, SCL introduces a litany of quality additions: repeatable topics, QOL topics, and even achievements to encourage you to make the most of both SCL and regular features in MAS!
 
 How will Monika change during her time with you? And how can your relationship influence her? 
 
 And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting background to this mod, here and there? There's never any harm in checking out the characters folder once in a while.
+
+# Features
+
+- 113 new topic blocks, 6 songs, 2 Compliments, 15 window reacts, 15 new intros, 18 farewells, 6 new moods to talk about in the 'I feel' menu for those tricky times in life; and lastly, 1 not-so-fun fact.
+- An optional Achievement system tied into SCL and base MAS content
+- Repeatable topics with changing dialogue; flirt with monika with bad pick-up lines! cut loose and hear Monika yell into the void.
+- Fold endless amounts of paper cranes with Monika to help idle away the time
+- Expanded dialogue for yearly anniversaries and affection tier changes
 
 # Installation:
 
