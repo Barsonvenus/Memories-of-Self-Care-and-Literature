@@ -14,7 +14,7 @@ And in the spirit of DDLC and DDLC+, there's.. perhaps some interesting backgrou
 
 - 113 new topic blocks, 6 songs, 2 Compliments, 15 window reacts, 15 new intros, 18 farewells, 6 new moods to talk about in the 'I feel' menu for those tricky times in life; and lastly, 1 not-so-fun fact.
 - An optional Achievement system tied into SCL and base MAS content
-- Repeatable topics with changing dialogue; flirt with monika with bad pick-up lines! cut loose and hear Monika yell into the void.
+- Repeatable topics with changing dialogue; catch a daydreaming Monika and peer into her thoughts! Flirt with Monika with bad pick-up lines! Cut loose and hear Monika yell into the void.
 - Fold endless amounts of paper cranes with Monika to help idle away the time
 - Expanded dialogue for yearly anniversaries and affection tier changes
 
