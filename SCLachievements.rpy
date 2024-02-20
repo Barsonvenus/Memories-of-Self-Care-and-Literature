@@ -20,7 +20,7 @@ label mcl_startachievement:
         $ _history_list.pop()
         menu:
             "~Achievement Menu~":
-                jump mcl_menuachievements
+                jump mcl_menuachievement
             "~Toggle Achievements~":
                 if persistent._mcl_achievementtoggle is True:
                     $ persistent._mcl_achievementtoggle = False
