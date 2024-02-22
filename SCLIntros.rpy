@@ -323,7 +323,6 @@ init 5 python:
     ev_rules = dict()
     ev_rules.update(MASGreetingRule.create_rule(
         skip_visual=True,
-        override_type=True,
     ))
 
     addEvent(
