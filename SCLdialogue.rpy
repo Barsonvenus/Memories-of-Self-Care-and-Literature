@@ -3515,7 +3515,7 @@ label mcl_matchmaker:
     if persistent.gender == "M":
         m 3htb "Have you ever played 'Wingman' for anybody, [player]?"
     elif persistent.gender == "F" or persistent.gender == "X":
-        m 3htb "Have you ever tried to play 'matchmaker' in this regard, [player?]"
+        m 3htb "Have you ever tried to play 'matchmaker' in this regard, [player]?"
     $ _history_list.pop()
     menu:
         "Yep!":
