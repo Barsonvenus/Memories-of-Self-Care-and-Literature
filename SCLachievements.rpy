@@ -187,7 +187,7 @@ label mcl_menuachievement:
             jump achievementmenu
         "Onu!" if mas_nou.get_wins_for('Player') >= 5:
             m "You've won at least five games of Nou!"
-            m "It's a especially chaotic game luck can wildly swing in both your way and mine at any given part of the game."
+            m "It's a especially chaotic game; luck can wildly swing in both your way and mine at any given part of the game."
             m "It always makes for a fun time..."
             m "Especially when I steal a win from you."
             m "Hehehe."
