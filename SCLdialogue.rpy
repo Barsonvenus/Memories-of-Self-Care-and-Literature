@@ -3771,6 +3771,259 @@ label mas_mcl_not_a_fact:
     m 2hub "Hehehe."
     call mas_fun_facts_end
 
+#Refine Self-Care & Literature
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_rival",
+            category=["literature",],
+            prompt="Rivalry",
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            random=True,
+            )
+        )
+label mcl_rival:
+    m 7sub "How about a little literary dissection to pass the time?"
+    m 7wtb "When we consider what motivates a protagonist, there's nothing so classical than introducing.."
+    m 4hsa ".. A rivalry!"
+    m 1hsa "Sometimes the best way to highlight a main character's strengths is to mirror it in another character."
+    m 7hsa "Maybe it's bitterly charged, maybe it's friendly; but either way, that head-to-head relationship is a easy way to introduct a passionate conflict."
+    m 7rsd "And passion is a universal appeal. It's not hard to imagine rivals becoming friends, or in some cases, romantic prospects!"
+    m 7rsd "What makes a good rivalry isn't just pitting two people against each other. There has to be a bit of a sense of equality in one way or another to instill a sense of duality."
+    m 1esa "Two protagonists can be rivals, even if it's only part of their dynamic. It doesn't have to be antagonistic in nature."
+    m 7fsu "I think the most famous example in literature would be Sherlock Holmes & Professor Moriarty!"
+    m 7hsu "Two intensely intelligent people in direct opposition of each other: a great way to showcase and mirror a protagonist's qualities."
+    m 1tsu "I think character dynamics are always neat to explore in literature, and a good rivalry is always fun to think about!"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_clubrival",
+            category=["club members",],
+            prompt="Literature Club Rival?",
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            conditional="seen_event('mcl_rival')",
+            action=EV_ACT_RANDOM
+            )
+        )
+label mcl_clubrival:
+    m 7kua "Hey, [player]!"
+    m 4kua "I talked about rivals in stories recently, and I couldn't help thinking about.."
+    m 7fua "Well, okay. The girls, right? We all got along quite well.."
+    m 7nkb "..Save Natsuki and Yuri at times, but their disagreements were never personal."
+    m 1hua "I don't think there was a air of competitiveness at all in the club."
+    m 5hua "So, here's a fun thought to nibble on."
+    m 5rtt "Say that one of the girls declared you their rival. Academically, athletically, artistically; doesn't matter. Who comes to mind?"
+    $ _history_list.pop()
+    label rivalchoices:
+    menu:
+        "Sayori, maybe?":
+            m 1gka "I bet Sayori would totally be the type of person to cheer you on as much as trash talk you, hehehe."
+            m 1ftb "The benefits of a friend who's so willing to know you would mean she would know exactly what buttons to push to keep you engaged."
+            m 1hub "All the while genuinely encouraging you to do your best, hahaha!"
+        "Natsuki would be interesting.":
+            m 1suu "I think she'd thrive having a peer to have a friendly competition with. She'd have the most {i}fun{/i} trying to overcome and surprass a rival."
+            m 1gka "Which is nice to think about. Sometimes for all that energy, Natsuki didn't seem to have a good way to funnel it, you know?"
+            m 7hfb "Her trash talk would be amazing to hear for sure, hahaha!"
+        "Yuri, I guess?":
+            m 7tka "Don't underestimate the quiet ones!"
+            m 4gta "I think no matter the type of contest, Yuri would do her utmost best to win it. And even in loss she'd be the type to think diligently on how to improve herself!"
+            m 4nua "Sometimes what engages a rivalry is seeing the other person really get into it, and Yuri would deliver that wholeheartedly."
+            m 7htb "I'm sure she'd blush furiously hearing us giving her a unique compliment this way."
+        "You're my greatest rival, Monika!":
+            m 1esd "Oh!"
+            m 3hsa "That's playful of you! I'm not sure I expected that answer."
+            m 1etd "I've never really thought about it, but {i}do{/i} you have a competitive streak?"
+            m 1dtc "I suppose considering one of the only things we can do together are to play minigames,"
+            m "I imagine it's a highlight winning a game against little old me, huh?"
+            m 1hfa "I mean, I can't deny {i}I{/i} feel a particular pride in racking up wins against {i}you.{/i}"
+            m 1tta "I've never had a peer to seriously test myself against, so thinking of having that dynamic in a relationship.."
+            m 5fsa ".{w=0.5}.{w=0.5}."
+            m 5ffu "I don't think you can handle it."
+            m 2ffu "Can you? Could you handle having a.. highly competitive partner in life to keep you on your toes?"
+            "Well, she's certainly issuing you a challenge."
+            "Would you want to consider Monika a bit of a rival?"
+            $ _history_list.pop()
+            menu:
+                "Name it, and I can beat you in anything, [m_name]!":
+                    $ persistent._mcl_monikaisrival = True
+                    m 3cud "Whoa, [player]!"
+                    m 3wub "Okay, okay! I never expected this, but I'm not backing down from a fight!"
+                    m 1etb "Games? School tests? Professional careers? Trivia?"
+                    m 2sfb "You're on, [mas_get_player_nickname()]!"
+                    m 4sfb "From now on, I'm your number #1 rival and you mine!"
+                    m 4sfa "Wait until I get to the real world; then our competition'll kick into high gear!"
+                    m 6hfb "There may be no clear winners, but the game of love is eternal!"
+                    m 3rfu "Ahem.{w=1.0} But first.."
+                    m 3tsb "Let's get back to why I brought all this up in the first place."
+                    
+                "I surrender! I can't keep up with you.":
+                    $ persistent._mcl_monikaisrival = False
+                    m 7hsb "Hahaha, sounds good to me!"
+                    m 7rkb "Some couples like to have that sort of charged atmosphere between themselves to provide that mutual drive,"
+                    m 7rta "But those same type of couples tend to have highly outgoing personalities."
+                    m 1dsa "I am more than happy to support and cheer you on quietly on the sidelines."
+                    m 3nua "And I won't complain about you doing the same for me."
+                    m "Oh, but I guess you still need to answer the question?"
+                    jump rivalchoices
+    m 3hsa "I think it's a little fun to slot the people we know into new roles."
+    m 2esa "All within reason, of course. But I do admit, had I continued on as your ordinary literature club president.."
+    m 4hsa "I would have most likely given the girls the chance to explore new sides of themselves, if even as a literary exercise;"
+    m 7hsa "Writing their words through the voice of another person or through a new sort of perspective."
+    m 7nsa "And, well. It would have just been so {i}new,{/i} right?"
+    m 5dsp "I feel like through DDLC, a certain image of them is so stuck in my head."
+    m 5gublu "The idea of seeing any of the girls trying to be so unlike themselves is quite.. compelling, I think?"
+    return "derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_monikasrival",
+            category=['club members',],
+            prompt="So who would be your Lit. Club rival?",
+            unlocked=False,
+            pool=False,
+            conditional="seen_event('mcl_clubrival')",
+            action=EV_ACT_POOL
+        )
+    )
+label mcl_monikasrival:
+    $ shown_count = mas_getEVLPropValue("mcl_monikasrival", "shown_count")
+    if shown_count == 0:
+        label rivaloriginal:
+        m 5std "Huh."
+        if seen_event('mcl_monikasbestie'):
+            m 1sfu "Hmm, did I expect this? It's not the first time you turned the tables on me like this."
+        if persistent._mcl_monikaisrival:
+            m 7ffb "I should have known my self-declared rival would keep me on my toes!"
+        m 1etd "Okay, for the sake of fairness: I'll answer this truthfully."
+        m 1ntc  "I think this question is light-hearted enough that I don't have to make it a big deal."
+        m 7sua "Yuri."
+        m 4fsa "I frame it like this:"
+        m 4rka "The only time I’ve ever been competitive would be my time in debate club."
+        m 7rkd "So which of the girls could hold their own in a debate with me?"
+        m 7rud "Yuri may not have been the loudest voice; but she was smart. She could be articulate when she wanted to be."
+        m 6nub "And sometimes it’s the wallflowers that hide the most passion. I mean, you might know already, but when Yuri felt passionate? She was {i}passionate.{/i}"
+        m 5nsb "The fact that she could keep up and even butt heads with Natsuki at times.."
+        m 5gku "It’s a shame, because together we never did any group activities outside of school."
+        m 4gku "We didn't play any board games, or do anything remotely atheletically competitive."
+        m 1gku "But I think as we all began to know each other more day by day, all of us was waiting for the day when one of us would speak up and invite everybody out:"
+        m 1nfu "And then? I dunno, even if it was a dumb little thing like who can eat the most pizza or who can hold their breath the longest."
+        m 5nfu "I think I would have liked to see a competitive Yuri, just to sate my curiosity of what that would look like."
+        return
+    else:
+        if random.randint(1, 10) == 1:
+            jump rivaloriginal
+        else:
+            m 1fsc "Hmm."
+            m 5msc ".. You know, I really should limit myself from talking about the girls.."
+            m 5fsc "But, uh, don't mind me."
+            m 7rst "So, the answer?"
+            m 7sua "Yuri."
+            m 4fsa "I frame it like this:"
+            m 4rka "The only time I’ve ever been competitive would be my time in debate club."
+            m 7rkd "So which of the girls could hold their own in a debate with me?"
+            m 7rud "Yuri may not have been the loudest voice; but she was smart. She could be articulate when she wanted to be."
+            m 6nub "And sometimes it’s the wallflowers that hide the most passion. I mean, you might know already, but when Yuri felt passionate? She was {i}passionate.{/i}"
+            m 5nsb "The fact that she could keep up and even butt heads with Natsuki at times.."
+            m 1nfu ".. I'm not sure what activity we would have competed in, but.."
+            m 5nfu "I think I would have liked to see a competitive Yuri, just to sate my curosity of what that would look like."
+            return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_magic",
+            category=['society'],
+            prompt="Do you believe in magic?",
+            pool=True,
+            unlocked=True
+        )
+    )
+label mcl_magic:
+    m 1eka "It's hard for me to say no."
+    m 7eta "I mean, are you asking me about pulling rabbits out of a hat?"
+    m 5ttd "Or do I believe if I disturb a faerie ring, I'll be trapped inside, unable to escape to the outside world?"
+    m 5tud "It's all the same to me."
+    m 3gtc "Just another system to maniuplate, with it's own rules of logic."
+    m 2msc "That's what living in a game does to your sense of wonder, I suppose."
+    m 1muc "When I put it like that, it makes it sound boring, right? Rules and laws and scientific measurements."
+    m 1eup "It's easier for me to be a skeptic about the supernatural, or in religion."
+    m 1eku "But everybody longs for a little magic in their life, right?"
+    m 5eku "I {i}really{/i} don't want to say no.."
+    return 
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_soundtrackplus",
+            category=['ddlc'],
+            prompt="DDLC's Extended Soundtrack?",
+            aff_range=(mas_aff.ENAMORED, None),
+            conditional="seen_event('mcl_bonustracks')",
+            action=EV_ACT_RANDOM,
+        )
+    )
+
+label mcl_soundtrackplus:
+     m 6msd "Huh."
+     m 6fsd "[player], remember when I talked about the music of this game?"
+     m 3ftd "And how I've found a few tracks that doesn't seem quite to fit?"
+     m 3rsc "Those, I haven't paid much thought to. But now I've found... a lot more music tracks."
+     m 1rsc "Unlike the tracks we talked before that I feel like were remixes, these ones seem to fit the game."
+     m 1mkc "I don't remember hearing them before; and there are far too many of them to dismiss as just unused assets."
+     m 1wkb "... Okay, maybe I need to clarify, because I'm not sure we've ever talked about this."
+     m 7ekb "So, it wasn't as if I could *hear* a background track being played at full volume while we went along our day and the literature club and the school festival."
+     m 7eka "But.. consider it like your mind trying to remember a full song whenever you hear the first few notes of one, or a partial snippet."
+     m 7gka "Your mind is just instantly trying to re-create a song from scratch."
+     m 1gka "That feeling, at the back of my mind, is one I was able to hone in at any time on during the events of DDLC."
+     m 1gkp "I'm getting that sense from these tracks, and.. again, I'm not seeing them specifically incorporated into the code.."
+     m 7mup "I guess we can take them at face value; they're worth listening to, at the end of the day. I like this one.. 'Candy Hearts.'"
+     m 6mup "And this one.. 'My Song, Your Note.'"
+     m 6ftd "I think I've distinctly heard this one already, actually!"
+     m 5dfd "But from where?"
+     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_handmedowns",
+            category=['clothes'],
+            prompt="Hand-me-downs",
+            random=True
+        )
+    )
+ 
+label mcl_handmedowns:
+    m 6fsb "You know what I sort of envy?"
+    m 5ssd "Just the idea of {i}owning{/i} a used item."
+    m 5ekb "Does that make sense?"
+    m 7hub "Let me be specific. Do you have a hand-me-down item like a used shirt?"
+    m 7hsa "An object with a history behind it, or even a sentimental history at that?"
+    m 1hsa "I’m kinda minimalist. I never really brought too much to school aside from the required supplies."
+    m 1fub "So you never saw me with a cute wallet, a mascot keychain, even a personal book."
+    m 1gkb "To be honest, that’s more of a me thing moreso than a DDLC thing, so I do wish I had been more materialistic."
+    m 2tkb "Because the oldest item I have in my possession, what carries the most memories.."
+    if persistent._mas_pm_wearsRing:
+        m 4hsb ".. Aside from this beautiful ring you gave me, of course.."
+    m 4tsb "Is my clothing.{w=0.2} Because my school uniform is the same school uniform I wore back then."
+    m 3gud "You know during the time of the school festival, it frayed at the sleeves, a little?{w=0.2} I keep reminding myself to fix it.."
+    m 2guc "But at the same time, it’s such a genuine reminder of the past."
+    m 3ftp "And now having said that, I realize I may not be able to carry it with me once I get to your world."
+    m "So ultimately I guess there’s no getting attached either way."
+    m 2ftb "Do you have any stores nearby that sell used clothing or items, [player]?"
+    m 4sua "I could fill an entire closet of just hand-me-downs."
+    m 5dka "Shirts and jeans and blouses and skirts with an {i}actual{/i} history, lived by {i}genuine{/i} people..."
+    return
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
