@@ -253,13 +253,13 @@ label mas_wrs_arknights:
     if not wrs_success:
         $ mas_unlockFailedWRS('mas_wrs_arknights')
     return
+
 init 5 python:
     addEvent(
         Event(
             persistent._mas_windowreacts_database,
             eventlabel="mas_wrs_yakuza",
-            category=["Yakuza Kiwami", "Yakuza Kiwami 2", "Yakuza: Like a Dragon", "Yakuza: The Man Who Erased His Name", "Like a Dragon Gaiden: The Man Who Erased His Name", "The Man Who Erased His Name", "Like a Dragon: Infinite Wealth",]
-            rules={
+            category=["Yakuza Kiwami", "Yakuza Kiwami 2", "Yakuza: Like a Dragon", "Yakuza: The Man Who Erased His Name", "Like a Dragon Gaiden: The Man Who Erased His Name", "The Man Who Erased His Name", "Like a Dragon: Infinite Wealth"],            rules={
                 "notif-group": "Window Reactions",
                 "skip alert": None,
                 "keep_idle_exp": None,
