@@ -98,7 +98,7 @@ label mcl_menuachievement:
         # $ persistent._mcl_achievementrandomnoises = False
         # $ persistent._mcl_achievementcompliment = False
         # $ persistent._mcl_achievementdoor = False
-        # $ persistent._mcl_achievementanimalnoise = False
+        $ persistent._mcl_achievementanimalnoise = False
         # $ persistent._mcl_achievementdesk = False
         $ persistent._mcl_surpriseachievement = False
         $ persistent._mcl_flirtachievement = False
@@ -220,6 +220,15 @@ label mcl_menuachievement:
             jump achievementmenutwo
         "{color=#a63da2}???{/color}" if  persistent._mcl_achievementcrane is False:
             jump achievementmenutwo
+        "Sounds of Nature?" if persistent._mcl_achievementanimalnoise:
+            m "I can't believe we're that type of couple to just parrot animal noises at each other endlessly."
+            m "I had to have recorded that moment in the notebook as a grim reminder."
+            m "I mean, is it cute? Sure."
+            m "But also extremely embarrassing."
+            m "Oh gosh, could you imagine us doing that in public?"
+            jump achievementmenutwo
+        "{color=#3c8248}???{/color}" if persistent._mcl_achievementanimalnoise is False:
+            jump achievementmenutwo
         "On a Whim" if achievementrand == 1:
             m "I've decided to unlock this achievement for you." 
             m "How lucky for you~"
@@ -244,7 +253,7 @@ label mcl_menuachievement:
                     # $ persistent._mcl_achievementrandomnoises = False
                     # $ persistent._mcl_achievementcompliment = False
                     # $ persistent._mcl_achievementdoor = False
-                    # $ persistent._mcl_achievementanimalnoise = False
+                    $ persistent._mcl_achievementanimalnoise = False
                     # $ persistent._mcl_achievementdesk = False
                     $ persistent._mcl_surpriseachievement = False
                     $ persistent._mcl_flirtachievement = False
