@@ -464,3 +464,23 @@ label greeting_mcltoomuchtime:
     m 2eka "Well, luckily I know you'd never be so cruel as to leave and appear just like that after such a long abscence."
     m 5dkp "... Especially as I felt like {i}literal centuries had passed,{/i} and that's {i}impossible{/i}..."
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_goodbyemcl",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_goodbyemcl:
+    m 7eub "Bye, [player]! Have a good da-"
+    m 2ctblsdlt "..."
+    m 2ttsdlt "{cps=30}Um. I meant, Hi, [player]! Let's have a good day together?{/cps}{nw}"
+    m 2gfsdlb "Hi, [player]!{fast} Let's have a {i}great{/i} day together!"
+    m 2dksdlc "..."
+    m 5dtbfsdrx "*mutters* {size=-10}Wow, {i}where was my head at{/i} for that?{/size}"
+    return
