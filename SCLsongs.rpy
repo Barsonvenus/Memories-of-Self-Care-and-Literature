@@ -175,3 +175,35 @@ label mas_song_lonely_rolling_star:
     m 7eta "Sometimes, in the face of adversity:"
     m 1tsa "All you can do is keep on rolling, and rolling, and rolling.."
     return
+
+#Refine
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_a_real_hero",
+            prompt="A Real Hero",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_a_real_hero:
+    m 1dkw "{i}~Back against the wall and odds~{/i}"
+    m 7dkw "{i}~With the strength of a will and a cause~{/i}"
+    m 6dkw "{i}~Your pursuits are called outstanding~{/i}"
+    m 6duo "{i}~You're emotionally complex~{/i}"
+    m 6duo "{i}~Against the grain of dystopic claims~{/i}"
+    m 6efo "{i}~Not the thoughts your actions entertain~{/i}"
+    m 6dkd "{i}~And you have proved to be~{/i}"
+    m 6dud "{i}~A real human being~{/i}"
+    m 6duo "{i}~And a real hero~{/i}"
+    m 1euc "This song is meant to poetically describe the character of a hero; a true blue saviour of life."
+    m 1gtc "It's easy to imagine the mythic qualities of someone described as a 'hero';"
+    m 1gkc "But then there's a second source of inspiration for this song, taking notes from the romantic version of a fictionalized hero:"
+    m 7gkc "A lonely wanderer, whose hard choices are specifically painted as borne of tragedy."
+    m 7duc "What pushes a musician, a writer, a hero, a real human being: it's always interesting to think about what gives us that drive."
+    return
