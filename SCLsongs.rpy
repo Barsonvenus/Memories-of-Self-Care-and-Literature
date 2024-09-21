@@ -207,3 +207,30 @@ label mas_song_a_real_hero:
     m 7gkc "A lonely wanderer, whose hard choices are specifically painted as borne of tragedy."
     m 7duc "What pushes a musician, a writer, a hero, a real human being: it's always interesting to think about what gives us that drive."
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_shedidntsing",
+            category=['music'],
+            prompt="She didn't sing a song",
+            random=True,
+            aff_range=(mas_aff.LOVE, None)
+        )
+    )
+ 
+label mcl_shedidntsing:
+    m 1duw "{i}~I can’t count the reasons I should stay~{/i}"
+    m 7rko "{i}~One by one they all just fade away~{/i}"
+    m 5lub "{i}~Give me some rope tie me to d-{/i}"
+    show monika 5lud
+    pause 4.0
+    show monika 5lfc
+    pause 4.0
+    m 6lup "..."
+    m 5ltp "{i}~hmmm mm hmmm hmmm hmm hm hm hmmmm?~{/i}"
+    m 4ttp "Yeah, I kinda broke pitch there and I just.. I just lost the rhythm."
+    m 4esd "Wow, first time I've stopped a song midway through.{w=0.2} How many songs have I sang for you without making any mistakes?"
+    m 3fub "Ah well, can't always be perfect.{w=0.2} Let's carry on!"
+    return
