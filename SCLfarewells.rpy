@@ -439,3 +439,21 @@ label bye_rainbow:
         m 4wup "..."
         m 3eub "Yay! No headache!"
     return 'quit'
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_hellomcl",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_hellomcl:
+    m 7eub "Hello, [player]!"
+    m 2ctblsdlt "..."
+    m 2ttsdlt "No.{w=0.5} No, it's.. goodbye. Goodbye, [player]."
+    m 5dtbfsdrx "*mutters* {size=-10}Seriously, {i}how did I mix that up?{/i}{/size}"
+    return "quit"
