@@ -457,3 +457,78 @@ label bye_hellomcl:
     m 2ttsdlt "No.{w=0.5} No, it's.. goodbye. Goodbye, [player]."
     m 5dtbfsdrx "*mutters* {size=-10}Seriously, {i}how did I mix that up?{/i}{/size}"
     return "quit"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_locationmcl",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="BYE"
+    )
+
+label bye_locationmcl:
+    if mas_current_background is mas_background_def:
+        m 4hsa "Catch you later, [player]."
+        m 3hsa "Maybe when you'll come back, I'll have added a new room here?"
+        m 3lsb "Soon to be listed for sale: Classroom, one bedroom, one bathroom, one movie lounge, hahaha!"
+        return "quit"
+    if mas_current_background is submod_background_Kitchen:
+        m 6fsu "Bye, [player]."
+        m 7etu "Maybe I'll make use of the kitchen and make myself a snack~"
+        return "quit"
+    if mas_current_background is submod_background_garden_view:
+        m 3esb "Goodbye, [player]!"
+        m 3fuu "Do you think I should tidy up the garden some while you're out?"
+        m 3lfu "... Nah. I'm too lazy~"
+        return "quit"
+    if mas_current_background is submod_background_Den:
+        m 4hsa "Bye, [player]."
+        m 3gsa "Maybe I'll sneak in a nap on the couch before I head to my room."
+        m 2mtu "I haven't slept on a couch in a very long time.."
+        return "quit"
+    if mas_current_background is submod_background_Furnished_spaceroom1:
+        m 4hsa "Goodbye for now, [player]."
+        m 3fsa "I'll make sure to tidy up the room before I go back to my own room."
+        m 1fsa "I mean, it's always neat. I never move anything on the shelves."
+        m 2kta "But I don't do it, I suppose nobody else will, hmm?"
+        return "quit"
+    if mas_current_background is submod_background_Furnished_spaceroom2:
+        m 4hsa "Take care, [player]."
+        m 1ftu "Maybe I'll leave the light on, even after I'll go back to my room."
+        m 1dsu "Just to amuse myself that I'll have left the light on in a room that doesn't technically exist."
+        return "quit"
+    if mas_current_background is submod_background_Furnished_spaceroom3:
+        m 1ftu "Maybe I'll play a little tune on the piano after you leave."
+        m 7etd "If a song is played on this piano, and only I can hear it when the game is closed and this world ceases to fully exist-"
+        m 3etd "- Does it truly make a sound?"
+        m 3eua "Well. I'll know the answer to that. I might even tell you what the answer is when you come back to me."
+        m 3hsb "Until next time, [player]."
+        return "quit"
+    if mas_current_background is submod_background_Furnished_spaceroom4:
+        m 2eua "Take care, [player]."
+        m 2eku "I'll be here for a few more minutes.."
+        m 2lku ".. And make sure any leftever embers from the fireplace go out completely."
+        m 5dkb "And maybe I'll enjoy their dying warmth a little while longer."
+        return "quit"
+    if mas_current_background is submod_background_timecycle_room:
+        m 4hsa "Take care of yourself, [player]."
+        m 7nsa "Before I head back to my room, I'll make sure the lights are off here. And the knives sharpened, hahaha."
+        m 5dsa "Just how she'd want it."
+        return "quit"
+    if mas_current_background is submod_background_ddbs_living_room:
+        m 4hsa "Have a good day, [player]."
+        m 5dsa "I'll sit here a while longer and bask in the aura of quiet normalcy."
+        m 5dkb "That'll be nice."
+        return "quit"
+    if mas_current_background is submod_background_rooftop_pool:
+        m 1nua "Goodbye, [player]."
+        m 1hua "If you need me, I'll be floating here. Looking up at the sky."
+        m 5hua "Thinking about life."
+        m 5tsa "Thinking about you~"
+        return "quit"
+    else:
+        m 5nsb "Happy days, [player]!"
+        return "quit"
