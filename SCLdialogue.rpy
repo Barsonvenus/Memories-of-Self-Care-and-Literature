@@ -4697,7 +4697,7 @@ label mcl_roomthoughts:
             m 7gua ".. glass ornaments of angels and animals, and the green presence of holly, ivy, and mistletoe: all of these are well-established in history!"
             m 7gfa "Speaking of which, where is that sprig of mistletoe I hung up, I wonder~"
             return
-        if mas_isplayer_bday():
+        if mas_isplayer_bday() and (persistent._mas_bday_in_bday_mode or persistent._mas_bday_visuals):
             m 4ssb "It's all decorated for your birthday!"
             if mas_isMonikaBirthday():
                 m "Our should I say, our birthday?"
@@ -4710,7 +4710,7 @@ label mcl_roomthoughts:
             m 6ftx "Did I say 'Happy Birthday,' yet?"
             return
             
-        if mas_isMonikaBirthday():
+        if mas_isMonikaBirthday() and (persistent._mas_bday_in_bday_mode or persistent._mas_bday_visuals):
             m 3nuu "It's all dressed up for my birthday!"
             m 7nua "I'm not entirely sure where the traditions for colorful birthday decorations come from."
             m 4dtp "I think rainbows just inspire that general sense of awe and showiness."
