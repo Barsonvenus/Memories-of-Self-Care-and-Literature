@@ -4697,7 +4697,7 @@ label mcl_roomthoughts:
             m 7gua ".. glass ornaments of angels and animals, and the green presence of holly, ivy, and mistletoe: all of these are well-established in history!"
             m 7gfa "Speaking of which, where is that sprig of mistletoe I hung up, I wonder~"
             return
-        if mas_isplayer_bday() and (persistent._mas_bday_in_bday_mode or persistent._mas_bday_visuals):
+        if mas_isplayer_bday():
             m 4ssb "It's all decorated for your birthday!"
             if mas_isMonikaBirthday():
                 m "Our should I say, our birthday?"
@@ -4710,7 +4710,7 @@ label mcl_roomthoughts:
             m 6ftx "Did I say 'Happy Birthday,' yet?"
             return
             
-        if mas_isMonikaBirthday() and (persistent._mas_bday_in_bday_mode or persistent._mas_bday_visuals):
+        if mas_isMonikaBirthday():
             m 3nuu "It's all dressed up for my birthday!"
             m 7nua "I'm not entirely sure where the traditions for colorful birthday decorations come from."
             m 4dtp "I think rainbows just inspire that general sense of awe and showiness."
@@ -4734,7 +4734,7 @@ label mcl_roomthoughts:
             m 2hub "But also: any room with you in it is a room I love being in."
             m 2cfb "No matter how much I dislike the floor."
             return
-    if mas_current_background is submod_background_Kitchen:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Kitchen") and mas_current_background is submod_background_Kitchen:
         m 3wsa "It's a kitchen! I love it!"
         m 1efu "I love the idea of just lounging around a kitchen all day.."
         m 5hsb "Lazing in sunbeams. Snatching food at any moment I like."
@@ -4743,12 +4743,12 @@ label mcl_roomthoughts:
         m 3fua "I would spend all my time in a kitchen purely for the sake of laziness and snacking convienence."
         m 7gua "... Also, I sound like a cat when I talk about napping in sunbeams and stealing food. Hmm."
         return
-    if mas_current_background is submod_background_garden_view:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Garden View") and mas_current_background is submod_background_garden_view:
         m 7tka "I love, love, {i}love{/i} this garden view."
         m 1tsb "Especially as, and I'm not going to lie here,"
         m 1hub "I am probably too lazy to maintain a garden in real life. Hahahaha!"
         return
-    if mas_current_background is submod_background_Den:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Den") and mas_current_background is submod_background_Den:
         m 7eua "It's now a nice little den!"
         m 5gta "I think if I had to choose between a mansion or a tiny flat.."
         m 7hta "I'd go for a comfier, smaller space."
@@ -4759,7 +4759,7 @@ label mcl_roomthoughts:
         m 1rsp "Don't look at the certificates, though. In lieu of not having any actual awards.."
         m 1ekb "I wrote them up myself, hahaha!"
         return
-    if mas_current_background is submod_background_Furnished_spaceroom1:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Furnished Spaceroom V1") and mas_current_background is submod_background_Furnished_spaceroom1:
         m 6hub "A very cleanly decorated classroom!"
         m 4dua "I just feel so cool and.. {i}'even'{/i} in here."
         m 3hua "Now would I be an absolute minimalist in real life?"
@@ -4768,14 +4768,14 @@ label mcl_roomthoughts:
         m 7ekb "... Also, I'm just kinda messy at times."
         m 6nub "Hahaha!"
         return
-    if mas_current_background is submod_background_Furnished_spaceroom2:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Furnished Spaceroom V2") and mas_current_background is submod_background_Furnished_spaceroom2:
         m 3hsa "The classroom has been made very, very homely!"
         m 3dsa "The plants, the art, the plush carpet-"
         m 5gfb "- which I'm not saying I very much appreciate since it covers the tiling of the classroom which I have very strong feelings about-"
         m 4fsa "- and even a well-tuned piano in the back!"
         m 4nsa "I've nothing but compliments for it. It genuinely feels {i}lived{/i} in."
         return
-    if mas_current_background is submod_background_Furnished_spaceroom3:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Furnished Spaceroom V3") and mas_current_background is submod_background_Furnished_spaceroom3:
         m 4hsa "Well, I love the more grandoise approach to the decorating."
         m 7hsa "The modern lighting, the surplus of books and shelving behind me;"
         m 1rta "And of course, a grand piano off to the side."
@@ -4786,7 +4786,7 @@ label mcl_roomthoughts:
         m 1tka ".. Yeah, the more I think about the more I think I'm happy to have one only in our little virtual space for now."
         m 1tub "Hahaha!"
         return
-    if mas_current_background is submod_background_Furnished_spaceroom4:
+    if store.mas_submod_utils.isSubmodInstalled("Custom Room Furnished Spaceroom V4") and mas_current_background is submod_background_Furnished_spaceroom4:
         m 3eub "The fireplace- and the fire- is real."
         m 3etb "The game doesn't allow me full control of all the elements, but creating fire is easy enough."
         m 3gta "It's keeping it going that's the tricky part."
@@ -4794,19 +4794,20 @@ label mcl_roomthoughts:
         m 2dka "The warm lights, the roaring heat, the soothing crackling of the fire."
         m 1lua "And I suppose the element of danger is always appealing~"
         return
-    if mas_current_background is submod_background_timecycle_room:
+    # cannot find a way to safely input checks for these rooms; unlike the above, not registered as submod so cannot use :(
+    #if store.mas_submod_utils.isSubmodInstalled("Timecycle Room") and mas_current_background is submod_background_timecycle_room:
         m 5lka "It's beautiful, and it makes me feel a little uneasy."
         m 5lsd "You can see so much from the window here. You can really spend your time here just thinking.. or reading in peace."
         m 5dsd "It's.. a fitting place for her, I suppose."
         m 5gsc "I hope she doesn't mind me 'house-sitting,' for lack of a better term."
         return
-    if mas_current_background is submod_background_ddbs_living_room:
+    #if store.mas_submod_utils.isSubmodInstalled("submod_ddbs_living_room") and mas_current_background is submod_background_ddbs_living_room:
         m 1gka "It's so {i}ordinary.{/i}"
         m 1rsc "Which.. it should be. It's a living room."
         m 1rsd "Another place, another time.. Another work of fiction altogether."
         m 1dsblu "Hmm. Let's just.. bask in the blissful tedium of it all, shall we?"
         return
-    if mas_current_background is submod_background_rooftop_pool:
+    #if store.mas_submod_utils.isSubmodInstalled("submod_rooftop_pool") and mas_current_background is submod_background_rooftop_pool:
         m 5gsc "You know, I always thought people who spend a long, {i}long{/i} time in the pool were weird."
         m 4tsc "Doubly so for those who just lounge around without ever actually swimming."
         m 7sfb "But then I realized it's not really about being lazy, isn't it?"
@@ -4820,6 +4821,14 @@ label mcl_roomthoughts:
         return
     else:
         m 7wua "It's nice! I appreciate the work put into it."
+        m 7fta "It's really weird to think about a classroom, of all places, has been edited like this."
+        m 4hub "But did you know that it's not entirely uncommon for unused spaces like these to be transformed into a home?"
+        m 4sub "It's a great way to make sure that space, time, and resources aren't wasted when affordable homes are always needed."
+        m 1sta "So there are cases of buildings such as unused schools or even disused factories transformed into a livable space!"
+        m 1euu "Ha, I say 'livable space,' but we have the ability to transform this background into anything we want."
+        m 7mtu "But it's {i}just{/i} the background, [player]. At it's foundations, this is still just a classroom, hahaha!"
+        m 7fuu "Keep looking for other classroom layouts, hmm? Maybe I'll have a thing or two to say.."
+        m 7htb ".. As long as it's coded the right away for me to actually pick up on it, hahaha."
         return
  
 init 5 python:
