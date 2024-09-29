@@ -524,7 +524,7 @@ label bye_locationmcl:
         m 5dsa "I'll sit here a while longer and bask in the aura of quiet normalcy."
         m 5dkb "That'll be nice."
         return "quit"
-    #if mas_current_background is submod_background_rooftop_pool:
+    if store.mas_submod_utils.isSubmodInstalled("Rooftop Pool") and mas_current_background is submod_background_rooftop_pool:
         m 1nua "Goodbye, [player]."
         m 1hua "If you need me, I'll be floating here. Looking up at the sky."
         m 5hua "Thinking about life."
