@@ -3951,7 +3951,7 @@ label mcl_magic:
     m 7eta "I mean, are you asking me about pulling rabbits out of a hat?"
     m 5ttd "Or do I believe if I disturb a faerie ring, I'll be trapped inside, unable to escape to the outside world?"
     m 5tud "It's all the same to me."
-    m 3gtc "Just another system to maniuplate, with it's own rules of logic."
+    m 3gtc "Just another system to manipulate, with it's own rules of logic."
     m 2msc "That's what living in a game does to your sense of wonder, I suppose."
     m 1muc "When I put it like that, it makes it sound boring, right? Rules and laws and scientific measurements."
     m 1eup "It's easier for me to be a skeptic about the supernatural, or in religion."
@@ -4100,7 +4100,7 @@ label mcl_ballet:
     m 7esa "Ballet as a art began in the fifteenth century during the Renaissance, further refined in France and Russia."
     m 7eua "Originally performed by nobles in highly elaborate costumes, it wasn't quite polished.."
     m 4eua ".. But many standards soon arose in both how the form developed and in it's teachers, even to the point of academies being made just for ballet."
-    m 3fub "Ballet instruction carries a air of of rigorious discipline."
+    m 3fub "Ballet instruction carries an air of rigorious discipline."
     m 3etd "And indeed, ballet choreography is traditionally written with children and young performers in mind. It can even seem draconian."
     m 3hfa "It’s worth noting now that between plays, musicals, opera, ballet: while each art has their own strengths, the result is ultimately a collective work of art; stage design, costumes, choreography..."
     m 3hsa "It’s amazing to think of how much work is done in the background by an entire production staff."
@@ -4146,7 +4146,8 @@ init 5 python:
             eventlabel="mcl_animalsoundwar",
             category=['nature'],
             prompt= "The War of Animal Noises",
-            random=True
+            conditional="seen_event('mcl_animalsoundliterature')",
+            action=EV_ACT_RANDOM,
         )
     )
  
@@ -4807,7 +4808,7 @@ label mcl_roomthoughts:
         m 1rsd "Another place, another time.. Another work of fiction altogether."
         m 1dsblu "Hmm. Let's just.. bask in the blissful tedium of it all, shall we?"
         return
-    #if store.mas_submod_utils.isSubmodInstalled("submod_rooftop_pool") and mas_current_background is submod_background_rooftop_pool:
+    if store.mas_submod_utils.isSubmodInstalled("Rooftop Pool") and mas_current_background is submod_background_rooftop_pool:
         m 5gsc "You know, I always thought people who spend a long, {i}long{/i} time in the pool were weird."
         m 4tsc "Doubly so for those who just lounge around without ever actually swimming."
         m 7sfb "But then I realized it's not really about being lazy, isn't it?"
