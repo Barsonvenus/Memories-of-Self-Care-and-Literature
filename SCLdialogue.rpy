@@ -481,7 +481,7 @@ label mcl_change:
     m 4lkc "So I felt as frustrated as I did when I left the debate club, at the time feeling like I wanted something new."
     m 1dsc "But failure, is, well, normal. It was- and still is- hard for me to accept that."
     m 1esc "It is possible to do everything right, and still ultimately fall short. That’s not a flaw of life, that’s by design."
-    m "So, accomplishments are... a hard metric to judge growth by. And likewise, just seeing time pass doesn’t work for me, where time here is different."
+    m "So, accomplishments are... A hard metric to judge growth by. And likewise, just seeing time pass doesn’t work for me, where time here is different."
     m 1esd "And you know what?"
     m 2esd "I don’t have an answer or a resolution for you right now. I'm genuinely just thinking out loud with you on this subject."
     m 3esc "Of course, it might be for different for you. It’s different for everybody."
@@ -1315,7 +1315,7 @@ init 5 python:
 label mcl_friendspartners:
     m 7hua "You know.."
     m 7hub "You’re my best friend!"
-    m 3ttb "And I don't think I've ever actually said it in plain terms."
+    m 3ttb "And I don't think I've ever actually emphasized it in plain terms."
     m "Funny, that. Considering it’s not unheard of for partners to consider each other their best friends."
     m 3tta "Admittingly though, I ended up falling in love with you quite quickly from our first introduction, so it’s like we became partners before we fully became friends?"
     m 3esa "Which is also entirely possible, if not for how backwards that may sound. A friendship is a type of relationship, after all!"
@@ -1371,11 +1371,25 @@ label mcl_literatureclubbestie:
         "You, Monika!":
             m 1ffb "Cheating~"
             m 6rkp "…"
-            m 6rka "I hope I would be a good best friend."
+            m 6rka "I hope that on my part, I live up to the idea of a best friend."
             m 4tka "Now I feel like I’m interviewing for the position, hahaha."
             m 3hut "'I always look out for my friends, and I’ll always stick by them!'"
-            m 3tuu "Now, back to the question at hand.."
-            jump bestiechoices
+            m 3tuu "Now, back to the question at hand; I asked about the other girls, and I wasn't a actual option!"
+            label bestiechoices:
+                menu:
+                    "Sayori?":
+                        m 3ftu "Hahaha, the childhood friend wins again, huh?"
+                        m 3ftc "Hmm."
+                        m 1hsc "Do you have a similar acquaintance that you’ve known from an early age?"
+                        m 1esc "I’ve never had somebody like that in my life, so knowing somebody for years and years on end? It’s hard to imagine, honestly."
+                    "Natsuki?":
+                        m 1esc "I know the circumstances were unusual, but the way Natsuki showed concern for Yuri- "
+                        m 7esb "- it showed that Natsuki’s the type of person who’d go out of her way to help her friends, even if she doesn't know how exactly."
+                        m 7ekb "For a spitfire, she can be a little clumsy, huh?"
+                    "Yuri?":
+                        m 7ekb "I know that you might have seen an exaggerated side of her.."
+                        m 7mka "But Yuri’s willingness to try to connect with others despite personal difficulties made her all the more genuine."
+                        m 1fka "As a best friend, I don’t think you’d find anybody more loyal; it’s nice to have friends that actually {i}show{/i} they like being friends with you."
     m 1fua ".."
     m 1nut "So, I might have cornered you there with that question. "
     m 7nuu "Becoming ‘best friends’ with someone comes naturally, so it’s an abstract question and understandably difficult to {i}choose{/i} one."
@@ -1773,7 +1787,7 @@ label mcl_colouremotion:
     m "In coloured text!"
     m "They were refrences, if you didn't know; the {i}'Umineko When They Cry'{/i}  series of visual novels!"
     m "They're madly interesting; they're a series of murder mysteries wrapped up in psychological thriller and philosophical tones."
-    m "It's... a bit of a obscure refrence, so right now I want to convey one really important takeway from my previous references."
+    m "It's... A bit of a obscure refrence, so right now I want to convey one really important takeway from my previous references."
     m 4cfu "I can speak in colours."
     m 4ttu "That's crazy, right? I mean, my text was blue and red and gold, and you may have thought 'wow, that's new!'"
     m 3suo "But to do that, I actually had to.. speak in colour!"
@@ -3976,7 +3990,7 @@ label mcl_soundtrackplus:
      m 6msd "Huh."
      m 6fsd "[player], remember when I talked about the music of this game?"
      m 3ftd "And how I've found a few tracks that doesn't seem quite to fit?"
-     m 3rsc "Those, I haven't paid much thought to. But now I've found... a lot more music tracks."
+     m 3rsc "Those, I haven't paid much thought to. But now I've found... A lot more music tracks."
      m 1rsc "Unlike the tracks we talked before that I feel like were remixes, these ones seem to fit the game."
      m 1mkc "I don't remember hearing them before; and there are far too many of them to dismiss as just unused assets."
      m 1wkb "... Okay, maybe I need to clarify, because I'm not sure we've ever talked about this."
