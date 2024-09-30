@@ -1348,7 +1348,7 @@ label mcl_literatureclubbestie:
     m 7hub "Hey, [player]!"
     m 7eub "So I think I have a good question in mind.. and it’s related to a topic we’ve discussed."
     m 4gtd "I brought up the idea of what ‘friends’ might mean to people, and I mentioned I consider you my best friend."
-    m 4gsd "The main character of DDLC also had a best friend in Sayori… well, a childhood friend, but we didn’t see the main character interact with anyone else."
+    m 4gsd "The main character of DDLC also had a best friend in Sayori... Well, a childhood friend, but we didn’t see the main character interact with anyone else."
     m 4msd "So it’s natural to assume Sayori and the MC would consider each other their closest friend."
     m 4fsa "With that said, {cps=30}here’s~ a~ quest{w=0.5}-ion..{/cps}"
     m 3ffu "If you had a choice of choosing a best friend from the other girls in the literature club, who would it be?"
@@ -1371,10 +1371,10 @@ label mcl_literatureclubbestie:
         "You, Monika!":
             m 1ffb "Cheating~"
             m 6rkp "…"
-            m 6rka "I hope that on my part, I live up to the idea of a best friend."
+            m 6rka "I hope that on my part, I live up to the standard of a best friend."
             m 4tka "Now I feel like I’m interviewing for the position, hahaha."
             m 3hut "'I always look out for my friends, and I’ll always stick by them!'"
-            m 3tuu "Now, back to the question at hand; I asked about the other girls, and I wasn't a actual option!"
+            m 3tuu "That's kind of you to choose me.. again, but let's choose a actual answer from the other girls."
             label bestiechoices:
                 menu:
                     "Sayori?":
