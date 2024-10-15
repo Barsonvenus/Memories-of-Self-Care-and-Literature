@@ -6522,7 +6522,7 @@ label mcl_cranefolding:
         $ persistent._mcl_achievementcrane = True
         m 7sub "It's done!"
         m 7suo "We've made 2000 paper cranes- "
-        if persistent._mclcranecount = 2000:
+        if persistent._mclcranecount == 2000:
             m 4suw "- {i}Exactly{/i} 2000 paper cranes, actually!"
             m 4wtd "What a stroke of luck- or were we that detail-oriented?"
         else:
