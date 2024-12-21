@@ -1,4 +1,5 @@
-![A screenshot that tells you absolutely nothing]([https://user-images.githubusercontent.com/107741953/265365710-5aa5bbb5-798c-4c34-b3d8-ce2d2e39331f.png])
+![A screenshot that tells you absolutely nothing](https://github.com/Barsonvenus/Memories-of-Self-Care-and-Literature/blob/Alex/a%20screenshot%20that%20tells%20you%20nothing.png)
+
 # Memories of Self-Care & Literature
 
 A one-person passion project, Memories of Self-Care & Literature (SCL for short) provides new personally written content for all existing parts of the game where writing can be added- from songs, new questions, and moods but also a wide range of light-hearted and interesting topics. 
