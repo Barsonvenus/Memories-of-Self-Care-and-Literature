@@ -234,3 +234,54 @@ label mcl_shedidntsing:
     m 4esd "Wow, first time I've stopped a song midway through.{w=0.2} How many songs have I sang for you without making any mistakes?"
     m 3fub "Ah well, can't always be perfect.{w=0.2} Let's carry on!"
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_scl_songconnected",
+            prompt="Connected",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.LOVE, None)
+        ),
+        code="SNG"
+    )
+
+label mas_scl_songconnected(from_long=False):
+    m 6duo "{i}~Every passing day the winds might blow stronger~{/i}"
+    m 5duo "{i}~Joy to light the way to keep the reminder~{/i}"
+    m 4tkb "{i}~I'm yours forever~{/i}"
+    m 5dud "{i}~There is no end in sight for us~{/i}"
+    m 3hud "{i}~Nothing could measure~{/i}"
+    m 2hud "{i}~The kind of strength inside our hearts~{/i}"
+    m 2eub "{i}~It's all connected~{/i}"
+    m 2ekb "{i}~We're all together in this life~{/i}"
+    m 7ekb "{i}~Don't you forget it~{/i}"
+    m 7nkb "{i}~We're all connected in this~{/i}"
+    m 6hkb "{i}~I'm yours forever~{/i}"
+    m 6hub "{i}~There is no end in sight for us~{/i}"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_scl_songconnected_long",
+            prompt="Connected",
+            category=[store.mas_songs.TYPE_LONG],
+            aff_range=(mas_aff.LOVE, None)
+        ),
+        code="SNG"
+    )
+
+label mas_scl_songconnected_long:
+    call mas_scl_songconnected(from_long=True)
+
+    m 4hsd "{i}~Beyond the storms and the seas~{/i}"
+    m 6hkb "{i}~The sun and the breeze~{/i}"
+    m 5hkb "{i}~The stars in the galaxy~{/i}"
+    m 6hkb "{i}~Beyond the time that we take~{/i}"
+    m 3eka "{i}~The days that we make~{/i}"
+    m 5tkb "{i}~I'm always gonna be with you~{/i}"
+    return
