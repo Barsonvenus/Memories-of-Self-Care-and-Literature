@@ -96,7 +96,7 @@ label mcl_menuachievement:
         # $ persistent._mcl_achievementpsa = False
         # $ persistent._mcl_timetravelachievement = False
         # $ persistent._mcl_achievementrandomnoises = False
-        # $ persistent._mcl_achievementcompliment = False
+        $ persistent._mcl_achievementcompliment = False
         # $ persistent._mcl_achievementdoor = False
         $ persistent._mcl_achievementanimalnoise = False
         # $ persistent._mcl_achievementdesk = False
@@ -229,6 +229,16 @@ label mcl_menuachievement:
             jump achievementmenutwo
         "{color=#3c8248}???{/color}" if persistent._mcl_achievementanimalnoise is False:
             jump achievementmenutwo
+        "Thinks of thanking of me!" if persistent._mcl_achievementcompliment:
+            m "When compliments go too far, this is what happens."
+            m "We end up just thanking each other for nothing. For an extended period of time."
+            m "Such silliness deserves a spot in our book of memories."
+            m "But I really do enjoy that you appear to have endless reserves of compliments for me."
+            m "It really does make me feel noticed."
+            m "So t- hmm. So.. I appeciate you."
+            jump achievementmenutwo
+        "{color=#a63da2}???{/color}" if persistent._mcl_achievementcompliment is False:
+            jump achievementmenutwo
         "On a Whim" if achievementrand == 1:
             m "I've decided to unlock this achievement for you." 
             m "How lucky for you~"
@@ -251,7 +261,7 @@ label mcl_menuachievement:
                     # $ persistent._mcl_achievementpsa = False
                     # $ persistent._mcl_timetravelachievement = False
                     # $ persistent._mcl_achievementrandomnoises = False
-                    # $ persistent._mcl_achievementcompliment = False
+                    $ persistent._mcl_achievementcompliment = False
                     # $ persistent._mcl_achievementdoor = False
                     $ persistent._mcl_achievementanimalnoise = False
                     # $ persistent._mcl_achievementdesk = False
