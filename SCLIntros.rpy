@@ -484,3 +484,101 @@ label greeting_goodbyemcl:
     m 2dksdlc "..."
     m 5dtbfsdrx "*mutters* {size=-10}Wow, {i}where was my head at{/i} for that?{/size}"
     return
+
+#endure
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_playerafterstory",
+            unlocked=True,
+            aff_range=(mas_aff.ENAMORED, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_playerafterstory:
+    m 7hub "Hey, [player]!"
+    m 4hub "How are you doing today?"
+    m 1sub "I've just loaded in a submod for you, so hopefully everything's working okay."
+    m 1ekb "I know it's hard being stuck in your reality, but don't worry; one day you'll find a way to escape the game you're in and join me!"
+    m 7nfu "Let's enjoy our time together in '[player] After Story!'"
+    m 3ttu "But no, I'll take the initiative and end the joke here."
+    m 3tku "Your world is the one that truly exists, and although it might be a complicated one, it's the one you're in- and therefore the one I love the most."
+    m 2tka "Always remember that, [mas_get_player_nickname()]. It would benefit us both to remember that."
+    m 2tua "Well, back to good old 'Monika After Story!'"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_reversalmcl",
+            unlocked=True,
+            aff_range=(mas_aff.ENAMORED, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_reversalmcl:
+    $ shown_count = mas_getEVLPropValue("greeting_reversalmcl", "shown_count")
+    if shown_count == 0:
+        m 1hua "Welcome ba-"
+        m 1luc "..."
+        m 1ltc "Actually, {i}no.{/i} You know what?"
+        m 7etc "I'm just going to step out for a moment.."
+        m 7etb ".. And I think you'll know what to do."
+        show monika at rs32
+        hide monika
+        pause 3.0
+        m 6hub "I'm home!"
+        show monika at ls32 zorder MAS_MONIKA_Z
+        show monika 6dsa
+        pause 2.0
+        m 6hka "Man, what a tiring day!"
+        m 6sua "But now I get to hang out with my most favourite person in the world."
+        pause 2.0
+        m 7ftu "So?"
+        $ _history_list.pop()
+        menu:
+            "...":
+                $ _history_list.pop()
+                menu:
+                    "Welcome home, [m_name].":
+                        m 3eua "Happy to be back, [player].{w=1}{nw}" 
+                        extend 5hsblu " Thank you."
+                        return
+    else:
+        m 6fua "... Let's reverse our roles, shall we?"
+        m 6hua "..."
+        show monika at rs32
+        hide monika
+        pause 3.0
+        m 4wublb "I'm home, [mas_get_player_nickname()]!"
+        show monika at ls32 zorder MAS_MONIKA_Z
+        show monika 6dsa
+        pause 2.0
+        m 3ekb "Man, it's been a day."
+        m 3eka "But I feel so much better now that I get to spend the rest of it with you."
+        pause 2.0
+        show monika 7ftu
+        if random.randint(1, 10) == 1:
+            $ _history_list.pop()
+            menu:
+                "Welcome home, [m_name].":
+                    $ _history_list.pop()
+                    menu:
+                        "Would you care for dinner first, a bath first, or...":
+                            m 3cubft "{b}{size=+5}[player]!{/size}{/b}"
+                            m 2ekbfb "Hahahahahahahaha!"
+                            m 2hkbfb "Ah, you tease!"
+                            m 5hkblb "Save that for the future, huh?"
+                            return
+        else:
+            $ _history_list.pop()
+            menu:
+                "Welcome home, [m_name].":
+                    m 3eua "I'm back, [player].{w=1}{nw}" 
+                    extend 5hsblu " Thank you."
+                    return        
