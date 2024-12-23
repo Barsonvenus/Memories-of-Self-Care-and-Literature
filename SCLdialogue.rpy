@@ -5926,7 +5926,7 @@ label mcl_roomthoughts:
         m 6hsa "Well."
         m 5hsa "I sure could love the time to myself feeling like I have a little less weight on my shoulders."
         return
-     if store.mas_submod_utils.isSubmodInstalled("Memories of Self Care and Literature ft The Workshop Spaceroom V1") and mas_current_background is submod_workshop_spaceroom: 
+    if store.mas_submod_utils.isSubmodInstalled("Memories of Self Care and Literature ft The Workshop Spaceroom V1") and mas_current_background is submod_workshop_spaceroom: 
         m 3euu "Not quite the usual cleanliness you expect of me, huh?"
         m 3etu "This classroom was a result done over the space of one night when I thought about simply cluttering it up with anything I could find."
         m 3gtu "I pretty much ransacked each of the school's club rooms and brought everything I thought I would need to be productive-"
