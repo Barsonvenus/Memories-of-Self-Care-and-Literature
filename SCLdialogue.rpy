@@ -4414,6 +4414,33 @@ label mcl_writingtip3:
 init 5 python:
     addEvent(
         Event(
+            persistent._mas_apology_database,
+            eventlabel="mcl_apolev",
+            prompt="...for *everything,* I guess.",
+            conditional="len(persistent._mas_apology_time_db) > 0",
+            unlocked=True
+        ),
+        code="APL"
+    )
+
+label mcl_apolev:
+        m 5fsc "..."
+        m 5fsd "Yeah."
+        m 5fkc "Sometimes it feels like you need to apoligize for just literally.. everything."
+        m 5ftx "{i}Everything.{/i} Even if it's not your fault."
+        m 5fst "That's the tricky thing with 'sorry.' It doesn't have to be said solely to own up for a mistake you did."
+        m 5fkt "Sometimes you're sorry {i}for{/i} somebody."
+        m 5fup "So I don't really know if you're feeling guilty about something in particular. Or maybe everything you think you've done wrong by me in the past."
+        m 5ftp "Or if you're just feeling sorry for me and my rollercoaster of a life."
+        m 5huc "I'm in no position to deny pity."
+        m 5euc "Thanks, is all I can say."
+        m 5ekb "Thanks."
+        $ mas_unlockEVL("mcl_apolev", 'APL')
+        return
+
+init 5 python:
+    addEvent(
+        Event(
             persistent._mas_compliments_database,
             eventlabel="mcl_compliment_compliment",
             prompt="You're great at taking compliments!",
