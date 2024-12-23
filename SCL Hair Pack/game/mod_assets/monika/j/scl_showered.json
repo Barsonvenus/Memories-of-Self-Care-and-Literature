@@ -1,0 +1,28 @@
+{
+    "__author": "SATURNVENUS",
+    "version": 3,
+    "type": 1,
+    "name": "scl_showered",
+    "img_sit": "scl_showered",
+    "pose_map": {
+        "mpm_type": 0,
+        "default": true,
+        "use_reg_for_l": true
+    },
+    "stay_on_start": true,
+    "ex_props": {
+        "night": true,
+        "down": true
+    },
+    "select_info": {
+        "display_name": "Just Showered",
+        "thumb": "scl_showered",
+        "group": "hair",
+        "visible_when_locked": true,
+        "select_dlg": [
+            "Whoof, it takes some effort to take care of my hair!",
+            "Care to smell? I used peppermint oil!"
+        ]
+    },
+    "unlock": true
+}

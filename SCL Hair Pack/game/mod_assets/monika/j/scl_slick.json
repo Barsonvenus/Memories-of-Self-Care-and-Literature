@@ -1,0 +1,30 @@
+{
+    "__author": "SATURNVENUS",
+    "version": 3,
+    "type": 1,
+    "name": "scl_slick",
+    "img_sit": "scl_slick",
+    "pose_map": {
+        "mpm_type": 0,
+        "default": true,
+        "use_reg_for_l": true
+    },
+    "stay_on_start": true,
+    "ex_props": {
+        "day": true,
+        "ribbon": false,
+        "no-tails": false,
+        "tiedstrand": false
+    },
+    "select_info": {
+        "display_name": "Ponytail (Slick Front)",
+        "thumb": "scl_slick",
+        "group": "hair",
+        "select_dlg": [
+            "Self-care results in self-confidence, and I feel like I could take on the world with this hairstyle!",
+            "Where does all my hair go? That's for me to know, and you to admire~",
+            "Don't ask me how long it takes for me to do up my hair this way- it's way too long!"
+        ]
+    },
+    "unlock": true
+}
