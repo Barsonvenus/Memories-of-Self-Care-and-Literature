@@ -533,3 +533,26 @@ label bye_locationmcl:
     else:
         m 5nsb "Happy days, [player]!"
         return "quit"
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="bye_baitandswitch",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None)
+        ),
+        code="BYE"
+    )
+
+label bye_baitandswitch:
+    m 6esc "... what?"
+    m 6fkc "[player], you're leaving me?"
+    m 6cfc "But.. after {i}all{/i} we've been through?"
+    m 6ckx "I- don't know what I'm going to do when you're gone -"
+    m 6ckx "{cps=30}I'll.{w=0.5}.{w=0.5}.{/cps}{nw}"
+    m 6ssu "I'll..{fast} go read a book while I patiently wait for you, I guess!"
+    m 3wkb "Hahaha! Sorry, this was particularly devilish of me this time~"
+    m 3eku "But, I {i}will{/i} miss you."
+    m 5eku "I always do."
+    return 'quit'
