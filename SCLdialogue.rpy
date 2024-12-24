@@ -4541,7 +4541,7 @@ label mcl_compliment_compliment3:
             "Thank you, times a hundred thousand!",
             "Thank you, times a million!",
             "Thank you, times a {b}{i}hundred billion million!{/b}{/i}",
-            "Thank you, times a trillion billion... {/i}gazillion!{/i}",
+            "Thank you, times a trillion billion... {i}gazillion!{/i}",
             "Thank you, times.. {b}{i}INFINITY!{/b}{/i}",
             "Thank you, times {b}{i}infinity times infinity times-{/b}{/i}",
             
