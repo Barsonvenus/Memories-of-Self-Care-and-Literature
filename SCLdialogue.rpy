@@ -475,7 +475,7 @@ label mcl_change:
     m 1hka "- I’m not really your typical girl, even."
     m 4ekb "I think I was- is- am? am the type of person to find their mood a bit too driven by their accomplishments."
     m "It’s… after a bit of thinking, that line of thinking can be bad for you."
-    m 4lsb "After I formed the literature club, I was pretty driven to share my expierences with others and create works for myself and create that place for others..."
+    m 4lsb "After I formed the literature club, I was pretty driven to share my experiences with others and create works for myself and create that place for others..."
     m "And I found myself having to grapple with more responsibility than ever; and I’m a perfectionist by nature."
     m 4lkb "So, when that responsibility became overwhelming, I started to think in black and white; my failures became resolute, and therefore I didn’t feel like I had properly accomplished anything:"
     m 4lkc "So I felt as frustrated as I did when I left the debate club, at the time feeling like I wanted something new."
