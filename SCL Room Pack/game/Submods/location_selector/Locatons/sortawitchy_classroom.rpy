@@ -7,10 +7,71 @@ init -990 python:
         version="1.0.0"
     )
 
+    #0 gifts is blank
+#1-3 gifts gets you part 1
+#4 gifts gets you part 2
+#5+ gifts get you part 3
+image SWmas_d25_gifts = ConditionSwitch(
+    "len(persistent._mas_d25_gifts_given) == 0", "mod_assets/location/sortawitchyclassroom/deco/d25/gifts_0.png",
+    "0 < len(persistent._mas_d25_gifts_given) < 3", "SW_gifts_1",
+    "3 <= len(persistent._mas_d25_gifts_given) <= 4", "SW_gifts_2",
+    "True", "SW_gifts_3"
+)
+
+image SW_gifts_1 = MASFilterSwitch(
+    "mod_assets/location/sortawitchyclassroom/deco/d25/gifts_1.png"
+)
+
+image SW_gifts_2 = MASFilterSwitch(
+    "mod_assets/location/sortawitchyclassroom/deco/d25/gifts_2.png"
+)
+
+image SW_gifts_3 = MASFilterSwitch(
+    "mod_assets/location/sortawitchyclassroom/deco/d25/gifts_3.png"
+)
+
+image SWmas_d25_lights = ConditionSwitch(
+    "mas_isNightNow()", ConditionSwitch(
+        "persistent._mas_disable_animations", "mod_assets/location/sortawitchyclassroom/deco/d25/SW_lights_on_1.png",
+        "not persistent._mas_disable_animations", "SWmas_d25_night_lights_atl"
+    ),
+    "True", MASFilterSwitch("mod_assets/location/sortawitchyclassroom/deco/d25/SW_lights_off.png")
+)
+
+image SWmas_d25_night_lights_atl:
+    block:
+        "mod_assets/location/sortawitchyclassroom/deco/d25/SW_lights_on_1.png"
+        3.0
+        "mod_assets/location/sortawitchyclassroom/deco/d25/SW_lights_on_2.png"
+        3.0
+        "mod_assets/location/sortawitchyclassroom/deco/d25/SW_lights_on_3.png"
+        3.0
+        repeat
+
+init 501 python:
+    MASImageTagDecoDefinition.register_img(
+        "mas_o31_vignette",
+        submod_witchy_spaceroom.background_id,
+        MASAdvancedDecoFrame(zorder=21) #21 to be in front of all cgs
+    )
+
+    MASImageTagDecoDefinition.register_img(
+        "mas_d25_gifts",
+        submod_witchy_spaceroom.background_id,
+        MASAdvancedDecoFrame(zorder=6),
+        replace_tag="SWmas_d25_gifts"
+    )
+
+    MASImageTagDecoDefinition.register_img(
+        "mas_d25_lights",
+        submod_witchy_spaceroom.background_id,
+        MASAdvancedDecoFrame(zorder=5),
+        replace_tag="SWmas_d25_lights"
+    )
 #Day images
 image submod_daywitchy-spaceroom-day = "mod_assets/location/sortawitchyclassroom/witchy-spaceroom-day.png"
 image submod_daywitchy-spaceroom-rain = "mod_assets/location/sortawitchyclassroom/witchy-spaceroom-rain.png"
-image submod_daywitchy-spaceroom-overcast = "mmod_assets/location/sortawitchyclassroom/witchy-spaceroom-rain.png"
+image submod_daywitchy-spaceroom-overcast = "mod_assets/location/sortawitchyclassroom/witchy-spaceroom-rain.png"
 image submod_daywitchy-spaceroom-snow = "mod_assets/location/sortawitchyclassroom/witchy-spaceroom-day.png"
 
 #Night images
