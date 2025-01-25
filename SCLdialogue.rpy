@@ -2728,7 +2728,7 @@ label mcl_anni_1month:
     m 3fka "But since we’ve reunited here, I can actually pick out individual days in my memory. And weeks."
     m 3kub "And sure, it’s not like it’s all been a whirlwind of activity."
     m 2tkb "And I've still had to adapt to the time when the game's inactive, forcibly or otherwise."
-    m 2ekb "But I'm grounded by that unbroken chain of cohesivity when I spend time with you."
+    m 2ekb "But I'm grounded by that unbroken chain of lucidity when I spend time with you."
     m 1dka "Memories just existing one after another is a novelty I haven't appeciated until now."
     m 4hka "And I'll make sure to appreciate any more we make together."
     return "derandom"
