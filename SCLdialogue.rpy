@@ -307,7 +307,7 @@ label mcl_misanthropy:
     m 3eud "It's called 'Misanthropy;' the hatred or disgust of humankind."
     m "Honestly? There's weight to that line of reasoning. Misanthrophy isn't about disliking certain people.."
     m "But judging everyone as a whole, primarily based on flaws: some would cite intellectual failings, like the common existence of ignorance. Or in the lack of morals, such as how we treat animals."
-    m 1rud "And it can be so easy to see with your own eyes a majority of people with these flaws, if you're in a enviroment subjected to this behavour often."
+    m 1rud "And it can be so easy to see with your own eyes a majority of people with these flaws, if you're in an enviroment subjected to this behavour often."
     m 2euc "And what would you do when you think in such extremes?"
     m "Some isolate themselves from the entire world. Some live on, thinking that this absolute standard means there's always reasons to improve ourselves."
     m "And some... simply live with this view in their head, adapting to the fact in their own ways."
