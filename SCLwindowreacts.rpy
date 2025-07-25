@@ -410,7 +410,7 @@ init 5 python:
     addEvent(
         Event(
             persistent._mas_windowreacts_database,
-            eventlabel="mas_wrs_justnatsuki",
+            eventlabel="mas_wrs_justyuri",
             category=["Just Yuri"],
             rules={
                 "notif-group": "Window Reactions",
