@@ -500,3 +500,34 @@ label mas_wrs_stp:
     if not wrs_success:
         $ mas_unlockFailedWRS('mas_wrs_stp')
     return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_windowreacts_database,
+            eventlabel="mas_wrs_wuwa",
+            category=["Wuthering Waves", "Wuwa"],
+            rules={
+                "notif-group": "Window Reactions",
+                "skip alert": None,
+                "keep_idle_exp": None,
+                "skip_pause": None
+            },
+            show_in_idle=True
+        ),
+        code="WRS"
+    )
+
+label mas_wrs_wuwa:
+    $ wrs_success = mas_display_notif(
+        m_name,
+        [
+            "The wuthering waves ebb and flow. They shall send you back to where you belong.",
+        ],
+        'Window Reactions'
+    )
+
+    #Unlock again if we failed
+    if not wrs_success:
+        $ mas_unlockFailedWRS('mas_wrs_wuwa')
+    return
