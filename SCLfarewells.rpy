@@ -556,3 +556,43 @@ label bye_baitandswitch:
     m 3eku "But, I {i}will{/i} miss you."
     m 5eku "I always do."
     return 'quit'
+
+
+#echoing
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="mcl_superspecialbye",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None)
+        ),
+        code="BYE"
+    )
+
+label mcl_superspecialbye:
+    m 7eub "Wow, [player]!"
+    m "You've unlocked a super special, super secret, one-in-a-million goodbye event!"
+    m 1suc "..."
+    m 1wkb "Okay, no. I just wanted to try to make this goodbye a little more special.{w=1} There's no element of randomness here."
+    m 7ekb "The real luck here is that, well.{w=1} I'm just lucky to have spent this time with you. :3 "
+    return "quit"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.farewell_database,
+            eventlabel="mcl_faretheewell",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None),
+        ),
+        code="BYE"
+    )
+
+label mcl_faretheewell:
+    m 7ssb "Fare thee well, [player]!"
+    m 7wkp "... Is that weird?{w=1} Does that sound like me?{w=1} Like something I'd say normally?"
+    m 7sfp ".{w=1}.{w=1}. It doesn't matter, because if I said it, then it {i}does{/i} sound like me."
+    m 4sfb "Fare thee well!"
+    return "quit"
