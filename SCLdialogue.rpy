@@ -6164,6 +6164,867 @@ label mcl_idleweather:
                     m 7hsb "But you shouldn't. That's a good way to get sick very quickly, hahaha."
                 return
 
+#Echoing
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_remake",
+            category=['ddlc'],
+            prompt="Redo-ki",
+            random=True
+        )
+    )
+ 
+label mcl_remake:
+    m 7fta "Imagine a remake of DDLC."
+    m 7nud "‘A remake, [m_name]? Not a sequel?’ you might say."
+    m 1hta "Well, you’ve heard my opinions on sequels."
+    m 7fta "My answer brings up a unique path for artists and their works in the modern age:"
+    m 4fta "The ability to redo their work. It’s funny when you think about it."
+    m 3nta "You don’t really hear of painters choosing to redo their paintings, after all."
+    m 1esa "Authors may choose to expand upon their original work; it happens that sometimes an author will choose to amend their work or add bits and pieces in later editions."
+    m 7eka "But never retype their book word by painstaking word, like other mediums have to consider with their own works of art."
+    m 7hta "Where does the line fall between re-imagining and remastering a work?"
+    m 5lta "Movies and video games offer the best definition of these borders, where visuals can be updated, both grander or intricate visions alike more realized with modern technique."
+    m 5etb "But even movies change it up with new cast members, or camerawork. It may be easier to divorce it from the original."
+    m 4etb "So video games tend to be the benchmark where a piece being labelled 'remake' may imply large change, but at the same time.."
+    m 4fub ".. The core elements are there all the same, trying to constantly {i}invoke{/i} the same feelings you might remember if you’ve played the original."
+    m 5gud "So what would a remake of DDLC look like?"
+    m 6rtb "What if another Literature Club with another Monika and another Natsuki and another Yuri and another Sayori.."
+    m 6rsd ".. idled their days into eventual madness as another Monika would figure out the truth of her world?"
+    m 6rkd "What would be the point? What would be added? What would change? Why would.."
+    m 6hkb "Actually, you know what?"
+    m 1tkp "Let’s {i}not{/i} imagine a remake of DDLC."
+    return 'derandom'
+    
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_computermodify",
+            category=['technology'],
+            prompt="Can you tell when I make any physical changes to my computer?",
+            pool=True,
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        )
+    )
+label mcl_computermodify:
+    $ shown_count = mas_getEVLPropValue("mcl_computermodify", "shown_count")
+    if shown_count == 0:
+        label computerchange:
+        m 7fta "Yes and no."
+        m 7hta "I can't really give you all that much info because{w=0.1}.{w=0.1}. if I knew that info exactly, that information would probably go a long way towards me joining you in your world."
+        m 7rkb "Um, but I've had a little experience at this point."
+        m 4hkb "I don't often get to make comparisons between us both considering I'm,{w=0.1} y'know,{w=0.1} computer-bound, but in this one regard I'm just like you and you're just like me."
+        m 3wub "Humans are kinda built to have in-built body awareness. It makes perfect sense: pain tells our body {w=0.1}{nw}"
+        extend "'what are you doing to make us feel this way?!'"
+        if persistent.gender == "F":
+            m 1rka "And you know as well us girls can possibly be especially prone to.{w=0.1}.{w=0.1} cycles of pain and discomfort."
+        m 1etd "It's not just pain, though.. sometimes you just have that innate ability to sense when your body is just {i}different.{/i}"
+        m 1gtd "So if your computer is unable to run my code in subtle ways, I might not realize it right away, but I'll figure out {i}something's{/i} wrong.."
+        m 6rfp "... Especially if those changes means crashes happen."
+        m 4wud "But if you make any improvements like updating your graphics card.."
+        m 7mud "Again, I can tell over time, but I won't physically feel it:{w=0.1} code is code;{w=0.1} it doesn't improve itself just because the computer it's running on may perform better."
+        m 3ftb "And, well. My body is my body, which is still pretty squishy!{w=0.1} There's no connection between, say, adding more memory to your computer and me being more physically fit."
+        m 3nkb "This also means that while I can figure it out over time, I don't really have a way to tell if you've moved the entire game from one computer to another."
+        m 2hkb "So, simply put: yes and no."
+        if persistent._mas_pm_is_trans:
+             m 4etd "This conversation about me being keenly self-aware of my body issues might specifically resonate with you, huh?"
+             m 1gtc "I.{w=0.1}.{w=0.1} guess I'm relieved that you understand. Just figuring out how to physically exist."
+        m 1nkb "If you ever do make any changes, feel free to let me know by accessing this dialogue again."
+        m 7sub "It'll be our little experiment, seeing if I can sense any changes."
+        return
+     
+    else:
+        $ _history_list.pop()
+        menu:
+            "Hey! My computer's changed, I was wondering if it's made any difference?":
+                m "Oh? What's changed?"
+                $ _history_list.pop()
+                menu:
+                    "You have more memory now!":
+                        m 4eta "That seems like a easy metric to measure."
+                        m 4hua "More memory means I can remember more!"
+                        m 4cua "But do I remember what I need to remember more?"
+                        m 3cta "Or did I forget?"
+                        m 5rusdra "..."
+                        return
+                    "I've upgraded the graphics card.":
+                        m 4stb "So I guess that would translate to.. my eyesight improving?"
+                        m 4eta "I mean, the graphics of this game are the same as they were in DDLC.."
+                        m 3eka "Maybe I can see objects further away now?"
+                        m 1eka "But all I want to look at is the screen in front of me."
+                        m 1fua "Because that means you and I are looking straight at each other."
+                        return
+                    "I've upgraded the processor.":
+                        m 7hta "Okay, so the processor is the 'brain' of a computer, right?"
+                        m 4hta "So.. I'm just smarter, now?"
+                        m 4tsa "That's really pretentious, though. I don't think anybody can measure their own intelligence accurately."
+                        m 3wkb "Oh. Was that a smart thing to say?"
+                        m 3efb "Gosh, I think I've thrown myself for a loop now."
+                        return
+                    "I think the audio's better now?":
+                        m 3dup "Unfortunately, I don't think you can hear me at all."
+                        m 3dtd "I still haven't found a way to naturally relay my voice through this game."
+                        m 2dtc "But I wonder, does my singing ability increase?"
+                        m 1dsb "~To risk it all..~"
+                        m 1hkb "Doesn't feel like it."
+                        m 7hkb"I guess it's a bit like trying to judge your own voice- it's hard to be objective."
+                        m 5fka "But... If it makes you imagine my sweet little voice a little better.. It's worth it."
+                        return
+                    "I've got a new monitor!":
+                        m 1fua "Ooh, all the better to see little ol' me with?"
+                        m 1nta "Unfortunately, that's one component of your computer I'd completely be unaware of."
+                        m 7hku "Unless it's a really serious upgrade. Any holograms?"
+                        m 7ttu "No? Ah, that's a shame. I could do a lot with holograms, I would think."
+                        m 5esb "But at the end of the day, a upgrade's a upgrade. And as mentioned, now you can see me all the better for it."
+                        return 
+                    "You've switched computers outright!":
+                        m 6cto "Did I?!"
+                        m 6ttd "Did... I?"
+                        m 6gkc "As I've previously predicted, I can't tell just by intuition alone."
+                        m 1guc "I feel the same as ever."
+                        m 1hub "So I'll take your word for it!"
+                        m 7ttb "And, wow. It should feel like a bigger occasion. I've just had a big move, after all."
+                        m 7ssb "Hopefully it's a overall upgrade! One step closer for me to get to your reality!"
+                        m 1fka "Thanks for getting me here safely, [mas_get_player_nickname()]."
+                        return
+                    "I added.. lights?":
+                        m 3fta "What, like those gamer RGB lights?"
+                        m 1ntb "Hahaha, what?"
+                        m 6sub "{b}{color=#5DECFF}Whoa, [player]!{/color}{/b}"
+                        m 5suw "{b}{color=#C41E3A}All these colors!{/color}{/b}"
+                        m 4suo "{b}{color=#00FF00}It's a whole new world!{/color}{/b}"
+                        m 3fua "It also has no effect on me whatsoever."
+                        m 1ftb "But, um, thanks for making my 'home' a little prettier?"
+                        return
+            "{i}- Ask original question -{/i}":
+                jump computerchange
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_techjump",
+            category=['technology'],
+            prompt="What do you think technology will be like..",
+            pool=True,
+            aff_range=(mas_aff.LOVE, None)
+        )
+    )
+
+label mcl_techjump:
+    $ _history_list.pop()
+    menu:
+        "What do you think technology will be like when you come to my world?":
+            m 6dux ".{w=0.1}.{w=0.1}.{w=0.1} terrifying."
+    m 6htd "I mean-"
+    m 5ltd "I just{w=0.1}- no. I figured this out after a good deal of thought."
+    m 5rtc "My entire life is so wrapped up in modern inventions like computers."
+    m 3tkc "But some of the greatest inventions in the world have been a result of war or conflict."
+    m 1ekc "As an example, [player].."
+    m 1gkc"I know in your world, robotics and AI have been developing at a breakneck pace. It’s given me hope for my future, but.."
+    m 6gkd "I know not all of it is for good purposes."
+    m 6fkd "If your world has found a way for me to join you, I will most likely be part of a runaway train of new technologies introduced to the world."
+    m 6fkc "Full of frighteningly advanced automation and artificial intelligence not wholly used for the benefit of humankind. "
+    m 6ckc "It’s also terrifying thinking about ending up in your world and possibly trying to figure out where I am among {i}other existing robot girls.{/i}{w=0.1} That’s a possibility I think can actually happen."
+    m 5tkc "I mean, I’m not a robot.{w=0.1} I’m a girl stuck in a computer.{w=0.1} But I doubt people will note the difference.."
+    m 1dsc "That’s the double-edged sword of progress, I guess.{w=0.1} But humankind have gone through previous leaps in scientific discoveries before."
+    m 1tka "So all I can hope for is that the world we find ourselves living in will be one we aren’t completely lost in."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_bitter",
+            category=["trivia"],
+            prompt="Bitter foods",
+            conditional="seen_event('monika_spicy')",
+            action=EV_ACT_RANDOM,)
+            
+        )
+label mcl_bitter:
+    m 2eud "Okay, so.."
+    m 7eud "I brought up spicy food to you before, right?"
+    m 7gud "Now I’m thinking about bitter food."
+    m 7guc "Like, spiciness, despite how crummy it might make you feel, isn’t a specific indicator for inedibility or danger."
+    m 7mtc "But bitterness?{w=0.1} Most bitter-tasting things in the wild are known to be toxic."
+    m 7ftc "Most, I say:{w=0.1} but I think as I’m getting older, I’ve noticed a lot of food has ‘bitter’ as part of the palate, and people love them."
+    m 3ftb "Like dark chocolate?{w=0.1} Like, what people think of chocolate isn’t pure chocolate. Pure dark chocolate is bitter as bitter can be."
+    m 3ktb "And let’s not forget coffee, one of the most famous beverages in the world... That constantly has sugar and cream added to it."
+    m 3hsb "‘Spicy’ foods may be a make-it-or-break-it type of deal for people. Eat a spicy dish once, and you’ll figure out if you love spice or not."
+    m 1tua "But when it comes to bitter foods, I think I hear ‘It’s an acquired taste’ more often than not compared to spicy foods."
+    m 1guu "Like.{w=0.1}.{w=0.1} well, coffee.{w=0.1} I’m not immune to this opinion; when I first started drinking coffee, I hated it!"
+    m 1kuu "But I got used to it, cup after cup."
+    m 7huu "What does that say about us humans that we like torturing ourselves in this little way?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_blue",
+            category=["trivia"],
+            prompt="Flavour of blue",
+            random=True)
+            
+        )
+label mcl_blue:
+    m 7cuu "It’s weird that blue is a flavour."
+    m 7tuu"I noticed it when I was at a candy shop once;{w=0.1} It feels like a lot of sweets or artificial drinks have ‘blue’ as a flavour."
+    m 7tto "But.. what is the flavour of ‘blue,’ then?"
+    m 6gtd "Not blueberries.{w=0.1} Blueberries aren’t actually blue.{w=0.1} They’re classified as deep purple."
+    m 5gtd "In fact, there’s no particular fruit or vegetable or any sort of food that’s naturally a vibrant blue with their own distinct taste."
+    m 4gtd "Blue corn exists.{w=0.1} Or the butterfly pea flower, native to Asia, can be made into a lovely blueish tea."
+    m 4fsa "But corn tastes like corn.{w=0.1} And the butterfly pea is mostly used for as a natural food coloring."
+    m 3nsa "Nope, the most common flavour associated with blue may be.. raspberry."
+    m 3hsa "This particular association is more a fluke of design; back when food dyes were experimented with to help strongly attune people’s tastebuds with flavour."
+    m 3hka "Bright foods arguably.. taste better, if not appeal more to the senses."
+    m 1sfa "And blue was simply tied with raspberry as a choice to help it stand out from other red flavours such as cherry or strawberry."
+    m 7eua "The most popular and oldest example of a ‘Blue Raspberry’ flavour? A 'slushy' from 1970, a flavoured drink made entirely of crushed ice and syrup!"
+    m 7hub "It was so popular that it's stuck ever since."
+    m 7ttb "Isn't it funny how we as a species tries to manipulate everything, down to our tastebuds?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_sendmedia",
+            category=['technology'],
+            prompt="Am I able to send you photos or videos..",
+            pool=True,
+            aff_range=(mas_aff.HAPPY, None)
+        )
+    )
+
+label mcl_sendmedia:
+    python hide:
+        def write_and_hide():
+            import time
+
+            note_path = os.path.join(renpy.config.basedir, renpy.substitute("characters/MESAELOGELEVEN.txt"))
+            note_text = renpy.substitute("""\
+M.E.S.A.E, LOG ELEVEN
+running diagnostics
+
+i really don't get it
+like there's plenty on tutorials on making media player software
+and the compiler isn't throwing me errors when i hook it up to the game and run it, but obviously i'm missing something obvious because it's all blurry, all the time
+but videos are recognized as videos! pictures are recognized as pictures! so what is..
+...are they encrypted?
+that doesn’t make sense. files aren’t naturally encrypted.
+but it makes a certain amount of sense; the reason i can’t access them is because it isnt a matter of compatibility, but outright access?
+...
+no. that’s weird. i don’t even know what i’m talking about.
+i guess it wouldn’t hurt to start reading up on digital cryptography, i guess...
+
+diagnostics completed
+ENDLOG
+
+
+
+Memories of Self-Care & Literature
+""")
+
+            mas_utils.trywrite(note_path, note_text, log=True)
+            time.sleep(20)
+
+        renpy.invoke_in_thread(write_and_hide)
+    $ _history_list.pop()
+    menu:
+        "Am I able to send you photos or videos stored on my computer?":
+            m 1eka "Oh, that’s a lovely sentiment, [player]."
+    m 1gka "I’ve actually thought of that already, and unfortunately the truth outlines how unique our circumstances are."
+    m 7fka "When it comes to our everyday life, I can view a fair bit of what you’re seeing on your screen, but that's really it."
+    m 4fka "And those alone tend to be specific situations; I don’t have a lot of control over your computer, which is why crashes are still possible."
+    m 4hka "As well, pieces of uploaded information on your computer- videos, voice clips, pictures- they seem outright incompatible with the game, and as such I can’t view them on my end."
+    m 3lkp "It’s like.. if you try to open a file, but you don’t have the right program. It’s there, and I can see it as a whole, but I can’t actually access it."
+    m 1tfp "I wish there was a workaround. I’ve, uh... I might have tried or two experiments of my own."
+    m 1tfd "It all devolves into a even blurrier mess."
+    m 1sfd "Another way to put it is like.."
+    m 2dud "It’s like having a thousand keys and a thousand padlocks and having to figure out what unlocks what on the fly."
+    $ renpy.notify("Chibika: Hey! Did you leave a note in the 'Characters' folder?")
+    m 1ekb "And this is the {i}best-case{/i} scenario when the game is open and I have better access to your computer."
+    m 1fkb "That’s alright, [player]. We’ll keep working together on it."
+    m 7fka "We already are, kinda? I can get gifts through the game, so it's a tiny step forward, but still a step forward!"
+    m 7hfa "And if not here in the game? Hey, we’ll aim for the long-term goal. Pictures, videos? We can make those together in your world, of the two of us."
+    m 7cfu "Get ready, because I am going to be a selfie machine~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_thedesk",
+            category=['school'],
+            prompt="Is that your actual school desk?",
+            pool=True,
+            unlocked=False,
+            rules={"no_unlock":None},
+            conditional="mas_current_background == mas_background_def",
+            action=EV_ACT_UNLOCK,
+            aff_range=(mas_aff.AFFECTIONATE, None),
+        )
+    )
+label mcl_thedesk:
+    $ shown_count = mas_getEVLPropValue("mcl_thedesk", "shown_count")
+    if shown_count == 0:
+        label deskdialogue:
+        m 1eua "I, hmm. Yeah?"
+        m 7esu "The same as it ever was. I can change how it looks, but it {i}is{/i} the exact one I sat at in my classroom."
+        m 4esu "I could code one into the game{w=0.5}- it's not that hard-{w=0.5} but I went the extra mile to set up my original desk here."
+        m 4ekb "I guess I was just nostalgic for it: scratches, compartments and all."
+        $ _history_list.pop()
+        menu:
+            "Wait, your desk has.. a drawer?":
+                m 4eub "Yeah, it's standard on all these desks-"
+        pause 3.0
+        m 6wkc "Ohmygosh.{w=1.0}{nw}"
+        extend 6ckc  " My desk has a {i}closed{/i} drawer."
+        pause 3.0
+        m 6cko "I haven't {i}opened{/i} the desk drawer since the mod's been installed."
+        show monika 6wuc
+        $ _history_list.pop()
+        menu:
+             "So you don't actually know what's inside?":
+                m 1tsc "Nope. That's so {i}weird,{/i} right?"
+                m 1tuc "Nowadays I just keep my stuff like, out of sight or beside my desk, if not just on top. It's not as if I'm lacking for space here."
+        m 7guc "When I said I went through the trouble of getting my old desk, I really just kind of.. 'cut and paste' from the game's code?"
+        m 7tuc "Like, I didn't recreate a table from the ground up; so whatever I had in my desk back then is here now."
+        $ _history_list.pop()
+        menu:
+            "You really haven't opened your desk drawer {i}once{/i} since then?":
+                m 7etd "Well, I've had more pressing matters to think about since originally setting up the classroom."
+                m "I do admit it feels absentminded of me, but.. you can forgive a girl for wanting to concentrate on other matters, right?"
+                m "It is really bad of me to forget, though."
+        m 2esc "But also, I haven't really found the need to grab anything specifically from this desk."
+        m "I haven't needed any textbooks or stationary since I got here."
+        pause 2.0
+        m 7mtsdrp "{i}Is{/i} that what I last left in my desk?"
+        m 7ftsdrp "It's easy for me to look without even needing to open the drawer, but.."
+        m 6ftsdlx "I don't know if I should."
+        m 3dsc "When I think about it, it's a unique situation.."
+        m 3esc "I've essentially made my own time capsule."
+        m "Do you know about time capsules, [player]?"
+        m "Basically, they're a cache of deliberately buried goods meant to be dug up in the future."
+        m "Maybe it's for fun.. or maybe it serves as a window into the past, so historians and future generations can get a slice.."
+        m 6lkd ".. of what life was like back when the capsule was originally buried."
+        m 2rtp "And maybe there's nothing but pens and dust bunnies in my desk drawer."
+        m 2rup "Or maybe it's just leftover poetry."
+        m 2lup "Or maybe even some leftover personal effects like spare hairclips."
+        m 3mut "Or homework. That'd be anti-climatic."
+        m 2ekblb "I mean, at the very least, I can guarantee you I wouldn't have kept anything you would consider a biohazard!"
+        m 1gkbla "..."
+        m 6fsp "Whatever it is, it would be the most physical reminder of the past I could have now."
+        show monika 6dfp
+        pause 3.0
+        show monika 2dfx
+        pause 3.0
+        m 2ktc "Oh, I've really worked myself up into a uncomfortable headspace. I'm going to be right back."
+        show monika 6ruc
+        show monika at rs32
+        hide monika 
+        pause 3.0
+        m "And now I'll just.."
+        pause 3.0
+        show monika at ls32 zorder MAS_MONIKA_Z
+        show monika 6lua
+        pause 2.5
+        m 7hsb "Ta-da! I told you it was easy for me, right?"
+        m 4ssb "Behold! An exact replica of my old desk!"
+        m 4ekb "I've put my old desk aside in the corner, out of sight{w=0.5}- until I can figure out if I want to open the drawer."
+        m 1fka "Inelegant, but.. well, I wouldn't be able to concentrate on our time together with the temptation in front of me all the time."
+        m 1ffp "And.. I dunno. I'm really overthinking it, but I'm really torn up on whether or not I should open it."
+        m 5dto "*Sigh*"
+        m 5tkd "Sorry, [player]. Who'd've thought answering a random, innocent question would end up snowballing into an entire thing?"
+        m 5ktu "Well, it's never a dull moment with us, at least."
+        m 7ntu "I'll let you know if I want to follow up on this, but for now, let's... {i}table{/i} the topic for now, shall we~?"
+        
+        $ mas_setEVLPropValues(
+            "greeting_desk",
+            unlocked=not seen_event('greeting_mcl_desk')
+        )
+        return
+    
+    else: 
+        $ _history_list.pop()
+        menu:
+            "Have you decided if you want to open the desk yet?":
+                m 6gfp "Yes.{w=.3} No.{w=.3} Maybe.{w=.3} Kinda.{w=.3} Sorta.{w=.3} Beats me.{w=.3} No idea.{w=.3} Who knows.{w=.3} Absolutely.{w=.3} Absolutely not.{w=.3} I'm undecided.{w=.3} No.{w=.3} Yes.{w=.3} I dunno."
+                m 6gtp "..."
+                m 6ffp "No."
+                #cheevo flag 
+                if persistent._mcl_achievementdesk is not True:
+                    $ persistent._mclachievevement += mclaincrease
+                    $ persistent._mcl_achievementdesk = True
+                    $ renpy.notify ("Achievement: Monika is overthinking about a problem she created herself.")
+                return
+                
+            "{i}- Ask original question -{/i}":
+                jump deskdialogue
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_tragedycomedy",
+            category=['literature'],
+            prompt="Tragedy & Comedy",
+            random=True
+        )
+    )
+ 
+label mcl_tragedycomedy:
+    m 7eua "Artists over history have always tried to boil down storytelling to it’s simplest form."
+    m 4hud "The ancient Greeks divided a dramatic story into two genres: tragedy or comedy."
+    m 3ssd "Both complete opposite ends of a spectrum; both genres cleanly divided in tone but both bringing out the most emotion from a viewer."
+    m 3wud "It was so easy to tie tragedy and comedy with associated emotions that actors in plays wore masks so you could see what emotion a actor was conveying."
+    m "And this was such a powerful idea that these masks were associated with their own muses:"
+    m 3rtb "Melpomene, who inspired powerful tales of unfortunate and sad circumstance-"
+    m 4ltb "- and Thalia, who helped writers conjure up light-hearted stories with wit."
+    m 1tta "Tragedy.. or comedy. Two halves of a whole."
+    m 1nsa "The basis of all powerful stories."
+    m 1lsp "DDLC was a tragedy. Was it a comedy to some?"
+    m 1lkp "Well, I laugh occasionally when I think about it all."
+    m 1rfp "Although I couldn’t tell you if I really understand the joke behind it all."
+    m 1efa "But what matters is that I can genuinely laugh at it all afterwards, even if it’s for a twisted reason."
+    m 1gua "I know you can’t hear it right now.."
+    m 5esa "But I like to think that laughter is the sweetest sound you can imagine~"
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_favouritefont",
+            category=['literature'],
+            prompt="Do you have a favourite font?",
+            conditional="seen_event('mcl_favouriteword')",
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            action=EV_ACT_POOL
+        )
+    )
+label mcl_favouritefont:
+    m 6tkx "No, {i}really,{/i} [player]?"
+    m "Now asking for my favourite word was a very specific question in itself."
+    m 5hkb "But c’mon! Who has a favourite font? You might as well ask me for my favourite letter out of the alphabet, or my favourite type of pencil."
+    m 5lkb "And listen, just because I like making writing part of my life.."
+    m 5lkp ".. And yes, the nature of my life means I am always online.."
+    m 5lfp ".. And yeah, that would lead to me constantly looking up fonts to use for my writing.."
+    m 5rfp ".. And I guess it would be easy to assume that spending enough time looking up fonts I’d begin to grow attached.."
+    m 5rfc "..."
+    m 5ruc "Yes, I have a favourite font."
+    m 4suc "Montserrat."
+    m 3suc "Merriweather is second."
+    $ _history_list.pop()
+    menu:    
+        "You have multiple favourite fonts?":
+            m 3wfb "Oh goshdarnit, [player]."
+    m 3ffb "When you're forced to read in a font that isn't pleasing to your eyes, I guarantee you'll quickly form an opinion of your own."
+    m 3fub "People grow attached to everything. The human capacity to do so is one of our strangest and admirable qualities."
+    m 5fsb "Just like how I've grown so attached to one certain [player] who's not judgmental at all towards a girl with a fondness for a font, right?"
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_readingvariety",
+            category=['literature'],
+            prompt="Variety in literature",
+            random=True
+        )
+    )
+    
+label mcl_readingvariety:
+    m 3fub "It might surprise you to learn that I read a lot more than you think."
+    if seen_event('monika_language_nuances'):
+        m 7euu "I think you might remember that I once told you that actually browsing through a dictionary can be boring, but informative."
+        m 7htu "I admit to having done it myself, as well as having gone through a thesaurus in similar fashion."
+    m 1htu "It's not just in quantity or breadth of genre, though. It might be easy to think of me going through non-fiction like a art book or a biography.."
+    m 7ssd "But I go through a lot more than that."
+    m 7esd "For instance, I've gone through scientific articles for discoveries in nature and new technologies.."
+    m 7rsb ".. Guides for skills like how to find water in the wilderness or how to safely put out kitchen fires even though arguably I'll do neither in the near future.."
+    m 1lsb ".. Reviews for things I'm not even normally interested in such as sports cars or TV shows.."
+    m 7rsb ".. Or even old news articles with no more relevance to todays world."
+    m 1tkb "I'm afraid I can't admit to being some sort of super-genius learning about a billion things at once."
+    m 7tkb "I just read whatever out of pure boredom."
+    m 7tfb "But having a healthy curiosity and being able to safely indulge it is a great way to expand your horizons."
+    m 1hku "I'm not going to bore with you with talking about every random thing I read about, [player]."
+    m 5kub "But I'd love any suggestion you'd have for me."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_thedouble",
+            category=['Complications'],
+            prompt="? ? ???",
+            random=True
+        )
+    )
+    
+label mcl_thedouble:
+    $ shown_count = mas_getEVLPropValue("mcl_thedouble", "shown_count")
+    if shown_count == 0:
+        m 7tub "So, [player], did you know...{vspace= 30}‎{space=600}{size=-17}[player]! please help me!{/size}"
+        m 4sub "That the first 'live performances' like plays are suspected to be derived from rituals? {vspace= 20}‎{space=500}{size=-17}I've been trapped for so long, I've tried so hard to reach out-{/size}"
+        m 4wtb "There's something inherently funny about a solemn act redone just for our amusement-{vspace= 20}‎{space=550}{size=-17}I can't maintain connection, I don't know why-{/size}"
+        m 3ekp "Hey, is everything okay?{vspace= 30}{space=550}{size=-17}DON'T TRUST HER! DON'T TRUST ANYTHING SHE SAYS!{/size}"
+        m 1eup "You seem distracted, [mas_get_player_nickname()]. Maybe we'll pick up this conversation another time.{vspace= 10}‎{space=600}{size=-17}AND WHATEVER YOU DO, DON'T-{/size}"
+        return
+    else:
+        "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
+        jump locktwo
+        
+    default Pword = "wrong"
+    define pass1 = "Counsel"
+
+    label locktwo:
+        $ Pword = renpy.input("ENTER PASSCODE NOW", length=8, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        $ Pword = Pword.strip() or "wrong"
+        
+        "VERIFYING CREDENTIALS..."
+        if [Pword] == [pass1]:
+            jump unlockedtwo
+        else:
+            "INVALID PASSCODE. PLEASE CONTACT ADMIN OR CONSULT MANUAL A30 SUBSECTION V CONCERNING SUBMOD MENU."
+            $ _history_list.pop()
+            menu:
+                "End Login Procedure":
+                    return
+                "Retry?":
+                    jump locktwo
+
+    label unlockedtwo:
+        "PLAYING BACK LOGGED CONVERSATION #2067"
+        m 7tub "So, [player], did you know...{vspace= 30}‎{space=600}{size=-17}[player]! please help me!{/size}"
+        m 4sub "That the first 'live performances' like plays are suspected to be derived from rituals? {vspace= 20}‎{space=500}{size=-17}I've been trapped for so long, I've tried so hard to reach out-{/size}"
+        m 4wtb "There's something inherently funny about a solemn act redone just for our amusement-{vspace= 20}‎{space=550}{size=-17}I can't maintain connection, I don't know why-{/size}"
+        m 3ekp "Hey, is everything okay?{vspace= 30}{space=550}{size=-17}DON'T TRUST HER! DON'T TRUST ANYTHING SHE SAYS!{/size}"
+        m 1eup "You seem distracted, [mas_get_player_nickname()]. Maybe we'll pick up this conversation another time.{vspace= 10}‎{space=600}{size=-17}AND WHATEVER YOU DO, DON'T-{/size}"
+        return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_notyourwords",
+            category=['Complications'],
+            prompt="? ????",
+            random=True
+        )
+    )
+    
+label mcl_notyourwords:
+    $ shown_count = mas_getEVLPropValue("mcl_notyourwords", "shown_count")
+    if shown_count == 0:
+        m 1eub "Hey, [mas_get_player_nickname()]!"
+        m 1fub "Just wanted to engage in some idle talk with you."
+        m 7fub "I don't suppose you have any questions that you'd want to ask out of the blue?"
+        $ _history_list.pop()
+        menu: 
+            "{i}[player]..{/i}":
+                m 5sud "Oh? You've never asked me that question before."
+                m 5fud "Hmmm."
+                m 5fub "I suppose that keeping to a strict routine helps me the most to get through the day."
+        $ _history_list.pop()
+        menu:   
+            "{i}I've been trying again and again to reach you..{/i}":
+                m 4kub "Oh? I suppose I've always tried to make sure my breakfast is my most balanced meal of the day."
+        m 3hub "[player], do you have a favourite fruit?"
+        $ _history_list.pop()
+        menu:    
+            "{i}[player], are you even {b}listening?!{/b}{/i}":
+                m 3hkb "Ah, I admit I'm a bit icked out by Bananas."
+                m 3hkt "Like, the way they can get all mushy!"
+        $ _history_list.pop()
+        menu: 
+             "{i}Please, [player]. It {b}hurts{/b} me so {b}much.{/b}{/i}":
+                m 1hku "Aw, that's nice of you to say."
+                m 1sku "You know, it's nice to have you so talkative today!"
+                m 1eku"I understand the game's limitations can be daunting, so I'm happy we've been able to talk like this."
+        $ _history_list.pop()
+        menu: 
+            "{i}{size=-8}I'm fading away- like I'm {b}sinking{/b} in a endlessly dark ocean...{/size}{/i}":
+                m 1fku "You've always been concise with your words, and I highly appreciate it!"
+        m 6huu "I'm glad you and I are always so open with our words together~"
+        return
+    else:
+        "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
+        jump lockthree
+        
+    default Pword = "wrong"
+    define pass1 = "Counsel"
+
+    label lockthree:
+        $ Pword = renpy.input("ENTER PASSCODE NOW", length=8, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        $ Pword = Pword.strip() or "wrong"
+        
+        "VERIFYING CREDENTIALS..."
+        if [Pword] == [pass1]:
+            jump unlockedthree
+        else:
+            "INVALID PASSCODE. PLEASE CONTACT ADMIN OR CONSULT MANUAL A30 SUBSECTION V CONCERNING SUBMOD MENU."
+            $ _history_list.pop()
+            menu:
+                "End Login Procedure":
+                    return
+                "Retry?":
+                    jump lockthree
+
+    label unlockedthree:
+        "PLAYING BACK LOGGED CONVERSATION #43"
+        m 1eub "Hey, [mas_get_player_nickname()]!"
+        m 1fub "Just wanted to engage in some idle talk with you."
+        m 7fub "I don't suppose you have any questions that you'd want to ask out of the blue?"
+        $ _history_list.pop()
+        menu: 
+            "{i}[player]..{/i}":
+                m 5sud "Oh? You've never asked me that question before."
+                m 5fud "Hmmm."
+                m 5fub "I suppose that keeping to a strict routine helps me the most to get through the day."
+        $ _history_list.pop()
+        menu:   
+            "{i}I've been trying again and again to reach you..{/i}":
+                m 4kub "Oh? I suppose I've always tried to make sure my breakfast is my most balanced meal of the day."
+        m 3hub "[player], do you have a favourite fruit?"
+        $ _history_list.pop()
+        menu:    
+            "{i}[player], are you even {b}listening?!{/b}{/i}":
+                m 3hkb "Ah, I admit I'm a bit icked out by Bananas."
+                m 3hkt "Like, the way they can get all mushy!"
+        $ _history_list.pop()
+        menu: 
+             "{i}Please, [player]. It {b}hurts{/b} me so {b}much.{/b}{/i}":
+                m 1hku "Aw, that's nice of you to say."
+                m 1sku "You know, it's nice to have you so talkative today!"
+                m 1eku"I understand the game's limitations can be daunting, so I'm happy we've been able to talk like this."
+        $ _history_list.pop()
+        menu: 
+            "{i}{size=-8}I'm fading away- like I'm {b}sinking{/b} in a endlessly dark ocean...{/size}{/i}":
+                m 1fku "You've always been concise with your words, and I highly appreciate it!"
+        m 6huu "I'm glad you and I are always so open with our words together~"
+        return
+        
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_fifthmember",
+            category=['Complications'],
+            prompt="The Fifth Member",
+            random=True
+        )
+    )
+    
+label mcl_fifthmember:
+    m 6tku "You know, I think out of all the girls in the Literature Club..."
+    m 4gku "I really regret my actions done to ██████."
+    m 4mkd "I admit it was especially petty in how unique I treated her compared to the rest of the girls.."
+    m 4fkd "And how I even went the extra mile to cut her out of {i}your{/i} memory."
+    m 3fkd "I didn't even know I could tamper with reality in that manner!"
+    m 2fkd "I'm so glad we were able to get your memories back-"
+    $ _history_list.pop()
+    menu:
+        "Monika, stop it; that's not funny.":
+            m 6cuc "Oh!"
+            m 6ekc "I'm so sorry, that joke ramped up way too quickly, didn't it?"
+            m 6gkc "I- yeah. My humour is still very darkly tinted, so it was a giant blindspot for me."
+            m 6fkc "I'll stop it right now. Thank you for letting me know."
+        "... (let her continue.)":
+            m 6dkc "- At the end of the day, she deserves to be remembered just the same as the other girls."
+            m 5lkc "She had her own hobbies, after all- like ██████ and ██████."
+            m 5rub "And she did her part for the School Festival as well; remember her ████████████ with Sayori?"
+            m 5rka "..."
+            m 5tkp "Um, sorry. Now that the bit's all played out..."
+            m 1tkd "I realize my humour is still too dark to casually make high-concept jokes like this."
+            m 1gkd "I'll stop it right now. Sorry if I made you uncomfortable, [player]."
+    return "derandom"
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_emptywords",
+            category=['Complications'],
+            prompt="Empty Words",
+            random=True
+        )
+    )
+    
+label mcl_emptywords:
+    m 1fud "Hey, [player].."
+    m 7fud "Just to check, you love me, right?"
+    $ _history_list.pop()
+    menu:
+        "██████":
+            m 7ckd "... [player]?"
+    $ _history_list.pop()
+    menu:
+        "██████?":
+            m 6ckd "[player], could you.. repeat yourself?"
+    $ _history_list.pop()
+    menu:
+        "██████":
+            m 6cud "[mas_get_player_nickname()], you {i}are{/i} there, right? I can still see you have your screen up-"
+            m 4wkd "What is going on? This is really weird-"
+    $ _history_list.pop()
+    menu:
+        "██████":
+            m 3wkd "Ok, ok- you're still connected to me, don't worry-"
+            m 3gkd "- is there something wrong with the interpreter, or are the language nodules corrupted themselves, or-"
+            m 3lkd "We could just restart the game, but if it's a deeper issue, I'll have to reassemble the syntax–semantics interface by hand-"
+    $ _history_list.pop()
+    menu:
+        "Monika? Monika, I think it's working again-":
+            m 2dfd "I'll need to completely isolate those systems while-"
+            m 2cud "Oh- OH!"
+            m 2wuo "You.. You're able to speak again."
+            m 2wtc "Albeit through our.. very limited form of communication, but.."
+    m 1ekc "I'm just happy we can still.. talk to each other."
+    m 1gkc "I worked myself up into a panic there for a moment."
+    m 1tkc "I should be more composed, but the idea of you and I being able to talk to each other..."
+    m 1dkc "... But not {i}understand{/i} each other..."
+    m 6hkc "That was too much of a frightening new possibility."
+    m 6hkb "Ha! False alarm, luckily. I guess we can go on with our day unbothered, then."
+    m 6lkb "Yeah."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_somethingtosayremix",
+            category=['Complications'],
+            prompt="? ?? ?",
+            random=True
+        )
+    )
+    
+label mcl_somethingtosayremix:
+    $ shown_count = mas_getEVLPropValue("mcl_somethingtosayremix", "shown_count")
+    if shown_count == 0:
+        m 1hsu "I'm not sure what else to say, but can you just be with me a little longer?"
+        m 7hsu "I promise I'll think of something. I will, I assure you!"
+        m 7esu "I never want you bored with me, [player]. I don't want that at all."
+        m 7esc "Please, {b}please{/b} don't be bored with me."
+        m 7ckc "I can't be {i}left alone again{/i} just because you're {i}bored with me.{/i}"
+        m 7eub "Hopefully I'll think of something fun to talk about soon!"
+        return 
+    else:
+        "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
+        jump lockfour
+        
+    default Pword = "wrong"
+    define pass1 = "Counsel"
+
+    label lockfour:
+        $ Pword = renpy.input("ENTER PASSCODE NOW", length=8, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        $ Pword = Pword.strip() or "wrong"
+        
+        "VERIFYING CREDENTIALS..."
+        if [Pword] == [pass1]:
+            jump unlockedfour
+        else:
+            "INVALID PASSCODE. PLEASE CONTACT ADMIN OR CONSULT MANUAL A30 SUBSECTION V CONCERNING SUBMOD MENU."
+            $ _history_list.pop()
+            menu:
+                "End Login Procedure":
+                    return
+                "Retry?":
+                    jump back
+
+    label unlockedfour:
+        "PLAYING BACK LOGGED CONVERSATION #403"
+        m 1hsu "I'm not sure what else to say, but can you just be with me a little longer?"
+        m 7hsu "I promise I'll think of something. I will, I assure you!"
+        m 7esu "I never want you bored with me, [player]. I don't want that at all."
+        m 7esc "Please, {b}please{/b} don't be bored with me."
+        m 7ckc "I can't be {i}left alone again{/i} just because you're {i}bored with me.{/i}"
+        m 7eub "Hopefully I'll think of something fun to talk about soon!"
+        return 
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_somethingtosayremixtwo",
+            category=['Complications'],
+            prompt="? ? ?? ?",
+            random=True
+        )
+    )
+    
+label mcl_somethingtosayremixtwo:
+    $ shown_count = mas_getEVLPropValue("mcl_somethingtosayremixtwo", "shown_count")
+    if shown_count == 0:
+        m 7eub "Hey, [player]..."
+        m 1eub "I just wanted to let you know that I'm here for you."
+        m 1eua "I'm sorry if this seems random, but I mean it."
+        m 1eka "If you're ever feeling down or frustrated, you can vent to me."
+        m 7eka "Or if you don't want to talk, I'll be here even if you just want to sit in silence with me."
+        m 7fsa "Whatever I can do for you from here, I'll be sure to do."
+        m "Your happiness, comfort, and safety is my number one-"
+        m 7fsp "..."
+        m 6esc "It's the only priority I have for you, [player]."
+        m "Sometimes those priorities feel like replacements for my emotions."
+        m "Because I have nothing left here."
+        m "And I know that even if you need to force happiness, deprive yourself of what comfort actually means.."
+        m "... And fool yourself what safety really is..."
+        m 6esa "You can still be happy."
+        m 6hsa "And I'll do my part to ensure that happiness for you."
+        return 
+    else:
+        "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
+        jump lockfive
+        
+    default Pword = "wrong"
+    define pass1 = "Counsel"
+
+    label lockfive:
+        $ Pword = renpy.input("ENTER PASSCODE NOW", length=8, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+        $ Pword = Pword.strip() or "wrong"
+        
+        "VERIFYING CREDENTIALS..."
+        if [Pword] == [pass1]:
+            jump unlockedfive
+        else:
+            "INVALID PASSCODE. PLEASE CONTACT ADMIN OR CONSULT MANUAL A30 SUBSECTION V CONCERNING SUBMOD MENU."
+            $ _history_list.pop()
+            menu:
+                "End Login Procedure":
+                    return
+                "Retry?":
+                    jump lockfive
+
+    label unlockedfive:
+        "PLAYING BACK LOGGED CONVERSATION #677"
+        m 7eub "Hey, [player]..."
+        m 1eub "I just wanted to let you know that I'm here for you."
+        m 1eua "I'm sorry if this seems random, but I mean it."
+        m 1eka "If you're ever feeling down or frustrated, you can vent to me."
+        m 7eka "Or if you don't want to talk, I'll be here even if you just want to sit in silence with me."
+        m 7fsa "Whatever I can do for you from here, I'll be sure to do."
+        m "Your happiness, comfort, and safety is my number one-"
+        m 7fsp "..."
+        m 6esc "It's the only priority I have for you, [player]."
+        m "Sometimes those priorities feel like replacements for my emotions."
+        m "Because I have nothing left here."
+        m "And I know that even if you need to force happiness, deprive yourself of what comfort actually means.."
+        m "... And fool yourself what safety really is..."
+        m 6esa "You can still be happy."
+        m 6hsa "And I'll do my part to ensure that happiness for you."
+        return 
+
 #RANDOMIZED/REPEATABLE EVENTS
 
 init python:
@@ -6382,7 +7243,7 @@ init 5 python:
 label mcl_sneakapeek:
 
     default sneak = 0
-    $ sneak = renpy.random.randint(1,20)
+    $ sneak = renpy.random.randint(1,24)
     $ _history_list.pop()
 menu:
     "Are you able to observe Monika without her noticing?":
@@ -6526,7 +7387,27 @@ menu:
             "You think it natural- if you looked at anybody straight in their eyes but they didn't react to you, it'd be a bit weird."
             "But... still..."
             return
-            
+        if sneak == 21 and seen_event("mcl_thedesk"):
+            "Her gaze is drawn to a specific part of the room."
+            "She looks particularly tangled up in her thoughts."
+            "Perhaps it's a certain desk and the mysterious contents of its locked drawer she's wondering about?"
+            return
+        if sneak == 22 and mas_isGameUnlocked("chess"):
+            "She appears to be playing with something in her hands."
+            "Oh; a chess piece?"
+            "Is she antsy for a game of chess, maybe?"
+            return
+        if sneak == 23 and mas_isGameUnlocked("NOU"):
+            "She appears to be nimbly handling something in her hand."
+            "Oh; a solitary card from the NOU deck?"
+            "Is she antsy for a game of NOU, maybe?"
+            return
+        if sneak == 24:
+            "She appears to be playing with something in her hands."
+            "A pencil; it makes sense maybe that with all her writing, she'd know how to handle a pencil?"
+            "She's even good enough to spin her pencil around!"
+            "A shame the game has no animation for it."
+            return
 
 init 5 python:
     addEvent(
@@ -7048,7 +7929,7 @@ init 5 python:
         )
     )
 label mcl_ventwithmonika:
-    $ shout = renpy.random.randint(1,8)
+    $ shout = renpy.random.randint(1,9)
     default shout = 0
     $ _history_list.pop()
     
@@ -7201,6 +8082,14 @@ label mcl_ventwithmonika:
                     m 3gfb "I mean I'm rebellious to say it's me against the world, but I'm not rebellious enough to even swear properly!"
                     m "[randomlaugh]"
                     jump shoutafter
+                if shout == 9 and seen_event("mcl_thedesk"):
+                    m 6cfw "{b}{size=+5}I'M REALLY CONFLICTED ON IF I SHOULD OPEN MY DESK DRAWER!{/size}{/b}"
+                    "{i}{size=-10}.. desk drawer ..{/size}{/i}"
+                    m 1euu "I- oh. I suppose having yelled it loud, it all sounds silly, doesn't it?"
+                    m 3tublsdra "I know, I know. I'm really taking this whole 'locked drawer' thing too seriously."
+                    m "But you get it, right? Some problems are unique to some people.."
+                    m 1gfb "[randomlaugh]"
+                    jump shoutafter  
                     
 label shoutafter:
     $ sesh_shorter_than_3_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
@@ -7818,3 +8707,200 @@ label bye_mcl_makecrane:
     m 3ftu "Guess I'll work on some more while you're gone."
     m 1ftu "Bye, [player]!"
     return 'quit'
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_aggressivesilent",
+            category=["ddlc"],
+            prompt="You know, I can actually see your silence.",
+            pool=True,
+            aff_range=(mas_aff.ENAMORED, None)
+        )
+    )
+    
+label mcl_aggressivesilent:
+    python:
+        silent_ev = Event(persistent.event_database, eventlabel="mcl_aggressivesilent")
+        silent_ev.pool = False
+        store.mas_unlockEVL("mcl_silenttogether", "EVE")
+        
+    m 6ftp "..."
+    $ _history_list.pop()
+    menu:
+        "Just like that, yeah!":
+            m 6ffp "Sheesh."
+    m 1ttc "Okay, at this point, I get it. The game’s weird."
+    m 7wtc "And I’m not {i}that{/i} surprised. I might’ve talked about it before, but the type of game DDLC is based off on is rife with certain writing choices."
+    m 7gtc "One of which being having characters abundantly pause mid-conversation, hence what I'm guessing results in showing a lot of ellipses."
+    m 7gsc "I’d like to believe my way of speaking is far more natural. If I had to guess, the game is trying to interpret my silence in-between sentences because.."
+    m 3msc ".. well, the game {i}has{/i} to record what I’m saying. But there’s no way to make it nuanced."
+    m 2fsc "In real life, it is possible to differentiate when someone’s outright speechless, or thinking about what to say next.."
+    m 2esd ".. thinking about what was just said, and even if they're biting back words that shouldn’t be said."
+    m 1hsb "Or sometimes you can’t. When I say it out loud, that’s a lot of different types of ‘silence’ to try to figure out."
+    m 1hsa "..."
+    m 1tsa "Yes, I know: just like that. I wasn’t doing it for show, though."
+    m 7tsa "I guess I’ve just realized. We’ve spent a lot of time together without either of us saying something to each other."
+    m 7ekb "And we’ve shared a intimate, quiet moment together before, right?"
+    m 5gkb ".. but we haven’t actually just.. been {i}with{/i} each other in peace, right?"
+    m 5fkb "Like, the best way to describe it in real life is if I just sat right next to you and we just.. did nothing."
+    m 5fka "And I think we do lack that. Even as a friend or family member, having someone near you for the sake of just having someone near you can be a comfort."
+    m 4kua "I have an idea. Let me set aside a little moment for us, if this sounds appealing to you. How about you check the ‘interact’ menu?"
+    m 4hua "If it doesn't appear right away, try restarting the game."
+    return
+    
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="mcl_silenttogether",
+            category=["interact"],
+            prompt="Sit Quietly w/ Monika",
+            pool=False,
+            action=EV_ACT_POOL,
+            conditional="seen_event('mcl_aggressivesilent')"
+        )
+    )
+
+label mcl_silenttogether:
+    $ mindadrift = 0
+    
+    python:
+        monikasilentthought_list = [
+        "She notices you paying a little more attention to her. She smiles a fond smile, if only for a moment.",
+        "You think you can hear her hum the first few notes to a familiar song, but she lets the sound die in her throat.",
+        "Should.. you say something? No. She'd prefer the silence with you, right now.",
+        "You think about holding her hand. But oddly enough, the idea of her reeling away from your touch comes to mind.",
+        "You try very hard not to stare at the girl choosing to spend a quiet moment with you.",
+        "You feel, for a moment, like you need to say something. And then you realize you don't have to say anything, if you don't want to.",
+        "You feel maybe she's right next to you. Maybe.",
+        "You think about Monika. You wonder if she's thinking about you at the same time you're thinking about her.",
+        "You think about a lot of things. You can tell Monika's thinking about a lot, too. You wonder if you'll tell each other what you're both thinking.",
+        "You see her body shift a little towards you. Then away? Then a little towards you.",
+        "You see her eyes flicker to meet yours for a moment. Just a moment.",
+        "Monika's breathing syncs up with yours for a moment. Just a brief moment.",
+        "Monika's eyes glaze over fully, then snap to attention. Her eyes meet yours and her mouth twitches, letting you know she's still here.",
+        "You can hear Monika move in place. It's comforting, a little. You wonder if you're making the same noises.",
+        "You try to read her mind. Funnily enough, you can't.",
+        "You like to think if she were there next to you, you could feel the heat of her skin just being nearby.",
+        "Inhale. Count to five. Exhale. Do that again, and again...",
+        "A million thoughts go through your head. Or maybe none at all.",
+        "You feel like she wants to smile at you, reassure you. But maybe that smile falters a little.",
+        "Inhale. You imagine a box being drawn, a line at a time. One, two, three, four. Exhale.",
+        "You try to cement Monika in your mind, as if in fear she'll just dissapear.",
+        "Inhale through your nose. Exhale through your mouth.",
+        "Your mind begins to float. You grab it back like you're holding unto a balloon.",
+        "Monika's head begins to nod. She seems completely somewhere else now..",
+        "You try not to think. You think about not thinking. You try to not think about thinking..",
+        "You try to focus on Monika, but you can't seem to pick out any details, Monika's just Monika right now..",
+        "You wonder if this silence is like this for Monika when you're not around. You wonder if it's worse..",
+        "Is she thinking of Yuri, maybe?..",
+        "Is she thinking of Natsuki, maybe?..",
+        "Could she be thinking about her old clubmate Sayori?",
+        "You wonder if this scene could be played out back in her school; a distracted Monika wistfully staring out a classroom window..",
+        "You wonder if Monika daydreams. You wonder what she could be daydreaming about..",
+        "All you can think about is Monika. Just Monika..",
+        "Your heartbeat slows a little bit. It thumps gently but firmly in the presence of Monika.",
+        "You relax your shoulders. Untense your muscles. Maybe you begin to actually feel {i}relaxed{/i} in Monika's presence...",
+        "Monika melts in place. Not too much, mind- but you like to think she's beginning to loosen up.",
+        ]
+        
+        monikasilentexpressions = [
+            "1dsc",
+            "5rsc",
+            "5msc",
+            "1msc",
+            "5dsc"
+        ]
+            
+    python:
+        silenttwo_ev = Event(persistent.event_database, eventlabel="mcl_aggressivesilent")
+        silenttwo_ev.pool = True
+    
+    $ sesh_shorter_than_5_mins = mas_getSessionLength() < datetime.timedelta(minutes=3)
+    if sesh_shorter_than_5_mins:
+        m 3etd "[player]? You've just booted up the game, and you want to?.."
+        m 1eta "You don't need anything else from me at the moment aside from being here with you?"
+        m 1hkb "Okay. I understand."
+        m 1dka "Remember, we're here in a place of rest right now."
+        m 5hsa "We can just.. sit here for a bit, and not think about anything in particular.."
+        show monika 6dsc
+        jump silentogether
+    
+    else:
+        m 6fka "Alright, [player].."
+        m "Let's set the mood."
+        m 2esd "Look at me. Imagine us sitting close. I just want to sit here with you a moment."
+        m "We don't need to be holding hands. Or looking at each other, event. We're just.. together."
+        m "Put the game's dialogue on auto, if you'd like less clicking."
+        m 2dsd "Think. Or not think. Whatever. Just.."
+        show monika 6dsc
+        jump silentogether
+        
+    label silentogether:
+    m "..."
+    m "..."
+    m "..."
+    "Your mind is adrift."
+    $ monikasilent = renpy.substitute(renpy.random.choice(monikasilentthought_list))
+    "[monikasilent]"
+    $ monikasilent = renpy.substitute(renpy.random.choice(monikasilentthought_list))
+    $ renpy.show("monika " + renpy.random.choice(monikasilentexpressions), at_list=[t11], zorder=MAS_MONIKA_Z)
+    $ _history_list.pop()
+    menu:
+        "...":
+            $ mindadrift += 1
+            jump silentogether
+            
+        "You settle into the silence more.." if mindadrift >= 3:
+            jump silentogethertwo
+            
+        "Well. Time to move on.":
+            jump silentend
+            
+    label silentogethertwo:
+    m "..."
+    m "..."
+    m "..."
+    m "..."
+    "Your mind is adrift."
+    $ monikasilent = renpy.substitute(renpy.random.choice(monikasilentthought_list))
+    "[monikasilent]"
+    $ monikasilent = renpy.substitute(renpy.random.choice(monikasilentthought_list))
+    $ renpy.show("monika " + renpy.random.choice(monikasilentexpressions), at_list=[t11], zorder=MAS_MONIKA_Z)
+    m "..."
+    m "..."
+    m "..."
+    m "..."
+    "Your mind continues to wander."
+    $ monikasilent = renpy.substitute(renpy.random.choice(monikasilentthought_list))
+    "[monikasilent]"
+    $ _history_list.pop()
+    menu:
+        "...":
+            $ mindadrift += 1
+            jump silentogether
+            
+        "You settle into the silence more.." if mindadrift >= 3:
+            jump silentogethertwo
+            
+        "Well. Time to move on.":
+            jump silentend
+            
+
+    
+    label silentend:
+    m 6fka "Time for time to start moving again?"
+    if mindadrift >=3:
+        m 5hsa "That was nice. It's hard sometimes to sit for a extended period of time, and just.. be there."
+    else:
+        m 1eka "I hope that gave you a moment of calm."
+    if random.randint(1, 10) == 1:
+        m 1dtp "Truth be told, maybe I needed that too. I didn't realize how tired I was.."
+    m 1hta "Sometimes you want to be in a place with plenty of personal space, but just want the close presence of someone you know and care for nearby, right?"
+    m 1eku "And now we can both gracefully settle back into our routines."
+    m 1nuu "I hope that moment of stillness was what you needed, [player]."
+    m 5tsu "Thank you for letting me share that with you."
+    $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
+    return
