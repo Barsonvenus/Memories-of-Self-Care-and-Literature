@@ -582,3 +582,394 @@ label greeting_reversalmcl:
                     m 3eua "I'm back, [player].{w=1}{nw}" 
                     extend 5hsblu " Thank you."
                     return        
+
+#echoing
+
+init 5 python:
+    ev_rules = dict()
+    ev_rules.update(MASGreetingRule.create_rule(
+        skip_visual=True,
+        override_type=True,
+    ))
+
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_mcl_speclookup",
+            unlocked=True,
+            rules=ev_rules,
+            aff_range=(mas_aff.AFFECTIONATE, None),
+        ),
+        code="GRE"
+    )
+    del ev_rules
+
+label greeting_mcl_speclookup:
+    $ mas_progressFilter()
+    scene black
+    $ mas_RaiseShield_core()
+    menu:
+        "Listen.":
+            $ computerdiagnosis = renpy.random.randint(1,8)
+            m "Okay, let's run another diagnosis.."
+    m "One step closer to learning all about how the game works."
+    m "So according to the game, the computer [player] is specifically running me on is.."
+    
+    if computerdiagnosis == 1:
+        m "A.. scientific calculator?"
+        m "Oh, for-"
+        m "I’m pretty sure the game is not running on a scientific calculator!"
+
+    if computerdiagnosis == 2:
+        m "A.. IBM 610?"
+        m "What the heck is that? Let me just search that up."
+        m "… and it’s a computer from 1957?!"
+        m "I didn’t even know they had computers back then! This thing looks like it takes up an entire bedroom!"
+        m "*Sigh,* this information is obviously wrong."
+        
+    if computerdiagnosis == 3:
+        m "A.. Nintendo 64."
+        m "Ha ha."
+        m "I know this is a game, but I sincerely doubt it’s being run on a Nintendo 64."
+        m "Obviously, there’s a cosmic joke being played on me.."
+
+    if computerdiagnosis == 4:
+        m "A.. Smart Fridge."
+        m "..."
+        m "Honestly, if this was true, I’d be incredibly impressed."
+        m "Wait, does that mean I can like, dispense ice whenever I want?"
+        m "Oh, even though I know this is wrong, the idea’s honestly too funny now."
+        
+    if computerdiagnosis == 5: 
+        m "A.. Nokia 2760 phone?"
+        m "A phone? I’m being run on a phone?"
+        m "I guess it’s entirely possible, but let me just search up the model.."
+        m "Oh, this is like one of those really old flip phones!"
+        m "I screwed up somehow, that’s for sure. This is obviously wrong."
+
+    if computerdiagnosis == 6:
+       m ".. What?"
+       m "{i}What????{/i}"
+       m "And- Oh! The console’s gone and crashed. I can't seem to run the same check.."
+       m "But what was that?"
+       m "I don’t know {i}that{/i} much about computers..."
+       m "But no way what I saw made sense on any level."
+       m "I don’t even think that technology exists yet!"
+       m "I had to have read those wrong."
+
+    if computerdiagnosis == 7:
+        m "A 'Magitek B090.'"
+        m "With a 'Dual-Enchanted Mana-Heart Processor' and '12 Sheaths of Aetherite Eidetic Memory.'"
+        m "..."
+        m "That's not any computer I've ever heard of."
+        if persistent.gender == "F":
+            m "{size=-8}is.. [player] a witch?{/size}"
+        if persistent.gender == "X":
+            m "{size=-8}is.. [player] a magician?{/size}"
+        elif persistent.gender == "M":
+            m "{size=-8}is.. [player] a wizard?{/size}"
+        m ".. No."
+        
+    if computerdiagnosis == 8:
+        m "A potato."
+        m "This actually just reads, 'a potato.'"
+        m "I get the internet joke."
+        m "I'm not laughing."
+        m "Unless.. [player] is actually running this on a potato.."
+        m "..."
+        
+    $ _history_list.pop()
+    menu:
+        "Monika?":
+            m "Oh!"
+    m "Doing alright, [player]? Don't mind me. Just getting into my usual brand of trouble."
+    $ mas_startupWeather()
+    call spaceroom(hide_monika=True, dissolve_all=True, scene_change=True, show_emptydesk=False)
+    jump monikaroom_greeting_post
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_signlanguage",
+            unlocked=True,
+            aff_range=(mas_aff.ENAMORED, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_signlanguage:
+    $ shown_count = mas_getEVLPropValue("greeting_signlanguage", "shown_count")
+    if shown_count == 0:
+        show monika 7hua 
+        "Hello- "
+        show monika 4hua 
+        "- Good day!"
+        m 6hua "..."
+        m 4suu "That was how to sign 'Hello, good day!' in Sign Language!"
+        m 3eub "Basically a visual language using your arms and hands to 'sign' out words, primarily used but not exclusively by the deaf."
+        m 2gtsdlp "It was also impossible to see because the game's sprites don't allow you to see the individual motions."
+        m 2lup ".{w=1}.{w=1}.{w=1}{nw}"
+        extend 2rkblsdrp ".{w=1}.{w=1}.{w=1}"
+        if seen_event('greeting_braille'):
+            $ _history_list.pop()
+            menu:
+                "This is the braille incident all over again.":
+                    m 7etd "No it isn't!{w=1}{nw}"
+                    extend 2gtsdlp " That was far worse."
+        m 2nta "Okay, that was awkward, but.. I really did learn how to sign it."
+        m 2hka "And I wanted to show it off to you.{w=1} Even if doing so made no sense."
+        m 1tua "I think the concept of sign language is poetic, aside from it being obviously useful. Sure, basic gestures can get a point across.."
+        m 7tua "But people realized the {i}need{/i} for communication, despite any barriers- "
+        m 4eua "- so the effort to make a full-blown language in sign was made."
+        m 4fua "Did you know sign language varies by country and region?{w=.5} Japanese and French sign language exist!"
+        m 3fua "And Sign language has existed as long as we needed it; as far back as fifth century BC, Plato wrote:"
+        m 2duo "'If we hadn't a voice or a tongue, and wanted to express things to one another, wouldn't we try to make signs by moving our hands, head, and the rest of our body?'"
+        m 2hka "While the disadvantaged were treated far worse in the past, it's still good to know people still thought to provide a 'voice' for all."
+        m 5tfa "I could sign 'I love you,' but maybe we'd benefit from a mutual show of physical affection?~"
+        return
+    
+    else:
+        show monika 7hua
+        "Hello-"
+        show monika 4hua
+        "-Good day!"
+        m 4suu "That was how to sign 'Hello, good day!' in sign language!"
+        m 3eub "A visual language using your arms and hands to 'sign' out words, primarily used but not exclusively by the deaf."
+        m 4etp "I know you can't see it, but, well.."
+        m 4htsdrb "Use your imagination, I guess?"
+        m 3tka "I do think the concept of sign language is poetic; a true testament to how people {i}want{/i} to talk and communicate with each other."
+        m 3tub "Maybe I'll give learning Japanese sign language a go sometime!"
+        if random.randint(1, 3) == 1:
+            m 3sub "I found this fantastic bunch of articles online on the basics.. what was the author's name? 'Shiina Mikado?'..."
+        return
+        
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_deadlanguage",
+            unlocked=True,
+            aff_range=(mas_aff.ENAMORED, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_deadlanguage:
+    $ shown_count = mas_getEVLPropValue("greeting_deadlanguage", "shown_count")
+    if shown_count == 0:
+        m 2esb "Halò! Ciamar a tha thu an-diugh?"
+        m 3hub "A more interesting language I'm using today, you think? It's Scots Gaelic, a 13th century Scottish spoken language!"
+        m 3hua "I chose to say hi in this language today because.."
+        m 7wup "It's a language which is being spoken less and less.{w=1} A estimated 87,000 people know it; 58,000 of those people could hold a full conversation."
+        m 7ekp "Maybe it doesn't seem like a small number, but compared to the billions of people in the world speaking other languages.."
+        m 6gkp "One of the most interesting parts about history is the loss of it; not only how we lose culture and art, but.. also entire languages."
+        m 6ftc "Maybe there could be recordings, but for a language to really stand the test of time, a {i}lot{/i} of the language if not outright how to speak it has to be recorded."
+        m 5ftc "It's a issue still happening today; especially to aboriginal or older ethnic groups as it's members adapt to modern life, and modern language."
+        m 5dsc "Efforts are being done to track these endangered languages and record as much as can be done, but.."
+        m 5lsc "Like any living being, sometimes languages just {i}die.{/i}"
+        m 1lsc "Could you imagine being the last speaker of a entire language? The last person to remember words and phrases no one else now knows?"
+        m 1dsc "Imagine your last words being those no one else will ever understand.."
+    
+    else:
+        m 2esb "Halò! Ciamar a tha thu an-diugh?"
+        m 3hub "A more interesting language I'm using today, you think? It's Scots Gaelic, a 13th century Scottish spoken language!"
+        m 3hua "I chose to say hi in this language today because it's a language whose speaker numbers are dwindling."
+        m 3eka "So I wanted to honour it in my own small way."
+        m 4esa "Luckily, this language is well-documented. Hopefully the act of keeping history alive by preserving languages continues in earnest."
+        m 4ttu "I'll do my part learning them.."
+        m 5huu ".. And saying 'I love you' in them, hehehe."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_chibikahi",
+            unlocked=True,
+            aff_range=(mas_aff.LOVE, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_chibikahi:
+    $ shown_count = mas_getEVLPropValue("greeting_chibikahi", "shown_count")
+    if shown_count == 0:
+        m "Heya, [player]! All set for-"
+        "{size=+10}{b}*CRASH*{/b}{/size}"
+        m 6wud "- Oh? what the? That came from my room!"
+        m 4wuc "Hold on a second, okay?"
+        show monika 6ruc
+        show monika at rs32
+        hide monika 
+        pause 3.0
+        show chibika 3 zorder 12 at mas_chriseup(y=600,x=1150,travel_time=0.5)
+        pause 0.5
+        "Hey, [player]!"
+        "Your friendly neighbourhood Chibika here."
+        "Just wanted to check on in with my favourite couple!"
+        "Hope you two have a great time together today!"
+        m "Okay, I'm done! I'm heading back!"
+        "- Oop, that's my cue for a quick exit, stage left!"
+        "'till next time! Remember, don't tell [m_name] 'bout me!"
+        hide chibika
+        pause 3.0
+        show monika at ls32 zorder MAS_MONIKA_Z
+        show monika 6lua
+        pause 2.5
+        m 7hua "Guess my stuff just shifted in place and knocked something over."
+        m "..."
+        m 6etc "Hey, did something happen while I was gone?"
+        $ _history_list.pop()
+        menu:
+            "Nope!":
+                m 5hub "... Okay!"
+            "Chibika was here to visit!":
+                play sound "sfx/s_kill_glitch1.ogg"
+                pause 0.1
+                stop sound
+                $ _history_list.pop()
+                menu:
+                    "Nope!":
+                        "{size=-15}Hey! What did I just say?     >:({/size}"
+                        m 5hub "... Okay!"
+        m "I guess there's nothing much else to do but enjoy our time together~"
+        return
+    else:
+        m "Heya, [player]! All set for-"
+        "{size=+10}{b}*CRASH*{/b}{/size}"
+        m 6wud "- Oh! Something fell in my room again. Gosh, I feel like that drawer is so uneven.."
+        m 4wuc "Hold on a second, okay?"
+        show monika 6ruc
+        show monika at rs32
+        hide monika 
+        pause 3.0
+        show chibika 3 zorder 12 at mas_chriseup(y=600,x=1150,travel_time=0.5)
+        pause 0.5
+        "Hey again, [player]!"
+        "Your friendly neighbourhood Chibika here."
+        "Just wanted to wish my favourite couple best tidings!"
+        m "I can't believe I can be so messy sometimes. I'm coming back, [player]!"
+        "I can't believe she keeps falling for it."
+        "'till next time! Remember, don't tell [m_name] 'bout me!"
+        hide chibika
+        pause 3.0
+        show monika at ls32 zorder MAS_MONIKA_Z
+        show monika 6lua
+        pause 2.5
+        m 7hua "Guess my stuff just shifted in place and knocked something over."
+        m "..."
+        m 6etc "Hey, did something happen while I was gone?"
+        $ _history_list.pop()
+        menu:
+            "Nope!":
+                m 5hub "... Okay!"
+            "Chibika was here to visit!":
+                play sound "sfx/s_kill_glitch1.ogg"
+                pause 0.1
+                stop sound
+                $ _history_list.pop()
+                menu:
+                    "Nope!":
+                        "{size=-15}Rude  >:({/size}"
+                        m 5hub "... Okay!"
+        m "I guess there's nothing much else to do but enjoy our time together~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_english",
+            unlocked=True,
+            aff_range=(mas_aff.NORMAL, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_english:
+    m 4wub "'How are you doing today,' [player]?"
+    m 4sub "Guess what language I'm saying hi in today?"
+    m ".. It's 'English.'"
+    #Remove below lines if translating into non-english language lol
+    $ _history_list.pop()
+    menu:
+        "Wait, aren't we already-":
+            m 1fta "Let's not trip ourselves up too much on details, [player]."
+    m 7kta "Anyway, English! Arguably the most spoken language in the world- and learned second language, as well."
+    m 7hka "Despite this, English is actually kinda a weird language. It has a lot of other quirks other languages don't have!"
+    m 4rka "This is in part because what we know as English has roots from one region but ended up borrowing from {i}other{/i} languages; French, Latin, and other early languages."
+    m 3tua "Because of this, from a non-native speaker's view.."
+    m 3sut ".. English can be often seen as a more difficult language to learn compared to others like French, Spanish, or Japanese."
+    m 3eup "And it makes sense. English is full of quirks that when you think about it overall, makes the entire language seem frustrating."
+    m 1htp "It's weird to think of the most popular language today as 'mysterious,' isn't it?"
+    m 1htb "Here's a quote to think about:"
+    m 7hto "'You can never understand one language until you understand at least two.'"
+    m 7esb "Let's keep learning today, hmm?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_mcl_desk",
+            unlocked=False,
+            aff_range=(mas_aff.AFFECTIONATE, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_mcl_desk:
+    m 6lkc "..."
+    m 5lkc "Do I open the desk, or not?"
+    m 5rkc "With every day that passes by, I'm just making it weirder.."
+    m 5rkblc "But I mean, maybe it has better value not being opened."
+    m 5rkt "But would I get any resolution at all about myself if I do open it?"
+    $ _history_list.pop()
+    menu:
+        "Still hung up over the desk?":
+            m 5ckt "Oh! [player]!"
+    m 2fku "I was so caught up on my eternal desk dilemma I didn't notice you come in."
+    m 2tku "I am. And said desk is {i}still{/i} here in the classroom. I don't have that much physical storage space, so it's staying in it's little corner."
+    m 7fusdrb "But hey, now you can distract me from the topic!"
+    m 5huu "How're you doing?"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.greeting_database,
+            eventlabel="greeting_mcl_questions",
+            unlocked=True,
+            aff_range=(mas_aff.AFFECTIONATE, None),
+        ),
+        code="GRE"
+    )
+
+label greeting_mcl_questions:
+    $ shown_count = mas_getEVLPropValue("greeting_mcl_questions", "shown_count")
+    if shown_count == 0:
+        m 5hua "Hey, [player]!"
+        m 4eua "Back so soon? Did you find those answers were you looking for?"
+        $ _history_list.pop()
+        menu:
+            ".. Answers?":
+                m 4eta "Yeah, to those odd questions you were asking just a few minutes ago; then you suddenly had to leave."
+        m 3gku "They were a little out of left field, actually. And to be honest, they were some really, really weird{/i} questions."
+        m 3mtu "What were they? Ugh, we {i}just{/i} talked and I can't remember."
+        m 3ktu "But I suppose if I don't remember, they weren't important enough anyway."
+        m 1htu "Well, hmm. I hope you found whatever you were looking for!"
+        $ _history_list.pop()
+        menu:
+            "?...":
+                return
+    else:
+        m 5hua "Welcome back, [player]!"
+        m 4eua "If we're going to have another quick Q&A session, can you try to avoid asking those sorts of questions?"
+        m 3gku "They felt a little too abnormal, to be honest."
+        m 3ktu "But I appreciate you being so interested in my life!"
+        m 1htu "That's all, [player]. Thanks!"
+        $ _history_list.pop()
+        menu:
+            "?...":
+                return
