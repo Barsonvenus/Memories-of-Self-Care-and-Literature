@@ -285,3 +285,61 @@ label mas_scl_songconnected_long:
     m 3eka "{i}~The days that we make~{/i}"
     m 5tkb "{i}~I'm always gonna be with you~{/i}"
     return
+
+#Echoing
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_earthvoices",
+            prompt="Earth Voices",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_earthvoices:
+    m 5dsb "{i}~Give me a few more hours to pass~{/i}"
+    m 5dsd "{i}~With the mellow flower of the elm-bough falling~{/i}"
+    m 5dso "{i}~And then no more than the lonely grass~{/i}"
+    m "{i}~And the birds calling~{/i}"
+    m 5dko "{i}~And the birds calling~{/i}"
+    m 5hud"{i}~Give me a few more days to keep~{/i}"
+    m 5dkd "{i}~With a little love and a little sorrow~{/i}"
+    m "{i}~And then the dawn in the skies of sleep~{/i}"
+    m 5rkb "{i}~And a clear tomorrow~{/i}"
+    m 4tkb "Lamenting the passage of time is a evergreen subject."
+    m 3tkb "In a modern world where timekeeping is as easy as glancing at a digital screen,"
+    m 3tka "Even in the vast wilderness you can realize just how easy it is for time to pass."
+    m 2tka "Here, in our little reality of our own,"
+    m 2tku "All I ask is another minute with you."
+    m 2ekb "And I ask that every single moment we spend together."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_songs_database,
+            eventlabel="mas_song_row",
+            prompt="Row, row, row your boat",
+            category=[store.mas_songs.TYPE_SHORT],
+            random=True,
+            aff_range=(mas_aff.NORMAL,None)
+        ),
+        code="SNG"
+    )
+
+label mas_song_row:
+    m 5dsd "Row, row, row your boat.."
+    m "Gently down the stream.."
+    m "Merrily, merrily, merrily, merrily,"
+    m 5dsb "~Life ~ is ~ but ~ a ~ dream~"
+    m 5nub "Such nursery rhymes are meant to send children to sleep and to introduce them to songs and music."
+    m 4hub "There are theories that some nursery rhymes are heavily disguised stories about old public events or figures or having some such other hidden meaning."
+    m 3hua "But such speculation has never been proven."
+    m 3eub "The inspiration for many rhymes remains unknown.. as if having come from a dream?~"
+    return
+    
