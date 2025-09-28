@@ -6941,7 +6941,7 @@ label mcl_somethingtosayremix:
                 "End Login Procedure":
                     return
                 "Retry?":
-                    jump back
+                    jump lockfour
 
     label unlockedfour:
         "PLAYING BACK LOGGED CONVERSATION #403"
