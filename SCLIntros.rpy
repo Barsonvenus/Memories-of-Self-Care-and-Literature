@@ -955,7 +955,7 @@ label greeting_mcl_questions:
         menu:
             ".. Answers?":
                 m 4eta "Yeah, to those odd questions you were asking just a few minutes ago; then you suddenly had to leave."
-        m 3gku "They were a little out of left field, actually. And to be honest, they were some really, really weird{/i} questions."
+        m 3gku "They were a little out of left field, actually. And to be honest, they were some really, really {i}weird{/i} questions."
         m 3mtu "What were they? Ugh, we {i}just{/i} talked and I can't remember."
         m 3ktu "But I suppose if I don't remember, they weren't important enough anyway."
         m 1htu "Well, hmm. I hope you found whatever you were looking for!"
@@ -973,3 +973,4 @@ label greeting_mcl_questions:
         menu:
             "?...":
                 return
+
