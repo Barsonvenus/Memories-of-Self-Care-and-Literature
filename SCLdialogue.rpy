@@ -5628,126 +5628,217 @@ label mcl_ustrivia:
         m 1hsc "..."
         m 1lsc "Well, I'm not sure we can say we know each other too well, but.."
     
-    m 4lup "For instance, if I remember right.."
+    m 4lup "Let's write down a list of what I know about you, and we can reminisce on any fact I've written down..."
+    jump scl_knowplayer_choices
     
-    $ _history_list.pop()
     label monikaremembermenu:
-    menu:
-        "{size=-2}{i}'Your taste in music!'{/i}{/size}" if mas_seenLabels(['monika_jazz', 'monika_orchestra', 'monika_rock', 'monika_vocaloid', 'monika_rap']):
+        label pf1:
             if persistent._mas_pm_like_orchestral_music:
-                m "You mentioned you like orchestral music..."
+                m 7dtb "You mentioned you like orchestral music..."
             if persistent._mas_pm_like_rock_n_roll:
-                m "You've talked about liking rock and roll..."
+                m 7dtb "You've talked about liking rock and roll..."
             if persistent._mas_pm_like_jazz:
-                m "You've said you can groove along to jazz..."
+                m 7dtb "You've said you can groove along to jazz..."
             if persistent._mas_pm_like_rap:
-                m "You appreciate a solid beat and some good rap lyrics..."
+                m 7dtb "You appreciate a solid beat and some good rap lyrics..."
             if persistent._mas_pm_like_vocaloids:
-                m "Your taste is quite modern with a preference for vocaloids!"
+                m 7dtb "Your taste is quite modern with a preference for vocaloids!"
             if persistent._mas_pm_like_other_music is True:
-                m "You've specified you're a fan of [tempmusicgenre] artists as well."
-            jump monikaremembermenu
-        "{size=-2}{i}'You can play a instrument!'{/i}{/size}" if persistent._mas_pm_plays_instrument:
-            m "What a lovely hobby to accompany my own, huh?"
-            jump monikaremembermenu
-        "{size=-2}{i}'You're religious!'{/i}{/size}" if persistent._mas_pm_religious:
+                m 7dtb "You've specified your tastes in music are unconventional!"
+            jump scl_knowplayer_choices
+
+        label pf2:
+            m 7hsb "What a lovely hobby to accompany my own, huh?"
+            jump scl_knowplayer_choices
+
+        label pf3:
             m 6fku "Although I'm mixed on religion myself, I’m a little envious of you being able to have faith."
-            jump monikaremembermenu
-        "{size=-2}{i}'You like mint ice cream!'{/i}{/size}" if persistent._mas_pm_like_mint_ice_cream:
+            jump scl_knowplayer_choices
+
+        label pf4:
             m 7wsc "Same as me!"
             m 6nuu "Mint-flavoured anything is so strong.. So if you like mint, that's a strong memory, hahaha!"
-            jump monikaremembermenu
-        "{size=-2}{i}'You like horror as a genre!'{/i}{/size}" if persistent._mas_pm_likes_horror:
+            jump scl_knowplayer_choices
+
+        label pf5:
             m 1esa "I think it shows you're quite brave."
             m 7etu "I know who to rely on if I'm being chased by a monster~"
-            jump monikaremembermenu
-        "{size=-2}{i}'You've been to a amusement park!'{/i}{/size}" if persistent._mas_pm_has_been_to_amusement_park:
+            jump scl_knowplayer_choices
+
+        label pf6:
             m 7hsblb "I'm eagerly awaiting the day when you can escort me to one as well!"
-            jump monikaremembermenu
-        "{size=-2}{i}'You like the rain, right?'{/i}{/size}" if persistent._mas_pm_likes_rain:
+            jump scl_knowplayer_choices
+
+        label pf7:
             m 3hsa "I admire someone who doesn't feel down during rainy days!"
-            jump monikaremembermenu
-        "{size=-2}{i}'I remember your eyes...'{/i}{/size}" if persistent._mas_pm_eye_color:
+            jump scl_knowplayer_choices
+
+        label pf8:
             m 7wsc "I remember you describing your ['beautiful' if isinstance(persistent._mas_pm_eye_color, tuple) else persistent._mas_pm_eye_color] eyes."
             m 5fsa "I think I'll remember that well until I finally meet you."
-            jump monikaremembermenu
-        "{size=-2}{i}'You have a pen name!'{/i}{/size}" if persistent._mas_penname:
+            jump scl_knowplayer_choices
+
+        label pf9:
             m 7wsc "You told me it was [persistent._mas_penname]."
             m 7esb "Not many people have one, so I'd remember that."
-            jump monikaremembermenu
-        "{size=-2}{i}'You've volunteered at a charity before!'{/i}{/size}" if persistent._mas_pm_volunteer_charity:
+            jump scl_knowplayer_choices
+
+        label pf10:
             m 7esb "That's so kind of you- of course I'd remember that!"
-            jump monikaremembermenu
-        "{size=-2}{i}'You know another language!'{/i}{/size}" if persistent._mas_pm_lang_other:
+            jump scl_knowplayer_choices
+
+        label pf11:
             if persistent._mas_pm_lang_jpn:
                 m "And even Japanese!"
             m 7esb "I'm working my hardest to hold a conversation in another language or two, so I'm super impressed!"
-            jump monikaremembermenu
-        "{size=-2}{i}'Hmm, I can't think of anything else.'{/i}{/size}":
-            m 6gksdra "Nothing's coming to mind at the moment. Sorry."
+            jump scl_knowplayer_choices
+
+        label pfend:
+            m 6gksdra "Nothing else is coming to mind at the moment."
+            jump youdontremember
+                
+    label scl_knowplayer_choices:
+        $ mas_RaiseShield_dlg()
+        
+        python:
+            items = [
+                ("{size=-2}{i}'Your taste in music!'{/i}{/size}", "pf1", False, False),
+                ("{size=-2}{i}'You can play a instrument!'{/i}{/size}", "pf2", False, False),
+                ("{size=-2}{i}'You're religious!'{/i}{/size}", "pf3", False, False),
+                ("{size=-2}{i}'You like mint ice cream!'{/i}{/size}", "pf4", False, False),
+                ("{size=-2}{i}'You like horror as a genre!'{/i}{/size}", "pf5", False, False),
+                ("{size=-2}{i}'You've been to a amusement park!'{/i}{/size}", "pf6", False, False),
+                ("{size=-2}{i}'You like the rain, right?'{/i}{/size}", "pf7", False, False),
+                ("{size=-2}{i}'I remember your eyes...'{/i}{/size}", "pf8", False, False),
+                ("{size=-2}{i}'You have a pen name!'{/i}{/size}", "pf9", False, False),
+                ("{size=-2}{i}'You've volunteered at a charity before!'{/i}{/size}", "pf10", False, False),
+                ("{size=-2}{i}'You know another language!'{/i}{/size}", "pf11", False, False)
+            ]
+                        
+            final_args = [
+                ("{size=-2}'.. And that's all I remember about you, [player]!'", "pfend", False, False, 0)
+            ]
+        
+        show monika at t21
+        call screen mas_gen_scrollable_menu(items, mas_ui.SCROLLABLE_MENU_TXT_LOW_AREA, mas_ui.SCROLLABLE_MENU_XALIGN, *final_args)
+        show monika at t11
+        
+        python:
+            items = [item for item in items if not (
+                (item[1] == "pf1" and not mas_seenLabels(['monika_jazz', 'monika_orchestra', 'monika_rock', 'monika_vocaloid', 'monika_rap'])) or
+                (item[1] == "pf2" and not persistent._mas_pm_plays_instrument) or
+                (item[1] == "pf3" and not persistent._mas_pm_religious) or
+                (item[1] == "pf4" and not persistent._mas_pm_like_mint_ice_cream) or
+                (item[1] == "pf5" and not persistent._mas_pm_likes_horror) or
+                (item[1] == "pf6" and not persistent._mas_pm_has_been_to_amusement_park) or                
+                (item[1] == "pf7" and not persistent._mas_pm_likes_rain) or
+                (item[1] == "pf8" and not persistent._mas_pm_eye_color) or
+                (item[1] == "pf9" and not persistent._mas_penname) or
+                (item[1] == "pf10" and not persistent._mas_pm_volunteer_charity) or
+                (item[1] == "pf11" and not persistent._mas_pm_lang_other)
+            )]
+            
+            
+        if not _return:  # _return is False
             jump youdontremember
         
-    label youdontremember:
-        m 6hkb "So, um, what about me? Do you remember anything about me that I've brought up?"
-        jump youremembermonika
+        elif _return == "pf1":
+            jump pf1
+        elif _return == "pf2":
+            jump pf2
+        elif _return == "pf3":
+            jump pf3
+        elif _return == "pf4":
+            jump pf4
+        elif _return == "pf5":
+            jump pf5
+        elif _return == "pf6":
+            jump pf6
+        elif _return == "pf7":
+            jump pf7
+        elif _return == "pf8":
+            jump pf8
+        elif _return == "pf9":
+            jump pf9
+        elif _return == "pf10":
+            jump pf10
+        elif _return == "pf11":
+            jump pf11
+        elif _return == "mfend": 
+            jump pfend
 
+        
+    label youdontremember:
+        m 6hkb "What about me? If you were to write up a list of what you know, what would you put down? What commentary can we offer?"
+        jump scl_knowmonika_choices
+
+    #dialogue containing all monika facts
     label youremembermonika:
-        $ _history_list.pop()        
-        menu:
-            "{size=-2}You decided on a surname.{/size}" if persistent._mcl_last_name:
-                m 6esa "Yep- [persistent._mcl_last_name]!"
-                m 6dka "I still just kind of repeat it in my head once in a while, just to get used to it."
-                jump youremembermonika
-            "{size=-2}Your last meal was a cucumber sandwich.{/size}" if persistent._mcl_storychoose_b:
-                m 6hka "Hahaha, yep!"
-                m 6tkbla "I'm kinda hungry just remembering, hahaha."
-                jump youremembermonika
-            "{size=-2}You felt uncomfortable doing team activities with other club presidents.{/size}" if persistent._mcl_storychoose_a:
-                m 6hka "Ehehehe, yeah."
-                m 6ckblb "You'd think the embrassment would fade over time, but nooope.."
-                jump youremembermonika
-            "{size=-2}You can't hiccup, right?{/size}" if persistent._mcl_liechoose_a:
-                m 6hkb "Yep! At least, if I can.. I haven't yet, hahaha!"
-                jump youremembermonika
-            "{size=-2}You won the lottery- technically!{/size}" if persistent._mcl_liechoose_b:
-                m 6hkb "Hahaha, 'technically.' But I'll say it again; I won a bigger jackpot in meeting you!"
-                jump youremembermonika
-            "{size=-2}Right! You got a hole-in-one on your first game of golf!{/size}" if persistent._mcl_liechoose_c:
-                m 6hub "Your answer's a home run!"
-                m 6hkb".. wait, wrong sport? Hehehe!"
-                jump youremembermonika
-            "{size=-2}Your favourite word is 'Reconsile.'{/size}" if seen_event('mcl_favouriteword'):
-                m 6hub "Correct! My second favourite word is 'you.'"
-                m 6rub ".. As in.. you, [player]."
-                m 6ckblb "Wait, no, I screwed that up, hahahaha!"
-                jump youremembermonika
-            "{size=-2}You made up your own language, right? 'Monikaish?'{/size}" if seen_event ('greeting_monikaish'):
-                m 6eka "Oh! Hahaha, I can't take all the credit."
-                m 6dtw "V xvaqn srry thvygl, fvapr vg'f whfg ebg13!"
-                m 6dfu "Ehehe."
-                jump youremembermonika
-            "{size=-2}You can speak in colors.{/size}" if seen_event ('mcl_colouremotion'):
-                m 7suu "{rainbow}correct-{/rainbow}"
-                m 2dfblp "Oh, ow! Still gives me a headache!"
-                m 2hkblsdrb "my bad, heh."
-                jump youremembermonika
-            "{size=-2}If you could own a pet, you'd like a bird.{/size}" if seen_event ('monika_pets'):
-                m 4fua "10 points to [player]!"
-                m 5eta "A 'Resplendent Quetzal', but I also know now they're not meant to kept in captivity."
-                m 5hfu "I sure wouldn't complain about having one as a friendly neighbour, though."
-                if persistent._mas_acs_enable_quetzalplushie:
-                    m 6hfu "I mean.. I suppose I have one already, hahaha!"
-                jump youremembermonika
-            "{size=-2}You have a strong sense of rivalry with me!{/size}" if persistent._mcl_monikaisrival is True:
-                m 1fua "..."
-                m 1ffa "That doesn't count, because that's a fact that's more tied to us both, right?"
-                m 1ntu "Is me fretting over the details proof of this rivalry?"
-                m 3ttb "Well. I'll leave that up to you to decide."
-                m 5tfb "But I'll still take the win~"
-                jump youremembermonika
-            "{size=-2}Oh. Uh, my mind's suddenly blanked out..{/size}":
-                m 3lksdlb "Ha, yeah. That's fine, sometimes it's difficult to talk about someone else on the spot?"
-                jump ustriviaending
+        label mf1:
+            m 6esa "Yep- [persistent._mcl_last_name]!"
+            m 6dka "I still just kind of repeat it in my head once in a while, just to get used to it."
+            jump scl_knowmonika_choices
+
+        label mf2:
+            m 6hka "Hahaha, yep!"
+            m 6tkbla "I'm kinda hungry just remembering, hahaha."
+            jump scl_knowmonika_choices
+
+        label mf3:
+            m 6hka "Ehehehe, yeah."
+            m 6ckblb "You'd think the embrassment would fade over time, but nooope.."
+            jump scl_knowmonika_choices
+
+        label mf8:
+            m 6hkb "Yep! At least, if I can.. I haven't yet, hahaha!"
+            jump scl_knowmonika_choices
+
+        label mf9:
+            m 6hkb "Hahaha, 'technically.' But I'll say it again; I won a bigger jackpot in meeting you!"
+            jump scl_knowmonika_choices
+
+        label mf10:
+            m 6hub "Your answer's a home run!"
+            m 6hkb".. wait, wrong sport? Hehehe!"
+            jump scl_knowmonika_choices
+
+        label mf7:
+            m 6hub "Correct! My second favourite word is 'you.'"
+            m 6rub ".. As in.. you, [player]."
+            m 6ckblb "Wait, no, I screwed that up, hahahaha!"
+            jump scl_knowmonika_choices
+
+        label mf6:
+            m 6eka "Oh! Hahaha, I can't take all the credit."
+            m 6dtw "V xvaqn srry thvygl, fvapr vg'f whfg ebg13!"
+            m 6dfu "Ehehe."
+            jump scl_knowmonika_choices
+
+        label mf4: 
+            m 7suu "{rainbow}correct-{/rainbow}"
+            m 2dfblp "Oh, ow! Still gives me a headache!"
+            m 2hkblsdrb "my bad, heh."
+            jump scl_knowmonika_choices
+
+        label mf5:
+            m 4fua "10 points to [player]!"
+            m 5eta "A 'Resplendent Quetzal', but I also know now they're not meant to kept in captivity."
+            m 5hfu "I sure wouldn't complain about having one as a friendly neighbour, though."
+            if persistent._mas_acs_enable_quetzalplushie:
+                m 6hfu "I mean.. I suppose I have one already, hahaha!"
+            jump scl_knowmonika_choices
+
+        label mf11:
+            m 1fua "..."
+            m 1ffa "That doesn't count, because that's a fact that's more tied to us both, right?"
+            m 1ntu "Is me fretting over the details proof of this rivalry?"
+            m 3ttb "Well. I'll leave that up to you to decide."
+            m 5tfb "But I'll still take the win~"
+            jump scl_knowmonika_choices
+
+        label mfend:
+            m 3lksdlb "Thanks for riffling through your mental folders, [player]."
+            jump ustriviaending
                 
     label ustriviaending:
     if mas_curr_affection == mas_affection.NORMAL:
@@ -5768,6 +5859,86 @@ label mcl_ustrivia:
         return
     
     m 2eua "Feel free to ask me again in the future. I'm sure as time goes on and we learn more about one another it'd be neat to see what we remember of each other."
+    return
+    
+    label scl_knowmonika_choices:
+        $ mas_RaiseShield_dlg()
+
+        python:
+            items = [
+                ("{size=-2}You decided on a surname.{/size}", "mf1", False, False),
+                ("{size=-2}Your last meal was a cucumber sandwich.{/size}", "mf2", False, False),
+                ("{size=-2}You felt uncomfortable doing team activities with other club presidents.{/size}", "mf3", False, False),
+                ("{size=-2}You can speak in colors.{/size}", "mf4", False, False),
+                ("{size=-2}If you could own a pet, you'd like a bird.{/size}", "mf5", False, False),
+                ("{size=-2}You made up your own language, right? 'Monikaish?'{/size}", "mf6", False, False),
+                ("{size=-2}Your favourite word is 'Reconsile.'{/size}", "mf7", False, False),
+                ("{size=-2}You can't hiccup, right?{/size}", "mf8", False, False),
+                ("{size=-2}You won the lottery- technically!{/size}", "mf9", False, False),
+                ("{size=-2}You got a hole-in-one on your first game of golf!{/size}", "mf10", False, False),
+                ("{size=-2}You have a strong sense of rivalry with me!{/size}", "mf11", False, False)
+            ]
+
+            final_args = [
+                ("{size=-2}.. And that's all I can think of right now.{/size}", "mfend", False, False, 0)
+            ]
+            
+        python:
+            items = [item for item in items if not (
+                (item[1] == "mf4" and not seen_event("monika_pets")) or
+                (item[1] == "mf5" and not seen_event("mcl_colouremotion")) or
+                (item[1] == "mf6" and not seen_event("greeting_monikaish")) or
+                (item[1] == "mf7" and not seen_event("mcl_favouriteword"))
+            )]         
+            
+            if persistent._mcl_monikaisrival is not True:
+                items = [item for item in items if item[1] != "mf11"]
+            if persistent._mcl_storychoose_a:
+                items = [item for item in items if item[1] != "mf2"]
+            if persistent._mcl_storychoose_b:
+                items = [item for item in items if item[1] != "mf3"]
+            if persistent._mcl_liechoose_a:
+                items = [item for item in items if item[1] not in ["mf9", "mf10"]]
+            if persistent._mcl_liechoose_b:
+                items = [item for item in items if item[1] not in ["mf8", "mf10"]]
+            if persistent._mcl_liechoose_c:
+                items = [item for item in items if item[1] not in ["mf8", "mf9"]]
+                
+        show monika at t21
+        call screen mas_gen_scrollable_menu(items, mas_ui.SCROLLABLE_MENU_TXT_LOW_AREA, mas_ui.SCROLLABLE_MENU_XALIGN, *final_args)
+        show monika at t11
+
+        if not _return:  # _return is False
+            jump ustriviaending
+        
+        elif _return == "mf1":
+            jump mf1
+        elif _return == "mf2":
+            jump mf2
+        elif _return == "mf3":
+            jump mf3
+        elif _return == "mf4":
+            jump mf4
+        elif _return == "mf5":
+            jump mf5
+        elif _return == "mf6":
+            jump mf6
+        elif _return == "mf7":
+            jump mf7
+        elif _return == "mf8":
+            jump mf8
+        elif _return == "mf9":
+            jump mf9
+        elif _return == "mf10":
+            jump mf10
+        elif _return == "mf11":
+            jump mf11
+        elif _return == "mfend": 
+            jump mfend
+        
+        $ mas_DropShield_dlg()
+        jump ch30_visual_skip
+        
     return
 
 init 5 python:
@@ -8904,3 +9075,4 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
