@@ -1375,21 +1375,20 @@ label mcl_literatureclubbestie:
             m 4tka "Now I feel like I’m interviewing for the position, hahaha."
             m 3hut "'I always look out for my friends, and I’ll always stick by them!'"
             m 3tuu "That's kind of you to choose me.. again, but let's choose a actual answer from the other girls."
-            label bestiechoices:
-                menu:
-                    "Sayori?":
-                        m 3ftu "Hahaha, the childhood friend wins again, huh?"
-                        m 3ftc "Hmm."
-                        m 1hsc "Do you have a similar acquaintance that you’ve known from an early age?"
-                        m 1esc "I’ve never had somebody like that in my life, so knowing somebody for years and years on end? It’s hard to imagine, honestly."
-                    "Natsuki?":
-                        m 1esc "I know the circumstances were unusual, but the way Natsuki showed concern for Yuri- "
-                        m 7esb "- it showed that Natsuki’s the type of person who’d go out of her way to help her friends, even if she doesn't know how exactly."
-                        m 7ekb "For a spitfire, she can be a little clumsy, huh?"
-                    "Yuri?":
-                        m 7ekb "I know that you might have seen an exaggerated side of her.."
-                        m 7mka "But Yuri’s willingness to try to connect with others despite personal difficulties made her all the more genuine."
-                        m 1fka "As a best friend, I don’t think you’d find anybody more loyal; it’s nice to have friends that actually {i}show{/i} they like being friends with you."
+            menu:
+                "Sayori?":
+                    m 3ftu "Hahaha, the childhood friend wins again, huh?"
+                    m 3ftc "Hmm."
+                    m 1hsc "Do you have a similar acquaintance that you’ve known from an early age?"
+                    m 1esc "I’ve never had somebody like that in my life, so knowing somebody for years and years on end? It’s hard to imagine, honestly."
+                "Natsuki?":
+                    m 1esc "I know the circumstances were unusual, but the way Natsuki showed concern for Yuri- "
+                    m 7esb "- it showed that Natsuki’s the type of person who’d go out of her way to help her friends, even if she doesn't know how exactly."
+                    m 7ekb "For a spitfire, she can be a little clumsy, huh?"
+                "Yuri?":
+                    m 7ekb "I know that you might have seen an exaggerated side of her.."
+                    m 7mka "But Yuri’s willingness to try to connect with others despite personal difficulties made her all the more genuine."
+                    m 1fka "As a best friend, I don’t think you’d find anybody more loyal; it’s nice to have friends that actually {i}show{/i} they like being friends with you."
     m 1fua ".."
     m 1nut "So, I might have cornered you there with that question. "
     m 7nuu "Becoming ‘best friends’ with someone comes naturally, so it’s an abstract question and understandably difficult to {i}choose{/i} one."
@@ -4618,14 +4617,14 @@ init 5 python:
     addEvent(
         Event(
             persistent.event_database,
-            eventlabel="mcl_meaning",
+            eventlabel="mcl_biased",
             category=['media'],
             prompt="Monika, a Biased History",
             random=True
         )
     )
  
-label mcl_meaning:
+label mcl_biased:
     m 1duo "'History is written by the winners.'"
     m 1htc "... Or the survivors."
     m 1etc "These are two examples of how bias can dramatically warp history."
@@ -5129,33 +5128,6 @@ label mcl_monikascharacter:
             m 1hua "They can range from hopeful, spirited.. or ultimately happy."
             m 5hua "Like{w=1.0} well, like we have now, right?"
             return 'derandom'
-
-init 5 python:
-    addEvent(
-        Event(
-            persistent._mas_apology_database,
-            eventlabel="mcl_apolev",
-            prompt="...for *everything,* I guess.",
-            conditional="len(persistent._mas_apology_time_db) > 0",
-            unlocked=True
-        ),
-        code="APL"
-    )
-
-label mcl_apolev:
-        m 5fsc "..."
-        m 5fsd "Yeah."
-        m 5fkc "Sometimes it feels like you need to apoligize for just literally.. everything."
-        m 5ftx "{i}Everything.{/i} Even if it's not your fault."
-        m 5fst "That's the tricky thing with 'sorry.' It doesn't have to be said solely to own up for a mistake you did."
-        m 5fkt "Sometimes you're sorry {i}for{/i} somebody."
-        m 5fup "So I don't really know if you're feeling guilty about something in particular. Or maybe everything you think you've done wrong by me in the past."
-        m 5ftp "Or if you're just feeling sorry for me and my rollercoaster of a life."
-        m 5huc "I'm in no position to deny pity."
-        m 5euc "Thanks, is all I can say."
-        m 5ekb "Thanks."
-        $ mas_unlockEVL("mcl_apolev", 'APL')
-        return
 
 init 5 python:
     addEvent(
@@ -9075,4 +9047,5 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
 
