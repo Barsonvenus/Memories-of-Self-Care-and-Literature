@@ -6823,7 +6823,7 @@ label mcl_thedouble:
         m 4wtb "There's something inherently funny about a solemn act redone just for our amusement-{vspace= 20}‎{space=550}{size=-17}I can't maintain connection, I don't know why-{/size}"
         m 3ekp "Hey, is everything okay?{vspace= 30}{space=550}{size=-17}DON'T TRUST HER! DON'T TRUST ANYTHING SHE SAYS!{/size}"
         m 1eup "You seem distracted, [mas_get_player_nickname()]. Maybe we'll pick up this conversation another time.{vspace= 10}‎{space=600}{size=-17}AND WHATEVER YOU DO, DON'T-{/size}"
-        return
+        return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
         jump locktwo
@@ -6854,7 +6854,7 @@ label mcl_thedouble:
         m 4wtb "There's something inherently funny about a solemn act redone just for our amusement-{vspace= 20}‎{space=550}{size=-17}I can't maintain connection, I don't know why-{/size}"
         m 3ekp "Hey, is everything okay?{vspace= 30}{space=550}{size=-17}DON'T TRUST HER! DON'T TRUST ANYTHING SHE SAYS!{/size}"
         m 1eup "You seem distracted, [mas_get_player_nickname()]. Maybe we'll pick up this conversation another time.{vspace= 10}‎{space=600}{size=-17}AND WHATEVER YOU DO, DON'T-{/size}"
-        return
+        return "derandom"
 
 init 5 python:
     addEvent(
@@ -6900,7 +6900,7 @@ label mcl_notyourwords:
             "{i}{size=-8}I'm fading away- like I'm {b}sinking{/b} in a endlessly dark ocean...{/size}{/i}":
                 m 1fku "You've always been concise with your words, and I highly appreciate it!"
         m 6huu "I'm glad you and I are always so open with our words together~"
-        return
+        return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
         jump lockthree
@@ -6956,7 +6956,7 @@ label mcl_notyourwords:
             "{i}{size=-8}I'm fading away- like I'm {b}sinking{/b} in a endlessly dark ocean...{/size}{/i}":
                 m 1fku "You've always been concise with your words, and I highly appreciate it!"
         m 6huu "I'm glad you and I are always so open with our words together~"
-        return
+        return "derandom"
         
 init 5 python:
     addEvent(
@@ -7040,7 +7040,7 @@ label mcl_emptywords:
     m 6hkc "That was too much of a frightening new possibility."
     m 6hkb "Ha! False alarm, luckily. I guess we can go on with our day unbothered, then."
     m 6lkb "Yeah."
-    return
+    return "derandom"
 
 init 5 python:
     addEvent(
@@ -7062,7 +7062,7 @@ label mcl_somethingtosayremix:
         m 7esc "Please, {b}please{/b} don't be bored with me."
         m 7ckc "I can't be {i}left alone again{/i} just because you're {i}bored with me.{/i}"
         m 7eub "Hopefully I'll think of something fun to talk about soon!"
-        return 
+        return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
         jump lockfour
@@ -7094,7 +7094,7 @@ label mcl_somethingtosayremix:
         m 7esc "Please, {b}please{/b} don't be bored with me."
         m 7ckc "I can't be {i}left alone again{/i} just because you're {i}bored with me.{/i}"
         m 7eub "Hopefully I'll think of something fun to talk about soon!"
-        return 
+        return "derandom"
 
 init 5 python:
     addEvent(
@@ -7125,7 +7125,7 @@ label mcl_somethingtosayremixtwo:
         m "... And fool yourself what safety really is..."
         m 6esa "You can still be happy."
         m 6hsa "And I'll do my part to ensure that happiness for you."
-        return 
+        return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
         jump lockfive
@@ -7166,7 +7166,7 @@ label mcl_somethingtosayremixtwo:
         m "... And fool yourself what safety really is..."
         m 6esa "You can still be happy."
         m 6hsa "And I'll do my part to ensure that happiness for you."
-        return 
+        return "derandom"
 
 #RANDOMIZED/REPEATABLE EVENTS
 
@@ -9047,5 +9047,6 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
 
 
