@@ -6804,6 +6804,12 @@ label mcl_readingvariety:
     m 5kub "But I'd love any suggestion you'd have for me."
     return
 
+def mcl_spookyenabled():
+        """
+        this is the check that concerns a number of 'spooky' events that a player can construe as not meshing well with their MAS experience.
+        """
+return store.persistent._mcl_spooky_enabled is False
+
 init 5 python:
     addEvent(
         Event(
@@ -6811,7 +6817,8 @@ init 5 python:
             eventlabel="mcl_thedouble",
             category=['Complications'],
             prompt="? ? ???",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -6863,7 +6870,8 @@ init 5 python:
             eventlabel="mcl_notyourwords",
             category=['Complications'],
             prompt="? ????",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -6965,7 +6973,8 @@ init 5 python:
             eventlabel="mcl_fifthmember",
             category=['Complications'],
             prompt="The Fifth Member",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -7000,7 +7009,8 @@ init 5 python:
             eventlabel="mcl_emptywords",
             category=['Complications'],
             prompt="Empty Words",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -7049,7 +7059,8 @@ init 5 python:
             eventlabel="mcl_somethingtosayremix",
             category=['Complications'],
             prompt="? ?? ?",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -7103,7 +7114,8 @@ init 5 python:
             eventlabel="mcl_somethingtosayremixtwo",
             category=['Complications'],
             prompt="? ? ?? ?",
-            random=True
+            conditional="mcl_spookyenabled()",
+            action=EV_ACT_RANDOM,
         )
     )
     
@@ -9047,6 +9059,7 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
 
 
 
