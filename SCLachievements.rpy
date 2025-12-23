@@ -99,7 +99,7 @@ label mcl_menuachievement:
         $ persistent._mcl_achievementcompliment = False
         # $ persistent._mcl_achievementdoor = False
         $ persistent._mcl_achievementanimalnoise = False
-        # $ persistent._mcl_achievementdesk = False
+        $ persistent._mcl_achievementdesk = False
         $ persistent._mcl_surpriseachievement = False
         $ persistent._mcl_flirtachievement = False
         $ persistent._mcl_noachievement = False
@@ -239,6 +239,14 @@ label mcl_menuachievement:
             jump achievementmenutwo
         "{color=#a63da2}???{/color}" if persistent._mcl_achievementcompliment is False:
             jump achievementmenutwo
+        "Schrödinger's Desk" if persistent._mcl_achievementdesk:
+            m "I've heard of being available at one's beck and call..."
+            m "But never 'desk and call.'"
+            m "Wait, no, that makes no sense, disregard that."
+            m "It's definitely something I feel is super weird to talk about, but I think that's all the more reason for me to note this happening."
+            jump achievementmenutwo
+        "{color=#3c8248}???{/color}" if persistent._mcl_achievementdesk is False:
+            jump achievementmenutwo
         "On a Whim" if achievementrand == 1:
             m "I've decided to unlock this achievement for you." 
             m "How lucky for you~"
@@ -264,7 +272,7 @@ label mcl_menuachievement:
                     $ persistent._mcl_achievementcompliment = False
                     # $ persistent._mcl_achievementdoor = False
                     $ persistent._mcl_achievementanimalnoise = False
-                    # $ persistent._mcl_achievementdesk = False
+                    $ persistent._mcl_achievementdesk = False
                     $ persistent._mcl_surpriseachievement = False
                     $ persistent._mcl_flirtachievement = False
                     $ persistent._mcl_noachievement = False
@@ -406,3 +414,4 @@ label mcl_bongcloudchess:
     m 1fub "But that’s the magic of chess. It's a game where every move has been carefully studied.. and you can still be unpredictable, and win because of it."
     m 5htb "Having a bit of fun while you're having fun.. is pretty fun, isn't it?"
     return
+
