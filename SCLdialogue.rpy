@@ -5343,21 +5343,28 @@ init 5 python:
             random=True,
         )
     )
-    
+
+# Your dialogue did it, it rage baited me into rewriting this because of how shallow it is.
+
 label mcl_heal:
-    m 6esd "Do you really 'heal' your wounds?"
-    m 6gsd "Can you really be 'fixed' if you're broken?"
-    m 6msd "These terms might be easy to latch unto if your mind is somewhere.. dark, and you're trying to imagine what a future is past that dark place."
-    m 1dfc "{cps=30}But those terms are traps-{/cps}{nw}"
-    m 1lkc "But those terms sometimes don't easily apply,{fast} and there's something to be said of being more productive by reframing your thoughts."
-    m "Sometimes what you go through.. you change because of it. And that change might not have been what you wanted.."
-    m ".. But it {i}did{/i} happen. And ownership of that fact can help create a starting line for you."
-    m 1tsc "So 'heal,' 'fix,' sometimes thinking of those as your goals implies the true goal is go {i}back.{/i}"
-    m 2mkd "And you have to face the possibility:"
-    m "You can never go back to the way it was."
-    m 2dfc "And that's {i}fine.{/i} You can find fulfillment and purpose even if the past was perfect and your future isn't."
-    m 6esc "I'm always looking towards you, aren't I? I never look back."
-    m 5msd "I never look back."
+    m 6esd "When you think of healing, what does that mean to you? "
+    extend 6gsd "The same goes for something being broken."
+    m 6msd "You might have different answers depending on when I ask you, but--I mention this for a good reason."
+    m 1dfc "Being broken doesn't mean it can't be fixed, it just takes times. "
+    extend "Just like healing, it's always a process."
+    m "Sometimes life is unpredictable, and things happen to people all the time. {w=1.0}{nw}"
+    extend "But it's important to always give time when it is needed."
+    m "That goes for yourself too, [player]."
+    m "When you find yourself in a tough spot, don't try to force yourself to be 'fixed' or 'heal'."
+    m "Give yourself time to process things, and take it one step at a time. "
+    extend "They do say hardships make you a better person afterall, haha-"
+    m "Though, that doesn't mean you can't take control of {i}how you change{/i}."
+    m "Well, [player], I guess I want to say that is that change isn't always a bad thing."
+    m "And the past is for us to always learn from; It is how we heal anyway."
+    m "But don't try to ruminate either! "
+    extend "Look forward, but glance back every once in a while to view your progress."
+    m 6esc "I know I'll always look forward to our company. "
+    extend 5msd "And our progress we make together."
     return
 
 init 5 python:
@@ -9059,6 +9066,7 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
 
 
 
