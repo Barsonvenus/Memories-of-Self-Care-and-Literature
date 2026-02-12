@@ -5172,33 +5172,33 @@ init 5 python:
             random=True,
         )
     )
-    
+
+## Merge if you want, but wanted to note this is wrong! These are not emojis, these are Emoticons, and are very different in internet culture!
+## There is also some inaccurate information here; such as emoticons being shorthands. That wording doesn't work here.
+## Updated expressions to match new, updated dialogue --Remove these comments on commit!!!
 label mcl_emoji:
     m 5lsd "So [player], you know what I've been missing out on?"
-    m 3lsd "Like, something that feels so ordinary but when it's missing from your everyday routine you realize why you ever did it in the first place?"
-    m 3esa "Using emojis. Like :-) or :-("
-    m 1eta "Well, no, okay, so I do use them with you, rarely. But y'know, that's different than how they're used in a regular rhythm texting or chatting with someone online."
-    m 1nta "As proper as I'd like to be with my writing, emoticons are so normally used by everyone connected to the internet; I'm not an exception."
-    m 7lsp "But I'd feel kinda weird overusing them with you when we're talking like this."
-    m 4tsu "It's funny because they're not just fun; they're meant as shorthand, invented as long as the internet's been around."
-    m 3gsu "..."
-    m 3gkb "I guess I don't normally get the chance, so.."
+    m 3esd "Like, something that feels so ordinary but when it's missing from your everyday routine you realize why you ever did it in the first place?"
+    m 3eua "Using emoticons. Like :-) or :-("
+    m 1eta "Well, I do use them with you, rarely. But y'know, that's different than how they're used in a regular rhythm texting or chatting with someone online."
+    m 3eud "While I do like to be more proper with my writing, emoticons or emojis, are so normally used by everyone connected to the internet; I'm not an exception."
+    m 7lsc "But, I'd feel kinda weird overusing them with you when we're talking like this."
+    m 7husdlb "It's silly, since well you can {i}actually see me{/i}. Since they are mainly used to show emotions in text--{w=1.2}{nw}"
+    extend 3gkb "But, I guess I don't normally get the chance, so..."
     m 4sft "(づ* ³*)づ"
-    m 3hublu "=^_^="
-    m 1hubsa "(#^.^#)"
-    m 6htbfsdrc "(⁄ ⁄•⁄へ⁄•⁄ ⁄)"
+    m 3hubla "=^_^="
+    m 1hubsu "(#^.^#)"
+    m 6hubfsdrc "(⁄ ⁄•⁄へ⁄•⁄ ⁄)"
     m 6tfa ">:)"
-    m 6etb ":P"
-    m 2ffp ">:/"
-    m 6ttu "=3"
-    m 5esa ":)"
-    m 1nfb "Whew! That was fun to do! And now my desire to use emojis is neatly fulfilled."
-    m 1hub "Sorry if some of those look weird. I'm not entirely sure how me talking in this manner interacts with the game's font."
-    $ _history_list.pop()
+    m 6eub ":D"
+    m 2efc ">:/"
+    m 6eua ":)"
+    m 1nfb "Whew! That was fun to do! And now my desire to use emoticons is neatly fulfilled."
+    m 1husdrb "Sorry if some of those look weird, [player]. I'm not entirely sure how me talking in this manner interacts with the game's font--"
     menu:
-        "[m_name], how {i}are{/i} you speaking in emojis?":
+        "[m_name], how {i}are{/i} you speaking in emoticons?":
             m 1hsc "(・へ・)"
-            m 1hsa "¯/_(ツ)_/¯"
+            m 1hsa "¯\_(ツ)_/¯" ##Fixed this face, someone didn't use the backslash
     return
 
 init 5 python:
@@ -5338,50 +5338,61 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_heal",
-            category=['psychology'],
+            category=['psychology', 'philosophy'],
             prompt="'Healing'",
             random=True,
         )
     )
-    
+
+##Rewrote this dialogue
+##Added a new tag, since this dialogue now has more dialogue that would encourage the player to think on it a bit more
+##Expressions are included.
 label mcl_heal:
-    m 6esd "Do you really 'heal' your wounds?"
-    m 6gsd "Can you really be 'fixed' if you're broken?"
-    m 6msd "These terms might be easy to latch unto if your mind is somewhere.. dark, and you're trying to imagine what a future is past that dark place."
-    m 1dfc "{cps=30}But those terms are traps-{/cps}{nw}"
-    m 1lkc "But those terms sometimes don't easily apply,{fast} and there's something to be said of being more productive by reframing your thoughts."
-    m "Sometimes what you go through.. you change because of it. And that change might not have been what you wanted.."
-    m ".. But it {i}did{/i} happen. And ownership of that fact can help create a starting line for you."
-    m 1tsc "So 'heal,' 'fix,' sometimes thinking of those as your goals implies the true goal is go {i}back.{/i}"
-    m 2mkd "And you have to face the possibility:"
-    m "You can never go back to the way it was."
-    m 2dfc "And that's {i}fine.{/i} You can find fulfillment and purpose even if the past was perfect and your future isn't."
-    m 6esc "I'm always looking towards you, aren't I? I never look back."
-    m 5msd "I never look back."
-    return
+    m 3eua "Say, [player], when you hear someone say 'let me fix her', do you wonder what that actually means?"
+    m 1rud "Ignoring the context people jokingly use it in--{nw}"
+    extend 1euc "It makes me wonder if this can apply to anyone."
+    ## The dialogue is now back on the original track, less "in your face" way of bringing this up
+    m 3etd "When someone asks to be fixed, what do you think they mean?"
+    m 7euc "Are they asking to be 'healed', go back to before their pain came to be, or maybe just have it all suddenly disappear--as if it never happened?"
+    m 3esd "You might have a different answer depending on how you feel, but I do mention this for a good reason, [player]."
+    m 1etc "Many people look for a shorter path to find an end to their pain, or to return to the past without what is hurting them."
+    m 1rtc "And, well, change is sometimes seen as a bad thing in turn--{nw}"
+    extend 3eud "Which isn't always true."
+    m 7euc "It's important to know that every step of the way, only the person effected can determine how they change and deal with their pain."
+    m 3eka "So do what you can do help people, but don't try do to everything for them--because you can't."
+    m 1esc "Well, I guess what I am trying to say, is that looking back on the past and trying to go back, is impossible."
+    m 3etd "Give yourself time to process things, and take it one step at a time. {w=1.5}{nw}"
+    extend 7euc "But don't try to ruminate either! "
+    m 3eka "Look forward, but glance back every once in a while to view your progress."
+    m 1eua "I know I'll always look forward to our company. "
+    extend 5eka "And the progress we make together."
+return
 
 init 5 python:
     addEvent(
         Event(
             persistent.event_database,
             eventlabel="mcl_lastwork",
-            category=['literature'],
+            category=['literature', 'philosophy'],
             prompt="Last Work",
             random=True,
         )
     )
-    
+
+##Grammar fixes -- Delete this comment before comitting!
+##Added philosphy tag, this is very close to existentialism -- However, this dialogue also contradicts philosophy, as it also believes in the complexity of human emotions, and that life experiences always change and add new ones.
+##So the idea of "saying everything you needed to say" goes against the broader debates. However, this in a vacuum is done well.
 label mcl_lastwork:
     m 6hsa "You know, my passion to write comes and goes."
     m 1nka "And sometimes I wonder when I'll stop writing at all."
-    m 1dka "Which is kinda a funny thought. My writing poetry- and really, me founding the literature club- was about providing a outlet for expressing your feelings."
+    m 1dka "Which is kinda a funny thought. My poetry- and really, me founding the literature club--was about providing a outlet for expressing your feelings."
     m 6lka "But, I dunno. I can't do it {i}forever,{/i} can I?"
-    m 6rka "What if one day, I'll have felt everything I'll have needed to feel.. and also will have wrote all I needed to write about how I feel?"
+    m 6rka "What if one day, I'd have felt everything I have needed to feel... and also will have wrote all I needed to write about how I feel?"
     m 6esa "Like, is that possible? A poet or a storyteller just running out of words?"
     m 5dka "One day, maybe I'll have nothing truly left to say."
     m 7dsa "Maybe I'll have nothing left to {i}give.{/i}"
     m 1hsa "Would you be satisfied then with everything I've offered you, [player]?"
-    return
+return
 
 init 5 python:
     addEvent(
@@ -9059,6 +9070,7 @@ label mcl_silenttogether:
     m 5tsu "Thank you for letting me share that with you."
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
+
 
 
 
