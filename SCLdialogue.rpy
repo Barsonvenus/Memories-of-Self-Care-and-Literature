@@ -7941,10 +7941,9 @@ label Choice_ND:
     m 7gta "It’s better if you imagine my tone being a lot more playful~"
     return
 label Choice_NE:
-    init:
-        $ import time
-        $ year, month, day, hour, minute, second, dow, doy, dst = time.localtime()
-    m 1eua "It’s [hour]:[minute], standard military time."
+    $ now = datetime.datetime.now()
+    $ time_str = now.strftime("%I:%M %p")  # e.g. "07:45 PM"
+    m 1eua "It’s [time_str]~"
     m 1tua "Did you actually expect me to answer that?"
     m 7efa "Well, [player]. Nice to know I can still surprise you."
     m "Anything else you'd like to ask today?"
