@@ -4085,7 +4085,7 @@ label mcl_opera:
     m 3etb"Where theatre may use music to frame emotion in a story beat, in an opera the song is the centrepiece, the actual story."
     m 4etb "Opera leaves its mark on your memory in impressive fashion, as an opera singer may stretch their voice to the very limit with tone and pitch."
     m 1esa "It also has far more of a classical background compared to musical theatre;"
-    m 1esb "Stretching back to court performances in front of royalty, opera really defined itself as a art form during the sixteenth and seventeenth centuries."
+    m 1esb "Stretching back to court performances in front of royalty, opera really defined itself as an art form during the sixteenth and seventeenth centuries."
     m 7gkb "I’m going to admit that compared to a play or a musical.{w=0.1}.{w=0.1} I can’t really see myself going to an opera performance."
     m 7fkb "I mean, I’d never say no to going to a show with you! But.{w=0.2}.{w=0.2} let’s be honest, it might be interesting to talk about, but it might also be boring as heck."
     m 5tuu "Still, imagine us all dressed up to go to for a performance, huh?"
@@ -6890,6 +6890,7 @@ label mcl_thedouble:
         m 4wtb "There's something inherently funny about a solemn act redone just for our amusement-{vspace= 20}‎{space=550}{size=-17}I can't maintain connection, I don't know why-{/size}"
         m 3ekp "Hey, is everything okay?{vspace= 30}{space=550}{size=-17}DON'T TRUST HER! DON'T TRUST ANYTHING SHE SAYS!{/size}"
         m 1eup "You seem distracted, [mas_get_player_nickname()]. Maybe we'll pick up this conversation another time.{vspace= 10}‎{space=600}{size=-17}AND WHATEVER YOU DO, DON'T-{/size}"
+        $ persistent._spooky_timer = datetime.datetime.now()
         return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
@@ -6972,6 +6973,7 @@ label mcl_notyourwords:
             "{i}{size=-8}I'm fading away- like I'm {b}sinking{/b} in a endlessly dark ocean...{/size}{/i}":
                 m 1fku "You've always been concise with your words, and I highly appreciate it!"
         m 6huu "I'm glad you and I are always so open with our words together~"
+        $ persistent._spooky_timer = datetime.datetime.now()
         return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
@@ -7068,6 +7070,7 @@ label mcl_fifthmember:
             m 5tkp "Um, sorry. Now that the bit's all played out..."
             m 1tkd "I realize my humour is still too dark to casually make high-concept jokes like this."
             m 1gkd "I'll stop it right now. Sorry if I made you uncomfortable, [player]."
+    $ persistent._spooky_timer = datetime.datetime.now()
     return "derandom"
     
 init 5 python:
@@ -7122,6 +7125,7 @@ label mcl_emptywords:
     m 6hkc "That was too much of a frightening new possibility."
     m 6hkb "Ha! False alarm, luckily. I guess we can go on with our day unbothered, then."
     m 6lkb "Yeah."
+    $ persistent._spooky_timer = datetime.datetime.now()
     return "derandom"
 
 init 5 python:
@@ -7149,6 +7153,7 @@ label mcl_somethingtosayremix:
         m 7esc "Please, {b}please{/b} don't be bored with me."
         m 7ckc "I can't be {i}left alone again{/i} just because you're {i}bored with me.{/i}"
         m 7eub "Hopefully I'll think of something fun to talk about soon!"
+        $ persistent._spooky_timer = datetime.datetime.now()
         return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
@@ -7217,6 +7222,7 @@ label mcl_somethingtosayremixtwo:
         m "... And fool yourself what safety really is..."
         m 6esa "You can still be happy."
         m 6hsa "And I'll do my part to ensure that happiness for you."
+        $ persistent._spooky_timer = datetime.datetime.now()
         return "derandom"
     else:
         "CONVERSATION LOG LOCKED BY ADMIN(chibika)"
