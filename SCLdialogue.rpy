@@ -5168,7 +5168,7 @@ init 5 python:
             persistent.event_database,
             eventlabel="mcl_emoji",
             category=['technology'],
-            prompt="Emoji",
+            prompt="Emoticon",
             random=True,
         )
     )
@@ -5176,7 +5176,7 @@ init 5 python:
 label mcl_emoji:
     m 5lsd "So [player], you know what I've been missing out on?"
     m 3lsd "Like, something that feels so ordinary but when it's missing from your everyday routine you realize why you ever did it in the first place?"
-    m 3esa "Using emojis. Like :-) or :-("
+    m 3esa "Using Emoticons. Like :-) or :-("
     m 1eta "Well, no, okay, so I do use them with you, rarely. But y'know, that's different than how they're used in a regular rhythm texting or chatting with someone online."
     m 1nta "As proper as I'd like to be with my writing, emoticons are so normally used by everyone connected to the internet; I'm not an exception."
     m 7lsp "But I'd feel kinda weird overusing them with you when we're talking like this."
@@ -5192,11 +5192,11 @@ label mcl_emoji:
     m 2ffp ">:/"
     m 6ttu "=3"
     m 5esa ":)"
-    m 1nfb "Whew! That was fun to do! And now my desire to use emojis is neatly fulfilled."
+    m 1nfb "Whew! That was fun to do! And now my desire to use emoticons is neatly fulfilled."
     m 1hub "Sorry if some of those look weird. I'm not entirely sure how me talking in this manner interacts with the game's font."
     $ _history_list.pop()
     menu:
-        "[m_name], how {i}are{/i} you speaking in emojis?":
+        "[m_name], how {i}are{/i} you speaking in emoticons?":
             m 1hsc "(・へ・)"
             m 1hsa "¯/_(ツ)_/¯"
     return
@@ -5347,17 +5347,17 @@ init 5 python:
 label mcl_heal:
     m 6esd "Do you really 'heal' your wounds?"
     m 6gsd "Can you really be 'fixed' if you're broken?"
-    m 6msd "These terms might be easy to latch unto if your mind is somewhere.. dark, and you're trying to imagine what a future is past that dark place."
-    m 1dfc "{cps=30}But those terms are traps-{/cps}{nw}"
-    m 1lkc "But those terms sometimes don't easily apply,{fast} and there's something to be said of being more productive by reframing your thoughts."
-    m "Sometimes what you go through.. you change because of it. And that change might not have been what you wanted.."
-    m ".. But it {i}did{/i} happen. And ownership of that fact can help create a starting line for you."
-    m 1tsc "So 'heal,' 'fix,' sometimes thinking of those as your goals implies the true goal is go {i}back.{/i}"
-    m 2mkd "And you have to face the possibility:"
-    m "You can never go back to the way it was."
-    m 2dfc "And that's {i}fine.{/i} You can find fulfillment and purpose even if the past was perfect and your future isn't."
-    m 6esc "I'm always looking towards you, aren't I? I never look back."
-    m 5msd "I never look back."
+    m "Well, what the heck do these terms mean in the first place?"
+    m 7euc "Does being 'healed' mean that you go back to before your pain came to be as if it never happened?"
+    m 3esd "You might have a different answer depending on how you feel, but I do mention this for a good reason, [player]."
+    m 1etc "Many people look for a shorter path to find an end to their pain, or to return to the past without what is hurting them."
+    m 1rtc "And, well, change is sometimes seen as a bad thing in turn--{nw}"
+    extend 3eud "Which isn't always true."
+    m "But defining that process of mental growth, and where it leads to, is never a universal answer."
+    m "And acknowledging you've grown in any way can be such a strong step forward towards maintaining your mental health, [player]. The first of many!"
+    m "Of course, lingering too long on the nature of change and how that change came about is also unhealthy in itself."
+    m "I'm always looking towards the future. I only spare the past a occasional glance."
+    m "Just a occasional glance."
     return
 
 init 5 python:
