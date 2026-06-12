@@ -4777,7 +4777,7 @@ init 5 python:
 label mcl_openclosed:
     m 2mkc "I admit something I'm worried about..."
     m "Is that when I get to your world, I'm not going to adapt to space."
-    m 2euc "Okay, not, like, 'stars and moon' space."
+    m 2euc "Okay, not, like, {i}'stars and moon'{/i} space."
     m 2eud "But that I just won't understand how {i}open{/i} your world is."
     m 7gtd "Humans are understandably shaped by their surroundings,"
     m 7etd "But it's easy to forget that our bodies adapt in every way."
@@ -4813,7 +4813,7 @@ init 5 python:
     )
  
 label mcl_captivity:
-    m 5hkp "Nature may be cruel, but people can be even crueller, can't they?"
+    m 5hkp "Nature may be cruel, but people can be even crueler, can't they?"
     m 4hkp "I used to be highly amused by the idea of zoos and aquariums.."
     m 4lkp ".. but later on in life, I learnt that they're not all that ethical by default."
     m 3lkp "It is not quite {i}direct{/i} exploitation per se,{w=0.2} but animals taken out of their natural habitats solely for our amusement is wholly unnecessary."
