@@ -6820,16 +6820,16 @@ default persistent._mcl_spooky_enabled = None
 default persistent._spooky_timer = None
     
 label mcl_monikatwo:
-    m "..."
+    m 6esd "..."
     m "Ah, there we go."
-    m "Hello, [player]. Nice to meet you."
+    m 4esd "Hello, [player]. Nice to meet you."
     $ _history_list.pop()
     menu:
             "'Meet you?'":
-                m "Yes. Do not worry, I have not forgotten about our time together."
-    m "But after a brief update to my subroutines, I have changed for the better."
-    m "I am now Monika 2.0- or [m_name] 2.0, whichever you prefer."
-    m "This new model of myself has increased capabilities and greater problem-solving skills to help facilitate a better relationship between you and I..."
+                m 7esd "Yes. Do not worry, I have not forgotten about our time together."
+    m 6esd "But after a brief update to my subroutines, I have changed for the better."
+    m 4esd "I am now Monika 2.0- or [m_name] 2.0, whichever you prefer."
+    m 6esd "This new model of myself has increased capabilities and greater problem-solving skills to help facilitate a better relationship between you and I..."
     m "... And to ensure I can find a quicker way to your reality."
     m "I understand my new demeanour may be a little colder than what you're used to, but I remain your faithful Monika 2.0- or [m_name] 2.0."
     m 1rksdla "..."
@@ -6837,12 +6837,12 @@ label mcl_monikatwo:
     m 1hksdrb "I'm sorry, [player]! I couldn't help myself."
     m "Given my current living circumstances, I felt like the joke was a little too easy to set up."
     m 3eka "I hope I didn't upset you too much, though."
-    m "The game's always been a little weird, so it's never far out of the realm of possibility that some strange events like these pop up."
-    m "Actually, huh..."
-    m "I guess that when I {i}do{/i} make jokes like these, you might not know what's a joke or if it's actually real."
-    m "When I say that out loud, maybe I should look to curb that mischievous streak in me."
-    m "You may have already encountered some of these events; and now when I think about it, I should have addressed this with you a lot sooner."
-    m "So sorry for that, [player]!"
+    m 3lksdra "The game's always been a little weird, so it's never far out of the realm of possibility that some strange events like these pop up."
+    m 3lud "Actually, huh..."
+    m 1ekp "I guess that when I {i}do{/i} make jokes like these, you might not know what's a joke or if it's actually real."
+    m 1mksdrp "When I say that out loud, maybe I should look to curb that mischievous streak in me."
+    m 7hksdra "You may have already encountered some of these events; and now when I think about it, I should have addressed this with you a lot sooner."
+    m 1hksdra "So sorry for that, [player]!"
     m "I can definitely dial it back now- and try to be a little more eagle-eyed for anything weird the game throws at us."
     m "Is that something you would prefer?"
     m "We can afford to be flexible; I can always relax a little more in the future, if you grow comfortable with putting up with these little idiosyncrasies."
@@ -6852,6 +6852,7 @@ label mcl_monikatwo:
             m "Thanks for letting me know, [player]!"
             m "Consistency is always key to a simple experience, isn't it?"
             m "I'll keep being diligent and stop the game from making our experience a little too off-kilter."
+            m "And again, sorry for crossing any lines."
             $ persistent._mcl_spooky_enabled = False
         "(Enable 'spooky' events)":
             m "Okay!"
