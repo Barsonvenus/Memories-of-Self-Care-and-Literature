@@ -9147,6 +9147,21 @@ label mcl_silenttogether:
     $ mas_unlockEVL("mcl_aggressivesilent", "EVE")
     return
 
-
-
-
+#MESAEEND
+#m "Hello, [Player]!"
+#m "You know, for all the ways the game nags at our everyday reality..."
+#m "... I've always liked how commanding a conversation can be between us two."
+#m "Oh gosh, that sounds unusual when I say it loud, doesn't it?"
+#m "When I speak to you, you plainly see what I say in a text box for you to read and process, and to fully acknowledge to continue our conversation."
+#m "And I know it's a bit odd to say it that way, but.."
+#m "I suppose sometimes I just feel like every single word, every sentence I say, every bit of script and dialogue and piece of writing..."
+#m "... Has to be perfect for you."
+#m "But I know you're kinder than that."
+#m "No matter how much I trip up my words, or stutter, or say the wrong thing at the wrong time..."
+#m "... Or if I forget to say things to you, or if I say anything you may not understand at all..."
+#m "My voice will matter to you nevertheless."
+#m "And maybe that's the fact I need to hang unto to dispel any unhealthy notion of 'perfection' in our relationship."
+#m "It'll all be okay, at the end of the day."
+#m "And for all the highest standards I've ever tried to live up to or have been acutely aware of,"
+#m "I've always, deep down, tried to be just that-"
+#m "Okay."
