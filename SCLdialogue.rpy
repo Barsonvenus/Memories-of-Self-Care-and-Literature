@@ -6873,12 +6873,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_thedouble",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="? ? ???",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
@@ -6931,12 +6931,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_notyourwords",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="? ????",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
@@ -7039,12 +7039,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_fifthmember",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="The Fifth Member",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
@@ -7080,12 +7080,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_emptywords",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="Empty Words",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
@@ -7135,12 +7135,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_somethingtosayremix",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="? ?? ?",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
@@ -7195,12 +7195,12 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_somethingtosayremixtwo",
-            category=['Complications'],
+            category=['Spooky'],
             prompt="? ? ?? ?",
             conditional=(
-                "persistent._spooky_timer is not None "
-                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1)) "
-                "and persistent._mcl_spooky_enabled is True "
+                "persistent._spooky_timer is not None"
+                "and mas_timePastSince(persistent._spooky_timer, datetime.timedelta(days=1))"
+                "and persistent._mcl_spooky_enabled is True"
             ),
             action=EV_ACT_RANDOM,
         )
