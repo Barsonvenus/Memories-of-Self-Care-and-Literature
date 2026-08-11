@@ -3,8 +3,17 @@ init -990 python in mas_submod_utils:
         author="SATURNVENUS",
         name="Memories of Self Care and Literature",
         description="(Metaverse Enterprise Solutions Analytics & Engagements Tools, Internal Use Only.) A submod that adds an entire wealth of dialogue! Check out the github/wiki {a=https://github.com/Barsonvenus/Memories-of-Self-Care-and-Literature}{i}{u}here!{/u}{/i}{/a}",
-        version="8.4.0",
+        version="9.0.0",
     )
+
+init -989 python:
+    if store.mas_submod_utils.isSubmodInstalled("Submod Updater Plugin"):
+        store.sup_utils.SubmodUpdater(
+            submod="Memories of Self Care and Literature",
+            user_name="Barsonvenus",
+            repository_name="Memories-of-Self-Care-and-Literature",
+            extraction_depth=2
+        )
 
 init -1 python:
     faketooltip = (
