@@ -5269,7 +5269,7 @@ label mcl_comfortfoodmedia:
     m 7gka "But I don’t."
     m 1nua "I end up going back to the same books, the same shows."
     m 5nua "And that’s nice; like wrapping yourself in a comfortable, warm blanket."
-    m 5rka "But I love reading enough to know I might be limiting myself of experiencing some truly great works out there by going back to these loved works too muc"
+    m 5rka "But I love reading enough to know I might be limiting myself of experiencing some truly great works out there by going back to these loved works too much."
     m 5tka "It’s funny to think that even if it’s in a space you love, exploring that space can conjure up a bit of hesitance."
     m 3nua "Always treasure that sentiment you may have to these works you yourself probably treat as ‘comfort food,’ [player]."
     m 7nub "But always realize there is always something new out there that you’ll find to love."
