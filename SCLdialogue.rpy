@@ -6873,7 +6873,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_thedouble",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="? ? ???",
             conditional=(
                 "persistent._spooky_timer is not None"
@@ -6931,7 +6931,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_notyourwords",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="? ????",
             conditional=(
                 "persistent._spooky_timer is not None"
@@ -7039,7 +7039,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_fifthmember",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="The Fifth Member",
             conditional=(
                 "persistent._spooky_timer is not None"
@@ -7080,7 +7080,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_emptywords",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="Empty Words",
             conditional=(
                 "persistent._spooky_timer is not None"
@@ -7135,7 +7135,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_somethingtosayremix",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="? ?? ?",
             conditional=(
                 "persistent._spooky_timer is not None"
@@ -7195,7 +7195,7 @@ init 5 python:
         Event(
             persistent.event_database,
             eventlabel="mcl_somethingtosayremixtwo",
-            category=['Spooky'],
+            category=['spooky'],
             prompt="? ? ?? ?",
             conditional=(
                 "persistent._spooky_timer is not None"
