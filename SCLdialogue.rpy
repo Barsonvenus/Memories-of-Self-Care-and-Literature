@@ -2220,7 +2220,7 @@ label mcl_lowtech:
     m 2eka "Watching a sunset with you on a beach far away from people and cars and bright lights and constant noise.."
     m 4fsb "I would love that."
     m 3fsb "I would want nothing more than that."
-    m 5fsb "And I try to would give up all the luxury in the world for it."
+    m 5fsb "And I would try to would give up all the luxury in the world for it."
     return
     
 init 5 python:
