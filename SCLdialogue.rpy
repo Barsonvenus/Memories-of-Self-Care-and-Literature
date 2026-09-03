@@ -6813,6 +6813,8 @@ init 5 python:
             category=['misc'],
             prompt="Monika 2.0",
             aff_range=(mas_aff.LOVE, None),
+            random=True,
+            sensitive=True
         )
     )
     
